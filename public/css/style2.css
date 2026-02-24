@@ -1,0 +1,95 @@
+.font-yellow{
+    color: #FFCA06;
+}
+
+.bg-yellow{
+    background-color: #FFCA06;
+}
+
+.font-dark-blue{
+    color: #054A76;
+}
+
+.font-medium-dark-blue{
+    color: #07639D;
+}
+
+.franklin-family{
+    font-family: 'Franklin Gothic Medium Cond', 'Arial Narrow', Arial, sans-serif;
+}
+
+.roboto-family{
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero-banner p{
+    font-size: 36px;
+}
+
+.hero-banner h2{
+    font-size: 55px;
+}
+
+.hero-banner h1{
+    font-size: 88px;
+}
+
+.hero-banner .btn{
+    font-size: 36px;
+    padding: 12px 30px;
+}
+
+.promo-details {
+    overflow: hidden; /* Evita que las ondas se salgan del contenedor */
+}
+
+.promo-bubble {
+    position: absolute;
+    padding: 30px 30px;
+    border-radius: 15px;
+
+    color: #003d6b;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Posicionamiento exacto sobre el teléfono */
+.bubble-blue {
+    background-color: #87CEFA;
+    top: 20%;
+    right: -15%;
+    font-weight: 800;
+    font-size:60px;
+    line-height: 1;
+    letter-spacing: -1.8px;
+    z-index: 2;
+}
+
+.bubble-blue::after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #87CEFA;
+}
+
+.bubble-yellow {
+    background-color: #FFF2B2;
+    bottom: 25%;
+    right: -10%;
+    z-index: 1;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -1.8px;
+}
+
+.bubble-yellow::after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #FFF2B2;
+}

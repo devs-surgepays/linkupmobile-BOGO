@@ -1,0 +1,18 @@
+# Deny all external HTTP access to this folder
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Deny from all
+</IfModule>
+<FilesMatch "\.(ini|env|log|sql|bak|zip)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes
