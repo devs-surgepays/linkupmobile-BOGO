@@ -21,7 +21,7 @@
 .roboto-family{
     font-family: 'Roboto', sans-serif;
 }
-
+/* hero banner */
 .hero-banner p{
     font-size: 36px;
 }
@@ -38,7 +38,7 @@
     font-size: 36px;
     padding: 12px 30px;
 }
-
+ /* bubbles promocionales */
 .promo-details {
     overflow: hidden; /* Evita que las ondas se salgan del contenedor */
 }
@@ -92,4 +92,34 @@
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-right: 15px solid #FFF2B2;
+}
+
+/* bogo deal section */
+/* Bordes extra redondeados como en la imagen */
+.rounded-5 {
+    border-radius: 30px !important;
+}
+
+/* Efecto para el cuadro de 12GB */
+.plan-info-box {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-color: #ffc107 !important;
+}
+
+/* Ajustes de tipografía */
+.bogo-section h2 {
+    font-family: 'Arial Black', sans-serif;
+}
+
+/* Estilo para los botones circulares */
+.btn-light.rounded-circle {
+    background: #fdf8e4;
+    color: #ffc107;
+    font-weight: bold;
+    border: none;
 }
