@@ -210,3 +210,50 @@ footer li{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     line-height: 1.5;
 }
+
+/* Burbujas celestes de la derecha */
+.info-bubble {
+    background-color: #cceeff; /* El celeste del mockup */
+    border-radius: 25px;
+    transition: transform 0.2s ease;
+}
+
+.info-bubble:hover {
+    transform: translateX(10px);
+}
+
+.info-bubble h3{
+    color: #07639D;
+    font-size: 48px;
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.1;
+}
+
+/* Botón de círculo amarillo con "+" */
+.plus-icon-btn {
+    width: 45px;
+    height: 45px;
+    background-color: #fdf8e4; /* Crema suave */
+    color: #ffc107; /* Amarillo */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Redondeado extra para la tarjeta izquierda */
+.rounded-5 {
+    border-radius: 40px !important;
+}
+
+/* Estilo para el hover del dropdown */
+.custom-destination-dropdown .dropdown-item:hover {
+    background-color: #f0f8ff;
+    color: #0076bd;
+}

@@ -74,7 +74,7 @@
                     <div class="py-3 px-5 text-start d-flex justify-content-between align-items-center" style="background-color: #FFF6D6;">
                         <div>
                             <p class="mb-0 fw-bold text-brown franklin-family" style="font-size: 30px;line-height: normal;
-letter-spacing: -0.9px;">YOU’RE GETTING:</p>
+letter-spacing: -0.9px;">YOU'RE GETTING:</p>
                             <h4 class="mb-0 fw-bold font-yellow franklin-family" style="font-size: 26px;">12<span style="font-size: 20px;line-height: normal;
 letter-spacing: -0.78px;">GB</span></h4>
                             <small class="d-block fw-bold franklin-family" style="font-size: 20px;color: #8F7000;line-height: normal;
@@ -163,6 +163,78 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                     </div>
                 </div>
             </div> -->
+
+        </div>
+    </div>
+</section>
+
+<section class="hero-banner py-5 bg-white">
+    <div class="container text-center">
+        
+        <h2 class="text-uppercase mb-4 h1 roboto-family" style="color: #03324E;font-weight: 900;">
+            International built in. No extra cost.
+        </h2>
+        
+        <p class="lead mx-auto franklin-family" style="max-width: 900px; font-weight: 500;color:#021927;font-size: 32px;">
+           Enjoy <span class="text-primary-dark" style="color: #005a9c;font-size: 32px;">unlimited landline and mobile calls to<br>100+ international destinations</span> Enjoy  with your LinkUp Mobile plan
+        </p>
+
+        
+    </div>
+</section>
+
+<section class="destinations-section pb-5">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-lg p-5 rounded-5 mx-auto" style="max-width: 450px; min-height: 400px;">
+                    <div class="text-center mb-4">
+                        <h4 class="franklin-family" style="color: #0877BC;font-size: 32px;font-weight: 600;">
+                            Search for unlimited<br>international destination:
+                        </h4>
+                    </div>
+                    
+                    <div class="dropdown custom-destination-dropdown">
+                        <button class="btn btn-white border shadow-sm w-100 d-flex justify-content-between align-items-center py-2 px-3 rounded-3" type="button" data-bs-toggle="dropdown">
+                            <span class="text-muted">Select destination</span>
+                            <i class="fa fa-chevron-down small"></i>
+                        </button>
+                        <ul class="dropdown-menu w-100 shadow-sm border-0">
+                            <li><a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="https://flagcdn.com/w20/mx.png" class="me-2" alt="Mexico"> Mexico
+                            </a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="https://flagcdn.com/w20/ca.png" class="me-2" alt="Canada"> Canada
+                            </a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="#">
+                                <img src="https://flagcdn.com/w20/co.png" class="me-2" alt="Colombia"> Colombia
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="d-flex flex-column gap-3">
+                    
+                    <div class="info-bubble d-flex justify-content-between align-items-center py-4 px-5">
+                        <h3 class="mb-0">UNLIMITED LANDLINE<br>AND MOBILE</h3>
+                        <button class="plus-btn border-0"><i class="fa fa-plus"></i></button>
+                    </div>
+
+                    <div class="info-bubble d-flex justify-content-between align-items-center py-4 px-5">
+                        <h3 class="mb-0">UNLIMITED LANDLINE</h3>
+                        <button class="plus-btn border-0"><i class="fa fa-plus"></i></button>
+                    </div>
+
+                    <div class="info-bubble d-flex justify-content-between align-items-center py-4 px-5">
+                        <h3 class="mb-0">UNLIMITED MOBILE</h3>
+                        <button class="plus-btn border-0"><i class="fa fa-plus"></i></button>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
     </div>
