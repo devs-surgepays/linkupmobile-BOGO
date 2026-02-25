@@ -88,50 +88,7 @@ if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
 
 	// Number From ReplyCX
 	define('FROM_NUMBER_REPLYCX', '18338441190');
-
-	//Paths configs 
-	$GLOBALS['configs'] = [
-		'SURGE' => [
-			'table' => 'c1_surgephone.agent_registration_acp',
-			'table_doc' => 'c1_surgephone.ebb_documents',
-			'table_log' => 'c1_surgephone.agent_acp_apis_log',
-			'documents' => 'surgephone/application/landing_files/Documents/',
-			'folder_signature' => 'surgephone/application/landing_files/Signatures/',
-			'folder_screenshots' => 'surgephone/application/landing_files/SignScreenshots/',
-			'consent' => 'surgephone/application/landing_files/ACPConsent/',
-			'doc_name' => 'ACPConsentForm.pdf'
-		],
-		'TORCH' => [
-			'table' => 'c1_surgephone.agent_registration_acp',
-			'table_doc' => 'c1_surgephone.ebb_documents',
-			'table_log' => 'c1_surgephone.agent_acp_apis_log',
-			'documents' => 'torch/torch_application/landing_files/Documents/',
-			'folder_signature' => 'torch/torch_application/landing_files/Signatures/',
-			'folder_screenshots' => 'torch/torch_application/landing_files/SignScreenshots/',
-			'consent' => 'surgephone/application/landing_files/ACPConsent/',
-			'doc_name' => 'TorchACPConsentForm.pdf'
-		],
-		'TERRACOM' => [
-			'table' => 'c1_surgephone.lifeline_registration',
-			'table_doc' => 'c1_surgephone.lifeline_documents',
-			'table_log' => 'c1_surgephone.lifeline_apis_log',
-			'documents' => 'lifeline_application/landing_files/Documents/',
-			'folder_signature' => 'lifeline_application/landing_files/Signatures/',
-			'folder_screenshots' => 'lifeline_application/landing_files/SignScreenshots/',
-			'consent' => 'lifeline_application/landing_files/LifelineConsent/',
-			'doc_name' => 'LifelineConsentForm.pdf'
-		],
-		'LIFELINE' => [
-			'table' => 'c1_surgephone.lifeline_registration',
-			'table_doc' => 'c1_surgephone.lifeline_documents',
-			'table_log' => 'c1_surgephone.lifeline_apis_log',
-			'documents' => 'lifeline_application/landing_files/Documents/',
-			'folder_signature' => 'lifeline_application/landing_files/Signatures/',
-			'folder_screenshots' => 'lifeline_application/landing_files/SignScreenshots/',
-			'consent' => 'lifeline_application/landing_files/LifelineConsent/',
-			'doc_name' => 'LifelineConsentForm.pdf'
-		],
-	];
+	
 
 /* AUTHORIZE.NET CONFIGURATION */
 if (AUTHENV == 'test' || AUTHENV == 'Test') {
@@ -147,7 +104,12 @@ if (AUTHENV == 'test' || AUTHENV == 'Test') {
 	define('CLIENT_KEY', $config['AUTHSANDBOX_CLIENT_KEY']);
 
 } else {
+	
+	define('API_LOGIN_ID', $config['AUTHLIVE_LOGIN_ID']);
 
+	define('TRANSACTION_KEY', $config['AUTHLIVE_TRANSACTION_KEY']);
+
+	define('APIURL', $config['AUTHLIVE_APIURL']);
 
 	define('ACCEPTURL', $config['AUTHLIVE_ACCEPTURL']);
 
