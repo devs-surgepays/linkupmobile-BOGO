@@ -133,17 +133,56 @@ if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
 		],
 	];
 
+/* AUTHORIZE.NET CONFIGURATION */
+if (AUTHENV == 'test' || AUTHENV == 'Test') {
+
+	define('API_LOGIN_ID', $config['AUTHSANDBOX_LOGIN_ID']);
+
+	define('TRANSACTION_KEY', $config['AUTHSANDBOX_TRANSACTION_KEY']);
+
+	define('APIURL', $config['AUTHSANDBOX_APIURL']);
+
+	define('ACCEPTURL', $config['AUTHSANDBOX_ACCEPTURL']);
+
+	define('CLIENT_KEY', $config['AUTHSANDBOX_CLIENT_KEY']);
+
+} else {
 	
-	/*CA Spia configs */
-	if (AUTHENV == 'test' || AUTHENV == 'Test') {
+	define('API_LOGIN_ID', $config['AUTHLIVE_LOGIN_ID']);
 
-		define('TOKEN', '0B5E463E-EEEA-EF11-A4DE-6045BDD3A124');
-		define('ENDPOINT_URL', "https://lifeline-preprod.cgmllc.net/api/v2/CaCheckCustomer");
-	} else {
+	define('TRANSACTION_KEY', $config['AUTHLIVE_TRANSACTION_KEY']);
 
-		define('TOKEN', '0B5E463E-EEEA-EF11-A4DE-6045BDD3A124');
-		define('ENDPOINT_URL', "https://lifeline.cgmllc.net/api/v2/CaCheckCustomer");
-	}
+	define('APIURL', $config['AUTHLIVE_APIURL']);
 
+	define('ACCEPTURL', $config['AUTHLIVE_ACCEPTURL']);
 
+	define('CLIENT_KEY', $config['AUTHLIVE_CLIENT_KEY']);
+
+}
+
+/* PAYPAL CONFIGURATION */
+define('ProPayPal', 0);
+
+if (ProPayPal) {
+
+	define("PayPalClientId", $config['PAYPALSANDBOX_CLIENT_ID']);
+
+	define("PayPalSecret", $config['PAYPALSANDBOX_SECRET']);
+
+	define("PayPalBaseUrl", $config['PAYPALSANDBOX_BASEURL']);
+
+	define("PayPalENV", "production");
+
+} else {
+
+	define("PayPalClientId", $config['PAYPALLIVE_CLIENT_ID']);
+
+	define("PayPalSecret", $config['PAYPALLIVE_SECRET']);
+
+	define("PayPalBaseUrl", $config['PAYPALLIVE_BASEURL']);
+
+	define("PayPalENV", "sandbox");
+
+}
+	
 	
