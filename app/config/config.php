@@ -134,16 +134,7 @@ if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
 	];
 
 	
-	/*CA Spia configs */
-	if (AUTHENV == 'test' || AUTHENV == 'Test') {
 
-		define('TOKEN', '0B5E463E-EEEA-EF11-A4DE-6045BDD3A124');
-		define('ENDPOINT_URL', "https://lifeline-preprod.cgmllc.net/api/v2/CaCheckCustomer");
-	} else {
-
-		define('TOKEN', '0B5E463E-EEEA-EF11-A4DE-6045BDD3A124');
-		define('ENDPOINT_URL', "https://lifeline.cgmllc.net/api/v2/CaCheckCustomer");
-	}
 
 
 	
