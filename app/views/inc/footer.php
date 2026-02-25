@@ -1,56 +1,78 @@
-<div class="maincontainer mt-4">
-  <div class="container">
-    <div class="footer-c">
-      <div class="fdiv1">
-        <div>
-          <img src="<?php echo URLROOT; ?>/img/linkup-white.png" data-at2x="https://linkupmobile.com/wp-content/uploads/2024/10/Artboard_1_42e4232e-5e72-495a-8ab4-b5539934c5fa_00fa00640_6635@2x.png" alt="Artboard_1_42e4232e-5e72-495a-8ab4-b5539934c5fa" class="logo_desktop fdiv1-image">
-        </div>
-      </div>
-      <div class="fdiv2">
-        <div>
-          <a href="https://linkupmobile.com">Home</a>
-          <a href="https://linkupmobile.com/plans/">Plans</a>
-          <a href="https://linkupmobile.com/faq/">FAQ</a>
-          <a href="https://linkupmobile.com/about-us/">About Us</a>
-          <a href="https://business.linkupmobile.com/">Become a Dealer</a>
-          <a href="https://enroll.linkupmobile.com/SignIn.php">My Account</a>
-          <a href="https://linkupmobile.com/support/">Support</a>
-        </div>
-      </div>
+<footer class="text-white pt-5" style="background-color: #0076bd;">
+    <div class="container pb-4">
+        <div class="row g-4">
+            
+            <div class="col-12 col-md-4">
+                <div class="mb-3">
+                    <img src="<?php echo URLROOT; ?>/img/linkup-white.png" class="img-fluid" style="max-height: 93px;" />
+                </div>
+                <p class="mb-3 roboto-family" style="font-size: 18px;">© 2026 LinkUp Mobile</p>
+                <!-- <div class="d-flex align-items-center small">
+                    <img src="https://flagcdn.com/w20/us.png" alt="EN" class="me-1">
+                    <span class="font-yellow fw-bold">EN</span>
+                    <span class="mx-2">|</span>
+                    <img src="https://flagcdn.com/w20/mx.png" alt="ES" class="me-1">
+                    <span>ES</span>
+                </div> -->
+                <div class="d-flex align-items-center franklin-family px-2">
+                <div class="me-2">
+                    <a href="" class="text-white text-decoration-none fw-bold d-flex align-items-center me-2" style="font-size: 24px;">
+                      <img src="https://flagcdn.com/24x18/us.png" alt="US" class="me-1">
+                    <span class="fw-bold font-yellow">EN</span>
+                    </a>
+                </div>
+                <span class="mx-2">|</span>
+                <div>
+                    <a href="" class="text-white text-decoration-none fw-bold d-flex align-items-center ms-2" style="font-size: 24px;">
+                      <img src="https://flagcdn.com/24x18/mx.png" alt="MX" class="me-1">
+                    <span class="text-white-50">ES</span>
+                    </a>
+                </div>
+            </div>
+            </div>
 
-      <div class="fdiv3">
-        <div class="d-flex flex-column">
-          <!-- <span class="fdiv3-title mb-2">Contact Info</span> -->
-          <span class="fdiv3-title mb-2">Support 24/7</span>
-          <div class="email-info mb-2">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <span class="email-info-text">support@linkupmobile.com</span>
-          </div>
-          <div class="schedule-info mb-2">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            <span class="schedule-info-text">904-596-0304</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+            <!-- <div class="col-6 col-md-3">
+                <h6 class="font-yellow fw-bold text-uppercase mb-3">Home</h6>
+                </div> -->
 
-<div class="copyrights_area">
-  <div class="container ">
-    <div class="copyrights_container a-center">
-      <div class="copyrights">© <?php echo date('Y') ?> LinkUp Mobile </div>
-      <div class="footer_nav_part">
-        <nav class="footer-nav-container">
-          <ul class="main-menu copyrights-menu">
-            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4888"><a href="https://linkupmobile.com/privacy-policy/">Privacy Policy</a></li>
-            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4892 right"><a href="https://linkupmobile.com/terms-of-service/">Terms of Service</a></li>
-          </ul>
-        </nav>
-      </div>
+            <div class="col-12 col-md-4">
+              <h6 class="font-yellow fw-bold text-uppercase mb-5">Home</h6>
+                <h6 class="font-yellow fw-bold text-uppercase mb-3">Help Center</h6>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold">LIVE CHAT</a></li>
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold">PHONE CALL</a></li>
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold">EMAIL</a></li>
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold">MESSAGE</a></li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <h6 class="font-yellow fw-bold text-uppercase mb-3">My Account</h6>
+                <ul class="list-unstyled small mb-4">
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold">LOG IN</a></li>
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold">REGISTER</a></li>
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold">FORGOT PASSWORD</a></li>
+                </ul>
+                <div class="d-inline-flex align-items-center rounded shadow-sm" style="background-color: #004d7c;">
+                    <img src="<?php echo URLROOT; ?>/img/BBB_logo.png" alt="BBB" height="75" class="img-fluid">
+                    
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
-</div>
+
+    <div class="py-3 text-center" style="background-color: #005a8e;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 offset-md-3"><a href="#" class="text-decoration-underline mx-3 franklin-family" style="font-size:20px;color:#FCFCFC;">Privacy Policy</a></div>
+            <div class="col-md-3"><a href="#" class="text-decoration-underline mx-3 franklin-family" style="font-size:20px;color:#FCFCFC;">Terms of Service</a></div>
+          </div>
+            
+            
+        </div>
+    </div>
+</footer>
 
 <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbxNK7_dnO0euaECxFDafZLvF4QkPabOE&libraries=places&callback=initAutocomplete" async-->
 <!--  defer-->

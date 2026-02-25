@@ -198,3 +198,15 @@
 
 .pricing-box::before { top: 0; }
 .pricing-box::after { bottom: 0; }
+
+footer h6{
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 2;
+}
+
+footer li{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.5;
+}
