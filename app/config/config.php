@@ -147,12 +147,7 @@ if (AUTHENV == 'test' || AUTHENV == 'Test') {
 	define('CLIENT_KEY', $config['AUTHSANDBOX_CLIENT_KEY']);
 
 } else {
-	
-	define('API_LOGIN_ID', $config['AUTHLIVE_LOGIN_ID']);
 
-	define('TRANSACTION_KEY', $config['AUTHLIVE_TRANSACTION_KEY']);
-
-	define('APIURL', $config['AUTHLIVE_APIURL']);
 
 	define('ACCEPTURL', $config['AUTHLIVE_ACCEPTURL']);
 

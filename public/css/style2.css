@@ -21,6 +21,11 @@
 .roboto-family{
     font-family: 'Roboto', sans-serif;
 }
+
+.text-brown{
+    color: #524000;
+}
+
 /* hero banner */
 .hero-banner p{
     font-size: 36px;
@@ -112,9 +117,9 @@
 }
 
 /* Ajustes de tipografía */
-.bogo-section h2 {
-    font-family: 'Arial Black', sans-serif;
-}
+/* .bogo-section h2 {
+    font-family: 'franklin-family', 'Franklin Gothic Medium Cond', Arial, sans-serif;
+} */
 
 /* Estilo para los botones circulares */
 .btn-light.rounded-circle {
@@ -123,3 +128,73 @@
     font-weight: bold;
     border: none;
 }
+
+/* Estilo general de la tarjeta derecha */
+.bogo-main-card {
+    border-radius: 30px !important;
+}
+
+
+
+
+
+/* Botón de "+" circular con sombra suave */
+.plus-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #fdf8e1;
+    color: #ffc107;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Sombras y bordes adicionales */
+.rounded-5 { border-radius: 2rem !important; }
+
+
+
+
+
+.pricing-box {
+  position: relative;
+  width: 171px;
+  height: 171px;
+  background: #FFF8E7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* Create all borders with box-shadow + mask technique */
+  box-shadow: 
+    inset 12px 0 0 0 #F4C430,   /* Left border */
+    inset -12px 0 0 0 #F4C430,  /* Right border */
+    inset 0 12px 0 0 #F4C430,   /* Top border */
+    inset 0 -12px 0 0 #F4C430;  /* Bottom border */
+}
+
+/* Mask out the gaps using pseudo-elements */
+.pricing-box::before {
+  content: '';
+  position: absolute;
+  left: 20%;
+  width: 30%;
+  height: 12px;
+  background: #FFF8E7; /* Same as box background */
+}
+.pricing-box::after {
+  content: '';
+  position: absolute;
+  left: 45%;
+  width: 30%;
+  height: 12px;
+  background: #FFF8E7; /* Same as box background */
+}
+
+.pricing-box::before { top: 0; }
+.pricing-box::after { bottom: 0; }

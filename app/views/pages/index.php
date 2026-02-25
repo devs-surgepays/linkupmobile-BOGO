@@ -59,32 +59,82 @@
         <div class="row g-5 align-items-center">
             
             <div class="col-lg-6 text-center">
+              <div class="mb-4">
+                <img src="<?php echo URLROOT; ?>/img/wifi-vector.png" alt="Chip" class="img-fluid" style="max-width: 250px;">
+              </div>
                 <div class="mb-4">
-                    <i class="bi bi-wifi d-block mb-2" style="font-size: 5rem; color: #0076bd; transform: rotate(180deg);"></i>
-                    <img src="sim-card-vector.png" alt="Chip" class="img-fluid" style="max-width: 250px;">
+                    
+                    <img src="<?php echo URLROOT; ?>/img/sim-card-vector.png" alt="Chip" class="img-fluid" style="max-width: 250px;">
                 </div>
                 
-                <div class="promo-summary-box rounded-4 overflow-hidden shadow-sm mx-auto" style="max-width: 450px;">
-                    <div class="bg-primary text-white py-2 px-3 text-start d-flex justify-content-between align-items-center" style="background-color: #005a9c !important;">
-                        <span class="fw-bold small">BUY ONE MONTH. <span class="text-warning">GET ONE MONTH FREE.</span></span>
+                <div class="promo-summary-box rounded-4 overflow-hidden shadow-sm mx-auto" style="max-width: 550px;">
+                    <div class="bg-primary text-white py-2 px-3 text-start d-flex justify-content-between align-items-center" style="background-color: #07639D !important;">
+                        <span class="fw-bold small franklin-family" style="font-size: 32px;">BUY ONE MONTH. <span class="font-yellow">GET ONE MONTH FREE.</span></span>
                     </div>
-                    <div class="p-3 text-start d-flex justify-content-between align-items-center" style="background-color: #fdf8e4;">
+                    <div class="py-3 px-5 text-start d-flex justify-content-between align-items-center" style="background-color: #FFF6D6;">
                         <div>
-                            <p class="mb-0 fw-bold text-dark small">YOU’RE GETTING:</p>
-                            <h4 class="mb-0 fw-bold" style="color: #b58d10;">12GB</h4>
-                            <small class="d-block text-muted fw-bold" style="font-size: 0.7rem;">eSIM + 1 FREE MONTH</small>
+                            <p class="mb-0 fw-bold text-brown franklin-family" style="font-size: 30px;line-height: normal;
+letter-spacing: -0.9px;">YOU’RE GETTING:</p>
+                            <h4 class="mb-0 fw-bold font-yellow franklin-family" style="font-size: 26px;">12<span style="font-size: 20px;line-height: normal;
+letter-spacing: -0.78px;">GB</span></h4>
+                            <small class="d-block fw-bold franklin-family" style="font-size: 20px;color: #8F7000;line-height: normal;
+letter-spacing: -0.6px;">eSIM </small>
+                            <small class="d-block fw-bold franklin-family" style="font-size: 20px;color: #8F7000;line-height: normal;
+letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                         </div>
-                        <div class="text-end">
-                            <p class="mb-0 fw-bold text-dark small">SUBTOTAL:</p>
-                            <h2 class="mb-0 fw-bold" style="color: #333;">$30 <small class="fs-6 fw-normal" style="font-size: 0.6rem;">(+ taxes & fees)*</small></h2>
+                        <div class="text-left">
+                            <p class="mb-0 fw-bold franklin-family" style="color:#292000;font-size:30px;line-height:normal;">SUBTOTAL:</p>
+                            <h2 class="mb-0 fw-bold franklin-family" style="color: #524000;font-size:70px;letter-spacing: -2.1px;line-height:normal;">$30 <small class="fw-normal" style="font-size: 20px;letter-spacing: -0.6px;
+">(+ taxes & fees)*</small></h2>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-6">
+                <div class="card border-0 shadow-lg rounded-5 bogo-main-card mx-auto">
+                    <div class="card-header text-center py-4 border-0 mb-4" style="background-color: #005a9c; border-radius: 25px 25px 0 0;">
+                        <h2 class="font-yellow roboto-family fw-bold mb-0" style="font-size: 64px;line-height: 1;">BOGO DEAL</h2>
+                        <p class="text-white mb-0 roboto-family" style="font-size: 30px;line-height: 1;">Limited time only!</p>
+                    </div>
+
+                    <div class="card-body p-4 text-center">
+                        <p class="text-start fw-bold roboto-family mb-3" style="color:#292000;font-size:30px;">Data:</p>
+
+                         <div class="pricing-box">
+                            <!-- <div class="border-left"></div>
+                            <div class="border-right"></div> -->
+                            <h2 class="mb-0 roboto-family" style="font-size: 48px;color:#524000; font-weight: 900;">12<span style="font-size: 40px;">GB</span></h2>
+                            <p class="mb-0 roboto-family" style="font-size: 24px;color:#524000; font-weight: 500;">$30 / mo.</p>
+                        </div>
+                        
+                        <!-- <div class="data-selection-box mb-4">
+                            <div class="data-badge">12GB</div>
+                            <div class="data-price">
+                                <span class="h3 fw-bold mb-0">$30 / mo.</span>
+                            </div>
+                        </div> -->
+
+                      
+
+                        <div class="d-flex align-items-center justify-content-center py-3 mt-4" style="cursor: pointer;">
+                            <span class="franklin-family fw-bold h5 mb-0 me-3" style="color:#0877BC;font-size:48px;">SEE PLAN DETAILS</span>
+                            <button class="plus-btn border-0"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <hr class="mt-0 mb-4" style="background: #021927;height: 3px;opacity:100;">
+
+                        <a href="#" class="d-block my-5 roboto-family text-decoration-underline" style="color:#07639D;font-size:30px;font-weight:600;">Check broadband facts label</a>
+
+                        <button class="btn franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" style="background-color: #ffc107; color: #054A76;font-size:32px;font-weight:400;">
+                            CLAIM OFFER
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-lg-6">
                 <div class="card border-0 shadow-lg rounded-5 overflow-hidden mx-auto" style="max-width: 420px;">
-                    <div class="card-header border-0 text-center py-4" style="background-color: #005a9c;">
+                    <div class="card-header border-0 text-center py-4" style="background-color: #07639D;">
                         <h2 class="text-warning fw-bold mb-0" style="letter-spacing: 1px;">BOGO DEAL</h2>
                         <p class="text-white mb-0 small">Limited time only!</p>
                     </div>
@@ -112,7 +162,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
