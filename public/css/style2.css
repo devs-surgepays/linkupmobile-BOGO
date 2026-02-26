@@ -26,6 +26,10 @@
     color: #524000;
 }
 
+.text-blue-2{
+    color: #03324E;
+}
+
 /* hero banner */
 .hero-banner p{
     font-size: 36px;
@@ -256,4 +260,69 @@ footer li{
 .custom-destination-dropdown .dropdown-item:hover {
     background-color: #f0f8ff;
     color: #0076bd;
+}
+
+
+/* Estilo Why Linkup */
+.custom-carousel {
+    border-radius: 40px !important;
+}
+
+/* Estilo de los puntitos (indicadores) */
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    /* border-radius: 50%; */
+    border-radius: 0;
+    clip-path: polygon(
+    50% 0%,      /* punta superior */
+    61% 38%,     /* lado derecho arriba */
+    100% 38%,    /* extremo derecho */
+    69% 62%,     /* lado derecho abajo */
+    82% 100%,    /* punta inferior derecha */
+    50% 75%,     /* centro inferior */
+    18% 100%,    /* punta inferior izquierda */
+    31% 62%,     /* lado izquierdo abajo */
+    0% 38%,      /* extremo izquierdo */
+    39% 38%      /* lado izquierdo arriba */
+  );
+    margin: 0 5px;
+    border: none;
+    opacity: 0.5;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+}
+
+/* Ajuste de las flechas amarillas */
+.carousel-controls-wrapper i {
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.carousel-controls-wrapper i:hover {
+    transform: scale(1.2);
+}
+
+.carousel-heading{
+    font-size:40px;font-weight: 600;line-height: normal;letter-spacing: -1.44px;
+}
+
+
+
+
+
+/* Versión Mobile: Ajustes de texto */
+@media (max-width: 768px) {
+    /* .custom-carousel h2 {
+        font-size: 1.8rem !important;
+    }
+    .carousel-item div {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1rem !important;
+    } */
 }

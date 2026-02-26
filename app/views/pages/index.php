@@ -237,8 +237,279 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
             </div>
 
         </div>
+        <div class="row p-5">
+            <div class="col text-center">
+                <a href="https://linkupmobile.com/wp-content/themes/councilio/pdf/ILD_BroadbandLM.pdf" target="_blank" class="franklin-family text-decoration-underline" style="color:#054A76;font-size:30px;">View our full list of international destinations</a>
+            </div>
+        </div>
     </div>
 </section>
+
+<!--Why LinnkUp Mobile Section-->
+<section class="why-linkup py-5 bg-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-5" style="color: #003d6b; font-size: 2.5rem;">WHY LINKUP?</h2>
+
+        <div id="linkupCarousel" class="carousel slide custom-carousel shadow-lg rounded-5 overflow-hidden mx-auto pt-md-5 px-md-5" data-bs-ride="carousel" style="max-width: 1000px;">
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-4 m-0 p-0" style="min-height: 220px;">
+                        <div class="col--md-12 px-0 pe-md-2 mt-0 mb-2 mb-md-0" >
+                            <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-4 h-100" style="background-color: #0076bd !important;">
+                        <img src="<?php echo URLROOT; ?>/img/phone-icon.png" alt="Phone Icon" class="img-fluid" style="width:150px">
+                        <h2 class="display-5 fw-bold text-uppercase">Unlimited<br>Talk and Text</h2>
+                        <img src="<?php echo URLROOT; ?>/img/speech-bubbles.png" alt="Chat bubbles" class="img-fluid" style="width:150px">
+                    </div>
+                            </div>
+                            </div>
+                    <!-- <div class="px-0 pe-md-2 mt-0 mb-2 mb-md-0 d-flex align-items-center justify-content-around bg-primary text-white rounded-4" style="background-color: #0076bd !important;">
+                        <img src="<?php //echo URLROOT; ?>/img/phone-icon.png" alt="Phone Icon" class="img-fluid" style="width:95px">
+                        <h2 class="display-5 fw-bold text-uppercase">Unlimited<br>Talk and Text</h2>
+                        <img src="<?php //echo URLROOT; ?>/img/speech-bubbles.png" alt="Chat bubbles" class="img-fluid" style="width:95px">
+                    </div> -->
+                </div>
+
+                <div class="carousel-item">
+                    <!-- <div class="" > -->
+                        <div class="row g-4 m-0 p-0" style="min-height: 220px;">
+                            <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0" >
+                                <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
+                                    <img src="<?php echo URLROOT; ?>/img/northamerica_icon.png" alt="Map" class="img-fluid" style="min-width:95px">
+                                <h2 class="franklin-family carousel-heading text-blue-2">ROAMING WITHIN THE US, MEXICO AND CANADA</h2>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 px-0 pe-md-2 mt-0">
+                               <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #FFEDAD;">
+                                 <img src="<?php echo URLROOT; ?>/img/map_61807711.png" alt="Map" class="img-fluid" style="min-width:95px">
+                                <h2 class="franklin-family carousel-heading text-brown" >100+ UNLIMITED INTERNATIONAL DESTINATIONS</h2>
+                               </div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+
+                <div class="carousel-item">
+                    <!-- <div class="" > -->
+                        <div class="row g-4 m-0 p-0" style="min-height: 220px;">
+                            <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0">
+                               <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #FFEDAD;">
+                                 <img src="<?php echo URLROOT; ?>/img/mexico_flag.png" alt="Map" class="img-fluid" style="min-width:95px">
+                                <h2 class="franklin-family carousel-heading text-brown" >ROAMING WITHIN MEXICO INCLUDED</h2>
+                               </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 px-0 pe-md-2 mt-0" >
+                                <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
+                                    <img src="<?php echo URLROOT; ?>/img/price_tag.png" alt="Map" class="img-fluid" style="min-width:95px">
+                                <h2 class="franklin-family carousel-heading text-blue-2" >AFFORDABLE DATA ADD-ONS</h2>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    <!-- </div> -->
+                </div>
+
+                <div class="carousel-item">
+                    <!-- <div class="" > -->
+                        <div class="row g-4 m-0 p-0"  style="min-height: 220px;">
+                            <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0" >
+                                <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
+                                    <img src="<?php echo URLROOT; ?>/img/usa_5g.png" alt="Map" class="img-fluid" style="width: 150px;">
+                                <h2 class="franklin-family carousel-heading text-blue-2" >NATIONWIDE HIGH-SPEED COVERAGE</h2>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 px-0 pe-md-2 mt-0">
+                               <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #FFEDAD;">
+                                 <img src="<?php echo URLROOT; ?>/img/call_agent.png" alt="Map" class="img-fluid" style="width: 150px;">
+                                <h2 class="franklin-family carousel-heading text-brown" >24/7 CUSTOMER SUPPORT</h2>
+                               </div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+
+            </div>
+
+            <div class="carousel-controls-wrapper py-3 bg-white d-flex align-items-center justify-content-center">
+                <button class="btn border-0 p-0 me-4" type="button" data-bs-target="#linkupCarousel" data-bs-slide="prev">
+                    <!-- <i class="fa fa-arrow-left text-warning display-4"></i> -->
+                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="12" viewBox="0 0 68 32" fill="none">
+                        <path d="M0.718492 16.6958C5.30252 19.4708 9.85951 22.2754 14.4255 25.0593C18.1498 27.3279 21.8802 29.5906 25.836 31.9983L25.851 31.9835C25.851 29.3566 25.9322 26.9725 25.8179 24.6062C25.7518 23.3298 26.0825 22.9714 27.4862 22.9714C53.7279 23.0158 41.7644 23.5341 67.9971 23.5341L67.9971 9.25333C41.599 9.26814 53.3973 8.73801 26.9993 8.75874C26.0254 8.75874 25.7939 8.47443 25.8089 7.58595C25.866 5.06268 25.824 2.53348 25.824 0.00427831C25.2709 -0.0371818 25.0063 0.232321 24.7178 0.410015C16.692 5.39733 8.67517 10.4083 0.631319 15.372C-0.38468 15.9998 -0.05403 16.2338 0.71248 16.6988L0.718492 16.6958Z" fill="#FFD333"/>
+                        </svg>
+                </button>
+
+                <div class="carousel-indicators position-static m-0">
+                    <button type="button" data-bs-target="#linkupCarousel" data-bs-slide-to="0" class="active bg-warning"></button>
+                    <button type="button" data-bs-target="#linkupCarousel" data-bs-slide-to="1" class="bg-warning"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7.0099 2.05941L14 0L11.9604 7.0099L14 14L7.0099 11.9604L0 14L2.05941 7.0099L0 0L7.0099 2.05941Z" fill="#FFD333"/>
+                    </svg></button>
+                    <button type="button" data-bs-target="#linkupCarousel" data-bs-slide-to="2" class="bg-warning"></button>
+                    <button type="button" data-bs-target="#linkupCarousel" data-bs-slide-to="3" class="bg-warning"></button>
+                </div>
+
+                <button class="btn border-0 p-0 ms-4" type="button" data-bs-target="#linkupCarousel" data-bs-slide="next">
+                    <!-- <i class="fa fa-arrow-right text-warning display-4"></i> -->
+                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="12" viewBox="0 0 68 32" fill="none">
+  <path d="M67.2786 15.3025C62.6945 12.5275 58.1376 9.7229 53.5716 6.93901C49.8472 4.67043 46.1169 2.40777 42.1611 0L42.146 0.014808C42.146 2.64174 42.0649 5.02582 42.1791 7.39213C42.2452 8.66858 41.9146 9.02693 40.5108 9.02693C14.2691 8.98251 26.2327 8.46423 0 8.46423V22.745C26.398 22.7302 14.5998 23.2603 40.9978 23.2396C41.9717 23.2396 42.2032 23.5239 42.1881 24.4124C42.131 26.9357 42.1731 29.4649 42.1731 31.9941C42.7262 32.0355 42.9907 31.766 43.2793 31.5883C51.3051 26.601 59.3219 21.59 67.3657 16.6264C68.3817 15.9985 68.0511 15.7646 67.2846 15.2996L67.2786 15.3025Z" fill="#CCA000"/>
+</svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="reviews-carousel-section py-5 overflow-hidden">
+    <div class="container bg-primary rounded-5 py-5 position-relative" style="background-color: #0099ff !important;">
+        <div id="testimonialSlider" class="carousel slide multi-item-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="review-wrapper">
+                        <div class="speech-bubble">
+                            <h5 class="fw-bold">Great customer service!</h5>
+                            <p class="small mb-0">I was unsure at first, but support really helped me. Everything works as promised.</p>
+                            <div class="bubble-tail"></div>
+                        </div>
+                        <div class="client-info">
+                            <h4 class="name">Jasmine MF.</h4>
+                            <p class="location">Memphis, TN</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="review-wrapper">
+                        <div class="speech-bubble">
+                            <h5 class="fw-bold">Reliable coverage!</h5>
+                            <p class="small mb-0">I live near the border and need service that works on both sides. LinkUp has been reliable.</p>
+                            <div class="bubble-tail"></div>
+                        </div>
+                        <div class="client-info">
+                            <h4 class="name">Luis R.</h4>
+                            <p class="location">El Paso, TX</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="review-wrapper">
+                        <div class="speech-bubble">
+                            <h5 class="fw-bold">No contracts!</h5>
+                            <p class="small mb-0">I like knowing exactly what I'm paying for. No confusing fees from the start.</p>
+                            <div class="bubble-tail"></div>
+                        </div>
+                        <div class="client-info">
+                            <h4 class="name">Marcus W.</h4>
+                            <p class="location">Jackson, MS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-indicators-custom mt-4 d-flex justify-content-center gap-2">
+                <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="0" class="star-btn active"></button>
+                <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="1" class="star-btn"></button>
+                <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="2" class="star-btn"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Permitir que los items laterales sean visibles */
+.multi-item-carousel .carousel-inner {
+    overflow: visible !important;
+    display: flex;
+}
+
+.multi-item-carousel .carousel-item {
+    display: block;
+    flex: 0 0 75%; /* La tarjeta central ocupa el 75% */
+    margin-right: 0;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease;
+    opacity: 0.4;
+    padding: 0 20px;
+}
+
+/* Centrado: (100% - 75%) / 2 = 12.5% */
+.multi-item-carousel .carousel-inner {
+    padding-left: 12.5%;
+}
+
+.multi-item-carousel .carousel-item.active {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+/* --- Estilo de la Burbuja y Alineación --- */
+.review-wrapper {
+    max-width: 600px;
+    margin-left: 0; /* Asegura alineación a la izquierda dentro del slide */
+}
+
+.speech-bubble {
+    background-color: #003d6b; /* Azul muy oscuro del mockup */
+    border: 2px solid #ffc107;
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    position: relative;
+    text-align: left;
+}
+
+.bubble-tail {
+    position: absolute;
+    bottom: -15px;
+    left: 40px; /* Pico a la izquierda */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #ffc107; /* Borde amarillo */
+}
+
+.bubble-tail::after {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: -15px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #003d6b; /* Fondo azul */
+}
+
+/* Alineación exacta del nombre bajo el pico */
+.client-info {
+    padding-left: 40px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.client-info .name {
+    color: #ffc107;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.client-info .location {
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Estrellas */
+.star-btn {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255,255,255,0.5);
+    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+    border: none;
+    transition: 0.3s;
+}
+
+.star-btn.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+</style>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
 <script>
