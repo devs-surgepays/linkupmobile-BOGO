@@ -6,15 +6,20 @@
             2X EVERYTHING
         </h1>
         
-        <h2 class="fw-bold text-primary-dark mb-4 h1 roboto-family" style="color: #003d6b;">
+        <h2 class="blue-heading mb-4">
             2X THE COVERAGE. 2X THE DATA. 2X THE VALUE
         </h2>
         
-        <p class="lead text-dark mx-auto mb-5 franklin-family" style="max-width: 900px; font-weight: 500;">
+        <!-- <p class="lead text-dark mx-auto mb-5 franklin-family" style="max-width: 900px; font-weight: 500;">
             <span class="text-primary-dark fw-bold" style="color: #005a9c;">Activate your line</span> 
             with this <span class="text-primary-dark fw-bold" style="color: #005a9c;">limited-time offer</span> 
             and enjoy your second month completely free! Don't miss out, get started today.
-        </p>
+        </p> -->
+
+        <div style="max-width: 900px;" class="mx-auto description">
+            <p><span>Activate your line</span> with this <span>limited-time offer</span> and enjoy your second month completely free! Don't miss out, get started today.</p>
+            </p>
+        </div>
         
         <a href="#" class="btn bg-yellow btn-lg px-5 py-3 fw-bold text-primary-dark shadow-sm rounded-3 uppercase franklin-family" 
            style="border: none; color: #003d6b;">
@@ -171,13 +176,13 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 <section class="hero-banner py-5 bg-white">
     <div class="container text-center">
         
-        <h2 class="text-uppercase mb-4 h1 roboto-family" style="color: #03324E;font-weight: 900;">
+        <h2 class="text-uppercase mb-4 blue-heading" >
             International built in. No extra cost.
         </h2>
-        
-        <p class="lead mx-auto franklin-family" style="max-width: 900px; font-weight: 500;color:#021927;font-size: 32px;">
-           Enjoy <span class="text-primary-dark" style="color: #005a9c;font-size: 32px;">unlimited landline and mobile calls to<br>100+ international destinations</span> Enjoy  with your LinkUp Mobile plan
-        </p>
+         <div style="max-width: 900px;" class="mx-auto description">
+            <p>Enjoy <span>unlimited landline and mobile calls to<br>100+ international destinations</span> Enjoy  with your LinkUp Mobile plan</p>
+            </p>
+         </div>
 
         
     </div>
@@ -248,7 +253,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 <!--Why LinnkUp Mobile Section-->
 <section class="why-linkup py-5 bg-white">
     <div class="container text-center">
-        <h2 class="fw-bold mb-5" style="color: #003d6b; font-size: 2.5rem;">WHY LINKUP?</h2>
+        <h2 class="mb-5 blue-heading" >WHY LINKUP?</h2>
 
         <div id="linkupCarousel" class="carousel slide custom-carousel shadow-lg rounded-5 overflow-hidden mx-auto pt-md-5 px-md-5" data-bs-ride="carousel" style="max-width: 1000px;">
             
@@ -360,158 +365,159 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 </section>
 
 
-<section class="reviews-carousel-section py-5 overflow-hidden">
-    <div class="container bg-primary rounded-5 py-5 position-relative" style="background-color: #0099ff !important;">
-        <div id="testimonialSlider" class="carousel slide multi-item-carousel" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="review-wrapper">
-                        <div class="speech-bubble">
-                            <h5 class="fw-bold">Great customer service!</h5>
-                            <p class="small mb-0">I was unsure at first, but support really helped me. Everything works as promised.</p>
-                            <div class="bubble-tail"></div>
-                        </div>
-                        <div class="client-info">
-                            <h4 class="name">Jasmine MF.</h4>
-                            <p class="location">Memphis, TN</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="review-wrapper">
-                        <div class="speech-bubble">
-                            <h5 class="fw-bold">Reliable coverage!</h5>
-                            <p class="small mb-0">I live near the border and need service that works on both sides. LinkUp has been reliable.</p>
-                            <div class="bubble-tail"></div>
-                        </div>
-                        <div class="client-info">
-                            <h4 class="name">Luis R.</h4>
-                            <p class="location">El Paso, TX</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="review-wrapper">
-                        <div class="speech-bubble">
-                            <h5 class="fw-bold">No contracts!</h5>
-                            <p class="small mb-0">I like knowing exactly what I'm paying for. No confusing fees from the start.</p>
-                            <div class="bubble-tail"></div>
-                        </div>
-                        <div class="client-info">
-                            <h4 class="name">Marcus W.</h4>
-                            <p class="location">Jackson, MS</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-indicators-custom mt-4 d-flex justify-content-center gap-2">
-                <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="0" class="star-btn active"></button>
-                <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="1" class="star-btn"></button>
-                <button type="button" data-bs-target="#testimonialSlider" data-bs-slide-to="2" class="star-btn"></button>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="container text-center">
+        <h2 class="blue-heading" >REVIEWS</h2>
+        <div class="description mx-auto"  style="width: 900px;">
+            <p>Customers are talking, and we're listening.<br><span>Real time reviews</span> from users who have saved with LinkUp.</p>
+        </div>
             </div>
         </div>
     </div>
+    <div class="container">
+        
+        <div class="testimonial-section mx-auto" style="max-width: 1000px;">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                        <div class="speech-bubble">
+                            <h4 class="fw-bold mb-3">Great customer service, even better value!</h4>
+                            <p>I was unsure at first, but customer support really helped me understand the plan. Everything works as promised, and the value for the price honestly surprised me.</p>
+                        </div>
+                        <div class="client-info">
+                            <p class="client-name">Jasmine M.</p>
+                            <p class="client-city">Memphis, TN</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="speech-bubble">
+                            <h4 class="fw-bold mb-3">Unlimited talk and text</h4>
+                            <p>I use my phone all day, so having unlimited talk and text was important. Calls are clear, no dropped issues, and I never worry about overages anymore.</p>
+                        </div>
+                        <div class="client-info">
+                            <p class="client-name">Tasha D.</p>
+                            <p class="client-city">Atlanta, GA</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="speech-bubble">
+                            <h4 class="fw-bold mb-3">Everything was clear</h4>
+                            <p>What I love most is that there are no hidden fees. Everything was clear from the start and the service is very reliable for my business needs.</p>
+                        </div>
+                        <div class="client-info">
+                            <p class="client-name">Robert S.</p>
+                            <p class="client-city">Dallas, TX</p>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="speech-bubble">
+                            <h4 class="fw-bold mb-3">Great customer service, even better value!</h4>
+                            <p>I was unsure at first, but customer support really helped me understand the plan. Everything works as promised, and the value for the price honestly surprised me.</p>
+                        </div>
+                        <div class="client-info">
+                            <p class="client-name">Jasmine M.</p>
+                            <p class="client-city">Memphis, TN</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="speech-bubble">
+                            <h4 class="fw-bold mb-3">Unlimited talk and text</h4>
+                            <p>I use my phone all day, so having unlimited talk and text was important. Calls are clear, no dropped issues, and I never worry about overages anymore.</p>
+                        </div>
+                        <div class="client-info">
+                            <p class="client-name">Tasha D.</p>
+                            <p class="client-city">Atlanta, GA</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="speech-bubble">
+                            <h4 class="fw-bold mb-3">Everything was clear</h4>
+                            <p>What I love most is that there are no hidden fees. Everything was clear from the start and the service is very reliable for my business needs.</p>
+                        </div>
+                        <div class="client-info">
+                            <p class="client-name">Robert S.</p>
+                            <p class="client-city">Dallas, TX</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="controls-container">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+        
+    </div>
 </section>
 
-<style>
-/* Permitir que los items laterales sean visibles */
-.multi-item-carousel .carousel-inner {
-    overflow: visible !important;
-    display: flex;
-}
+<div class="support-banner-wrapper">
+  <div class="support-banner">
+    
+    <div class="support-content">
+      <h2 class="support-title">24/7 HUMAN SUPPORT</h2>
+      <p class="support-text">
+        Questions or need help? Our support team is ready to step in, answer your questions, and support you every&nbsp;step.
+      </p>
+      <div>
+        <button class="support-button">VISIT HELP CENTER</button>
+      </div>
+    </div>
 
-.multi-item-carousel .carousel-item {
-    display: block;
-    flex: 0 0 75%; /* La tarjeta central ocupa el 75% */
-    margin-right: 0;
-    transition: transform 0.6s ease-in-out, opacity 0.6s ease;
-    opacity: 0.4;
-    padding: 0 20px;
-}
+    <div class="support-image-container">
+      <img 
+        src="<?php echo URLROOT; ?>/img/emojis.png" 
+        alt="Hands holding smiling emojis" 
+        class="support-image"
+      >
+    </div>
 
-/* Centrado: (100% - 75%) / 2 = 12.5% */
-.multi-item-carousel .carousel-inner {
-    padding-left: 12.5%;
-}
+  </div>
+</div>
 
-.multi-item-carousel .carousel-item.active {
-    opacity: 1;
-    transform: scale(1.02);
-}
 
-/* --- Estilo de la Burbuja y Alineación --- */
-.review-wrapper {
-    max-width: 600px;
-    margin-left: 0; /* Asegura alineación a la izquierda dentro del slide */
-}
-
-.speech-bubble {
-    background-color: #003d6b; /* Azul muy oscuro del mockup */
-    border: 2px solid #ffc107;
-    border-radius: 20px;
-    padding: 30px;
-    color: white;
-    position: relative;
-    text-align: left;
-}
-
-.bubble-tail {
-    position: absolute;
-    bottom: -15px;
-    left: 40px; /* Pico a la izquierda */
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid #ffc107; /* Borde amarillo */
-}
-
-.bubble-tail::after {
-    content: '';
-    position: absolute;
-    top: -18px;
-    left: -15px;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid #003d6b; /* Fondo azul */
-}
-
-/* Alineación exacta del nombre bajo el pico */
-.client-info {
-    padding-left: 40px;
-    text-align: left;
-    margin-top: 10px;
-}
-
-.client-info .name {
-    color: #ffc107;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-.client-info .location {
-    color: white;
-    font-size: 0.9rem;
-}
-
-/* Estrellas */
-.star-btn {
-    width: 20px;
-    height: 20px;
-    background-color: rgba(255,255,255,0.5);
-    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
-    border: none;
-    transition: 0.3s;
-}
-
-.star-btn.active {
-    background-color: white;
-    transform: scale(1.2);
-}
-</style>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1.5, // Muestra el central y partes de los lados
+        centeredSlides: true,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        // breakpoints: {
+        //     // Cuando la pantalla es >= 768px (Desktop)
+        //     768: {
+        //         slidesPerView: 1.5,
+        //         spaceBetween: 50,
+        //     }
+        // }
+    });
 </script>
+</body>
+
+</html>

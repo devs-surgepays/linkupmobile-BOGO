@@ -77,17 +77,23 @@
 <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbxNK7_dnO0euaECxFDafZLvF4QkPabOE&libraries=places&callback=initAutocomplete" async-->
 <!--  defer-->
 <!--  loading="async"></script>-->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9ytcfyWi2RoHTr_bKnUTUrFvmyKKjb4&libraries=places&callback=initAutocomplete"> </script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9ytcfyWi2RoHTr_bKnUTUrFvmyKKjb4&libraries=places&callback=initAutocomplete"> </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"
   integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
+</script> -->
+  <!-- <script type="text/javascript" src="<?php //echo URLROOT; ?>/js/jquery.min.js?<?php echo rand(0, 999); ?>"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="<?php echo URLROOT; ?>/js/index.js"></script>
+  <script type="text/javascript" src="<?php echo URLROOT; ?>/js/functions_validation.js?<?php echo rand(9, 9999); ?>"></script>
+  <script type="text/javascript" src="<?php echo URLROOT; ?>/js/dist/jquery.validate.js"></script>
+  <script type="text/javascript" src="<?php echo URLROOT; ?>/js/dist/additional-methods.js"></script>
+  <script type="text/javascript" src="<?php echo URLROOT; ?>/js/bootstrap.bundle.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 </script>
-<script src="/js/main.js"></script>
-<script src="/js/jquery.mask.js"></script>
-</body>
+<script src="<?php echo URLROOT; ?>/js/main.js"></script>
+<script src="<?php echo URLROOT; ?>/js/jquery.mask.js"></script>
+<!-- <script src="<?php //echo URLROOT; ?>/js/swiper-bundle.min.js"></script> -->
 
-</html>
 

@@ -1,55 +1,75 @@
-.font-yellow{
+.font-yellow {
     color: #FFCA06;
 }
 
-.bg-yellow{
+.bg-yellow {
     background-color: #FFCA06;
 }
 
-.font-dark-blue{
+.blue-heading {
+    color: #03324E; 
+    font-size: 64px;
+        font-weight: 900;
+        line-height: 1.1;
+        font-family: 'Roboto', sans-serif;
+}
+.description p {
+    font-size: 36px;
+    line-height: 1.5;
+    color: #021927;
+    font-family: 'Franklin Gothic Medium Cond', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+}
+.description span{
+    color: #07639D;
+    font-weight: 500;
+}
+.font-dark-blue {
     color: #054A76;
 }
 
-.font-medium-dark-blue{
+.font-medium-dark-blue {
     color: #07639D;
 }
 
-.franklin-family{
+.franklin-family {
     font-family: 'Franklin Gothic Medium Cond', 'Arial Narrow', Arial, sans-serif;
 }
 
-.roboto-family{
+.roboto-family {
     font-family: 'Roboto', sans-serif;
 }
 
-.text-brown{
+.text-brown {
     color: #524000;
 }
 
-.text-blue-2{
+.text-blue-2 {
     color: #03324E;
 }
 
 /* hero banner */
-.hero-banner p{
+.hero-banner p {
     font-size: 36px;
 }
 
-.hero-banner h2{
+.hero-banner h2 {
     font-size: 55px;
 }
 
-.hero-banner h1{
+.hero-banner h1 {
     font-size: 88px;
 }
 
-.hero-banner .btn{
+.hero-banner .btn {
     font-size: 36px;
     padding: 12px 30px;
 }
- /* bubbles promocionales */
+
+/* bubbles promocionales */
 .promo-details {
-    overflow: hidden; /* Evita que las ondas se salgan del contenedor */
+    overflow: hidden;
+    /* Evita que las ondas se salgan del contenedor */
 }
 
 .promo-bubble {
@@ -58,7 +78,7 @@
     border-radius: 15px;
 
     color: #003d6b;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Posicionamiento exacto sobre el teléfono */
@@ -67,7 +87,7 @@
     top: 20%;
     right: -15%;
     font-weight: 800;
-    font-size:60px;
+    font-size: 60px;
     line-height: 1;
     letter-spacing: -1.8px;
     z-index: 2;
@@ -154,62 +174,76 @@
     justify-content: center;
     font-size: 1.5rem;
     font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Sombras y bordes adicionales */
-.rounded-5 { border-radius: 2rem !important; }
+.rounded-5 {
+    border-radius: 2rem !important;
+}
 
 
 
 
 
 .pricing-box {
-  position: relative;
-  width: 171px;
-  height: 171px;
-  background: #FFF8E7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
-  /* Create all borders with box-shadow + mask technique */
-  box-shadow: 
-    inset 12px 0 0 0 #F4C430,   /* Left border */
-    inset -12px 0 0 0 #F4C430,  /* Right border */
-    inset 0 12px 0 0 #F4C430,   /* Top border */
-    inset 0 -12px 0 0 #F4C430;  /* Bottom border */
+    position: relative;
+    width: 171px;
+    height: 171px;
+    background: #FFF8E7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Create all borders with box-shadow + mask technique */
+    box-shadow:
+        inset 12px 0 0 0 #F4C430,
+        /* Left border */
+        inset -12px 0 0 0 #F4C430,
+        /* Right border */
+        inset 0 12px 0 0 #F4C430,
+        /* Top border */
+        inset 0 -12px 0 0 #F4C430;
+    /* Bottom border */
 }
 
 /* Mask out the gaps using pseudo-elements */
 .pricing-box::before {
-  content: '';
-  position: absolute;
-  left: 20%;
-  width: 30%;
-  height: 12px;
-  background: #FFF8E7; /* Same as box background */
+    content: '';
+    position: absolute;
+    left: 20%;
+    width: 30%;
+    height: 12px;
+    background: #FFF8E7;
+    /* Same as box background */
 }
+
 .pricing-box::after {
-  content: '';
-  position: absolute;
-  left: 45%;
-  width: 30%;
-  height: 12px;
-  background: #FFF8E7; /* Same as box background */
+    content: '';
+    position: absolute;
+    left: 45%;
+    width: 30%;
+    height: 12px;
+    background: #FFF8E7;
+    /* Same as box background */
 }
 
-.pricing-box::before { top: 0; }
-.pricing-box::after { bottom: 0; }
+.pricing-box::before {
+    top: 0;
+}
 
-footer h6{
+.pricing-box::after {
+    bottom: 0;
+}
+
+footer h6 {
     font-size: 24px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     line-height: 2;
 }
 
-footer li{
+footer li {
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     line-height: 1.5;
@@ -217,7 +251,8 @@ footer li{
 
 /* Burbujas celestes de la derecha */
 .info-bubble {
-    background-color: #cceeff; /* El celeste del mockup */
+    background-color: #cceeff;
+    /* El celeste del mockup */
     border-radius: 25px;
     transition: transform 0.2s ease;
 }
@@ -226,7 +261,7 @@ footer li{
     transform: translateX(10px);
 }
 
-.info-bubble h3{
+.info-bubble h3 {
     color: #07639D;
     font-size: 48px;
     font-weight: 800;
@@ -238,15 +273,17 @@ footer li{
 .plus-icon-btn {
     width: 45px;
     height: 45px;
-    background-color: #fdf8e4; /* Crema suave */
-    color: #ffc107; /* Amarillo */
+    background-color: #fdf8e4;
+    /* Crema suave */
+    color: #ffc107;
+    /* Amarillo */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
     font-weight: bold;
-    box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     flex-shrink: 0;
 }
@@ -274,18 +311,27 @@ footer li{
     height: 10px;
     /* border-radius: 50%; */
     border-radius: 0;
-    clip-path: polygon(
-    50% 0%,      /* punta superior */
-    61% 38%,     /* lado derecho arriba */
-    100% 38%,    /* extremo derecho */
-    69% 62%,     /* lado derecho abajo */
-    82% 100%,    /* punta inferior derecha */
-    50% 75%,     /* centro inferior */
-    18% 100%,    /* punta inferior izquierda */
-    31% 62%,     /* lado izquierdo abajo */
-    0% 38%,      /* extremo izquierdo */
-    39% 38%      /* lado izquierdo arriba */
-  );
+    clip-path: polygon(50% 0%,
+            /* punta superior */
+            61% 38%,
+            /* lado derecho arriba */
+            100% 38%,
+            /* extremo derecho */
+            69% 62%,
+            /* lado derecho abajo */
+            82% 100%,
+            /* punta inferior derecha */
+            50% 75%,
+            /* centro inferior */
+            18% 100%,
+            /* punta inferior izquierda */
+            31% 62%,
+            /* lado izquierdo abajo */
+            0% 38%,
+            /* extremo izquierdo */
+            39% 38%
+            /* lado izquierdo arriba */
+        );
     margin: 0 5px;
     border: none;
     opacity: 0.5;
@@ -307,8 +353,11 @@ footer li{
     transform: scale(1.2);
 }
 
-.carousel-heading{
-    font-size:40px;font-weight: 600;line-height: normal;letter-spacing: -1.44px;
+.carousel-heading {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.44px;
 }
 
 
@@ -325,4 +374,304 @@ footer li{
         text-align: center;
         padding: 3rem 1rem !important;
     } */
+}
+
+:root {
+            --brand-blue: #0099e5;
+            --dark-blue: #0077b6;
+            --brand-yellow: #ffcc00;
+        }
+
+.testimonial-section {
+    background-color: var(--brand-blue);
+    padding: 50px 0;
+    color: white;
+    overflow: hidden;
+    border-radius: 40px;
+    /* Como en la imagen */
+    margin: 20px;
+}
+
+/* Contenedor del Slider */
+.swiper {
+    width: 100%;
+    padding-bottom: 25px !important;
+}
+
+.swiper-slide {
+    transition: opacity 0.3s ease;
+    opacity: 0.4;
+    /* Opacidad para los slides no activos */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.swiper-slide-active {
+    opacity: 1;
+    /* El slide central es totalmente visible */
+}
+
+/* La Burbuja de Texto (Speech Bubble) */
+.speech-bubble {
+    background-color: var(--dark-blue);
+    border-radius: 35px;
+    padding: 40px;
+    position: relative;
+    min-height: 250px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+/* Borde amarillo solo para el activo */
+.swiper-slide-active .speech-bubble {
+    border-color: var(--brand-yellow);
+}
+
+/* La flecha de la burbuja */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 60px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--dark-blue);
+    z-index: 1;
+}
+
+/* Borde amarillo para la flecha del activo */
+.swiper-slide-active .speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -23px;
+    left: 58px;
+    width: 0;
+    height: 0;
+    border-left: 22px solid transparent;
+    border-right: 22px solid transparent;
+    border-top: 22px solid var(--brand-yellow);
+    z-index: 0;
+}
+
+/* Información del Cliente */
+.client-info {
+    margin-top: 30px;
+    padding-left: 55px;
+    /* Alineado con la flecha */
+    text-align: left;
+}
+
+.client-name {
+    color: var(--brand-yellow);
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.client-city {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Controles Personalizados */
+.controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: static !important;
+    color: white !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 24px !important;
+    font-weight: bold;
+}
+
+/* Estilo de los Dots (Paginación) */
+.swiper-pagination {
+    position: static !important;
+    width: auto !important;
+}
+
+.swiper-pagination-bullet {
+    background: white !important;
+    opacity: 1 !important;
+    width: 12px;
+    height: 12px;
+    margin: 0 8px !important;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    /* Forma de estrella opcional como los dots */
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--brand-yellow) !important;
+}
+
+
+
+/* Wrapper to center the banner and allow space for the overlapping image */
+.support-banner-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px; 
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+/* The main blue banner */
+.support-banner {
+  background-color: #57B5F3; 
+  border-radius: 45px;
+  width: 100%;
+  max-width: 1240px;
+  min-height: 350px; 
+  display: flex;
+  position: relative;
+  padding: 50px 60px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Left Content Container */
+.support-content {
+  width: 55%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading */
+.support-title {
+  color: #ffffff;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+  font-size: 48px; /* Restored original desktop size */
+}
+
+/* Subtitle paragraph */
+.support-text {
+  color: #1a2a3a;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  line-height: 1.4;
+  font-size: 24px; /* Restored original desktop size */
+}
+
+/* The yellow button */
+.support-button {
+  background-color: #FFC600;
+  color: #00467f;
+  font-weight: 800;
+  padding: 15px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 332px; 
+  min-height: 81px; 
+  font-size: 26px; /* Restored original desktop size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.support-button:hover {
+  background-color: #e6b800;
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(212, 162, 0, 0.8);
+}
+
+/* Right Image Container */
+.support-image-container {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%); 
+  width: 40%;
+  max-width: 350px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* The hands and emojis image */
+.support-image {
+  width: 100%;
+  height: auto;
+  transform: scale(1.3); 
+}
+
+/* --- Tablet Responsiveness --- */
+@media (max-width: 992px) {
+  .support-content {
+    width: 60%;
+  }
+  .support-banner {
+    padding: 40px;
+  }
+}
+
+/* --- Mobile Responsiveness (Scaled down side-by-side) --- */
+@media (max-width: 768px) {
+  .support-banner-wrapper {
+    padding: 30px 10px; 
+  }
+
+  .support-banner {
+    padding: 20px; 
+    min-height: auto;
+    border-radius: 24px; 
+  }
+
+  .support-content {
+    width: 60%; 
+  }
+
+  /* Override fonts for mobile */
+  .support-title {
+    font-size: clamp(16px, 4.5vw, 24px); 
+    margin-bottom: 8px;
+  }
+
+  .support-text {
+    font-size: clamp(11px, 3vw, 14px); 
+    margin-bottom: 15px;
+  }
+
+  .support-button {
+    min-height: 40px; 
+    padding: 8px 12px;
+    font-size: clamp(10px, 2.5vw, 14px); /* Scaled down for mobile */
+    width: 100%;
+    max-width: 160px; 
+  }
+
+  .support-image-container {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    max-width: 140px; 
+  }
+
+  .support-image {
+    transform: scale(1.15); 
+  }
 }
