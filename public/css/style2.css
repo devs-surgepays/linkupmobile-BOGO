@@ -675,3 +675,98 @@ footer li {
     transform: scale(1.15); 
   }
 }
+
+
+/* Definición de la base del texto */
+.plan-details-content {
+    color: #054A76;   /* El color --Blue---700 */
+    font-size: 24px;  /* Ajustado para mejor lectura, puedes subir a 32px si lo prefieres */
+    line-height: 1.2;
+    text-align: left;
+}
+
+.plan-features-list li {
+    margin-bottom: 8px; /* Espaciado entre beneficios */
+}
+
+/* Variaciones de la tipografía Franklin Gothic */
+.fw-demi {
+    font-family: 'Franklin Gothic Demi Cond', sans-serif;
+    font-weight: 400; /* Demi suele ser un peso específico */
+}
+
+.fw-medium {
+    font-family: 'Franklin Gothic Medium Cond', sans-serif;
+    font-weight: 600;
+}
+
+/* Ajuste responsivo para móviles */
+@media (max-width: 768px) {
+    .plan-details-content {
+        font-size: 1.2rem;
+        padding-left: 1rem;
+    }
+}
+
+
+.broadband-label-card {
+    max-width: 450px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.2;
+    color:#021927;
+    font-size:12px;
+    text-align: left;
+    /*border: 2px solid #000 !important;*/
+}
+
+.header-premium {
+    background-color: #0076bd;
+}
+
+.fw-black {
+    font-weight: 900;
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+}
+
+.x-small-text {
+    font-size: 0.75rem;
+}
+
+/* Clases para imitar el grosor de la etiqueta real */
+.border-bottom-8 { border-bottom-width: 8px !important; }
+.border-top-8 { border-top-width: 8px !important; }
+.border-5 { border-bottom-width: 5px !important; }
+.border-top-5 { border-top-width: 5px !important; }
+.border-bottom-5 { border-bottom-width: 5px !important; }
+.border-4 { border-bottom-width: 4px !important; }
+.border-bottom-3 { border-bottom-width: 3px !important; }
+.border-top-3 { border-top-width: 3px !important; }
+
+.border-bottom-2 { border-bottom-width: 2px !important; }
+.border-top-2 { border-top-width: 2px !important; }
+
+/* Ajuste para que las tablas no tengan padding excesivo */
+.table-sm>:not(caption)>*>* {
+    padding: 0.1rem 0;
+}
+
+.broadband-label-card a {
+    text-decoration: underline;
+    color: #0076bd;
+    word-break: break-all;
+}
+
+.broadband-label-card h1{
+    font-size: 36px;
+    text-align: left;
+}
+
+.broadband-label-card hr{
+    margin: 2px 0 0 0;
+    background: #000;
+    height: 1px;
+    /* color: #000; */
+    border: none;
+    opacity: 100;
+}
