@@ -770,3 +770,15 @@ footer li {
     border: none;
     opacity: 100;
 }
+
+.bubble-expanded{
+    background: #89CFFA !important;
+}
+
+.bubble-text {
+    font-size: 32px;
+    line-height: 1.4;
+    color: #021927;
+    font-family: 'Franklin Gothic Medium Cond', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+}

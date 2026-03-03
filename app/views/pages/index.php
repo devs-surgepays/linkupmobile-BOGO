@@ -127,7 +127,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                             <button class="plus-btn border-0" data-bs-toggle="collapse"
                                 data-bs-target="#planDetailsCollapse"
                                 aria-expanded="false"
-                                aria-controls="planDetailsCollapse"onclick="toggleButtons('planDetailsCollapse', 'toggleIcon')"><i class="fa fa-plus" id="toggleIcon"></i></button>
+                                aria-controls="planDetailsCollapse" onClick="toggleIcon('toggleIcon')"><i class="fa fa-plus" id="toggleIcon"></i></button>
                         </div>
                         <hr class="mt-0 mb-4" style="background: #021927;height: 3px;opacity:100;">
                         <div class="collapse" id="planDetailsCollapse">
@@ -375,7 +375,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                     <div class="dropdown custom-destination-dropdown">
                         <button class="btn btn-white shadow-sm border-0 dropdown-toggle w-100 d-flex align-items-center justify-content-between" type="button" id="countryDropdown" data-bs-toggle="dropdown">
                             <span id="selected-country-label">Select a destination</span>
-                           
+
                         </button>
                         <ul class="dropdown-menu w-100 shadow-sm border-0" id="countries-list">
                         </ul>
@@ -383,10 +383,10 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 
                     <div id="country-info" class="text-center mt-5 d-none">
                         <div class="flag">
-                        <div id="info-flag" class="mb-3" style="font-size: 4rem;"></div>
-                        <h4 id="info-prevtext" class="text-secondary"></h4>
-                        <h3 id="info-text" class="fw-bold text-primary text-uppercase"></h3>
-                        <h4 id="info-subtext" class="text-secondary"></h4>
+                            <div id="info-flag" class="mb-3" style="font-size: 4rem;"></div>
+                            <h4 id="info-prevtext" class="text-secondary"></h4>
+                            <h3 id="info-text" class="fw-bold text-primary text-uppercase"></h3>
+                            <h4 id="info-subtext" class="text-secondary"></h4>
                         </div>
                     </div>
 
@@ -413,16 +413,197 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
             <div class="col-lg-6">
                 <div class="d-flex flex-column gap-3">
 
-                    <div class="info-bubble d-flex justify-content-between align-items-center py-4 px-5">
+                    <!-- <div class="info-bubble d-flex justify-content-between align-items-center py-4 px-5">
                         <h3 class="mb-0">UNLIMITED LANDLINE<br>AND MOBILE</h3>
                         <button class="plus-btn border-0"><i class="fa fa-plus"></i></button>
+                    </div> -->
+
+                    <div class="info-bubble bubble-section collapsed-state  py-4 px-5" id="bubble1">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- <h2 class="bubble-heading">UNLIMITED MOBILE</h2> -->
+                            <h3 class="mb-0">UNLIMITED LANDLINE<br>AND MOBILE</h3>
+                            <button class="plus-btn bubble-toggle border-0" id="bubbleBtn1" type="button" data-bs-toggle="collapse" data-bs-target="#bubbleContent1" aria-expanded="false" aria-controls="bubbleContent1" onClick="toggleIcon('bubbleIcon1','bubble1')">
+                                <i id="bubbleIcon1" class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="collapse" id="bubbleContent1">
+                            <div class="bubble-content">
+                                <hr class="bubble-divider">
+                                <p class="bubble-text">With LinkUp Mobile, you have unlimited landline and mobile calls to the following destinations:</p>
+                                <table class="table table-sm table-borderless mb-0" style="--bs-table-bg: none;">
+                                    <tbody>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/as.png' class='me-2' alt='American Samoa'> American Samoa</td>
+                                            <td><img src='https://flagcdn.com/24x18/id.png' class='me-2' alt='Indonesia'> Indonesia</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/ar.png' class='me-2' alt='Argentina'> Argentina</td>
+                                            <td><img src='https://flagcdn.com/24x18/ie.png' class='me-2' alt='Ireland'> Ireland</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/bd.png' class='me-2' alt='Bangladesh'> Bangladesh</td>
+                                            <td><img src='https://flagcdn.com/24x18/it.png' class='me-2' alt='Italy'> Italy</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/bm.png' class='me-2' alt='Bermuda'> Bermuda</td>
+                                            <td><img src='https://flagcdn.com/24x18/jp.png' class='me-2' alt='Japan'> Japan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/bt.png' class='me-2' alt='Bhutan'> Bhutan</td>
+                                            <td><img src='https://flagcdn.com/24x18/kw.png' class='me-2' alt='Kuwait'> Kuwait</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/br.png' class='me-2' alt='Brazil'> Brazil</td>
+                                            <td><img src='https://flagcdn.com/24x18/my.png' class='me-2' alt='Malaysia'> Malaysia</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/kh.png' class='me-2' alt='Cambodia'> Cambodia</td>
+                                            <td><img src='https://flagcdn.com/24x18/mp.png' class='me-2' alt='Mariana Islands'> Mariana Islands</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/ca.png' class='me-2' alt='Canada'> Canada</td>
+                                            <td><img src='https://flagcdn.com/24x18/mn.png' class='me-2' alt='Mongolia'> Mongolia</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/cl.png' class='me-2' alt='Chile'> Chile</td>
+                                            <td><img src='https://flagcdn.com/24x18/na.png' class='me-2' alt='Namibia'> Namibia</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/cn.png' class='me-2' alt='China'> China</td>
+                                            <td><img src='https://flagcdn.com/24x18/nz.png' class='me-2' alt='New Zealand'> New Zealand</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/co.png' class='me-2' alt='Colombia'> Colombia</td>
+                                            <td><img src='https://flagcdn.com/24x18/no.png' class='me-2' alt='Norway'> Norway</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/cr.png' class='me-2' alt='Costa Rica'> Costa Rica</td>
+                                            <td><img src='https://flagcdn.com/24x18/pk.png' class='me-2' alt='Pakistan'> Pakistan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/cz.png' class='me-2' alt='Czech Republic'> Czech Republic</td>
+                                            <td><img src='https://flagcdn.com/24x18/pe.png' class='me-2' alt='Peru'> Peru</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/fo.png' class='me-2' alt='Faroe Islands'> Faroe Islands</td>
+                                            <td><img src='https://flagcdn.com/24x18/pl.png' class='me-2' alt='Poland'> Poland</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/fr.png' class='me-2' alt='France'> France</td>
+                                            <td><img src='https://flagcdn.com/24x18/pr.png' class='me-2' alt='Puerto Rico'> Puerto Rico</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/de.png' class='me-2' alt='Germany'> Germany</td>
+                                            <td><img src='https://flagcdn.com/24x18/ro.png' class='me-2' alt='Romania'> Romania</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/gr.png' class='me-2' alt='Greece'> Greece</td>
+                                            <td><img src='https://flagcdn.com/24x18/sg.png' class='me-2' alt='Singapore'> Singapore</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/gu.png' class='me-2' alt='Guam'> Guam</td>
+                                            <td><img src='https://flagcdn.com/24x18/kr.png' class='me-2' alt='South Korea'> South Korea</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/hk.png' class='me-2' alt='Hong Kong'> Hong Kong</td>
+                                            <td><img src='https://flagcdn.com/24x18/es.png' class='me-2' alt='Spain'> Spain</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/hu.png' class='me-2' alt='Hungary'> Hungary</td>
+                                            <td><img src='https://flagcdn.com/24x18/se.png' class='me-2' alt='Sweden'> Sweden</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/is.png' class='me-2' alt='Iceland'> Iceland</td>
+                                            <td><img src='https://flagcdn.com/24x18/th.png' class='me-2' alt='Thailand'> Thailand</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/in.png' class='me-2' alt='India'> India</td>
+                                            <td><img src='https://flagcdn.com/24x18/tr.png' class='me-2' alt='Turkey'> Turkey</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="info-bubble d-flex justify-content-between align-items-center py-4 px-5">
-                        
+                    <div class="info-bubble bubble-section collapsed-state  py-4 px-5" id="bubble2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- <h2 class="bubble-heading">UNLIMITED MOBILE</h2> -->
                             <h3 class="mb-0">UNLIMITED LANDLINE</h3>
-                        <button class="plus-btn border-0"><i class="fa fa-plus"></i></button>
-                        
+                            <button class="plus-btn bubble-toggle border-0" id="bubbleBtn2" type="button" data-bs-toggle="collapse" data-bs-target="#bubbleContent2" aria-expanded="false" aria-controls="bubbleContent2" onClick="toggleIcon('bubbleIcon2','bubble2')">
+                                <i id="bubbleIcon2" class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="collapse" id="bubbleContent2">
+                            <div class="bubble-content">
+                                <hr class="bubble-divider">
+                                <p class="bubble-text">With LinkUp Mobile, you have unlimited landline calls to the following destinations:</p>
+                                <table class="table table-sm table-borderless mb-0" style="--bs-table-bg: none;">
+                                    <tbody>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/dz.png' class='me-2' alt='Algeria'> Algeria</td>
+                                            <td><img src='https://flagcdn.com/24x18/li.png' class='me-2' alt='Liechtenstein'> Liechtenstein</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/ad.png' class='me-2' alt='Andorra'> Andorra</td>
+                                            <td><img src='https://flagcdn.com/24x18/mq.png' class='me-2' alt='Martinique'> Martinique</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/aw.png' class='me-2' alt='Aruba'> Aruba</td>
+                                            <td><img src='https://flagcdn.com/24x18/mu.png' class='me-2' alt='Mauritius'> Mauritius</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/at.png' class='me-2' alt='Austria'> Austria</td>
+                                            <td><img src='https://flagcdn.com/24x18/mc.png' class='me-2' alt='Monaco'> Monaco</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/be.png' class='me-2' alt='Belgium'> Belgium</td>
+                                            <td><img src='https://flagcdn.com/24x18/ma.png' class='me-2' alt='Morocco'> Morocco</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/bg.png' class='me-2' alt='Bulgaria'> Bulgaria</td>
+                                            <td><img src='https://flagcdn.com/24x18/nl.png' class='me-2' alt='Netherlands'> Netherlands</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/ky.png' class='me-2' alt='Cayman Islands'> Cayman Islands</td>
+                                            <td><img src='https://flagcdn.com/24x18/pa.png' class='me-2' alt='Panama'> Panama</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/hr.png' class='me-2' alt='Croatia'> Croatia</td>
+                                            <td><img src='https://flagcdn.com/24x18/pt.png' class='me-2' alt='Portugal'> Portugal</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/co.png' class='me-2' alt='Dominican Republic'> Dominican Republic</td>
+                                            <td><img src='https://flagcdn.com/24x18/ru.png' class='me-2' alt='Russia'> Russia</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/ee.png' class='me-2' alt='Estonia'> Estonia</td>
+                                            <td><img src='https://flagcdn.com/24x18/sk.png' class='me-2' alt='Slovakia'> Slovakia</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/gf.png' class='me-2' alt='French Guiana'> French Guiana</td>
+                                            <td><img src='https://flagcdn.com/24x18/za.png' class='me-2' alt='South Africa'> South Africa</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/gi.png' class='me-2' alt='Gibraltar'> Gibraltar</td>
+                                            <td><img src='https://flagcdn.com/24x18/ch.png' class='me-2' alt='Switzerland'> Switzerland</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/gp.png' class='me-2' alt='Guadeloupe'> Guadeloupe</td>
+                                            <td><img src='https://flagcdn.com/24x18/tw.png' class='me-2' alt='Taiwan'> Taiwan</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/il.png' class='me-2' alt='Israel'> Israel</td>
+                                            <td><img src='https://flagcdn.com/24x18/tt.png' class='me-2' alt='Trinidad & Tobago'> Trinidad & Tobago</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src='https://flagcdn.com/24x18/la.png' class='me-2' alt='Laos'> Laos</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- <div class="info-bubble d-flex justify-content-between align-items-center py-4 px-5">
@@ -430,27 +611,38 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                         <button class="plus-btn border-0"><i class="fa fa-plus"></i></button>
                     </div> -->
 
-                    <div class="info-bubble bubble-section collapsed-state  py-4 px-5" id="bubble2">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <!-- <h2 class="bubble-heading">UNLIMITED MOBILE</h2> -->
-                         <h3 class="mb-0">UNLIMITED MOBILE</h3>
-                        <button class="plus-btn bubble-toggle border-0" type="button" data-bs-toggle="collapse" data-bs-target="#content2" aria-expanded="false" aria-controls="content2" onclick="toggleBubble('bubble2', this)">
-                            <i class="fa fa-plus"></i>
-                        </button>
-                    </div>
-                    <div class="collapse" id="content2">
-                        <div class="bubble-content">
-                            <hr class="bubble-divider">
-                            <p class="bubble-text">With LinkUp Mobile, you have unlimited mobile calls to the following destinations:</p>
-                            <ul class="country-list list-unstyled mb-0">
-                                <li><img src="https://flagcdn.com/24x18/bn.png" class="me-2" alt="Brunei"> Brunei</li>
-                                <li><img src="https://flagcdn.com/24x18/dk.png" class="me-2" alt="Denmark"> Denmark</li>
-                                <li><img src="https://flagcdn.com/24x18/fi.png" class="me-2" alt="Finland"> Finland</li>
-                                <li><img src="https://flagcdn.com/24x18/mx.png" class="me-2" alt="Mexico"> Mexico</li>
-                            </ul>
+                    <div class="info-bubble bubble-section collapsed-state  py-4 px-5" id="bubble3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- <h2 class="bubble-heading">UNLIMITED MOBILE</h2> -->
+                            <h3 class="mb-0">UNLIMITED MOBILE</h3>
+                            <button class="plus-btn bubble-toggle border-0" id="bubbleBtn3" type="button" data-bs-toggle="collapse" data-bs-target="#bubbleContent3" aria-expanded="false" aria-controls="bubbleContent3" onClick="toggleIcon('bubbleIcon3','bubble3')">
+                                <i id="bubbleIcon3" class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="collapse" id="bubbleContent3">
+                            <div class="bubble-content">
+                                <hr class="bubble-divider">
+                                <p class="bubble-text">With LinkUp Mobile, you have unlimited mobile calls to the following destinations:</p>
+
+                                <table class="table table-sm table-borderless mb-0" style="--bs-table-bg: none;">
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="https://flagcdn.com/24x18/bn.png" class="me-2" alt="Brunei"> Brunei</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://flagcdn.com/24x18/dk.png" class="me-2" alt="Denmark"> Denmark</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://flagcdn.com/24x18/fi.png" class="me-2" alt="Finland"> Finland</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="https://flagcdn.com/24x18/mx.png" class="me-2" alt="Mexico"> Mexico</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 </div>
             </div>
@@ -733,23 +925,33 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
         // }
     });
 
-    const collapseElement = document.getElementById('planDetailsCollapse');
-    const iconElement = document.getElementById('toggleIcon');
+    // const collapseElement = document.getElementById('planDetailsCollapse');
+    // const iconElement = document.getElementById('toggleIcon');
 
-    // Al abrirse: de Plus a Minus
-    collapseElement.addEventListener('show.bs.collapse', function() {
-        iconElement.classList.replace('fa-plus', 'fa-minus');
-    });
+    // // Al abrirse: de Plus a Minus
+    // collapseElement.addEventListener('show.bs.collapse', function() {
+    //     iconElement.classList.replace('fa-plus', 'fa-minus');
+    // });
 
-    // Al cerrarse: de Minus a Plus
-    collapseElement.addEventListener('hide.bs.collapse', function() {
-        iconElement.classList.replace('fa-minus', 'fa-plus');
-    });
+    // // Al cerrarse: de Minus a Plus
+    // collapseElement.addEventListener('hide.bs.collapse', function() {
+    //     iconElement.classList.replace('fa-minus', 'fa-plus');
+    // });
 
-    function toggleButtons(collapseDiv, collapsebuton) {
-        const collapseElement = document.getElementById(collapseDiv);
-        const iconElement = document.getElementById(collapsebuton);
+    function toggleIcon(iconId, bubbleId = null) {
+        let icon = document.getElementById(iconId);
+        icon.classList.toggle('fa-plus');
+        icon.classList.toggle('fa-minus');
+        if (bubbleId) {
+            let bubble = document.getElementById(bubbleId);
+            bubble.classList.toggle('bubble-expanded');
+        }
+    }
 
+    function toggleButtons(collapseDiv, collapseIcon) {
+        let collapseElement = document.getElementById(collapseDiv);
+        let iconElement = document.getElementById(collapseIcon);
+        console.log('Toggle function called for:', collapseDiv, collapseIcon);
         // Al abrirse: de Plus a Minus
         collapseElement.addEventListener('show.bs.collapse', function() {
             iconElement.classList.replace('fa-plus', 'fa-minus');
@@ -762,83 +964,546 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
     }
 
 
-    const countries = [{id:'dz',en:'Algeria',es:'Argelia',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'as',en:'American Samoa',es:'Samoa Americana',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'ad',en:'Andorra',es:'Andorra',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'ar',en:'Argentina',es:'Argentina',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'aw',en:'Aruba',es:'Aruba',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'at',en:'Austria',es:'Austria',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'bd',en:'Bangladesh',es:'Bangladesh',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'be',en:'Belgium',es:'Bélgica',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'bm',en:'Bermuda',es:'Bermudas',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'bt',en:'Bhutan',es:'Bután',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'br',en:'Brazil',es:'Brasil',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'bn',en:'Brunei',es:'Brunéi',leyenden:'UNLIMITED MOBILE',leyendes:'LLAMADAS ILIMITADAS A MÓVILES'},
-{id:'bg',en:'Bulgaria',es:'Bulgaria',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'kh',en:'Cambodia',es:'Camboya',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'ca',en:'Canada',es:'Canadá',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'ky',en:'Cayman Islands',es:'Islas Caimán',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'cl',en:'Chile',es:'Chile',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'cn',en:'China',es:'China',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'co',en:'Colombia',es:'Colombia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'cr',en:'Costa Rica',es:'Costa Rica',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'hr',en:'Croatia',es:'Croacia',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'cz',en:'Czech Republic',es:'República Checa',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'dk',en:'Denmark',es:'Dinamarca',leyenden:'UNLIMITED MOBILE',leyendes:'LLAMADAS ILIMITADAS A MÓVILES'},
-{id:'co',en:'Dominican Republic',es:'República Dominicana',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'ee',en:'Estonia',es:'Estonia',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'fo',en:'Faroe Islands',es:'Islas Feroe',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'fi',en:'Finland',es:'Finlandia',leyenden:'UNLIMITED MOBILE',leyendes:'LLAMADAS ILIMITADAS A MÓVILES'},
-{id:'fr',en:'France',es:'Francia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'gf',en:'French Guiana',es:'Guayana Francesa',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'de',en:'Germany',es:'Alemania',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'gi',en:'Gibraltar',es:'Gibraltar',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'gr',en:'Greece',es:'Grecia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'gp',en:'Guadeloupe',es:'Guadalupe',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'gu',en:'Guam',es:'Guam',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'hk',en:'Hong Kong',es:'Hong Kong',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'hu',en:'Hungary',es:'Hungría',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'is',en:'Iceland',es:'Islandia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'in',en:'India',es:'India',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'id',en:'Indonesia',es:'Indonesia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'ie',en:'Ireland',es:'Irlanda',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'il',en:'Israel',es:'Israel',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'it',en:'Italy',es:'Italia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'jp',en:'Japan',es:'Japón',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'kw',en:'Kuwait',es:'Kuwait',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'la',en:'Laos',es:'Laos',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'li',en:'Liechtenstein',es:'Liechtenstein',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'my',en:'Malaysia',es:'Malasia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'mp',en:'Mariana Islands',es:'Islas Marianas',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'mq',en:'Martinique',es:'Martinica',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'mu',en:'Mauritius',es:'Mauricio',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'mx',en:'Mexico',es:'México',leyenden:'UNLIMITED MOBILE',leyendes:'LLAMADAS ILIMITADAS A MÓVILES'},
-{id:'mc',en:'Monaco',es:'Mónaco',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'mn',en:'Mongolia',es:'Mongolia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'ma',en:'Morocco',es:'Marruecos',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'na',en:'Namibia',es:'Namibia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'nl',en:'Netherlands',es:'Países Bajos',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'nz',en:'New Zealand',es:'Nueva Zelanda',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'no',en:'Norway',es:'Noruega',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'pk',en:'Pakistan',es:'Pakistán',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'pa',en:'Panama',es:'Panamá',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'pe',en:'Peru',es:'Perú',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'pl',en:'Poland',es:'Polonia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'pt',en:'Portugal',es:'Portugal',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'pr',en:'Puerto Rico',es:'Puerto Rico',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'ro',en:'Romania',es:'Rumanía',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'ru',en:'Russia',es:'Rusia',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'sg',en:'Singapore',es:'Singapur',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'sk',en:'Slovakia',es:'Eslovaquia',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'za',en:'South Africa',es:'Sudáfrica',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'kr',en:'South Korea',es:'Corea del Sur',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'es',en:'Spain',es:'España',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'se',en:'Sweden',es:'Suecia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'ch',en:'Switzerland',es:'Suiza',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'tw',en:'Taiwan',es:'Taiwán',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'th',en:'Thailand',es:'Tailandia',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'},
-{id:'tt',en:'Trinidad & Tobago',es:'Trinidad y Tobago',leyenden:'UNLIMITED LANDLINE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'},
-{id:'tr',en:'Turkey',es:'Turquía',leyenden:'UNLIMITED LANDLINE & MOBILE',leyendes:'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'}];
+    const countries = [{
+            id: 'dz',
+            en: 'Algeria',
+            es: 'Argelia',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'as',
+            en: 'American Samoa',
+            es: 'Samoa Americana',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'ad',
+            en: 'Andorra',
+            es: 'Andorra',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'ar',
+            en: 'Argentina',
+            es: 'Argentina',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'aw',
+            en: 'Aruba',
+            es: 'Aruba',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'at',
+            en: 'Austria',
+            es: 'Austria',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'bd',
+            en: 'Bangladesh',
+            es: 'Bangladesh',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'be',
+            en: 'Belgium',
+            es: 'Bélgica',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'bm',
+            en: 'Bermuda',
+            es: 'Bermudas',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'bt',
+            en: 'Bhutan',
+            es: 'Bután',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'br',
+            en: 'Brazil',
+            es: 'Brasil',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'bn',
+            en: 'Brunei',
+            es: 'Brunéi',
+            leyenden: 'UNLIMITED MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A MÓVILES'
+        },
+        {
+            id: 'bg',
+            en: 'Bulgaria',
+            es: 'Bulgaria',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'kh',
+            en: 'Cambodia',
+            es: 'Camboya',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'ca',
+            en: 'Canada',
+            es: 'Canadá',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'ky',
+            en: 'Cayman Islands',
+            es: 'Islas Caimán',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'cl',
+            en: 'Chile',
+            es: 'Chile',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'cn',
+            en: 'China',
+            es: 'China',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'co',
+            en: 'Colombia',
+            es: 'Colombia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'cr',
+            en: 'Costa Rica',
+            es: 'Costa Rica',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'hr',
+            en: 'Croatia',
+            es: 'Croacia',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'cz',
+            en: 'Czech Republic',
+            es: 'República Checa',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'dk',
+            en: 'Denmark',
+            es: 'Dinamarca',
+            leyenden: 'UNLIMITED MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A MÓVILES'
+        },
+        {
+            id: 'co',
+            en: 'Dominican Republic',
+            es: 'República Dominicana',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'ee',
+            en: 'Estonia',
+            es: 'Estonia',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'fo',
+            en: 'Faroe Islands',
+            es: 'Islas Feroe',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'fi',
+            en: 'Finland',
+            es: 'Finlandia',
+            leyenden: 'UNLIMITED MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A MÓVILES'
+        },
+        {
+            id: 'fr',
+            en: 'France',
+            es: 'Francia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'gf',
+            en: 'French Guiana',
+            es: 'Guayana Francesa',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'de',
+            en: 'Germany',
+            es: 'Alemania',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'gi',
+            en: 'Gibraltar',
+            es: 'Gibraltar',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'gr',
+            en: 'Greece',
+            es: 'Grecia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'gp',
+            en: 'Guadeloupe',
+            es: 'Guadalupe',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'gu',
+            en: 'Guam',
+            es: 'Guam',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'hk',
+            en: 'Hong Kong',
+            es: 'Hong Kong',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'hu',
+            en: 'Hungary',
+            es: 'Hungría',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'is',
+            en: 'Iceland',
+            es: 'Islandia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'in',
+            en: 'India',
+            es: 'India',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'id',
+            en: 'Indonesia',
+            es: 'Indonesia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'ie',
+            en: 'Ireland',
+            es: 'Irlanda',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'il',
+            en: 'Israel',
+            es: 'Israel',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'it',
+            en: 'Italy',
+            es: 'Italia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'jp',
+            en: 'Japan',
+            es: 'Japón',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'kw',
+            en: 'Kuwait',
+            es: 'Kuwait',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'la',
+            en: 'Laos',
+            es: 'Laos',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'li',
+            en: 'Liechtenstein',
+            es: 'Liechtenstein',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'my',
+            en: 'Malaysia',
+            es: 'Malasia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'mp',
+            en: 'Mariana Islands',
+            es: 'Islas Marianas',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'mq',
+            en: 'Martinique',
+            es: 'Martinica',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'mu',
+            en: 'Mauritius',
+            es: 'Mauricio',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'mx',
+            en: 'Mexico',
+            es: 'México',
+            leyenden: 'UNLIMITED MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A MÓVILES'
+        },
+        {
+            id: 'mc',
+            en: 'Monaco',
+            es: 'Mónaco',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'mn',
+            en: 'Mongolia',
+            es: 'Mongolia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'ma',
+            en: 'Morocco',
+            es: 'Marruecos',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'na',
+            en: 'Namibia',
+            es: 'Namibia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'nl',
+            en: 'Netherlands',
+            es: 'Países Bajos',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'nz',
+            en: 'New Zealand',
+            es: 'Nueva Zelanda',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'no',
+            en: 'Norway',
+            es: 'Noruega',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'pk',
+            en: 'Pakistan',
+            es: 'Pakistán',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'pa',
+            en: 'Panama',
+            es: 'Panamá',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'pe',
+            en: 'Peru',
+            es: 'Perú',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'pl',
+            en: 'Poland',
+            es: 'Polonia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'pt',
+            en: 'Portugal',
+            es: 'Portugal',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'pr',
+            en: 'Puerto Rico',
+            es: 'Puerto Rico',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'ro',
+            en: 'Romania',
+            es: 'Rumanía',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'ru',
+            en: 'Russia',
+            es: 'Rusia',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'sg',
+            en: 'Singapore',
+            es: 'Singapur',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'sk',
+            en: 'Slovakia',
+            es: 'Eslovaquia',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'za',
+            en: 'South Africa',
+            es: 'Sudáfrica',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'kr',
+            en: 'South Korea',
+            es: 'Corea del Sur',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'es',
+            en: 'Spain',
+            es: 'España',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'se',
+            en: 'Sweden',
+            es: 'Suecia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'ch',
+            en: 'Switzerland',
+            es: 'Suiza',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'tw',
+            en: 'Taiwan',
+            es: 'Taiwán',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'th',
+            en: 'Thailand',
+            es: 'Tailandia',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        },
+        {
+            id: 'tt',
+            en: 'Trinidad & Tobago',
+            es: 'Trinidad y Tobago',
+            leyenden: 'UNLIMITED LANDLINE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+        },
+        {
+            id: 'tr',
+            en: 'Turkey',
+            es: 'Turquía',
+            leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+        }
+    ];
 
     const listContainer = document.getElementById('countries-list');
     const infoContainer = document.getElementById('country-info');
@@ -851,11 +1516,11 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
       <img src="https://flagcdn.com/24x18/${country.id}.png" class="me-2" alt="${country.en}"> 
       ${country.en}
     </a>`;
-    // li.innerHTML = `
-    // <a class="dropdown-item d-flex align-items-center" href="#" onclick="selectCountry('${country.id}')">
-    //   <img src="https://flagcdn.com/w20/${country.id}.png" class="me-2" alt="${country.es}"> 
-    //   ${country.es} / ${country.en}
-    // </a>`;
+        // li.innerHTML = `
+        // <a class="dropdown-item d-flex align-items-center" href="#" onclick="selectCountry('${country.id}')">
+        //   <img src="https://flagcdn.com/w20/${country.id}.png" class="me-2" alt="${country.es}"> 
+        //   ${country.es} / ${country.en}
+        // </a>`;
         listContainer.appendChild(li);
     });
 
