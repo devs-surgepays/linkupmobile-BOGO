@@ -7,9 +7,10 @@
 }
 
 .blue-heading {
-    color: #03324E; 
-    font-size: 64px;
-        font-weight: 900;
+    color: #054A76; 
+    font-weight: 900;
+    font-size: 32px;
+        
         line-height: 1.1;
         font-family: 'Roboto', sans-serif;
 }
@@ -53,7 +54,18 @@
     font-size: 36px;
 }
 
-.hero-banner h2 {
+.underline-link {
+    text-decoration: underline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#07639D;
+    font-size:30px;
+    font-weight:600;
+}
+
+.banner-icon-1 {
+    width: 150px;
+}
+.blue-heading {
     font-size: 55px;
 }
 
@@ -61,7 +73,7 @@
     font-size: 88px;
 }
 
-.hero-banner .btn {
+#claim-offer-btn {
     font-size: 36px;
     padding: 12px 30px;
 }
@@ -698,6 +710,11 @@ footer li {
 .fw-medium {
     font-family: 'Franklin Gothic Medium Cond', sans-serif;
     font-weight: 600;
+}
+
+.header-logo {
+    max-height: 64px;
+    /* Ajusta según el espacio disponible en el header */
 }
 
 /* Ajuste responsivo para móviles */

@@ -1,0 +1,674 @@
+/* ============================================
+   MOBILE TEXT ADJUSTMENTS - index.php
+   Responsive Typography & Spacing Fixes
+   ============================================ */
+
+/* HERO BANNER SECTION */
+@media (max-width: 767px) {
+    .header-logo {
+    max-height: 97px;
+    /* Ajusta según el espacio disponible en el header */
+}
+    
+    /* Main Hero Heading - "2X EVERYTHING" */
+    .hero-banner h1 {
+        font-size: 48px !important;    /* Reduced from display-1 (~80px) */
+        line-height: 1.2;
+        margin-bottom: 0.5rem !important;
+        font-weight: 700;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        letter-spacing: -1px;
+    }
+
+    /* Blue Heading - "2X THE COVERAGE..." */
+    .blue-heading {
+        font-size: 55px !important;    /* Reduced from ~32px */
+        line-height: 1.4;
+        margin-bottom: 1.5rem !important;
+        color: #054A76; 
+    font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Description paragraph in hero */
+    /* .hero-banner .description p {
+        font-size: 32px !important;    
+        line-height: 1.6;
+        margin: 1rem 0;
+        padding: 0 0.5rem;
+    } */
+
+    .hero-banner .description span {
+        font-weight: 600;
+        color: #005a9c;
+    }
+
+    #claim-offer-btn {
+    font-size: 36px !important;
+    padding: 12px 30px;
+}
+}
+
+/* PROMO DETAILS SECTION */
+@media (max-width: 767px) {
+    
+    .promo-bubble {
+        font-size: 14px !important;    /* Reduced from ~16px */
+        line-height: 1.3;
+        padding: 1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        margin: 0.75rem auto;
+    }
+
+    .bubble-blue,
+    .bubble-yellow {
+        background-color: #0877BC;
+        color: #fff;
+    }
+
+    .bubble-yellow {
+        background-color: #FFC107;
+        color: #333;
+    }
+}
+
+/* BOGO SECTION - MAIN CARD */
+@media (max-width: 767px) {
+    
+    .bogo-section .card-header {
+        padding: 1rem !important;
+        background-color: #005a9c !important;
+        border-radius: 12px 12px 0 0 !important;
+    }
+
+    /* Card header heading */
+    .bogo-section .card-header .font-yellow {
+        font-size: 40px !important;    /* Reduced from 64px */
+        line-height: 1.1;
+        margin-bottom: 0;
+    }
+
+    .bogo-section .card-header p {
+        font-size: 18px !important;    /* Reduced from 30px */
+        line-height: 1.2;
+        margin-bottom: 0;
+    }
+
+    /* Card body heading */
+    .bogo-section .card-body > p {
+        font-size: 20px !important;    /* Reduced from 30px */
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    /* Data pricing box */
+    .pricing-box h2 {
+        font-size: 36px !important;    /* Reduced from 48px */
+        line-height: 1.1;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+    }
+
+    .pricing-box h2 span {
+        font-size: 28px !important;    /* Reduced from 40px */
+    }
+
+    .pricing-box p {
+        font-size: 18px !important;    /* Reduced from 24px */
+        font-weight: 500;
+    }
+
+    /* See Plan Details Link */
+    .bogo-section .franklin-family.h5 {
+        font-size: 24px !important;    /* Reduced from 48px */
+        line-height: 1.2;
+        color: #0877BC;
+    }
+
+    /* Broadband heading in card */
+    .broadband-label-card h4 {
+        font-size: 18px !important;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+    }
+
+    .broadband-label-card h1 {
+        font-size: 20px !important;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    /* Broadband facts table */
+    .broadband-label-card table {
+        font-size: 12px !important;
+    }
+
+    .broadband-label-card table td {
+        padding: 0.5rem 0 !important;
+        line-height: 1.4;
+    }
+
+    /* Broadband small text */
+    .x-small-text {
+        font-size: 12px !important;
+        line-height: 1.5;
+    }
+
+    /* Claim button */
+    .bogo-section .btn {
+        font-size: 18px !important;    /* Reduced from 32px */
+        padding: 0.75rem 1.5rem !important;
+        line-height: 1.2;
+    }
+}
+
+/* PROMO SUMMARY BOX */
+@media (max-width: 767px) {
+    
+    .promo-summary-box {
+        max-width: 100% !important;
+        margin: 1rem auto;
+        border-radius: 12px;
+    }
+
+    .promo-summary-box .fw-bold {
+        font-size: 18px !important;    /* Reduced from 32px */
+        line-height: 1.3;
+        padding: 0.75rem !important;
+    }
+
+    .promo-summary-box .fw-bold span.font-yellow {
+        font-size: 16px !important;
+    }
+
+    .promo-summary-box h4 {
+        font-size: 18px !important;    /* Reduced from 26px */
+        line-height: 1.2;
+    }
+
+    .promo-summary-box h2 {
+        font-size: 40px !important;    /* Reduced from ~70px */
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: -1px;
+    }
+
+    .promo-summary-box h2 small {
+        font-size: 14px !important;    /* Reduced from 20px */
+    }
+
+    .promo-summary-box .franklin-family {
+        font-size: 16px !important;
+    }
+}
+
+/* INTERNATIONAL SECTION */
+@media (max-width: 767px) {
+    
+    .destinations-section .blue-heading {
+        font-size: 18px !important;
+        line-height: 1.4;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .destinations-section .description p {
+        font-size: 15px !important;
+        line-height: 1.6;
+        padding: 0 0.5rem;
+    }
+
+    .destinations-section .description span {
+        font-weight: 600;
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    /* Dropdown heading */
+    .custom-destination-dropdown .franklin-family {
+        font-size: 18px !important;    /* Reduced from 32px */
+        line-height: 1.3;
+        text-align: center;
+    }
+
+    .custom-destination-dropdown .franklin-family br {
+        display: none;
+    }
+
+    /* Country info sections */
+    #country-info h4 {
+        font-size: 14px !important;
+        margin-bottom: 0.5rem;
+    }
+
+    #country-info h3 {
+        font-size: 18px !important;
+        font-weight: 700;
+    }
+
+    #info-flag {
+        font-size: 3rem !important;
+    }
+}
+
+/* INFO BUBBLES - COLLAPSIBLE SECTIONS */
+@media (max-width: 767px) {
+    
+    .info-bubble {
+        padding: 1rem 1.5rem !important;
+        margin-bottom: 1rem !important;
+        border-radius: 12px;
+    }
+
+    .info-bubble h3 {
+        font-size: 18px !important;    /* Reduced from ~24px */
+        line-height: 1.3;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .info-bubble h3 br {
+        display: none;
+    }
+
+    /* Bubble divider */
+    .bubble-divider {
+        margin: 1rem 0 !important;
+        height: 2px;
+    }
+
+    /* Bubble content text */
+    .bubble-text {
+        font-size: 14px !important;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    /* Bubble table */
+    .info-bubble .table {
+        font-size: 13px !important;
+        margin-bottom: 0;
+    }
+
+    .info-bubble table td {
+        padding: 0.5rem 0.5rem !important;
+        line-height: 1.4;
+    }
+
+    .info-bubble table img {
+        max-width: 18px !important;
+        margin-right: 0.5rem;
+    }
+
+    /* Plus button styling */
+    .plus-btn {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .plus-btn i {
+        font-size: 20px;
+    }
+}
+
+/* PLAN FEATURES LIST */
+@media (max-width: 767px) {
+    
+    .plan-features-list {
+        font-size: 14px !important;
+        line-height: 1.6;
+        padding-left: 0;
+    }
+
+    .underline-link{
+        font-size: 18px !important;
+    }
+
+    /* .plan-features-list li {
+        margin-bottom: 0.75rem;
+        list-style-position: inside;
+    } */
+
+    /* .plan-features-list span.fw-demi {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    .plan-features-list span.fw-medium {
+        font-weight: 500;
+        display: block;
+        margin-left: 1.5rem;
+        opacity: 0.9;
+    } */
+}
+
+/* GENERAL TEXT ELEMENT SCALING */
+@media (max-width: 767px) {
+
+    
+    /* All headings - reduce from desktop proportions */
+    h1 {
+        font-size: 28px !important;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+    }
+
+    h2 {
+        font-size: 22px !important;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
+    }
+
+    h3 {
+        font-size: 20px !important;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
+    }
+
+    h4 {
+        font-size: 24px !important;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+
+    .speech-bubble h4 {
+        font-size: 18px !important;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+
+    .speech-bubble p{
+        font-size: 14px !important;
+        line-height: 1.6;
+    }
+
+    h5 {
+        font-size: 16px !important;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Paragraph text sizing */
+    p {
+        font-size: 18px !important;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    /* Small text elements */
+    small {
+        font-size: 13px !important;
+        line-height: 1.5;
+    }
+
+    /* Links in text */
+    a {
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    /* List items */
+    li {
+        font-size: 15px !important;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Table text */
+    table {
+        font-size: 13px !important;
+    }
+
+    table td,
+    table th {
+        padding: 0.5rem !important;
+        line-height: 1.4;
+    }
+}
+
+/* SPACING ADJUSTMENTS FOR MOBILE */
+@media (max-width: 767px) {
+    
+    /* Reduce margin/padding on text blocks */
+    /* .description {
+        margin: 0.75rem auto !important;
+        padding: 0 0.5rem !important;
+    } */
+
+    /* Section spacing */
+    section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    section.hero-banner,
+    section.promo-details,
+    section.bogo-section,
+    section.destinations-section {
+        padding: 1.5rem 0.5rem !important;
+    }
+
+    /* Container padding */
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Card padding */
+    /* .card {
+        padding: 1rem !important;
+    }
+
+    .card-body {
+        padding: 1.25rem !important;
+    } */
+
+    /* Button text adjustments */
+    .btn {
+        font-size: 15px !important;
+        line-height: 1.2;
+        padding: 0.5rem 1rem !important;
+        letter-spacing: 0;
+    }
+
+    .btn-lg,
+    .btn.btn-lg {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 16px !important;
+    }
+}
+
+/* RESPONSIVE UTILITY CLASSES */
+@media (max-width: 767px) {
+    
+    /* Text alignment - center on mobile */
+    .text-center {
+        text-align: center !important;
+    }
+
+    /* Font-weight utilities */
+    .fw-bold {
+        font-weight: 700 !important;
+    }
+
+    .fw-bolder {
+        font-weight: 800 !important;
+    }
+
+    .fw-normal {
+        font-weight: 500 !important;
+    }
+
+    .fw-light {
+        font-weight: 400 !important;
+    }
+
+    /* Text transform */
+    .text-uppercase {
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .text-lowercase {
+        text-transform: lowercase;
+    }
+
+    /* Color utilities */
+    .text-warning {
+        color: #FFC107 !important;
+    }
+
+    .text-primary,
+    .text-primary-dark {
+        color: #0877BC !important;
+    }
+
+    .text-white {
+        color: #ffffff !important;
+    }
+
+    .text-dark {
+        color: #333 !important;
+    }
+
+    .text-muted {
+        color: #999 !important;
+    }
+}
+
+/* FONT FAMILY SPECIFIC ADJUSTMENTS */
+@media (max-width: 767px) {
+    
+    .franklin-family,
+    .roboto-family {
+        font-size: inherit;
+        letter-spacing: -0.5px;
+    }
+
+    .montserrat-style {
+        letter-spacing: -0.5px;
+    }
+}
+
+/* FIXES FOR SPECIFIC ELEMENTS FROM index.php */
+@media (max-width: 767px) {
+    
+    /* Fix overlapping text on small devices */
+    .section1 {
+        flex-direction: column !important;
+        column-gap: 0 !important;
+        row-gap: 1.5rem;
+    }
+
+    /* Image sizing for mobile */
+    .woman-image {
+        max-width: 150px !important;
+    }
+
+    .usamap-image {
+        max-width: 40px !important;
+    }
+
+    .signphone-image,
+    .phone-image {
+        max-width: 30px !important;
+    }
+
+    /* Text with icons adjustment */
+    .text-with-icons__item {
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+    .text-with-icons__icon-wrapper {
+        margin-bottom: 0.75rem;
+        margin-right: 0 !important;
+    }
+
+    /* Subtext */
+    .subtext {
+        font-size: 18px !important;
+    }
+
+    .acc-text {
+        font-size: 20px !important;
+        text-align: center;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* EXTRA SMALL DEVICES (< 400px) */
+@media (max-width: 399px) {
+    
+    h1 {
+        font-size: 24px !important;
+    }
+
+    h2 {
+        font-size: 18px !important;
+    }
+
+    .hero-banner .main-title {
+        font-size: 36px !important;
+    }
+
+    .pricing-box h2 {
+        font-size: 28px !important;
+    }
+
+    .bogo-section .btn {
+        width: 100%;
+        font-size: 16px !important;
+    }
+
+
+
+    section {
+        padding: 1rem 0 !important;
+    }
+}
+
+/* MEDIUM DEVICES (400px - 599px) */
+@media (max-width: 599px) {
+    
+    .hero-banner .main-title {
+        font-size: 45px !important;
+    }
+
+    .blue-heading {
+        font-size: 32px !important;
+    }
+
+    .bogo-section .card-header .font-yellow {
+        font-size: 44px !important;
+    }
+
+    .pricing-box h2 {
+        font-size: 40px !important;
+    }
+    .description p {
+        font-size: 18px !important; 
+        margin-bottom: 0;
+    }
+
+    /* Hero CTA Button */
+ #claim-offer-btn {
+        font-size: 27px !important;    /* Reduced from ~20px */
+        padding: 0.75rem 2rem !important;
+        line-height: 1.2;
+        height: auto;
+        min-height: 50px;
+    }
+        .banner-icon-1 {
+    width: 50px !important;
+}
+}

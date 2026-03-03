@@ -17,13 +17,14 @@
   <link rel="stylesheet" href="<?php //echo URLROOT; ?>/css/bootstrap.css"> -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/fontawesome.min.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/mobile-adjustments.css?c=<?php echo rand(9, 9999); ?>">
   <link href="https://fonts.cdnfonts.com/css/franklin-gothic-medium-cond" rel="stylesheet">   
     <link href="https://fonts.cdnfonts.com/css/franklin-gothic-demi-cond" rel="stylesheet">  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style2.css?<?php echo rand(9, 9999); ?>">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style2.css?c=<?php echo rand(9, 9999); ?>">
     <!-- <link rel="stylesheet" href="<?php //echo URLROOT; ?>/css/swiper-bundle.min.css?<?php //echo rand(9, 9999); ?>"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

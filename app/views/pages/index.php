@@ -7,7 +7,7 @@
         </h1>
 
         <h2 class="blue-heading mb-4">
-            2X THE COVERAGE. 2X THE DATA. 2X THE VALUE
+            2X&nbsp;THE&nbsp;COVERAGE. 2X&nbsp;THE&nbsp;DATA. 2X&nbsp;THE&nbsp;VALUE
         </h2>
 
         <!-- <p class="lead text-dark mx-auto mb-5 franklin-family" style="max-width: 900px; font-weight: 500;">
@@ -17,11 +17,11 @@
         </p> -->
 
         <div style="max-width: 900px;" class="mx-auto description">
-            <p><span>Activate your line</span> with this <span>limited-time offer</span> and your second month completely free! Don't miss out, get started today.</p>
+            <p><span>Activate your line</span> with this <span>limited-time offer</span> and your second month completely free! Don't miss out, get started&nbsp;today.</p>
             </p>
         </div>
 
-        <a href="#" class="btn bg-yellow btn-lg px-5 py-3 fw-bold text-primary-dark shadow-sm rounded-3 uppercase franklin-family"
+        <a href="#" id="claim-offer-btn" class="btn bg-yellow btn-lg px-5 py-3 fw-bold text-primary-dark shadow-sm rounded-3 uppercase franklin-family"
             style="border: none; color: #003d6b;">
             CLAIM OFFER
         </a>
@@ -46,11 +46,12 @@
             </div>
 
             <div class="col-md-6 d-md-none mt-4">
-                <div class="bg-info text-primary-dark p-3 rounded-4 fw-bold mb-3 text-center">
-                    BUY 1 MONTH, GET 1 MONTH FREE
+                <div class="blue-heading text-center mb-3">
+                    BUY 1 MONTH, GET&nbsp;1&nbsp;MONTH&nbsp;FREE
                 </div>
-                <div class="bg-warning text-primary-dark p-3 rounded-4 fw-bold text-center">
-                    UNLIMITED TALK & TEXT + ROAMING TO & WITHIN MEXICO
+                <div class="description">
+                    <p>With your LinkUp data plan you get <span>additional perks</span> such as <span>unlimited talk & text</span> as well as roaming included to and within&nbsp;Mexico <img src="https://flagcdn.com/24x18/mx.png" class="me-2" alt="Mexico"></p>
+                  
                 </div>
             </div>
 
@@ -63,7 +64,7 @@
     <div class="container">
         <div class="row g-5 align-items-center">
 
-            <div class="col-lg-6 text-center">
+         <div class="col-lg-6 text-center d-none d-md-block">
                 <div class="mb-4">
                     <img src="<?php echo URLROOT; ?>/img/wifi-vector.png" alt="Chip" class="img-fluid" style="max-width: 250px;">
                 </div>
@@ -96,7 +97,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                 </div>
             </div>
 
-            <div class="col-lg-6">
+        <div class="col-lg-6">
                 <div class="card border-0 shadow-lg rounded-5 bogo-main-card mx-auto">
                     <div class="card-header text-center py-4 border-0 mb-4" style="background-color: #005a9c; border-radius: 25px 25px 0 0;">
                         <h2 class="font-yellow roboto-family fw-bold mb-0" style="font-size: 64px;line-height: 1;">BOGO DEAL</h2>
@@ -107,20 +108,9 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                         <p class="text-start fw-bold roboto-family mb-3" style="color:#292000;font-size:30px;">Data:</p>
 
                         <div class="pricing-box">
-                            <!-- <div class="border-left"></div>
-                            <div class="border-right"></div> -->
                             <h2 class="mb-0 roboto-family" style="font-size: 48px;color:#524000; font-weight: 900;">12<span style="font-size: 40px;">GB</span></h2>
                             <p class="mb-0 roboto-family" style="font-size: 24px;color:#524000; font-weight: 500;">$30 / mo.</p>
                         </div>
-
-                        <!-- <div class="data-selection-box mb-4">
-                            <div class="data-badge">12GB</div>
-                            <div class="data-price">
-                                <span class="h3 fw-bold mb-0">$30 / mo.</span>
-                            </div>
-                        </div> -->
-
-
 
                         <div class="d-flex align-items-center justify-content-center py-3 mt-4" style="cursor: pointer;">
                             <span class="franklin-family fw-bold h5 mb-0 me-3" style="color:#0877BC;font-size:48px;">SEE PLAN DETAILS</span>
@@ -131,7 +121,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                         </div>
                         <hr class="mt-0 mb-4" style="background: #021927;height: 3px;opacity:100;">
                         <div class="collapse" id="planDetailsCollapse">
-                            <div class="plan-details-content py-3">
+                            <div class="plan-details-content py-md-3">
                                 <ul class="mb-0 plan-features-list">
                                     <li>
                                         <span class="fw-demi">12 GB</span>
@@ -154,10 +144,10 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                             </div>
                         </div>
 
-                        <a href="#" class="d-block my-5 roboto-family text-decoration-underline" data-bs-toggle="collapse"
+                        <a href="#" class="d-block my-5 underline-link" data-bs-toggle="collapse"
                             data-bs-target="#broadbandCard"
                             aria-expanded="false"
-                            aria-controls="broadbandCard" style="color:#07639D;font-size:30px;font-weight:600;">Check broadband facts label</a>
+                            aria-controls="broadbandCard">Check broadband facts label</a>
 
                         <div class="broadband-label-card bg-white rounded-3 shadow-sm mx-auto mb-5 collapse" style="max-width: 362px;" id="broadbandCard">
                             <div class="header-premium text-center text-white py-2 rounded-top">
@@ -187,7 +177,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                                     Link to terms of contract:<br><a href="https://linkupmobile.com/terms-of-service/" class="text-primary ps-3">https://linkupmobile.com/terms-of-service/</a>
                                 </p>
 
-                                <div class="fw-bold mb-2">Additional Charges & Terms</div><!-- border-bottom border-dark border-2 -->
+                                <div class="fw-bold mb-2">Additional Charges & Terms</div>
                                 <table class="table table-sm table-borderless x-small-text mb-0">
                                     <tr style="height: 25px;">
                                         <td class="fw-bold ps-3">Provider Monthly Fees</td>
@@ -283,11 +273,6 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                                     </tr>
                                 </table>
 
-                                <!--         
-        <div class="ps-3 fst-italic pb-1 mb-2">
-            <small>*Customer must purchase Link Up Data Add-On</small>
-        </div> -->
-
                                 <div class="pt-2 mb-2 border-top border-dark border-top-8"><b>Network Management Policy</b><br><a href="https://about.att.com/sites/broadband/network" class=" fs-medium text-primary ps-3 fs-light">https://about.att.com/sites/broadband/network</a></div>
                                 <div class="pt-2 mb-2"><b>Privacy Policy</b><br><a href="https://linkupmobile.com/privacy-policy/" class="text-primary fs-medium ps-3 fs-light">https://linkupmobile.com/privacy-policy/</a></div>
                                 <div class="pt-2 mb-2 border-top border-dark border-top-5">
@@ -310,37 +295,9 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                 </div>
             </div>
 
-            <!-- <div class="col-lg-6">
-                <div class="card border-0 shadow-lg rounded-5 overflow-hidden mx-auto" style="max-width: 420px;">
-                    <div class="card-header border-0 text-center py-4" style="background-color: #07639D;">
-                        <h2 class="text-warning fw-bold mb-0" style="letter-spacing: 1px;">BOGO DEAL</h2>
-                        <p class="text-white mb-0 small">Limited time only!</p>
-                    </div>
-                    
-                    <div class="card-body p-4">
-                        <label class="fw-bold mb-2">Data:</label>
-                        <div class="plan-info-box p-3 mb-4 d-inline-block border border-warning border-3" style="border-style: dashed !important; position: relative;">
-                            <div class="bg-white px-2 fw-bold" style="position: absolute; top: -12px; left: 10px;">12GB</div>
-                            <h3 class="fw-bold mb-0">$30 / mo.</h3>
-                        </div>
+           
 
-                        <div class="d-flex align-items-center justify-content-between py-3 border-bottom border-top mb-3">
-                            <h5 class="mb-0 fw-bold text-primary" style="cursor: pointer;">SEE PLAN DETAILS</h5>
-                            <button class="btn btn-light rounded-circle shadow-sm" style="width: 40px; height: 40px;">+</button>
-                        </div>
-
-                        <div class="text-center mb-4">
-                            <a href="#" class="text-primary fw-bold text-decoration-underline small">Check broadband facts label</a>
-                        </div>
-
-                        <div class="text-center">
-                            <button class="btn btn-warning w-100 py-3 fw-bold rounded-3 shadow-sm" style="background-color: #ffc107; color: #003d6b;">
-                                CLAIM OFFER
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+            
 
         </div>
     </div>
@@ -350,10 +307,10 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
     <div class="container text-center">
 
         <h2 class="text-uppercase mb-4 blue-heading">
-            International built in. No extra cost.
+            International built in. No extra&nbsp;cost.
         </h2>
         <div style="max-width: 900px;" class="mx-auto description">
-            <p><span>unlimited landline and mobile calls to<br>100+ international destinations</span> with your LinkUp Mobile plan</p>
+            <p>With LinkUp Mobile, you can enjoy <span>unlimited&nbsp;landline and mobile calls to 100+&nbsp;international&nbsp;destinations</span></p>
             </p>
         </div>
 
@@ -650,7 +607,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
         </div>
         <div class="row p-5">
             <div class="col text-center">
-                <a href="https://linkupmobile.com/wp-content/themes/councilio/pdf/ILD_BroadbandLM.pdf" target="_blank" class="franklin-family text-decoration-underline" style="color:#054A76;font-size:30px;">View our full list of international destinations</a>
+                <a href="https://linkupmobile.com/wp-content/themes/councilio/pdf/ILD_BroadbandLM.pdf" target="_blank" class="underline-link">View our full list of international destinations</a>
             </div>
         </div>
     </div>
@@ -661,16 +618,16 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
     <div class="container text-center">
         <h2 class="mb-5 blue-heading">WHY LINKUP?</h2>
 
-        <div id="linkupCarousel" class="carousel slide custom-carousel shadow-lg rounded-5 overflow-hidden mx-auto pt-md-5 px-md-5" data-bs-ride="carousel" style="max-width: 1240px;">
+        <div id="linkupCarousel" class="carousel slide custom-carousel shadow-lg rounded-5 overflow-hidden mx-auto pt-md-5 pt-4 px-md-5 px-4" data-bs-ride="carousel" style="max-width: 1240px;">
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="row g-4 m-0 p-0" style="min-height: 220px;">
+                    <div class="row g-4 m-0 p-0" style="min-height: 185px;">
                         <div class="col--md-12 px-0 pe-md-2 mt-0 mb-2 mb-md-0">
-                            <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-4 h-100" style="background-color: #0076bd !important;">
-                                <img src="<?php echo URLROOT; ?>/img/phone-icon.png" alt="Phone Icon" class="img-fluid" style="width:150px">
+                            <div class="rounded-4 p-md-4 p-3 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #0076bd !important;">
+                                <img src="<?php echo URLROOT; ?>/img/phone-icon.png" alt="Phone Icon" class="img-fluid banner-icon-1">
                                 <h2 class="display-5 fw-bold text-uppercase text-white">Unlimited<br>Talk and Text</h2>
-                                <img src="<?php echo URLROOT; ?>/img/speech-bubbles.png" alt="Chat bubbles" class="img-fluid" style="width:150px">
+                                <img src="<?php echo URLROOT; ?>/img/speech-bubbles.png" alt="Chat bubbles" class="img-fluid banner-icon-1">
                             </div>
                         </div>
                     </div>
@@ -685,7 +642,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 
                 <div class="carousel-item">
                     <!-- <div class="" > -->
-                    <div class="row g-4 m-0 p-0" style="min-height: 220px;">
+                    <div class="row g-4 m-0 p-0" style="min-height: 185px;">
                         <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
                                 <img src="<?php echo URLROOT; ?>/img/northamerica_icon.png" alt="Map" class="img-fluid" style="min-width:95px">
@@ -695,7 +652,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                         <div class="col-12 col-md-6 px-0 pe-md-2 mt-0">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #FFEDAD;">
                                 <img src="<?php echo URLROOT; ?>/img/map_61807711.png" alt="Map" class="img-fluid" style="min-width:95px">
-                                <h2 class="franklin-family carousel-heading text-brown">100+ UNLIMITED INTERNATIONAL DESTINATIONS</h2>
+                                <h2 class="franklin-family carousel-heading text-brown">100+ UNLIMITED INTERNATIONAL&nbsp;DESTINATIONS</h2>
                             </div>
                         </div>
                     </div>
@@ -704,11 +661,11 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 
                 <div class="carousel-item">
                     <!-- <div class="" > -->
-                    <div class="row g-4 m-0 p-0" style="min-height: 220px;">
+                    <div class="row g-4 m-0 p-0" style="min-height: 185px;">
                         <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #FFEDAD;">
                                 <img src="<?php echo URLROOT; ?>/img/mexico_flag.png" alt="Map" class="img-fluid" style="min-width:95px">
-                                <h2 class="franklin-family carousel-heading text-brown">ROAMING WITHIN MEXICO INCLUDED</h2>
+                                <h2 class="franklin-family carousel-heading text-brown">ROAMING WITHIN MEXICO&nbsp;INCLUDED</h2>
                             </div>
                         </div>
 
@@ -725,10 +682,10 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 
                 <div class="carousel-item">
                     <!-- <div class="" > -->
-                    <div class="row g-4 m-0 p-0" style="min-height: 220px;">
+                    <div class="row g-4 m-0 p-0" style="min-height: 185px;">
                         <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
-                                <img src="<?php echo URLROOT; ?>/img/usa_5g.png" alt="Map" class="img-fluid" style="width: 150px;">
+                                <img src="<?php echo URLROOT; ?>/img/usa_5g.png" alt="Map" class="img-fluid" style="min-width: 95px;">
                                 <h2 class="franklin-family carousel-heading text-blue-2">NATIONWIDE HIGH-SPEED COVERAGE</h2>
                             </div>
                         </div>
@@ -779,7 +736,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
             <div class="col">
                 <div class="container text-center">
                     <h2 class="blue-heading">REVIEWS</h2>
-                    <div class="description mx-auto" style="width: 900px;">
+                    <div class="description mx-auto" style="max-width: 900px;">
                         <p>Customers are talking, and we're listening.<br><span>Real time reviews</span> from users who have saved with LinkUp.</p>
                     </div>
                 </div>
@@ -904,9 +861,9 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1.5, // Muestra el central y partes de los lados
+        slidesPerView: 1, // Muestra el central y partes de los lados
         centeredSlides: true,
-        spaceBetween: 30,
+        spaceBetween: 15,
         loop: true,
         pagination: {
             el: ".swiper-pagination",
@@ -916,13 +873,13 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-        // breakpoints: {
-        //     // Cuando la pantalla es >= 768px (Desktop)
-        //     768: {
-        //         slidesPerView: 1.5,
-        //         spaceBetween: 50,
-        //     }
-        // }
+        breakpoints: {
+            // Cuando la pantalla es >= 768px (Desktop)
+            768: {
+                slidesPerView: 1.5,
+                spaceBetween: 30,
+            }
+        }
     });
 
     // const collapseElement = document.getElementById('planDetailsCollapse');
@@ -1548,6 +1505,37 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
             document.getElementById('info-subtext').innerText = `en ${country.es}`;
         }
     }
+
+    // Configura la fecha de finalización (ejemplo: 3 días a partir de ahora)
+const countdownDate = new Date();
+countdownDate.setDate(countdownDate.getDate() + 3); 
+
+const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    // Cálculos de tiempo
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Inyectar en el HTML
+    document.getElementById("days").innerText = d;
+    document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
+    document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
+    document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+
+    // Si la oferta termina
+    if (distance < 0) {
+        clearInterval(interval);
+        document.querySelector(".text-warning").innerText = "OFFER EXPIRED";
+    }
+};
+
+// Ejecutar cada segundo
+const interval = setInterval(updateCountdown, 1000);
+updateCountdown(); // Ejecución inicial para evitar el salto de 1s
 </script>
 </body>
 
