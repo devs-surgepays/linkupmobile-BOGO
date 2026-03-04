@@ -114,3 +114,4 @@ function getBase64(file, hidden_input) {
         console.log('Error: ', error);
     };
 }
+

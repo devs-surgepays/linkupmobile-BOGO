@@ -1,0 +1,1 @@
+SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for linkupmobile.coxqtrdztrtj.us-east-1.rds.amazonaws.com failed: No such host is known. 
