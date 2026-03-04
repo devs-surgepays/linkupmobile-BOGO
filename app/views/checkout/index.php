@@ -684,7 +684,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                     <input type="hidden" id="number_of_lines" name="number_of_lines" value="<?php echo $data['number_of_lines']; ?>">
                                     <input type="hidden" id="plan_price" value="<?php echo $infoPlan['price']; ?>">
                                     <input type="hidden" id="regularPrice" value="">
-                                    <input type="hidden" id="promoPrice" value="">
+                                    <input type="hidden" id="promoPrice" value="<?php echo isset($infoPlan['promo_price']) ? $infoPlan['promo_price'] : ''; ?>">
                                     <input type="hidden" id="taxes" value="">
                                     <input type="hidden" id="c1" value="">
                                     <input type="hidden" id="c2" value="">
@@ -717,8 +717,12 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 
 
                                 <div class="px-4 pt-3 pb-4 text-center">
-                                    <div id="response" style="margin-bottom: 0;"></div>
+                                    <div id="receipt" style="margin-bottom: 0;"></div>
                                 </div>
+
+                                <!--  <div class="px-4 pt-3 pb-4 text-center">
+                                    <div id="response" style="margin-bottom: 0;"></div>
+                                </div> -->
 
 
 
@@ -879,7 +883,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                     $('#grandTotal').text('$' + parseFloat(data.total_with_taxes).toFixed(2));
                     $('#gtotal').text('$' + parseFloat(data.total_with_taxes).toFixed(2));
                     $('#regularPrice').val(data.subtotal);
-                    $('#taxes').val(data.tax);
+                    $('#taxes').val(parseFloat(data.tax).toFixed(2));
                     setSummaryText(''); // clear any status
                     enablePay();
                 } else {
@@ -1128,7 +1132,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
             var url = '/Authorizenets/createSubscription';
         } else {}*/
         var subscription = 'No';
-        var url = '/Authorizenets/singlePayment/';
+        var url = '<?php echo $GLOBALS["urlbase"]; ?>/Authorizenets/singlePayment/';
 
         var fields = {
             "planPrice": priceplan,
