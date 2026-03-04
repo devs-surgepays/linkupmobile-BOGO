@@ -1697,7 +1697,7 @@ async function sendImeiPost(imei) {
 
     const form = document.createElement('form');
     form.method = 'POST';
-    form.action = '<?php echo URLROOT; ?>/pages/checkout';
+    form.action = '<?php echo URLROOT; ?>/checkout';
     const hiddenField = document.createElement('input');
     hiddenField.type = 'hidden';
     hiddenField.name = 'imei';
