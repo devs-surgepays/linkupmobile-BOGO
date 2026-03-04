@@ -1,113 +1,139 @@
 <?php
-/* ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); */
+error_reporting(E_ALL); 
 class Checkout extends Controller
 {
 	private $db;
-	//public $landerModel = '';
-	//public $plansModel = '';
-	public $ordersModel;
+	public $orderModel;
+	public $logModel;
 
 	public function __construct()
 	{
 		$this->db = new Database;
-		$this->ordersModel = $this->model('Order');
-		//$this->plansModel = $this->model('Plan');		
-		//$this->landerModel = $this->model('Lander');
+		$this->orderModel = $this->model('Order');
+		$this->logModel = $this->model('Log');
 	}
 
 	public function index()
 	{
+		$defaultPlan = 'BOGO30';
+		
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+			$plan_id = isset($_POST['plan_id']) ? $_POST['plan_id'] : $defaultPlan;
+			$imei = isset($_POST['imei']) ? $_POST['imei'] : '';
+			$lines = isset($_POST['selectLine']) ? $_POST['selectLine'] : 1;
+			$infoPlans = $this->getPlanInfo($plan_id);
+
+			//$price_data = $this->calculatePlanPriceWithTax();
+
+			$utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : null;
+			$utm_medium = isset($_GET['utm_medium']) ? $_GET['utm_medium'] : null;
+			$utm_campaign = isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : null;
+			$utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
+			$match_type = isset($_GET['match_type']) ? $_GET['match_type'] : null;
+			$utm_adgroup = isset($_GET['utm_adgroup']) ? $_GET['utm_adgroup'] : null;
+
+			$data = [
+				'title' => "BOGO PROMO",
+				'description' => "Lorem Ipsum",
+				'logo' => '/img/UsaSnap15_logo.png',
+				'css' => '/css/lifeline_form.css',
+				'url' => "https://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]",
+				'source' => "bogo30landing",
+				'origin' => "domain_name",
+				'program' => "",
+				'utm_source' => $utm_source,
+				'utm_medium' => $utm_medium,
+				'utm_campaign' => $utm_campaign,
+				'utm_content' => $utm_content,
+				'match_type' => $match_type,
+				'utm_adgroup' => $utm_adgroup
+			];
+			$data['encryption_key'] = CARD_ENCRYPTION_KEY;
+			$data['IdPlan'] = $plan_id;
+			$data['number_of_lines'] = $lines ?? 1;
+			$data['infoPlan'] = $infoPlans; // Get information Plan
+			$data['infoTax'] = isset($tax_rate) ? $tax_rate : []; // Get tax rate
+			$data['total'] = isset($totalPriceWTaxes) ? $totalPriceWTaxes : [];			
+
+			//print_r($data);
+
+			$this->view('checkout/index', $data);
+			
+		} else {
+
+			$infoPlans = $this->getPlanInfo($defaultPlan);
+			//$price_data = $this->calculatePlanPriceWithTax();
+			$utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : null;
+			$utm_medium = isset($_GET['utm_medium']) ? $_GET['utm_medium'] : null;
+			$utm_campaign = isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : null;
+			$utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
+			$match_type = isset($_GET['match_type']) ? $_GET['match_type'] : null;
+			$utm_adgroup = isset($_GET['utm_adgroup']) ? $_GET['utm_adgroup'] : null;
+
+			$data = [
+				'title' => "BOGO PROMO",
+				'description' => "Lorem Ipsum",
+				'logo' => '/img/UsaSnap15_logo.png',
+				'css' => '/css/lifeline_form.css',
+				'url' => "https://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]",
+				'source' => "bogo30landing",
+				'origin' => "domain_name",
+				'program' => "",
+				'utm_source' => $utm_source,
+				'utm_medium' => $utm_medium,
+				'utm_campaign' => $utm_campaign,
+				'utm_content' => $utm_content,
+				'match_type' => $match_type,
+				'utm_adgroup' => $utm_adgroup
+			];
+			$data['encryption_key'] = CARD_ENCRYPTION_KEY;
+			$data['IdPlan'] = $defaultPlan;
+			$data['number_of_lines'] = $lines ?? 1;
+			$data['infoPlan'] = $infoPlans; // Get information Plan
+			$data['infoTax'] = $tax_rate ?? []; // Get tax rate
+			$data['total'] = $totalPriceWTaxes ?? [];		
+
+			//print_r($data);
+
+			$this->view('checkout/index', $data);
+		}
+	}
+
+	public function indexTEst()
+	{
+		$defaultPlan = 'BOGO30';
 
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-			$plan_id = isset($_POST['plan_id']) ? $_POST['plan_id'] : null;
+			$plan_id = isset($_POST['plan_id']) ? $_POST['plan_id'] : $defaultPlan;
+			$infoPlans = $this->getPlanInfo($plan_id);
+
 			$lines = isset($_POST['selectLine']) ? $_POST['selectLine'] : 1;
 			$c_id = isset($_POST['c_id']) ? $_POST['c_id'] : null;
-			$order_id = (!empty($c_id)) ? encrypt_decrypt('decrypt', $c_id) : null;
-			
+			$order_id = isset($_POST['order_id']) ? $_POST['order_id'] : null;
 
-			$infoPlans = [
-				'LMP100' => [
-					'plan_id'     => 'LMP100',
-					'name'        => 'Premium',
-					'description' => '$90* for three months&nbsp;of&nbsp;service ',
-					'spec'        => [
-						'minutes' => '5G National Coverage',
-						'sms'     => 'Unlimited SMS',
-						'hotspot' => false,
-					],
-					'price'       => 30, // USD
-					'promo_price' => 90, 
-					'data'        => '12 GB',
-					'custom_spec' => [
-						'activation_fee'   => 0,
-						'contract'         => 'No contract',
-						'international'    => 'Not included',
-						'extra_notes'      => 'Best for low data usage',
-					],
-				],
-				'LMP200' => [
-					'plan_id'     => 'LMP200',
-					'name'        => 'Unlimited',
-					'description' => '$120* for three months&nbsp;of&nbsp;service',
-					'spec'        => [
-						'minutes' => 'Unlimited nationwide minutes',
-						'sms'     => 'Unlimited SMS',
-						'hotspot' => true,
-					],
-					'price'       => 40,
-					'promo_price' => 120,
-					'data'        => '30 GB',
-					'custom_spec' => [
-						'activation_fee'   => 0,
-						'contract'         => 'Month-to-month',
-						'international'    => 'Includes calls to MX & CA',
-						'extra_notes'      => 'Good for mixed voice & data usage',
-					],
-				],
-				'LMP300' => [
-					'plan_id'     => 'LMP300',
-					'name'        => 'UnlimitedPlus',
-					'description' => '$150* for three months&nbsp;of&nbsp;service ',
-					'spec'        => [
-						'minutes' => '5G National Coverage',
-						'sms'     => 'Unlimited SMS',
-						'hotspot' => true,
-					],
-					'price'       => 50,
-					'promo_price' => 150,
-					'data'        => 'UNLIMITED',
-					'custom_spec' => [
-						'activation_fee'   => 15,
-						'contract'         => 'Month-to-month',
-						'international'    => 'Includes roaming in MX & CA',
-						'extra_notes'      => 'Recommended for streaming & tethering',
-					],
-				],
-			];
+			/*Create Order ID*/
+			/*******************************/
+			if (!empty($order_id)) {
+				$actionDatabase = 'updateOrder';
+			} else {
+				$actionDatabase = 'addOrder';
+				$order_id = $this->orderModel->createOrderId();
+				$data['order_id'] = $order_id;
+			}
+			$this->logModel->putLog("OrderID: " . json_encode($order_id, true));
 
 			$data = [];
-			/* $data = [
-				'customerIdPlan' => $_POST['customerIdPlan'],
-				'IdPlan' => $_POST['IdPlanSelected'],
-				'saInformation' => $_POST['saInformation'],
-				'logo' => '/img/UsaSnap15_logo.png',
-				'urlRedirect' => $_SERVER['SCRIPT_URI'],
-				'css' => '/css/lifeline_form.css',
-				'url' =>  $_SERVER['SCRIPT_URI'],
-				'program' => "lifeline",
-				'source' => "AMBT",
-				'origin' => "USASNAP"
-			]; */
 
 			if (!empty($c_id)) {
 
-				$data = $this->ordersModel->getOrderInformation($order_id);
-							
+				$data = $this->orderModel->getOrderInformation($order_id);
 
-				 /*$data = array_merge($data, [
+
+				/*$data = array_merge($data, [
 					"apikey" => "U3VyZ2VwYXlzMjQ6VyEybTZASnk4QVFk",
 					'customer_id' => $c_data['customer_id'] ?? '',
 					'first_name' => $c_data['first_name'] ?? '',
@@ -156,35 +182,10 @@ class Checkout extends Controller
 					'number_of_lines' => $c_data['number_of_lines'] ?? '',
 					'pob_name' => $pob_doc['filename']
 				]); */
-				
+
 				/* $idPlan = $data['IdPlan'] ?? null;
 				$lines  = $c_data['number_of_lines'] ?? 0; */
-
-				if ($plan_id && isset($infoPlans[$plan_id])) {
-
-					$plan     = $infoPlans[$plan_id];
-					
-					$basePrice = $plan['promo_price'] ?? 0;
-					$unitPrice = $plan['price'] ?? 0;
-
-					// Calculate subtotal per lines if SIM has cost
-					$subtotal = $basePrice * $lines;
-
-					// Final price logic
-					/* $price = ($shipping > 0 || $sim > 0)
-						? ($shipping + $subtotal)
-						: $basePrice; */
-
-					$totalPrice = $subtotal;
-
-				} else {
-					$price = 0;
-					$totalPrice = 0;
-				}
-				
-				$data_address = [
-
-					'price' => $totalPrice,
+				$addressData = [
 
 					'street_address1' => $data['address1'],
 
@@ -197,25 +198,24 @@ class Checkout extends Controller
 					'zipcode' => $data['zipcode'],
 
 				];
-				
-
-				/*Calculate the tax*/
-				$tax_rate = taxtCalculation($data_address);				
-				if ($tax_rate['TotalTax'] > 0){
-					$totalPriceWTaxes = $totalPrice + $tax_rate['TotalTax'];
-				}else{
-					$totalPriceWTaxes = $totalPrice;
-				}
-				
 			}
+			$pricing = $this->calculatePlanPriceWithTax($plan_id, $infoPlans, $lines, $addressData);
+			//echo $pricing['price'];
+			//echo $pricing['total_with_taxes'];
+			//echo $pricing['tax_rate'];
+
 			$data['IdPlan'] = $plan_id;
 			$data['number_of_lines'] = $lines;
 			$data['infoPlan'] = $infoPlans[$plan_id]; // Get information Plan
 			$data['infoTax'] = $tax_rate ?? []; // Get tax rate
 			$data['total'] = $totalPriceWTaxes ?? [];
+
 			$this->view('checkout/index', $data);
-			
 		} else {
+
+			$infoPlans = $this->getPlanInfo($defaultPlan);
+
+			//$price_data = $this->calculatePlanPriceWithTax();
 
 			$utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : null;
 			$utm_medium = isset($_GET['utm_medium']) ? $_GET['utm_medium'] : null;
@@ -225,14 +225,14 @@ class Checkout extends Controller
 			$utm_adgroup = isset($_GET['utm_adgroup']) ? $_GET['utm_adgroup'] : null;
 
 			$data = [
-				'title' => "Welcome to Lifeline",
+				'title' => "BOGO PROMO",
 				'description' => "Lorem Ipsum",
 				'logo' => '/img/UsaSnap15_logo.png',
 				'css' => '/css/lifeline_form.css',
 				'url' => "https://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]",
-				'source' => "usaphone",
+				'source' => "bogo30landing",
 				'origin' => "domain_name",
-				'program' => "lifeline",
+				'program' => "",
 				'utm_source' => $utm_source,
 				'utm_medium' => $utm_medium,
 				'utm_campaign' => $utm_campaign,
@@ -240,12 +240,113 @@ class Checkout extends Controller
 				'match_type' => $match_type,
 				'utm_adgroup' => $utm_adgroup
 			];
+			$data['encryption_key'] = CARD_ENCRYPTION_KEY;
+			$data['IdPlan'] = $defaultPlan;
+			$data['number_of_lines'] = $lines ?? 1;
+			$data['infoPlan'] = $infoPlans; // Get information Plan
+			$data['infoTax'] = $tax_rate ?? []; // Get tax rate
+			$data['total'] = $totalPriceWTaxes ?? [];
 
 			//print_r($data);
-			
-			$this->view('pages/indexpayment');
+
+			$this->view('checkout/index', $data);
 		}
 	}
+	
+	public function getPlanInfo($plan_name = null)
+	{
+		if(isset($plan_name) && !empty($plan_name)){
+	
+			$infoPlans = [
+				'LMP100' => [
+					'plan_id'     => 'LMP100',
+					'name'        => 'Premium',
+					'description' => '$90* for three months&nbsp;of&nbsp;service ',
+					'spec'        => [
+						'minutes' => '5G National Coverage',
+						'sms'     => 'Unlimited SMS',
+						'hotspot' => false,
+					],
+					'price'       => 30, // USD
+					'promo_price' => 90,
+					'data'        => '12 GB',
+					'custom_spec' => [
+						'activation_fee'   => 0,
+						'contract'         => 'No contract',
+						'international'    => 'Not included',
+						'extra_notes'      => 'Best for low data usage',
+					],
+				],
+				'LMP200' => [
+					'plan_id'     => 'LMP200',
+					'name'        => 'Unlimited',
+					'description' => '$120* for three months&nbsp;of&nbsp;service',
+					'spec'        => [
+						'minutes' => 'Unlimited nationwide minutes',
+						'sms'     => 'Unlimited SMS',
+						'hotspot' => true,
+					],
+					'price'       => 40,
+					'promo_price' => 120,
+					'data'        => '30 GB',
+					'custom_spec' => [
+						'activation_fee'   => 0,
+						'contract'         => 'Month-to-month',
+						'international'    => 'Includes calls to MX & CA',
+						'extra_notes'      => 'Good for mixed voice & data usage',
+					],
+				],
+				'LMP300' => [
+					'plan_id'     => 'LMP300',
+					'name'        => 'UnlimitedPlus',
+					'description' => '$150* for three months&nbsp;of&nbsp;service ',
+					'spec'        => [
+						'minutes' => '5G National Coverage',
+						'sms'     => 'Unlimited SMS',
+						'hotspot' => true,
+					],
+					'price'       => 50,
+					'promo_price' => 150,
+					'data'        => 'UNLIMITED',
+					'custom_spec' => [
+						'activation_fee'   => 15,
+						'contract'         => 'Month-to-month',
+						'international'    => 'Includes roaming in MX & CA',
+						'extra_notes'      => 'Recommended for streaming & tethering',
+					],
+				],
+				'BOGO30' => [
+					'plan_id'     => 'BOGO30',
+					'name'        => 'BOGO - Premium Plan',
+					'description' => '12 GB eSIM + 1 FREE MONTH',
+					'image'       => '/img/BOGOeSIM_plan.png',
+					'spec'        => [
+						'minutes' => '',
+						'sms'     => '',
+						'hotspot' => '',
+					],
+					'price'       => 60,
+					'promo_price' => 30,
+					'shipping' => 0,
+					'sim_fee' => 0,
+					'data'        => '12 GB',
+					'custom_spec' => [
+						'activation_fee'   => 0,
+						'contract'         => '',
+						'international'    => '',
+						'extra_notes'      => '',
+					],					
+					'sim' => 'eSIM',
+					'autopay' => true,
+				],
+			];
+
+		} else {
+			$infoPlans = [];
+		}
+		return isset($infoPlans[$plan_name]) ? $infoPlans[$plan_name] : null;
+	}
+
 	public function test($type = '', $plan = '', $zipcode = '', $qty = '', $sim = '')
 	{
 
@@ -269,6 +370,7 @@ class Checkout extends Controller
 			$this->view('checkout/index2', $data);
 		}
 	}
+
 	public function saveApiLog($customer_id, $url, $request, $response, $title)
 	{
 		$data = [
@@ -280,6 +382,111 @@ class Checkout extends Controller
 		];
 		$this->db->insertQuery("c1_surgephone.agent_acp_apis_log", $data);
 	}
+
+
+	public function calculatePlanPriceWithTax()
+	{
+		//$raw = file_get_contents("php://input");
+		$raw= '{"plan_id":"BOGO30","infloPlan":"BOGO - Premium Plan","number_of_lines":"1","address1":"2126 Sun Swept way","address2":"","city":"Las Vegas","state":"NV","zipcode":"89074"}';
+		$arrayPost = json_decode($raw, true);
+		$logfile = "log_" . date('Y-m-d') . ".txt";
+		$log = new Logger($logfile);
+		$log->setTimestamp("Y-m-d h:i:s");
+		$log->putLog("Rawdata: " . $raw, true);
+		//$this->checkAuthentication($arrayPost['apikey']);
+
+		$result = [
+			'subtotal' => 0.0,
+			'shipping' => 0.0,
+			'sim_fee' => 0.0,
+			'tax' => 0.0,
+			'total_with_taxes' => 0.0,
+			'address' => [],
+			'lines' => 0,
+			'plan_id' => $arrayPost['plan_id'] ?? null,
+		];
+
+		$infoPlans = $this->getPlanInfo($arrayPost['plan_id']);
+		$log->putLog("Plan Info: " . json_encode($infoPlans, true));
+		
+
+		// normalize plan input: accept either a single plan or an array keyed by plan_id
+		if (isset($infoPlans) && !empty($infoPlans)) {
+			$plan = $infoPlans;			
+			
+		} else {
+			// invalid plan
+			echo json_encode($result);
+		}
+
+		// normalize numeric inputs
+		$lines = max(1, (int)$arrayPost['number_of_lines']);
+		$basePrice = isset($plan['price']) && (float)$plan['price'] > 0
+			? (float)$plan['price']
+			: (float)($plan['promo_price'] ?? 0.0);
+		$promoPrice = isset($plan['promo_price']) && (float)$plan['promo_price'] > 0
+			? (float)$plan['promo_price']
+			: (float)($plan['price'] ?? 0.0);
+
+		$shipping = (float)($plan['shipping'] ?? 0.0);
+		$sim_fee = (float)($plan['sim_fee'] ?? $plan['sim'] ?? 0.0);
+
+		// normalize address keys (accept both address1/street_address1 and city/locality)
+		$addr = [
+			'address1' => isset($arrayPost['address1']) ? $arrayPost['address1'] : '',
+			'address2' => isset($arrayPost['address2']) ? $arrayPost['address2'] : '',
+			'city'     => isset($arrayPost['city']) ? $arrayPost['city'] : '',
+			'state'    => isset($arrayPost['state']) ? $arrayPost['state'] : '',
+			'zipcode'  => isset($arrayPost['zipcode']) ? $arrayPost['zipcode'] : (isset($arrayPost['postal_code']) ? $arrayPost['postal_code'] : '')
+		];
+		$log->putLog("Address: " . json_encode($addr, true));
+
+		// compute subtotal & totals
+		$subtotal = $basePrice * $lines;
+
+		// compute subtotal & totals
+		$subtotalDiscount = $promoPrice * $lines;
+		
+		$discount = isset($plan['promo_price']) ? (float)$plan['price'] - (float)$plan['promo_price'] : 0.0;
+		$totalPrice = $subtotalDiscount + $shipping + $sim_fee;
+
+		// tax calculation (call external helper safely)
+		$taxAmount = 0.0;
+		try {
+			if (!empty($addr['zipcode']) && !empty($addr['state'])) {
+				// taxtCalculation is expected to accept an array with price & address fields
+				$taxPayload = [
+					'price' => $totalPrice,
+					'street_address1' => $addr['address1'],
+					'address2' => $addr['address2'],
+					'locality' => $addr['city'],
+					'state' => $addr['state'],
+					'zipcode' => $addr['zipcode'],
+				];
+				$taxData = taxtCalculation($taxPayload);
+				$log->putLog("Tax Data: " . json_encode($taxData, true));
+
+				$taxAmount = isset($taxData['TotalTax']) ? (float)$taxData['TotalTax'] : 0.0;
+			}
+		} catch (\Throwable $e) {
+			// optionally log $e->getMessage() here via $this->logModel
+			$taxAmount = 0.0;
+		}
+
+		$result['subtotal'] = round($subtotal, 2);
+		$result['normal_price'] = round($plan['price'], 2);
+		$result['shipping'] = round($shipping, 2);
+		$result['sim_fee'] = round($sim_fee, 2);
+		$result['tax'] = round($taxAmount, 2);
+		$result['total_with_taxes'] = round($totalPrice + $taxAmount, 2);
+		$result['address'] = $addr;
+		$result['lines'] = $lines;
+		$log->putLog("Result: " . json_encode($result, true));
+
+		echo json_encode($result);
+		exit();
+	}
+
 
 	public function createOrder()
 	{
@@ -400,5 +607,28 @@ class Checkout extends Controller
 
 			echo json_encode($response);
 		}
+	}
+
+	public function encrypt()
+	{
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+			$input = isset($_POST['input']) ? trim($_POST['input']) : null;
+
+			if ($input === null || $input === '') {
+				echo json_encode(['response' => 'Error', 'message' => 'Input empty']);
+				exit();
+			}
+
+			try {
+				$encrypted = encrypt_decrypt('encrypt', $input);
+				echo json_encode(['response' => 'OK', 'encrypted' => $encrypted]);
+			} catch (\Throwable $e) {
+				echo json_encode(['response' => 'Error', 'message' => $e->getMessage()]);
+			}
+		} else {
+			echo json_encode(['response' => 'Error', 'message' => 'Invalid request method']);
+		}
+		exit();
 	}
 }

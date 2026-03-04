@@ -9,6 +9,29 @@ class Order
 	{
 		$this->db = new Database;
 	}
+
+	public function createCustomerId()
+	{
+
+		$date = date('Y-m-d h:i:s');
+		$this->db->query("SELECT count(id_order) as count from LinkupMobile.{$this->table} where customer_id !='' and CAST(date_create as date) = current_date()");
+		//$this->db->bind("date_create", $date);
+		$row = $this->db->single();
+		$now = date('mdys');
+		$number = isset($row['count']) ? $row['count'] : 0;
+		$number++;
+		if ($number < 10) {
+			$correlativo = str_pad($number, 2, "0", STR_PAD_LEFT);
+		} else {
+			$correlativo = $number;
+		}
+		$customer_id = 'LM' . $now . $correlativo;
+
+		return $customer_id;
+	}
+
+
+
 	public function saveOrdersWithoutshopifyID($data)
 	{
 		$insertData = [
@@ -65,6 +88,7 @@ class Order
 		$getOrder = $this->db->single();
 		return $getOrder;
 	}
+
 	public function getOrderTransferByShopifyNumber($shopify_OrderNumber, $phone_number)
 	{
 		$this->db->query('SELECT customer_id,shopify_OrderId,shopify_OrderNumber,first_name,second_name,email,phone_number,address1,address2,city,state,zipcode,plan_id,transfer,mdn_transfer,current_service_provider,current_account_number,current_account_pin 
@@ -164,10 +188,10 @@ class Order
 	public function createOrderId()
 	{
 		$date = date('Y-m-d h:i:s');
-		$this->db->query("SELECT count(id) as count from {$this->table} where order_id  !='' and CAST(date_created as date) = current_date()");
+		$this->db->query("SELECT count(id_order) as count from LinkupMobile.{$this->table} where order_id !='' and CAST(date_created as date) = current_date()");
 		$row = $this->db->single();
 		$now = date('mdys');
-		$number = $row['count'];
+		$number =  isset($row['count']) ? $row['count'] : 0;
 		$number++;
 		if ($number < 10) {
 			$correlativo = str_pad($number, 2, "0", STR_PAD_LEFT);

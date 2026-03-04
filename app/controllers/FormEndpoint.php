@@ -12,13 +12,229 @@ class FormEndpoint extends Controller
         $this->orderModel = $this->model('Order');
         $this->logModel = $this->model('Log');
 
-        //header("Access-Control-Allow-Origin: https://parichute.linkupmobile.com/");
-        header("Access-Control-Allow-Origin: *");
-        header('Access-Control-Allow-Methods: POST ');
+        $allowed_origins = [
+            'http://localhost/',
+            'https://ambassador.linkupmobile.com/',
+            'https://pib.linkupmobile.com/',
+            'https://parichute.linkupmobile.com/',
+            'https://secure-order-forms.com/'            
+        ];
+        $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+
+        if (in_array($origin, $allowed_origins)) {
+            header("Access-Control-Allow-Origin: $origin");
+            header("Access-Control-Allow-Credentials: true");
+        }
+        header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
         header("Access-Control-Allow-Headers: Content-Type, Authorization");
         header("Content-Type: application/json; charset=UTF-8");
         header("Connection: keep-alive");
     }
+
+    public function orders()
+    {
+        $raw = file_get_contents("php://input");
+       /*  $raw = '{
+            "apikey": "U3VyZ2VwYXlzMjQ6VyEybTZASnk4QVFk",
+            "first_name": "Ana",
+            "middle_name": "Lilian",
+            "second_name": "Amaya",
+            "middle_initial": "L",
+            "suffix": "",
+            "phone_number": "(702)555-0199",
+            "email": "ana.test@example.com",
+            "address1": "1234 S Rainbow Blvd",
+            "address2": "Apt 21",
+            "city": "Las Vegas",
+            "state": "NV",
+            "zipcode": "89146",
+            "shipping_address1": "1234 S Rainbow Blvd",
+            "shipping_address2": "Apt 21",
+            "shipping_city": "Las Vegas",
+            "shipping_state": "NV",
+            "shipping_zipcode": "89146",
+            "billing_address1": "2126 Sun Swept Way",
+            "billing_address2": "",
+            "billing_city": "Henderson",
+            "billing_state": "NV",
+            "billing_zipcode": "89074",
+            "source": "landing_page",
+            "agree_terms": true,
+            "customer_id": "CUST-10002458",
+            "utm_source": "google",
+            "utm_medium": "cpc",
+            "utm_campaign": "linkup_30bogo_brand",
+            "utm_content": "ad_variation_1",
+            "match_type": "exact",
+            "utm_adgroup": "brand_core",
+            "url": "https://30bogo.linkupmobile.com/checkout",
+            "address_type": "billing",
+            "terminal_id": "TERM-001",
+            "clerk_id": "CLK-123",
+            "cake_clickId": "CK-9f3b2a8c-4d12-4f27-a9f1-0a1b2c3d4e5f",
+            "card_number": "4400662246955194",
+            "card_name": "Ana Amaya",
+            "expiration_date": "08/26",
+            "card_scnumber": "888",
+            "card_type": "Visa",
+            "Imei": "354802263841372"
+        }'; */
+        
+        $arrayPost = json_decode($raw, true);
+        $logfile = "log_" . date('Y-m-d') . ".txt";
+        $log = new Logger($logfile);
+        $log->setTimestamp("Y-m-d h:i:s");
+        $log->putLog("Rawdata: " . json_encode($raw, true));
+        $this->checkAuthentication(isset($arrayPost['apikey']) ? $arrayPost['apikey'] : '');
+        $sw = $arrayPost['sw'] ?? 'null';
+        $signature_text = $arrayPost['first_name'] . " " . $arrayPost['second_name'];
+
+        if (empty($arrayPost['first_name']) and (empty($arrayPost['second_name']))) {
+            $this->msgResponse(false, 'FIELD_REQUIRED', 'There are required fields.', array()); // Exit
+        }
+        $customer_id = $this->orderModel->createCustomerId();
+
+        $data = [
+            'customer_id' => $customer_id,
+            'first_name' => $this->sanitizeInput($arrayPost['first_name'], 'string'),
+            'second_name' => $this->sanitizeInput($arrayPost['second_name'], 'string'),
+            'phone_number' => $this->sanitizeInput($arrayPost['phone_number'], 'phone'),
+            'email' => $this->sanitizeInput($arrayPost['email'], 'email'),
+            'address1' => $this->sanitizeInput($arrayPost['address1'], 'string'),
+            'address2' => $this->sanitizeInput($arrayPost['address2'], 'string'),
+            'city' => $this->sanitizeInput($arrayPost['city'], 'string'),
+            'state' => $this->sanitizeInput($arrayPost['state'], 'string'),
+            'zipcode' => $this->sanitizeInput($arrayPost['zipcode'], 'string'),
+            "shipping_address1" => $this->sanitizeInput($arrayPost['shipping_address1'], 'string'),
+            "shipping_address2" => $this->sanitizeInput($arrayPost['shipping_address2'], 'string'),
+            "shipping_city" => $this->sanitizeInput($arrayPost['shipping_city'], 'string'),
+            "shipping_state" => strtoupper($this->sanitizeInput($arrayPost['shipping_state'], 'string')),
+            "shipping_zipcode" => $this->sanitizeInput($arrayPost['shipping_zipcode'], 'string'),
+            "billing_address1" => $this->sanitizeInput($arrayPost['billing_address1'], 'string'),
+            "billing_address2" => $this->sanitizeInput($arrayPost['billing_address2'], 'string'),
+            "billing_city" => $this->sanitizeInput($arrayPost['billing_city'], 'string'),
+            "billing_state" => strtoupper($this->sanitizeInput($arrayPost['billing_state'], 'string')),
+            "billing_zipcode" => $this->sanitizeInput($arrayPost['billing_zipcode'], 'string'),
+            'agree_terms' => $this->sanitizeInput($arrayPost['agree_terms'], 'string'),
+            'utm_source' => $this->sanitizeInput($arrayPost['utm_source'], 'string'),
+            'utm_medium' => $this->sanitizeInput($arrayPost['utm_medium'], 'string'),
+            'utm_campaign' => $this->sanitizeInput($arrayPost['utm_campaign'], 'string'),
+            'utm_content' => $this->sanitizeInput($arrayPost['utm_content'], 'string'),
+            'match_type' => $this->sanitizeInput($arrayPost['match_type'], 'string'),
+            'source' => $this->sanitizeInput($arrayPost['source'], 'string'),
+            'URL' => $this->sanitizeInput($arrayPost['url'], 'url'),
+            'terminal_id' => $this->sanitizeInput($arrayPost['terminal_id'], 'string'),
+        ];
+        $log->putLog("SanitizeData: " . json_encode($data, true));
+
+        $expiration_date = encrypt_decrypt('decrypt',$arrayPost['expiration_date']);
+        $data_cc = [
+            'card_type' => encrypt_decrypt('decrypt', $arrayPost['card_type']),
+            'card_name' => encrypt_decrypt('decrypt',$arrayPost['card_name']),
+            'card_number' => encrypt_decrypt('decrypt',$arrayPost['card_number']),
+            'expiration_date' => date("m/y", strtotime(trim($expiration_date))),
+            'card_scnumber' => encrypt_decrypt('decrypt',$arrayPost['card_scnumber']),
+        ];
+        $log->putLog("Credit Card Data: " . json_encode($data_cc, true));               
+
+        /*Create Customer ID*/
+        /*******************************/
+
+
+        /*Create Order ID*/
+        /*******************************/
+        if (!empty($data['order_id'])) {
+            $order_id = $data['order_id'];
+            $actionDatabase = 'updateOrder';
+        } else {
+            $actionDatabase = 'addOrder';
+            $order_id = $this->orderModel->createOrderId();
+            $data['order_id'] = $order_id;
+        }
+        $log->putLog("OrderID: " . json_encode($order_id, true));
+
+        /*Create Order Record*/
+        if(isset($data['order_id']) && !empty($data['order_id']) && $actionDatabase == 'updateOrder') {
+            $order = $this->orderModel->updateOrder($data);
+        } else {
+            $order = $this->orderModel->createOrder($data);
+        }
+
+        /*Calling the API  */
+        if ($order == true) {
+
+            $order_response = 'SUCCESS';            
+           
+            /* $line_payload = '{
+                "enrollment_id": "' . $data['order_id'] . '",
+                "order_id": "'.$data['order_id']. '",
+                "password": "",
+                "sponsor_id": "9102319965",
+                "first_name": "' . $data['first_name'] . '",
+                "last_name": "' . $data['last_name'] . '",
+                "alternate_phone_number": "",
+                "email": "' . $data['email'] . '",
+                "pin": "",
+                "activation_type": "NEWACTIVATION",
+                "service_address_one": ", '. $data['state'] . ' ' . $data['zipcode'] . '",
+                "service_address_two": "'. $data['address2'].'",
+                "service_city": "' . $data['city'] . '",
+                "service_state": "'. $data['state'] . '",
+                "service_zip": "'. $data['zipcode']. '",
+                "plan_id": "8497",
+                "device_id": "356364245476445",
+                "carrier": "LINKUP",
+                "is_portin": "N",
+                "enrollment_type": "SHIPMENT",
+                "billing_address_one": "' . ($billingInfoFlag == "true" ? ', ' . $data['billing_state'] . ' ' . $data['billing_zipcode'] : ', ' . $data['state'] . ' ' . $data['zipcode']) . '",
+                "billing_city": "' . ($billingInfoFlag == "true" ? $data['billing_city'] :  $data['city']) . '",
+                "billing_state": "' . ($billingInfoFlag == "true" ? $data['billing_state'] :  $data['state']) . '",
+                "billing_zip": "' . ($billingInfoFlag == "true" ? $data['billing_zipcode'] :  $data['zipcode']) . '",
+                "is_esim": "Y",
+                "order_id": "'.$data['order_id'].'",
+                "no_of_advance_month": "1",
+                "parent_enrollment_id": "A376249"
+            }'; */
+
+            
+            /*ECS Telgo API*/
+            /*******************************/
+            //$ecs_response = ECSTelgoo($data, $data_cc);
+            $data['areacode'] = $this->getAreaCode($data['phone_number']);
+            $data['imei'] = $arrayPost['Imei'] ?? '';
+            //$ecs_response = ecsmakePaymentAutopay($data, $data_cc);
+            $ecs_response = testmakePaymentAutopay($data, $data_cc);
+            $log->putLog(
+                "ECSResponse: " .
+                json_encode(array(
+                    'request' => $ecs_response['request'],
+                    'response' => $ecs_response['response'],
+                ))
+            );
+            $msg_response = $ecs_response["response"]["CellularVoucherPurchase"]["Message"]; 
+
+            if ($msg_response == 'APPROVED') {
+                $msg[] = $this->msgResponse(
+                    true,
+                    'SUCCESS',
+                    $ecs_response["response"]["CellularVoucherPurchase"]["Message"],
+                    $ecs_response["response"]["CellularVoucherPurchase"]["PGSTransId"],
+                    $ecs_response["response"]["CellularVoucherPurchase"]["PhoneNumber"],
+                    $ecs_response["response"]["CellularVoucherPurchase"]["PinCode"],
+                    $ecs_response["response"]["CellularVoucherPurchase"]["QRCode"],
+                );
+            } else {
+                $msg[] = $this->msgResponse(false, 'ERROR', $msg_response, "", "");
+            }
+
+        } else {
+            $order_response = 'ERROR';
+        }
+    
+        $log->putLog("OrderResponse: " . json_encode($order_response, true));
+
+    }
+
     public function processAmbassadorLandingData()
     {
         $raw = file_get_contents("php://input");
@@ -200,7 +416,12 @@ class FormEndpoint extends Controller
             "shipping_address2" => $this->sanitizeInput($arrayPost['shipping_address2'], 'string'),
             "shipping_city" => $this->sanitizeInput($arrayPost['shipping_city'], 'string'),
             "shipping_state" => strtoupper($this->sanitizeInput($arrayPost['shipping_state'], 'string')),
-            "shipping_zipcode" => $this->sanitizeInput($arrayPost['shipping_zipcode'], 'string'),         
+            "shipping_zipcode" => $this->sanitizeInput($arrayPost['shipping_zipcode'], 'string'),
+            "billing_address1" => $this->sanitizeInput($arrayPost['billing_address1'], 'string'),
+            "billing_address2" => $this->sanitizeInput($arrayPost['billing_address2'], 'string'),
+            "billing_city" => $this->sanitizeInput($arrayPost['billing_city'], 'string'),
+            "billing_state" => strtoupper($this->sanitizeInput($arrayPost['billing_state'], 'string')),
+            "billing_zipcode" => $this->sanitizeInput($arrayPost['billing_zipcode'], 'string'),
             'agree_terms' => $this->sanitizeInput($arrayPost['agree_terms'], 'string'),                  
             'utm_source' => $this->sanitizeInput($arrayPost['utm_source'], 'string'),
             'utm_medium' => $this->sanitizeInput($arrayPost['utm_medium'], 'string'),
@@ -326,6 +547,7 @@ class FormEndpoint extends Controller
         );
         
     }
+
     public function verifyDuplicateRecord()
     {
         $raw = file_get_contents("php://input");
@@ -510,6 +732,21 @@ class FormEndpoint extends Controller
         }
 
         return $decryptedData;
+    }
+
+    public function getAreaCode($phone)
+    {
+        $digits = preg_replace('/\D+/', '', $phone);
+        return strlen($digits) >= 3 ? substr($digits, 0, 3) : null;
+    }
+
+    function decryptField(string $b64): string
+    {
+        $key = substr(hash('sha256', CARD_ENCRYPTION_KEY, true), 0, 32); // 32 bytes
+        $raw = base64_decode($b64);
+        $iv  = substr($raw, 0, 16);
+        $ciphertext = substr($raw, 16);
+        return openssl_decrypt($ciphertext, 'AES-256-CBC', $key, OPENSSL_RAW_DATA, $iv);
     }
 
 }

@@ -1,81 +1,90 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
-<style>
-    .button-login-myaccount {
-        color: #fff;
-        font-size: 2.2rem;
-        font-weight: 700;
-        border-radius: 40px !important;
-        background-color: #E03829 !important;
-        padding: 10px 27px 12px 27px;
-    }
+<?php require APPROOT . '/views/inc/header.php';
+$infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['infoPlan'] : [];
+?>
 
-    .card {
-        background-color: #F5F5F5;
-        border: 0px;
-    }
-
-    .thank-text {
-        font-size: 2.75rem;
-    }
-
-    .sub-thank-text {
-        font-size: 1.75rem;
-    }
-
-    @media (max-width: 350px) {
-        .thank-text {
-            font-size: 1.8rem;
-        }
-
-        .sub-thank-text {
-            font-size: 1.3rem;
-        }
-
-        .button-login-myaccount {
-            font-size: 1.5rem;
-        }
-    }
-</style>
 <section class="position-relative py-4 py-xl-5" style="min-height:525px">
     <div class="container">
-        
-            <div class="row">
-                <div class="col p-3">
+
+        <div class="row">
+            <div class="col p-3">
+            </div>
+        </div>
+        <div class="row justify-content-md-center pt-3">
+            <div class="col-lg-6 mb-4 pt-5">
+                <div class="text-center">
+                    <h1 class="thankyou-title fw-bold">ORDER #<?php echo isset($order_id) ? $order_id : 'N/A'; ?></h1>
+                    <h2 class="thankyou-title fw-bold">HAS BEEN PLACED!</h2>
+                    <p class="lead text-muted mb-4">Thank you for your order. You will receive your eSIM and your order confirmation via email.</p>
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6">
-                    <div class="card car-wrapp">
-                        <div class="row">
-                            <div class="col-lg-12 text-center">
-                                <div class="col-lg-12 text-center p-4">
-                                    <img src="/img/mark_success.png" style="width: 75px;" class="img-fluid" width="" height="" alt="Complete">
-
-                                    <?php if (@$_GET['pay'] == 'success') { ?>
-                                        <h2 style="font-size: 1.5rem;">Congratulations! <br>The payment has been completed&nbsp;successfully </h2>
-                                    <?php } else { ?>
-                                        <h2 style="font-size: 1.5rem;">Congratulations! <br>Your application has been&nbsp;submitted! </h2>
-                                    <?php } ?>
-
-                                    <hr>
-                                    <p style="text-align: left;font-size: 1.3rem;">We will contact you in the next 2 business days for an update on your enrollment. Please look for text messages and emails from&nbsp;us.</p>
-
-                                </div>
+        </div>
+        <div class="row justify-content-md-center pt-3" id="summary-thankyou">
+            <div class="col-lg-6 mb-4">
+                <div class="order-card bg-white">
+                    <!-- Header -->
+                    <div class="d-flex align-items-start justify-content-between px-4 pt-4 pb-4">
+                        <div>
+                            <div class="d-flex align-items-center gap-2">
+                                <h5 class="mb-0 fw-bold">Order Review</h5>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Item row -->
+                    <div class="px-4 pb-4 collapse" id="order-review-area">
+                        <div class="d-flex gap-3 align-items-start">
+
+                            <!-- Icon -->
+                            <div class="icon-box d-flex align-items-center justify-content-center flex-shrink-0">
+                                <span class="fs-3"><?php echo isset($infoPlan['image']) ? '<img src="' . URLROOT . $infoPlan['image'] . '" alt="Plan Image" class="img-fluid plan-img">' : '📶'; ?></span>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="flex-grow-1">
+                                <div class="d-flex align-items-start justify-content-between gap-3">
+                                    <div>
+                                        <div class="fw-semibold"><?php echo isset($infoPlan['name']) ? $infoPlan['name'] : 'Plan name not available'; ?></div>
+                                        <div class="text-muted text-start small"><?php echo isset($infoPlan['data']) ? $infoPlan['data'] : 'Data not available'; ?> | <?php echo isset($infoPlan['sim']) ? $infoPlan['sim'] : ''; ?> | <?php echo (isset($infoPlan['autopay']) && $infoPlan['autopay'] == true) ? 'Auto Pay' : ''; ?></div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-end justify-content-between mt-2 flex-wrap gap-3">
+                                    <!-- Quantity -->
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button class="btn btn-outline-secondary qty-btn" type="button" aria-label="Decrease" disabled>
+                                            −
+                                        </button>
+
+                                        <input class="form-control qty-input text-center" name="lines" id="lines" type="text" value="1" aria-label="Quantity" readonly>
+
+                                        <button class="btn btn-outline-secondary qty-btn" type="button" aria-label="Increase" disabled>
+                                            +
+                                        </button>
+                                    </div>
+
+                                    <!-- Price -->
+                                    <div class="text-end ms-auto">
+                                        <div class="text-muted text-decoration-line-through small"><?php echo isset($infoPlan['price']) ? '$' . number_format($infoPlan['price'], 2) : '$0.00'; ?></div>
+                                        <div class="fs-5 fw-bold"><?php echo isset($infoPlan['promo_price']) ? '$' . number_format($infoPlan['promo_price'], 2) : '$0.00'; ?></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <hr class="my-3">
+                    </div>
+
                 </div>
             </div>
-        
-            <div class="row">
-                <div class="col-lg-12 text-center mt-3">
-                </div>
+        </div>
+
+        <div class="row justify-content-md-center pt-3">
+            <div class="col-lg-3 text-center mt-3">
+                <a class="btn w-100 gohome-btn">GO BACK HOME</a>
             </div>
-        
+        </div>
+
     </div>
 </section>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
-
