@@ -49,8 +49,8 @@ if (!headers_sent()) {
 
 $rmEnvSet = isset($_ENV['RUN_MODE']);
 $amEnvSet = isset($_ENV['AUTH_MODE']);
-define('ENVIRONMENT', $rmEnvSet ? $_ENV['RUN_MODE'] : 'development');
-define('AUTHENV', $amEnvSet ? $_ENV['AUTH_MODE'] : 'development');
+define('ENVIRONMENT', $rmEnvSet ? $_ENV['RUN_MODE'] : 'test');
+define('AUTHENV', $amEnvSet ? $_ENV['AUTH_MODE'] : 'test');
 
 if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
     error_reporting(E_ALL&~E_NOTICE);
@@ -78,16 +78,22 @@ if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
 
 	// URL Root
 	// define ('URLROOT',$config["baseurl"]);
-	define('URLROOT', $config['URLROOT']);  
+	define('URLROOT', $config["urlbase"]);  
 	
 	// Site Name
-	define('SITENAME', $config['SITENAME']);
+	define('SITENAME', 'LinkupMobile');
 
 	// Files URL Root
-	define('FILESROOT', $config['FILESROOT']);
+	//define('FILESROOT', $config['FILESROOT']);
 
 	// Number From ReplyCX
 	define('FROM_NUMBER_REPLYCX', '18338441190');
+
+	//tAX API CONFIG
+	define('TAXCLIENT_NUMBER', $config['TAXCLIENT_NUMBER']);
+	define('TAXVALIDATION_KEY', $config['TAXVALIDATION_KEY']);
+
+	define('CARD_ENCRYPTION_KEY', $config['CARD_ENCRYPTION_KEY']);
 	
 
 /* AUTHORIZE.NET CONFIGURATION */
@@ -121,17 +127,6 @@ if (AUTHENV == 'test' || AUTHENV == 'Test') {
 define('ProPayPal', 0);
 
 if (ProPayPal) {
-
-	define("PayPalClientId", $config['PAYPALSANDBOX_CLIENT_ID']);
-
-	define("PayPalSecret", $config['PAYPALSANDBOX_SECRET']);
-
-	define("PayPalBaseUrl", $config['PAYPALSANDBOX_BASEURL']);
-
-	define("PayPalENV", "production");
-
-} else {
-
 	define("PayPalClientId", $config['PAYPALLIVE_CLIENT_ID']);
 
 	define("PayPalSecret", $config['PAYPALLIVE_SECRET']);
@@ -139,6 +134,15 @@ if (ProPayPal) {
 	define("PayPalBaseUrl", $config['PAYPALLIVE_BASEURL']);
 
 	define("PayPalENV", "sandbox");
+	
+} else {
+	define("PayPalClientId", $config['PAYPALSANDBOX_CLIENT_ID']);
+
+	define("PayPalSecret", $config['PAYPALSANDBOX_SECRET']);
+
+	define("PayPalBaseUrl", $config['PAYPALSANDBOX_BASEURL']);
+
+	define("PayPalENV", "production");
 
 }
 	

@@ -9,8 +9,8 @@ function taxtCalculation($data){
 		// $ValidationKey = VALIDATION_KEY;
 		// $url = SURETAX_URL;
 		// $url= SURETAX_URL;
-		$ClientNumber = "D002860001";
-		$ValidationKey = "27FEBA39-C2B8-4629-A1E5-458C97018E0E";
+		$ClientNumber = TAXCLIENT_NUMBER;
+		$ValidationKey = TAXVALIDATION_KEY;
 
 		$url = "https://api.taxrating.net/Services/Communications/V01/SureTax.asmx/PostRequest";
 		//$url = "https://testapi.taxrating.net/Services/Communications/V01/SureTax.asmx/PostRequest";

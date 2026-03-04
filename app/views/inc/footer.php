@@ -1,7 +1,7 @@
 <footer class="text-white pt-5" style="background-color: #0076bd;">
     <div class="container pb-4">
         <div class="row g-4">
-            
+
             <div class="col-12 col-md-4">
                 <div class="mb-3">
                     <img src="<?php echo URLROOT; ?>/img/linkup-white.png" class="img-fluid" style="max-height: 93px;" />
@@ -15,20 +15,20 @@
                     <span>ES</span>
                 </div> -->
                 <div class="d-flex align-items-center franklin-family px-2">
-                <div class="me-2">
-                    <a href="" class="text-white text-decoration-none fw-bold d-flex align-items-center me-2" style="font-size: 24px;">
-                      <img src="https://flagcdn.com/24x18/us.png" alt="US" class="me-1">
-                    <span class="fw-bold font-yellow">EN</span>
-                    </a>
+                    <div class="me-2">
+                        <a href="" class="text-white text-decoration-none fw-bold d-flex align-items-center me-2" style="font-size: 24px;">
+                            <img src="https://flagcdn.com/24x18/us.png" alt="US" class="me-1">
+                            <span class="fw-bold font-yellow">EN</span>
+                        </a>
+                    </div>
+                    <span class="mx-2">|</span>
+                    <div>
+                        <a href="" class="text-white text-decoration-none fw-bold d-flex align-items-center ms-2" style="font-size: 24px;">
+                            <img src="https://flagcdn.com/24x18/mx.png" alt="MX" class="me-1">
+                            <span class="text-white-50">ES</span>
+                        </a>
+                    </div>
                 </div>
-                <span class="mx-2">|</span>
-                <div>
-                    <a href="" class="text-white text-decoration-none fw-bold d-flex align-items-center ms-2" style="font-size: 24px;">
-                      <img src="https://flagcdn.com/24x18/mx.png" alt="MX" class="me-1">
-                    <span class="text-white-50">ES</span>
-                    </a>
-                </div>
-            </div>
             </div>
 
             <!-- <div class="col-6 col-md-3">
@@ -36,7 +36,7 @@
                 </div> -->
 
             <div class="col-12 col-md-4">
-              <h6 class="font-yellow fw-bold text-uppercase mb-5">Home</h6>
+                <h6 class="font-yellow fw-bold text-uppercase mb-5">Home</h6>
                 <h6 class="font-yellow fw-bold text-uppercase mb-3">Help Center</h6>
                 <ul class="list-unstyled small">
                     <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold">LIVE CHAT</a></li>
@@ -55,7 +55,7 @@
                 </ul>
                 <div class="d-inline-flex align-items-center rounded shadow-sm" style="background-color: #004d7c;">
                     <img src="<?php echo URLROOT; ?>/img/BBB_logo.png" alt="BBB" height="75" class="img-fluid">
-                    
+
                 </div>
             </div>
 
@@ -64,12 +64,12 @@
 
     <div class="py-3 text-center" style="background-color: #005a8e;">
         <div class="container">
-          <div class="row">
-            <div class="col-md-3 offset-md-3"><a href="#" class="text-decoration-underline mx-3 franklin-family" style="font-size:20px;color:#FCFCFC;">Privacy Policy</a></div>
-            <div class="col-md-3"><a href="#" class="text-decoration-underline mx-3 franklin-family" style="font-size:20px;color:#FCFCFC;">Terms of Service</a></div>
-          </div>
-            
-            
+            <div class="row">
+                <div class="col-md-3 offset-md-3"><a href="#" class="text-decoration-underline mx-3 franklin-family" style="font-size:20px;color:#FCFCFC;">Privacy Policy</a></div>
+                <div class="col-md-3"><a href="#" class="text-decoration-underline mx-3 franklin-family" style="font-size:20px;color:#FCFCFC;">Terms of Service</a></div>
+            </div>
+
+
         </div>
     </div>
 </footer>
@@ -79,8 +79,8 @@
 <!--  loading="async"></script>-->
 <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9ytcfyWi2RoHTr_bKnUTUrFvmyKKjb4&libraries=places&callback=initAutocomplete"> </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"
-  integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
 </script> -->
   <!-- <script type="text/javascript" src="<?php //echo URLROOT; ?>/js/jquery.min.js?<?php echo rand(0, 999); ?>"></script> -->
