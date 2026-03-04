@@ -65,8 +65,8 @@
     <div class="py-3 text-center" style="background-color: #005a8e;">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 offset-md-3"><a href="#" class="text-decoration-underline mx-3 franklin-family" style="font-size:20px;color:#FCFCFC;">Privacy Policy</a></div>
-                <div class="col-md-3"><a href="#" class="text-decoration-underline mx-3 franklin-family" style="font-size:20px;color:#FCFCFC;">Terms of Service</a></div>
+                <div class="col-6 col-md-3 offset-md-3"><a href="#" class="text-decoration-underline mx-3 franklin-family" style="font-size:20px;color:#FCFCFC;">Privacy Policy</a></div>
+                <div class="col-6 col-md-3"><a href="#" class="text-decoration-underline mx-3 franklin-family" style="font-size:20px;color:#FCFCFC;">Terms of Service</a></div>
             </div>
 
 
