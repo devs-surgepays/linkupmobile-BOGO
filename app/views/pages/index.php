@@ -22,7 +22,7 @@
         </div>
 
         <a href="#" id="claim-offer-btn" class="btn bg-yellow btn-lg px-5 py-3 fw-bold text-primary-dark shadow-sm rounded-3 uppercase franklin-family"
-            style="border: none; color: #003d6b;">
+            style="border: none; color: #003d6b;" data-bs-toggle="modal" data-bs-target="#exampleModal">
             CLAIM OFFER
         </a>
     </div>
@@ -288,7 +288,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                             </div>
                         </div>
 
-                        <button class="btn franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" style="background-color: #ffc107; color: #054A76;font-size:32px;font-weight:400;">
+                        <button class="btn franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #ffc107; color: #054A76;font-size:32px;font-weight:400;">
                             CLAIM OFFER
                         </button>
                     </div>
@@ -831,30 +831,76 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
         </div>
 </section>
 
-<div class="support-banner-wrapper">
-    <div class="support-banner">
+<section class="human-support-section py-5">
+    <div class="container" style="max-width: 1000px;">
+        <!-- <div class="rounded-5 p-4 p-md-5 text-white shadow-lg overflow-visible" 
+             style="background-color: #4db8ff;"> -->
+            
+            <!-- <img src="hand-top.png" alt="" class="hand-decoration hand-top d-none d-lg-block"> -->
 
-        <div class="support-content">
-            <h2 class="support-title">24/7 HUMAN SUPPORT</h2>
-            <p class="support-text">
-                Questions or need help? Our support team is ready to step in, answer your questions, and support you every&nbsp;step.
-            </p>
-            <div>
-                <button class="support-button">VISIT HELP CENTER</button>
+            <div class="row align-items-center rounded-5 p-4 p-md-5 text-white shadow-lg" 
+             style="background-color: #4db8ff;">
+                <div class="col-md-8 z-1 text-center text-md-start">
+                    <h2 class="display-5 fw-bold mb-3 text-uppercase">24/7 Human Support</h2>
+                    <p class="lead mb-4 fw-medium" style="max-width: 500px;">
+                        Questions or need help? Our bilingual customer support team is ready to step in, answer your questions, and support you every step.
+                    </p>
+                    <a href="#" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-primary-dark rounded-3 shadow-sm"
+                       style="background-color: #ffc107; border: none; color: #003d6b;">
+                        VISIT HELP CENTER
+                    </a>
+                </div>
+
+                <div class="col-md-4 text-center m-negative"> <!--  mt-4 mt-lg-0 -->
+                    <img src="<?php echo URLROOT; ?>/img/emojis.png" alt="Support Emojis" class="img-fluid z-1 support-image">
+                </div>
             </div>
-        </div>
 
-        <div class="support-image-container">
-            <img
-                src="<?php echo URLROOT; ?>/img/emojis.png"
-                alt="Hands holding smiling emojis"
-                class="support-image">
-        </div>
-
+            <!-- <img src="<?php //echo URLROOT; ?>/img/emojis.png" alt="" class="hand-decoration hand-bottom d-none d-lg-block"> -->
+        <!-- </div> -->
     </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border:none">
+        <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <div class="blue-heading-modal text-center mb-3">
+                    KEEP YOUR PHONE&nbsp;AND&nbsp;NUMBER
+                </div>
+                <div class="description-modal">
+                    <p>Check your zip code and phone below to make sure they are LinkUp compatible</p>
+                  
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 offset-3 text-center imei-section">
+                            <label for="imeiInput">IMEI:</label>
+                            <input type="text" id="imeiInput" class="form-control mb-3" placeholder="Enter your 15 - 17 digit IMEI">
+                            
+                            <div class="d-flex justify-content-center gap-3 mb-3">
+                                <button class="btn bg-yellow btn-lg franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" onclick="checkImei()">Check Compatibility</button>    
+                                
+                            </div>
+                            <div id="imeiFeedback" class="mt-3 fw-bold d-none"></div>
+                             
+                            <!-- <a href="">Can't find your IMEI?</a> -->
+                        </div>
+                </div>
+                            </div>
+      </div>
+      <div class="modal-footer"  style="border:none; margin:1rem;">
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
 </div>
-
-
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -1536,6 +1582,132 @@ const updateCountdown = () => {
 // Ejecutar cada segundo
 const interval = setInterval(updateCountdown, 1000);
 updateCountdown(); // Ejecución inicial para evitar el salto de 1s
+
+
+// document.getElementById('imeiInput').addEventListener('input', function(e) {
+//     const imei = e.target.value;
+//     const feedback = document.getElementById('imeiFeedback');
+
+//     // 1. Solo permitir números
+//     e.target.value = imei.replace(/\D/g, '');
+
+//     // 2. Ejecutar validación cuando tenga entre 15 y 17 dígitos
+//     if (imei.length >= 15) {
+//         checkCompatibility(imei);
+//     } else {
+//         feedback.classList.add('d-none');
+//     }
+// });
+
+const imeiInput = document.getElementById('imeiInput');
+
+imeiInput.addEventListener('input', function(e) {
+    // 1. Elimina cualquier caracter que no sea un número
+    let value = e.target.value.replace(/\D/g, '');
+    
+    // 2. Limita la longitud a 17 (máximo estándar)
+    if (value.length > 17) {
+        value = value.substring(0, 17);
+    }
+    
+    e.target.value = value;
+});
+
+function isValidLuhn(imei) {
+    // Solo validamos por Luhn si tiene 15 dígitos
+    if (imei.length !== 15) return imei.length >= 15 && imei.length <= 17;
+
+    let sum = 0;
+    for (let i = 0; i < imei.length; i++) {
+        let n = parseInt(imei[i]);
+        // Multiplicar por 2 cada segundo dígito empezando desde la derecha
+        if ((imei.length - 1 - i) % 2 === 1) {
+            n *= 2;
+            if (n > 9) n -= 9;
+        }
+        sum += n;
+    }
+    return sum % 10 === 0;
+}
+
+async function checkImei() {
+    const imei = document.getElementById('imeiInput').value.trim();
+    const feedback = document.getElementById('imeiFeedback');
+    feedback.classList.remove('d-none', 'text-danger', 'text-success');
+    feedback.innerHTML = '<span class="text-muted">Checking compatibility...</span>';
+
+    if (imei.length < 15) {
+            //showFeedback("El IMEI debe tener al menos 15 dígitos", "text-danger");
+            feedback.innerText = "❌ IMEI Length is less than 15 digits.";
+            feedback.classList.add('text-danger');
+            return;
+        }
+
+        // Validación de algoritmo
+    if (!isValidLuhn(imei)) {
+            //showFeedback("El formato del IMEI es inválido", "text-danger");
+            feedback.innerText = "❌ Invalid IMEI Format.";
+            feedback.classList.add('text-danger');
+            return;
+        }
+
+    try {
+        // Validación básica de longitud
+
+        // REEMPLAZAR con tu URL real de API
+        const response = await fetch(`<?php echo URLROOT; ?>/pages/check_imei/${imei}`);
+        const data = await response.json();
+
+        if (data.response.CellularRtrPurchase.Message=="APPROVED") {
+            // Caso Positivo
+            //feedback.innerText = "✅ Este dispositivo es compatible.";
+            feedback.innerText = "✅ This device is compatible. you will be redirected shortly.";
+            feedback.classList.add('text-success');
+
+            // Esperar 5 segundos y enviar via POST
+            setTimeout(() => {
+                sendImeiPost(imei);
+            }, 5000);
+
+        } else {
+            // Caso Negativo
+            //feedback.innerText = "❌ Este dispositivo no es compatible.";
+            feedback.innerText = "❌ This device is not compatible.";
+            feedback.classList.add('text-danger');
+        }
+    } catch (error) {
+        //feedback.innerText = "Error al conectar con el servidor.";
+        feedback.innerText = "Error connecting to server.";
+        feedback.classList.add('text-danger');
+    }
+}
+
+async function sendImeiPost(imei) {
+    // try {
+    //     await fetch('<?php //echo URLROOT; ?>/pages/checkout', {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify({ imei: imei, timestamp: new Date() })
+    //     });
+    //     console.log("IMEI enviado con éxito.");
+    //     // Aquí podrías redirigir al usuario al siguiente paso del carrito
+    // } catch (error) {
+    //     console.error("Error al enviar el IMEI:", error);
+    // }
+
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '<?php echo URLROOT; ?>/pages/checkout';
+    const hiddenField = document.createElement('input');
+    hiddenField.type = 'hidden';
+    hiddenField.name = 'imei';
+    hiddenField.value = imei;
+    form.appendChild(hiddenField);
+
+
+    document.body.appendChild(form);
+    form.submit();
+}
 </script>
 </body>
 

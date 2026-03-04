@@ -21,6 +21,54 @@
     font-family: 'Franklin Gothic Medium Cond', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
 }
+
+.imei-section label {
+    color: var(--Main-Blue---500, #0877BC);
+text-align: center;
+
+/* General Text/SH 2 (Bold) */
+font-family: "Franklin Gothic Demi Cond";
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.imei-section a{
+    color: var(--Main-Blue---500, #0877BC);
+text-align: center;
+
+/* Interactive Text Fields/Links */
+font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-decoration-line: underline;
+text-decoration-style: solid;
+text-decoration-skip-ink: auto;
+text-decoration-thickness: auto;
+text-underline-offset: auto;
+text-underline-position: from-font;
+}
+        .blue-heading-modal {
+        font-size: 36px !important;    /* Reduced from ~32px */
+        line-height: 1.4;
+        margin-bottom: 1.5rem !important;
+        color: #054A76; 
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+.description-modal p {
+    font-size: 26px;
+    line-height: 1.5;
+    text-align: center;
+    color: #021927;
+    font-family: 'Franklin Gothic Medium Cond', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+}
 .description span{
     color: #07639D;
     font-weight: 500;
@@ -67,6 +115,10 @@
 }
 .blue-heading {
     font-size: 55px;
+}
+
+.blue-heading-modal{
+    font-size: 48px;
 }
 
 .hero-banner h1 {
@@ -683,8 +735,16 @@ footer li {
     max-width: 140px; 
   }
 
+  .m-negative{
+    padding: 1.5rem;
+    max-width: 250px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin: auto;
+  }
   .support-image {
-    transform: scale(1.15); 
+    transform:none;
+
   }
 }
 
@@ -798,4 +858,9 @@ footer li {
     color: #021927;
     font-family: 'Franklin Gothic Medium Cond', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
+}
+
+.m-negative {
+    margin-top: -50px;
+    margin-bottom: -50px;
 }
