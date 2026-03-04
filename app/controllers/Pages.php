@@ -88,6 +88,72 @@
 
     }
 
+    public function check_imei($imei){
+      //if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        //$imei = $_POST['imei'];
+        $data = [
+          'imei' => trim($imei)
+        ];
+
+        $curl = curl_init();
+
+        $request = '<Request>
+  <CellularRtrPurchase sku="8033">
+    <ApiUsername>AHWS</ApiUsername>
+    <ApiPassword>a4Wh0!3a13!</ApiPassword>
+    <TerminalType>1</TerminalType>
+    <TerminalId>3695974391</TerminalId>
+    <ClerkId>1</ClerkId>
+    <IMEI>' . $data['imei']. '</IMEI>
+    <Amount>0.00</Amount>
+    <PIN/>
+  </CellularRtrPurchase>
+  </Request>';
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => 'https://www.ecsprepaid.com/api/',
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => '',
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => 'POST',
+          CURLOPT_SSL_VERIFYPEER => false,
+          CURLOPT_POSTFIELDS =>"request=" . urlencode($request),
+          CURLOPT_HTTPHEADER => array(
+            "cache-control: no-cache",
+            "content-type: application/x-www-form-urlencoded",
+          ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        $xml = simplexml_load_string($response);
+        $json = json_encode($xml);
+        $array = json_decode($json, TRUE);
+
+        $data['response'] = $array;
+
+        //$this->view('pages/checkimei', $data);
+        echo json_encode($data);
+      // } else {
+      //   echo json_encode(['error' => 'Invalid request method']);
+      // }
+    }
+
+    // public function checkout(){
+    //   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //     $imei = $_POST['imei'];
+    //     $data = [
+    //       'imei' => trim($imei)
+    //     ];
+    //     $this->view('pages/checkout', $data);
+    //   } else {
+    //     echo "Invalid request method.";
+    //   }
+    // }
+
     public function thankyou()
     {
       if ($_SERVER['REQUEST_METHOD'] == 'GET') {
