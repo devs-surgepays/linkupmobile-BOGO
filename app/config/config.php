@@ -94,6 +94,8 @@ if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
 	define('TAXVALIDATION_KEY', $config['TAXVALIDATION_KEY']);
 
 	define('CARD_ENCRYPTION_KEY', $config['CARD_ENCRYPTION_KEY']);
+
+	define('GOOGLE_MAPS_API_KEY', $config['google_maps_api_key']);
 	
 
 /* AUTHORIZE.NET CONFIGURATION */

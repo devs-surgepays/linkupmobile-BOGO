@@ -74,9 +74,8 @@
     </div>
 </footer>
 
-<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbxNK7_dnO0euaECxFDafZLvF4QkPabOE&libraries=places&callback=initAutocomplete" async-->
-<!--  defer-->
-<!--  loading="async"></script>-->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAPS_API_KEY; ?>&libraries=places&callback=initAutocomplete" async defer></script>
+
 <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9ytcfyWi2RoHTr_bKnUTUrFvmyKKjb4&libraries=places&callback=initAutocomplete"> </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"
     integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w=="
