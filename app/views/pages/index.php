@@ -51,7 +51,7 @@
                 </div>
                 <div class="description">
                     <p>With your LinkUp data plan you get <span>additional perks</span> such as <span>unlimited talk & text</span> as well as roaming included to and within&nbsp;Mexico <img src="https://flagcdn.com/24x18/mx.png" class="me-2" alt="Mexico"></p>
-                  
+
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
     <div class="container" style="max-width:1240px;">
         <div class="row g-5 align-items-center">
 
-         <div class="col-lg-6 text-center d-none d-md-block">
+            <div class="col-lg-6 text-center d-none d-md-block">
                 <div class="mb-4">
                     <img src="<?php echo URLROOT; ?>/img/wifi-vector.png" alt="Chip" class="img-fluid" style="max-width: 250px;">
                 </div>
@@ -97,7 +97,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                 </div>
             </div>
 
-        <div class="col-lg-6">
+            <div class="col-lg-6">
                 <div class="card border-0 shadow-lg rounded-5 bogo-main-card mx-auto">
                     <div class="card-header text-center py-4 border-0 mb-4" style="background-color: #005a9c; border-radius: 25px 25px 0 0;">
                         <h2 class="font-yellow roboto-family fw-bold mb-0" style="font-size: 64px;line-height: 1;">BOGO DEAL</h2>
@@ -295,9 +295,9 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                 </div>
             </div>
 
-           
 
-            
+
+
 
         </div>
     </div>
@@ -835,72 +835,105 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
     <div class="container" style="max-width: 1000px;">
         <!-- <div class="rounded-5 p-4 p-md-5 text-white shadow-lg overflow-visible" 
              style="background-color: #4db8ff;"> -->
-            
-            <!-- <img src="hand-top.png" alt="" class="hand-decoration hand-top d-none d-lg-block"> -->
 
-            <div class="row align-items-center rounded-5 p-4 p-md-5 text-white shadow-lg" 
-             style="background-color: #4db8ff;">
-                <div class="col-md-8 z-1 text-center text-md-start">
-                    <h2 class="display-5 fw-bold mb-3 text-uppercase">24/7 Human Support</h2>
-                    <p class="lead mb-4 fw-medium" style="max-width: 500px;">
-                        Questions or need help? Our bilingual customer support team is ready to step in, answer your questions, and support you every step.
-                    </p>
-                    <a href="#" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-primary-dark rounded-3 shadow-sm"
-                       style="background-color: #ffc107; border: none; color: #003d6b;">
-                        VISIT HELP CENTER
-                    </a>
-                </div>
+        <!-- <img src="hand-top.png" alt="" class="hand-decoration hand-top d-none d-lg-block"> -->
 
-                <div class="col-md-4 text-center m-negative"> <!--  mt-4 mt-lg-0 -->
-                    <img src="<?php echo URLROOT; ?>/img/emojis.png" alt="Support Emojis" class="img-fluid z-1 support-image">
-                </div>
+        <div class="row align-items-center rounded-5 p-4 p-md-5 text-white shadow-lg"
+            style="background-color: #4db8ff;">
+            <div class="col-md-8 z-1 text-center text-md-start">
+                <h2 class="display-5 fw-bold mb-3 text-uppercase">24/7 Human Support</h2>
+                <p class="lead mb-4 fw-medium" style="max-width: 500px;">
+                    Questions or need help? Our bilingual customer support team is ready to step in, answer your questions, and support you every step.
+                </p>
+                <a href="#" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-primary-dark rounded-3 shadow-sm"
+                    style="background-color: #ffc107; border: none; color: #003d6b;">
+                    VISIT HELP CENTER
+                </a>
             </div>
 
-            <!-- <img src="<?php //echo URLROOT; ?>/img/emojis.png" alt="" class="hand-decoration hand-bottom d-none d-lg-block"> -->
+            <div class="col-md-4 text-center m-negative"> <!--  mt-4 mt-lg-0 -->
+                <img src="<?php echo URLROOT; ?>/img/emojis.png" alt="Support Emojis" class="img-fluid z-1 support-image">
+            </div>
+        </div>
+
+        <!-- <img src="<?php //echo URLROOT; 
+                        ?>/img/emojis.png" alt="" class="hand-decoration hand-bottom d-none d-lg-block"> -->
         <!-- </div> -->
     </div>
 </section>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header" style="border:none">
-        <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> -->
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-         <div class="blue-heading-modal text-center mb-3">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="border:none">
+                <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="blue-heading-modal text-center mb-3">
                     KEEP YOUR PHONE&nbsp;AND&nbsp;NUMBER
                 </div>
                 <div class="description-modal">
-                    <p>Check IMEI device number below to make sure they are LinkUp compatible</p>
-                  
+                    <p class="mb-0">Check your IMEI code to make sure they are LinkUp eSIM compatible</p>
+                    <div class="small-text text-center mb-3" style="max-width:650px;margin:auto;">Your <b>IMEI</b> (International Mobile Equipment Identity) is a unique number that identifies your phone and lets us check if it's compatible with LinkUp Mobile's eSIM service.</div>
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-6 offset-3 text-center imei-section">
                             <label for="imeiInput">IMEI:</label>
                             <input type="text" id="imeiInput" class="form-control mb-3" placeholder="Enter your 15 - 17 digit IMEI">
-                            
-                            <div class="d-flex justify-content-center gap-3 mb-3">
-                                <button class="btn bg-yellow btn-lg franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" onclick="checkImei()">Check Compatibility</button>    
-                                
+
+                            <div class="d-flex justify-content-center gap-3">
+                                <button class="btn bg-yellow btn-lg franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" onclick="checkImei()">Check Compatibility</button>
+
                             </div>
                             <div id="imeiFeedback" class="mt-3 fw-bold d-none"></div>
-                             
+
                             <!-- <a href="">Can't find your IMEI?</a> -->
-                             <button type="link" class="btn btn-link text-decoration-underline" style="color: #007bff;">Can't find your IMEI?</button>
+                            <button type="link" class="btn btn-link underline-link" style="color: #007bff;" data-bs-toggle="collapse" data-bs-target="#imeiHelpSection">Can't find your IMEI?</button>
                         </div>
+                    </div>
                 </div>
-                            </div>
-      </div>
-      <div class="modal-footer"  style="border:none; margin:1rem;">
-        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button> -->
-      </div>
+            </div>
+            <div class="modal-footer" style="border:none; margin:1rem;">
+                <div class="container collapse" id="imeiHelpSection">
+                    <div class="rounded-4 p-3" style="background-color: #FFF6D6;">
+                    <div class="row">
+                        <div class="col text-center mb-3" style="color:#524000;font-family:'Roboto', sans-serif;font-weight:900;">
+                            <h2><b>LOCATE YOUR IMEI</b></h2>
+                        </div>
+                    </div>
+                    <div class="row px-4">
+                        <div class="col col-md-6 mb-3">
+                            <h3 class="fw-bold franklin-family" style="color:#8F7000">Android Users:</h3>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Option 1:</b> Dial *#06#</p>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Option 2:</b> Go to Settings > About Phone</p>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Option 3:</b> Visit <a href="http://www.android.com/find" target="_blank" rel="noopener noreferrer">www.android.com/find</a></p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h3 class="fw-bold franklin-family" style="color:#8F7000">iPhone Users:</h3>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Step 1:</b> Go to Settings > General > About</p>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Step 2:</b> Scroll to the bottom</p>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Step 3:</b> You will find your 15 - 17 IMEI<br>number under “Available&nbsp;SIM”</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <h3 class="fw-bold franklin-family" style="color:#8F7000">Still need help?</h3>
+                            <a href="#" class="btn btn-warning btn-lg franklin-family px-3 py-2 fw-bold text-primary-dark rounded-3 shadow-sm"
+                    style="background-color: #ffc107; border: none; color: #003d6b;">
+                    VISIT HELP CENTER
+                </a>
+                        </div>
+                    </div>
+                </div>
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
@@ -1554,90 +1587,90 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
     }
 
     // Configura la fecha de finalización (ejemplo: 3 días a partir de ahora)
-const countdownDate = new Date();
-countdownDate.setDate(countdownDate.getDate() + 3); 
+    const countdownDate = new Date();
+    countdownDate.setDate(countdownDate.getDate() + 3);
 
-const updateCountdown = () => {
-    const now = new Date().getTime();
-    const distance = countdownDate - now;
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
 
-    // Cálculos de tiempo
-    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((distance % (1000 * 60)) / 1000);
+        // Cálculos de tiempo
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Inyectar en el HTML
-    document.getElementById("days").innerText = d;
-    document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
-    document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
-    document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+        // Inyectar en el HTML
+        document.getElementById("days").innerText = d;
+        document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
+        document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
+        document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
 
-    // Si la oferta termina
-    if (distance < 0) {
-        clearInterval(interval);
-        document.querySelector(".text-warning").innerText = "OFFER EXPIRED";
-    }
-};
-
-// Ejecutar cada segundo
-const interval = setInterval(updateCountdown, 1000);
-updateCountdown(); // Ejecución inicial para evitar el salto de 1s
-
-
-// document.getElementById('imeiInput').addEventListener('input', function(e) {
-//     const imei = e.target.value;
-//     const feedback = document.getElementById('imeiFeedback');
-
-//     // 1. Solo permitir números
-//     e.target.value = imei.replace(/\D/g, '');
-
-//     // 2. Ejecutar validación cuando tenga entre 15 y 17 dígitos
-//     if (imei.length >= 15) {
-//         checkCompatibility(imei);
-//     } else {
-//         feedback.classList.add('d-none');
-//     }
-// });
-
-const imeiInput = document.getElementById('imeiInput');
-
-imeiInput.addEventListener('input', function(e) {
-    // 1. Elimina cualquier caracter que no sea un número
-    let value = e.target.value.replace(/\D/g, '');
-    
-    // 2. Limita la longitud a 17 (máximo estándar)
-    if (value.length > 17) {
-        value = value.substring(0, 17);
-    }
-    
-    e.target.value = value;
-});
-
-function isValidLuhn(imei) {
-    // Solo validamos por Luhn si tiene 15 dígitos
-    if (imei.length !== 15) return imei.length >= 15 && imei.length <= 17;
-
-    let sum = 0;
-    for (let i = 0; i < imei.length; i++) {
-        let n = parseInt(imei[i]);
-        // Multiplicar por 2 cada segundo dígito empezando desde la derecha
-        if ((imei.length - 1 - i) % 2 === 1) {
-            n *= 2;
-            if (n > 9) n -= 9;
+        // Si la oferta termina
+        if (distance < 0) {
+            clearInterval(interval);
+            document.querySelector(".text-warning").innerText = "OFFER EXPIRED";
         }
-        sum += n;
+    };
+
+    // Ejecutar cada segundo
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Ejecución inicial para evitar el salto de 1s
+
+
+    // document.getElementById('imeiInput').addEventListener('input', function(e) {
+    //     const imei = e.target.value;
+    //     const feedback = document.getElementById('imeiFeedback');
+
+    //     // 1. Solo permitir números
+    //     e.target.value = imei.replace(/\D/g, '');
+
+    //     // 2. Ejecutar validación cuando tenga entre 15 y 17 dígitos
+    //     if (imei.length >= 15) {
+    //         checkCompatibility(imei);
+    //     } else {
+    //         feedback.classList.add('d-none');
+    //     }
+    // });
+
+    const imeiInput = document.getElementById('imeiInput');
+
+    imeiInput.addEventListener('input', function(e) {
+        // 1. Elimina cualquier caracter que no sea un número
+        let value = e.target.value.replace(/\D/g, '');
+
+        // 2. Limita la longitud a 17 (máximo estándar)
+        if (value.length > 17) {
+            value = value.substring(0, 17);
+        }
+
+        e.target.value = value;
+    });
+
+    function isValidLuhn(imei) {
+        // Solo validamos por Luhn si tiene 15 dígitos
+        if (imei.length !== 15) return imei.length >= 15 && imei.length <= 17;
+
+        let sum = 0;
+        for (let i = 0; i < imei.length; i++) {
+            let n = parseInt(imei[i]);
+            // Multiplicar por 2 cada segundo dígito empezando desde la derecha
+            if ((imei.length - 1 - i) % 2 === 1) {
+                n *= 2;
+                if (n > 9) n -= 9;
+            }
+            sum += n;
+        }
+        return sum % 10 === 0;
     }
-    return sum % 10 === 0;
-}
 
-async function checkImei() {
-    const imei = document.getElementById('imeiInput').value.trim();
-    const feedback = document.getElementById('imeiFeedback');
-    feedback.classList.remove('d-none', 'text-danger', 'text-success');
-    feedback.innerHTML = '<span class="text-muted">Checking compatibility...</span>';
+    async function checkImei() {
+        const imei = document.getElementById('imeiInput').value.trim();
+        const feedback = document.getElementById('imeiFeedback');
+        feedback.classList.remove('d-none', 'text-danger', 'text-success');
+        feedback.innerHTML = '<span class="text-muted">Checking compatibility...</span>';
 
-    if (imei.length < 15) {
+        if (imei.length < 15) {
             //showFeedback("El IMEI debe tener al menos 15 dígitos", "text-danger");
             feedback.innerText = "❌ IMEI Length is less than 15 digits.";
             feedback.classList.add('text-danger');
@@ -1645,70 +1678,71 @@ async function checkImei() {
         }
 
         // Validación de algoritmo
-    if (!isValidLuhn(imei)) {
+        if (!isValidLuhn(imei)) {
             //showFeedback("El formato del IMEI es inválido", "text-danger");
             feedback.innerText = "❌ Invalid IMEI Format.";
             feedback.classList.add('text-danger');
             return;
         }
 
-    try {
-        // Validación básica de longitud
+        try {
+            // Validación básica de longitud
 
-        // REEMPLAZAR con tu URL real de API
-        const response = await fetch(`<?php echo URLROOT; ?>/pages/check_imei/${imei}`);
-        const data = await response.json();
+            // REEMPLAZAR con tu URL real de API
+            const response = await fetch(`<?php echo URLROOT; ?>/pages/check_imei/${imei}`);
+            const data = await response.json();
 
-        if (data.response.CellularRtrPurchase.Message=="APPROVED") {
-            // Caso Positivo
-            //feedback.innerText = "✅ Este dispositivo es compatible.";
-            feedback.innerText = "✅ This device is compatible. you will be redirected shortly.";
-            feedback.classList.add('text-success');
+            if (data.response.CellularRtrPurchase.Message == "APPROVED") {
+                // Caso Positivo
+                //feedback.innerText = "✅ Este dispositivo es compatible.";
+                feedback.innerText = "✅ This device is compatible. you will be redirected shortly.";
+                feedback.classList.add('text-success');
 
-            // Esperar 5 segundos y enviar via POST
-            setTimeout(() => {
-                sendImeiPost(imei);
-            }, 5000);
+                // Esperar 5 segundos y enviar via POST
+                setTimeout(() => {
+                    sendImeiPost(imei);
+                }, 5000);
 
-        } else {
-            // Caso Negativo
-            //feedback.innerText = "❌ Este dispositivo no es compatible.";
-            feedback.innerText = "❌ This device is not compatible.";
+            } else {
+                // Caso Negativo
+                //feedback.innerText = "❌ Este dispositivo no es compatible.";
+                feedback.innerText = "❌ This device is not compatible.";
+                feedback.classList.add('text-danger');
+            }
+        } catch (error) {
+            //feedback.innerText = "Error al conectar con el servidor.";
+            feedback.innerText = "Error connecting to server.";
             feedback.classList.add('text-danger');
         }
-    } catch (error) {
-        //feedback.innerText = "Error al conectar con el servidor.";
-        feedback.innerText = "Error connecting to server.";
-        feedback.classList.add('text-danger');
     }
-}
 
-async function sendImeiPost(imei) {
-    // try {
-    //     await fetch('<?php //echo URLROOT; ?>/pages/checkout', {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify({ imei: imei, timestamp: new Date() })
-    //     });
-    //     console.log("IMEI enviado con éxito.");
-    //     // Aquí podrías redirigir al usuario al siguiente paso del carrito
-    // } catch (error) {
-    //     console.error("Error al enviar el IMEI:", error);
-    // }
+    async function sendImeiPost(imei) {
+        // try {
+        //     await fetch('<?php //echo URLROOT; 
+                            ?>/pages/checkout', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({ imei: imei, timestamp: new Date() })
+        //     });
+        //     console.log("IMEI enviado con éxito.");
+        //     // Aquí podrías redirigir al usuario al siguiente paso del carrito
+        // } catch (error) {
+        //     console.error("Error al enviar el IMEI:", error);
+        // }
 
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = '<?php echo URLROOT; ?>/checkout';
-    const hiddenField = document.createElement('input');
-    hiddenField.type = 'hidden';
-    hiddenField.name = 'imei';
-    hiddenField.value = imei;
-    form.appendChild(hiddenField);
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '<?php echo URLROOT; ?>/checkout';
+        const hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = 'imei';
+        hiddenField.value = imei;
+        form.appendChild(hiddenField);
 
 
-    document.body.appendChild(form);
-    form.submit();
-}
+        document.body.appendChild(form);
+        form.submit();
+    }
 </script>
 </body>
 
