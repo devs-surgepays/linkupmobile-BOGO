@@ -1,8 +1,8 @@
 <footer class="text-white pt-5" style="background-color: #0076bd;">
     <div class="container pb-4">
-        <div class="row g-4">
+        <div class="row g-4 d-none d-md-flex">
 
-            <div class="col-12 col-md-4">
+            <div class="col-md-4">
                 <div class="mb-3">
                     <img src="<?php echo URLROOT; ?>/img/linkup-white.png" class="img-fluid" style="max-height: 93px;" />
                 </div>
@@ -35,7 +35,7 @@
                 <h6 class="font-yellow fw-bold text-uppercase mb-3">Home</h6>
                 </div> -->
 
-            <div class="col-12 col-md-4">
+            <div class="col-md-4">
                 <h6 class="font-yellow fw-bold text-uppercase mb-5">Home</h6>
                 <h6 class="font-yellow fw-bold text-uppercase mb-3">Help Center</h6>
                 <ul class="list-unstyled small">
@@ -46,7 +46,7 @@
                 </ul>
             </div>
 
-            <div class="col-12 col-md-4">
+            <div class="col-md-4">
                 <h6 class="font-yellow fw-bold text-uppercase mb-3">My Account</h6>
                 <ul class="list-unstyled small mb-4">
                     <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold">LOG IN</a></li>
@@ -60,6 +60,23 @@
             </div>
 
         </div>
+        <div class="row gap-4 d-md-none">
+            <div class="col text-center">
+                <img src="<?php echo URLROOT; ?>/img/LinkUpMobile.png" alt="LinkUp Mobile"  class="img-fluid">
+            </div>
+        </div>
+        <div class="row mt-3 d-md-none">
+            <div class="col-4 text-center">
+                <h6 class="font-yellow fw-bold text-uppercase mb-3 franklin-family" style="font-size: 16px;">Home</h6>
+            </div>
+            <div class="col-4 text-center">
+                <h6 class="font-yellow fw-bold text-uppercase mb-3 franklin-family" style="font-size: 16px;">Help Center</h6>
+            </div>
+            <div class="col-4 text-center">
+                <h6 class="font-yellow fw-bold text-uppercase mb-3 franklin-family" style="font-size: 16px;">My Account</h6>
+            </div>
+        </div>
+        
     </div>
 
     <div class="py-3 text-center" style="background-color: #005a8e;">

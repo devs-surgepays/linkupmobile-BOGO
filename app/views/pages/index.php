@@ -21,9 +21,9 @@
             </p>
         </div>
 
-        <a href="#" id="claim-offer-btn" class="btn bg-yellow btn-lg px-5 py-3 fw-bold text-primary-dark shadow-sm rounded-3 uppercase franklin-family"
-            style="border: none; color: #003d6b;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            CLAIM OFFER
+        <a href="#linkup-offer" id="claim-offer-btn" class="btn bg-yellow btn-lg px-5 py-3 fw-bold text-primary-dark shadow-sm rounded-3 uppercase franklin-family"
+            style="border: none; color: #003d6b;">
+            REVIEW OFFER
         </a>
     </div>
 </section>
@@ -60,8 +60,8 @@
 </section>
 
 <!-- Section of plan details -->
-<section class="bogo-section py-5 bg-white">
-    <div class="container">
+<section id="linkup-offer" class="bogo-section py-5 bg-white">
+    <div class="container" style="max-width:1240px;">
         <div class="row g-5 align-items-center">
 
          <div class="col-lg-6 text-center d-none d-md-block">
@@ -288,7 +288,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                             </div>
                         </div>
 
-                        <button class="btn franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #ffc107; color: #054A76;font-size:32px;font-weight:400;">
+                        <button class="btn franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #ffc107; color: #054A76;font-size:36px;font-weight:400;">
                             CLAIM OFFER
                         </button>
                     </div>
@@ -874,7 +874,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                     KEEP YOUR PHONE&nbsp;AND&nbsp;NUMBER
                 </div>
                 <div class="description-modal">
-                    <p>Check your zip code and phone below to make sure they are LinkUp compatible</p>
+                    <p>Check IMEI device number below to make sure they are LinkUp compatible</p>
                   
                 </div>
                 <div class="container">
@@ -890,6 +890,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                             <div id="imeiFeedback" class="mt-3 fw-bold d-none"></div>
                              
                             <!-- <a href="">Can't find your IMEI?</a> -->
+                             <button type="link" class="btn btn-link text-decoration-underline" style="color: #007bff;">Can't find your IMEI?</button>
                         </div>
                 </div>
                             </div>
