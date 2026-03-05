@@ -1,13 +1,15 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/header.php'; //echo $data['tid']; ?>
+
+
 <!-- Hero Banner Section -->
 <section class="hero-banner py-5 bg-white">
     <div class="container text-center py-5">
         <h1 class="display-1 fw-bold text-warning main-title mb-0 font-yellow" style="font-family: 'Roboto';text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
-            2X EVERYTHING
+            <?php echo $data['main_title']; ?>
         </h1>
 
         <h2 class="blue-heading mb-4">
-            2X&nbsp;THE&nbsp;COVERAGE. 2X&nbsp;THE&nbsp;DATA. 2X&nbsp;THE&nbsp;VALUE
+            <?PHP echo $data['blue_heading_1']; ?>
         </h2>
 
         <!-- <p class="lead text-dark mx-auto mb-5 franklin-family" style="max-width: 900px; font-weight: 500;">
@@ -17,13 +19,13 @@
         </p> -->
 
         <div style="max-width: 900px;" class="mx-auto description">
-            <p><span>Activate your line</span> with this <span>limited-time offer</span> and your second month completely free! Don't miss out, get started&nbsp;today.</p>
+            <p><?php echo $data['main_description']; ?></p>
             </p>
         </div>
 
         <a href="#linkup-offer" id="claim-offer-btn" class="btn bg-yellow btn-lg px-5 py-3 fw-bold text-primary-dark shadow-sm rounded-3 uppercase franklin-family"
             style="border: none; color: #003d6b;">
-            REVIEW OFFER
+            <?php echo $data['review_offer_btn']; ?>
         </a>
     </div>
 </section>
@@ -37,30 +39,36 @@
                 <img src="<?php echo URLROOT; ?>/img/LinkUpMobile_Images_PIB_Content_v3.png" alt="Smartphone" class="img-fluid">
 
                 <div class="promo-bubble bubble-blue d-none d-md-block franklin-family">
-                    BUY 1 MONTH, <br> GET 1 MONTH FREE
+                    <?php echo $data['promo_bubble_text']; ?>
                 </div>
 
                 <div class="promo-bubble bubble-yellow d-none d-md-block franklin-family">
-                    UNLIMITED TALK & TEXT + <br> ROAMING TO & WITHIN MEXICO
+                    <?php echo $data['promo_bubble_text_2']; ?>
                 </div>
+                <div style="position: relative;height: 150px;background-color: rgba(255, 255, 255);filter: blur(18px);margin-top:-100px;"></div>
             </div>
 
             <div class="col-md-6 d-md-none mt-4">
                 <div class="blue-heading text-center mb-3">
-                    BUY 1 MONTH, GET&nbsp;1&nbsp;MONTH&nbsp;FREE
+                    <?php echo $data['promo_bubble_text']; ?>
                 </div>
                 <div class="description">
-                    <p>With your LinkUp data plan you get <span>additional perks</span> such as <span>unlimited talk & text</span> as well as roaming included to and within&nbsp;Mexico <img src="https://flagcdn.com/24x18/mx.png" class="me-2" alt="Mexico"></p>
+                    <p><?php echo $data['promo_perks_description']; ?> <img src="https://flagcdn.com/24x18/mx.png" class="me-2" alt="Mexico"></p>
 
                 </div>
             </div>
 
         </div>
+        
+    </div>
+    
+
     </div>
 </section>
 
 <!-- Section of plan details -->
 <section id="linkup-offer" class="bogo-section py-5 bg-white">
+    
     <div class="container" style="max-width:1240px;">
         <div class="row g-5 align-items-center">
 
@@ -75,23 +83,23 @@
 
                 <div class="promo-summary-box rounded-4 overflow-hidden shadow-sm mx-auto" style="max-width: 550px;">
                     <div class="bg-primary text-white py-2 px-3 text-start d-flex justify-content-between align-items-center" style="background-color: #07639D !important;">
-                        <span class="fw-bold small franklin-family" style="font-size: 32px;">BUY ONE MONTH. <span class="font-yellow">GET ONE MONTH FREE.</span></span>
+                        <span class="fw-bold small franklin-family" style="font-size: 32px;"><?php echo $data['bogo_deal_title']; ?></span>
                     </div>
                     <div class="py-3 px-5 text-start d-flex justify-content-between align-items-center" style="background-color: #FFF6D6;">
                         <div>
                             <p class="mb-0 fw-bold text-brown franklin-family" style="font-size: 30px;line-height: normal;
-letter-spacing: -0.9px;">YOU'RE GETTING:</p>
+letter-spacing: -0.9px;"><?php echo $data['bogo_deal_plan'];?></p>
                             <h4 class="mb-0 fw-bold font-yellow franklin-family" style="font-size: 26px;">12<span style="font-size: 20px;line-height: normal;
 letter-spacing: -0.78px;">GB</span></h4>
                             <small class="d-block fw-bold franklin-family" style="font-size: 20px;color: #8F7000;line-height: normal;
 letter-spacing: -0.6px;">eSIM </small>
                             <small class="d-block fw-bold franklin-family" style="font-size: 20px;color: #8F7000;line-height: normal;
-letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
+letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
                         </div>
                         <div class="text-left">
                             <p class="mb-0 fw-bold franklin-family" style="color:#292000;font-size:30px;line-height:normal;">SUBTOTAL:</p>
                             <h2 class="mb-0 fw-bold franklin-family" style="color: #524000;font-size:70px;letter-spacing: -2.1px;line-height:normal;">$30 <small class="fw-normal" style="font-size: 20px;letter-spacing: -0.6px;
-">(+ taxes & fees)*</small></h2>
+"><?php echo $data['bogo_deal_charges'];?></small></h2>
                         </div>
                     </div>
                 </div>
@@ -100,20 +108,20 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
             <div class="col-lg-6">
                 <div class="card border-0 shadow-lg rounded-5 bogo-main-card mx-auto">
                     <div class="card-header text-center py-4 border-0 mb-4" style="background-color: #005a9c; border-radius: 25px 25px 0 0;">
-                        <h2 class="font-yellow roboto-family fw-bold mb-0" style="font-size: 64px;line-height: 1;">BOGO DEAL</h2>
-                        <p class="text-white mb-0 roboto-family" style="font-size: 30px;line-height: 1;">Limited time only!</p>
+                        <h2 class="font-yellow roboto-family fw-bold mb-0" style="font-size: 64px;line-height: 1;"><?php echo $data['bogo_heading']; ?></h2>
+                        <p class="text-white mb-0 roboto-family" style="font-size: 30px;line-height: 1;"><?php echo $data['bogo_subheading']; ?></p>
                     </div>
 
                     <div class="card-body p-4 text-center">
-                        <p class="text-start fw-bold roboto-family mb-3" style="color:#292000;font-size:30px;">Data:</p>
+                        <p class="text-start fw-bold roboto-family mb-3" style="color:#292000;font-size:30px;"><?php echo $data['bogo_data_label']; ?></p>
 
                         <div class="pricing-box">
-                            <h2 class="mb-0 roboto-family" style="font-size: 48px;color:#524000; font-weight: 900;">12<span style="font-size: 40px;">GB</span></h2>
-                            <p class="mb-0 roboto-family" style="font-size: 24px;color:#524000; font-weight: 500;">$30 / mo.</p>
+                            <h2 class="mb-0 roboto-family" style="font-size: 48px;color:#524000; font-weight: 900;"><?php echo $data['bogo_data_amount']; ?></h2>
+                            <p class="mb-0 roboto-family" style="font-size: 24px;color:#524000; font-weight: 500;"><?php echo $data['bogo_price']; ?></p>
                         </div>
 
                         <div class="d-flex align-items-center justify-content-center py-3 mt-4" style="cursor: pointer;">
-                            <span class="franklin-family fw-bold h5 mb-0 me-3" style="color:#0877BC;font-size:48px;">SEE PLAN DETAILS</span>
+                            <span class="franklin-family fw-bold h5 mb-0 me-3" style="color:#0877BC;font-size:48px;"><?php echo $data['bogo_see_details']; ?></span>
                             <button class="plus-btn border-0" data-bs-toggle="collapse"
                                 data-bs-target="#planDetailsCollapse"
                                 aria-expanded="false"
@@ -123,23 +131,11 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                         <div class="collapse" id="planDetailsCollapse">
                             <div class="plan-details-content py-md-3">
                                 <ul class="mb-0 plan-features-list">
-                                    <li>
-                                        <span class="fw-demi">12 GB</span>
-                                        <span class="fw-medium">high-speed data</span>
-                                    </li>
-                                    <li>
-                                        <span class="fw-demi">Unlimited talk & text</span>
-                                        <span class="fw-medium">to and within US, Canada, and Mexico</span>
-                                    </li>
-                                    <li>
-                                        <span class="fw-medium">Unlimited calling to</span>
-                                        <span class="fw-demi">100+ international destinations</span>
-                                    </li>
-                                    <li class="fw-demi">Mobile Hotspot</li>
-                                    <li>
-                                        <span class="fw-demi">Global Roaming</span>
-                                        <span class="fw-medium">via Wi-Fi Calling</span>
-                                    </li>
+                                    <li><?php echo $data['plan_feature_1']; ?></li>
+                                    <li><?php echo $data['plan_feature_2']; ?></li>
+                                    <li><?php echo $data['plan_feature_3']; ?></li>
+                                    <li><?php echo $data['plan_feature_4']; ?></li>
+                                    <li><?php echo $data['plan_feature_5']; ?></li>
                                 </ul>
                             </div>
                         </div>
@@ -147,7 +143,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                         <a href="#" class="d-block my-5 underline-link" data-bs-toggle="collapse"
                             data-bs-target="#broadbandCard"
                             aria-expanded="false"
-                            aria-controls="broadbandCard">Check broadband facts label</a>
+                            aria-controls="broadbandCard"><?php echo $data['broadband_label']; ?></a>
 
                         <div class="broadband-label-card bg-white rounded-3 shadow-sm mx-auto mb-5 collapse" style="max-width: 362px;" id="broadbandCard">
                             <div class="header-premium text-center text-white py-2 rounded-top">
@@ -288,8 +284,8 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                             </div>
                         </div>
 
-                        <button class="btn franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #ffc107; color: #054A76;font-size:36px;font-weight:400;">
-                            CLAIM OFFER
+                        <button class="btn bg-yellow franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #054A76;font-size:36px;font-weight:400;">
+                            <?php echo $data['claim_offer_btn']; ?>
                         </button>
                     </div>
                 </div>
@@ -307,10 +303,10 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
     <div class="container text-center">
 
         <h2 class="text-uppercase mb-4 blue-heading">
-            International built in. No extra&nbsp;cost.
+            <?php echo $data['intl_heading']; ?>
         </h2>
         <div style="max-width: 900px;" class="mx-auto description">
-            <p>With LinkUp Mobile, you can enjoy <span>unlimited&nbsp;landline and mobile calls to 100+&nbsp;international&nbsp;destinations</span></p>
+            <p><?php echo $data['intl_description']; ?></p>
             </p>
         </div>
 
@@ -326,15 +322,15 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                 <div class="card border-0 shadow-lg p-5 rounded-5 mx-auto" style="max-width: 450px; min-height: 400px;">
                     <div class="text-center mb-4">
                         <h4 class="franklin-family" style="color: #0877BC;font-size: 32px;font-weight: 600;">
-                            Search for unlimited<br>international destination:
+                            <?php echo $data['intl_search_heading']; ?>
                         </h4>
                     </div>
                     <div class="dropdown custom-destination-dropdown">
                         <button class="btn btn-white shadow-sm border-0 dropdown-toggle w-100 d-flex align-items-center justify-content-between" type="button" id="countryDropdown" data-bs-toggle="dropdown">
-                            <span id="selected-country-label">Select a destination</span>
+                            <span id="selected-country-label"><?php echo $data['intl_select_destination']; ?></span>
 
                         </button>
-                        <ul class="dropdown-menu w-100 shadow-sm border-0" id="countries-list">
+                        <ul class="dropdown-menu w-100 shadow-sm border-0" id="countries-list" style="max-height: 200px;overflow-y:scroll;">
                         </ul>
                     </div>
 
@@ -378,7 +374,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                     <div class="info-bubble bubble-section collapsed-state  py-4 px-5" id="bubble1">
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- <h2 class="bubble-heading">UNLIMITED MOBILE</h2> -->
-                            <h3 class="mb-0">UNLIMITED LANDLINE<br>AND MOBILE</h3>
+                            <h3 class="mb-0"><?php echo $data['bubble_heading_1']; ?></h3>
                             <button class="plus-btn bubble-toggle border-0" id="bubbleBtn1" type="button" data-bs-toggle="collapse" data-bs-target="#bubbleContent1" aria-expanded="false" aria-controls="bubbleContent1" onClick="toggleIcon('bubbleIcon1','bubble1')">
                                 <i id="bubbleIcon1" class="fa fa-plus"></i>
                             </button>
@@ -386,7 +382,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                         <div class="collapse" id="bubbleContent1">
                             <div class="bubble-content">
                                 <hr class="bubble-divider">
-                                <p class="bubble-text">With LinkUp Mobile, you have unlimited landline and mobile calls to the following destinations:</p>
+                                <p class="bubble-text"><?php echo $data['bubble_content_1']; ?></p>
                                 <table class="table table-sm table-borderless mb-0" style="--bs-table-bg: none;">
                                     <tbody>
                                         <tr>
@@ -487,7 +483,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                     <div class="info-bubble bubble-section collapsed-state  py-4 px-5" id="bubble2">
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- <h2 class="bubble-heading">UNLIMITED MOBILE</h2> -->
-                            <h3 class="mb-0">UNLIMITED LANDLINE</h3>
+                            <h3 class="mb-0"><?php echo $data['bubble_heading_2']; ?></h3>
                             <button class="plus-btn bubble-toggle border-0" id="bubbleBtn2" type="button" data-bs-toggle="collapse" data-bs-target="#bubbleContent2" aria-expanded="false" aria-controls="bubbleContent2" onClick="toggleIcon('bubbleIcon2','bubble2')">
                                 <i id="bubbleIcon2" class="fa fa-plus"></i>
                             </button>
@@ -495,7 +491,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                         <div class="collapse" id="bubbleContent2">
                             <div class="bubble-content">
                                 <hr class="bubble-divider">
-                                <p class="bubble-text">With LinkUp Mobile, you have unlimited landline calls to the following destinations:</p>
+                                <p class="bubble-text"><?php echo $data['bubble_content_2']; ?></p>
                                 <table class="table table-sm table-borderless mb-0" style="--bs-table-bg: none;">
                                     <tbody>
                                         <tr>
@@ -571,7 +567,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                     <div class="info-bubble bubble-section collapsed-state  py-4 px-5" id="bubble3">
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- <h2 class="bubble-heading">UNLIMITED MOBILE</h2> -->
-                            <h3 class="mb-0">UNLIMITED MOBILE</h3>
+                            <h3 class="mb-0"><?php echo $data['bubble_heading_3']; ?></h3>
                             <button class="plus-btn bubble-toggle border-0" id="bubbleBtn3" type="button" data-bs-toggle="collapse" data-bs-target="#bubbleContent3" aria-expanded="false" aria-controls="bubbleContent3" onClick="toggleIcon('bubbleIcon3','bubble3')">
                                 <i id="bubbleIcon3" class="fa fa-plus"></i>
                             </button>
@@ -579,7 +575,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                         <div class="collapse" id="bubbleContent3">
                             <div class="bubble-content">
                                 <hr class="bubble-divider">
-                                <p class="bubble-text">With LinkUp Mobile, you have unlimited mobile calls to the following destinations:</p>
+                                <p class="bubble-text"><?php echo $data['bubble_content_3']; ?></p>
 
                                 <table class="table table-sm table-borderless mb-0" style="--bs-table-bg: none;">
                                     <tbody>
@@ -607,7 +603,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
         </div>
         <div class="row p-5">
             <div class="col text-center">
-                <a href="https://linkupmobile.com/wp-content/themes/councilio/pdf/ILD_BroadbandLM.pdf" target="_blank" class="underline-link">View our full list of international destinations</a>
+                <a href="https://linkupmobile.com/wp-content/themes/councilio/pdf/ILD_BroadbandLM.pdf" target="_blank" class="underline-link"><?php echo $data['view_full_list']; ?></a>
             </div>
         </div>
     </div>
@@ -616,17 +612,17 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 <!--Why LinnkUp Mobile Section-->
 <section class="why-linkup py-5 bg-white">
     <div class="container text-center">
-        <h2 class="mb-5 blue-heading">WHY LINKUP?</h2>
+        <h2 class="mb-5 blue-heading"><?php echo $data['why_linkup_heading']; ?></h2>
 
         <div id="linkupCarousel" class="carousel slide custom-carousel shadow-lg rounded-5 overflow-hidden mx-auto pt-md-5 pt-4 px-md-5 px-4" data-bs-ride="carousel" style="max-width: 1240px;">
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="row g-4 m-0 p-0" style="min-height: 185px;">
-                        <div class="col--md-12 px-0 pe-md-2 mt-0 mb-2 mb-md-0">
-                            <div class="rounded-4 p-md-4 p-3 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #0076bd !important;">
+                    <div class="row g-4 m-0 p-0" style="height: 185px;">
+                        <div class="col--md-12 px-0 mt-0 mb-md-0">
+                            <div class="rounded-4 p-3 d-flex align-items-center  justify-content-around gap-3 h-100" style="background-color: #0076bd !important;">
                                 <img src="<?php echo URLROOT; ?>/img/phone-icon.png" alt="Phone Icon" class="img-fluid banner-icon-1">
-                                <h2 class="display-5 fw-bold text-uppercase text-white">Unlimited<br>Talk and Text</h2>
+                                <h2 class="display-5 fw-bold text-uppercase text-white"><?php echo $data['carousel_slide_1']; ?></h2>
                                 <img src="<?php echo URLROOT; ?>/img/speech-bubbles.png" alt="Chat bubbles" class="img-fluid banner-icon-1">
                             </div>
                         </div>
@@ -641,62 +637,62 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                 </div>
 
                 <div class="carousel-item">
-                    <!-- <div class="" > -->
-                    <div class="row g-4 m-0 p-0" style="min-height: 185px;">
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0">
+                
+                    <div class="row g-4 m-0 p-0">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0"  style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
                                 <img src="<?php echo URLROOT; ?>/img/northamerica_icon.png" alt="Map" class="img-fluid" style="min-width:95px">
-                                <h2 class="franklin-family carousel-heading text-blue-2">ROAMING WITHIN THE US, MEXICO AND CANADA</h2>
+                                <h2 class="franklin-family carousel-heading text-blue-2"><?php echo $data['carousel_slide_2_col1']; ?></h2>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0"  style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #FFEDAD;">
                                 <img src="<?php echo URLROOT; ?>/img/map_61807711.png" alt="Map" class="img-fluid" style="min-width:95px">
-                                <h2 class="franklin-family carousel-heading text-brown">100+ UNLIMITED INTERNATIONAL&nbsp;DESTINATIONS</h2>
+                                <h2 class="franklin-family carousel-heading text-brown"><?php echo $data['carousel_slide_2_col2']; ?></h2>
                             </div>
                         </div>
                     </div>
-                    <!-- </div> -->
+            
                 </div>
 
                 <div class="carousel-item">
-                    <!-- <div class="" > -->
-                    <div class="row g-4 m-0 p-0" style="min-height: 185px;">
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0">
+                  
+                    <div class="row g-4 m-0 p-0">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0"  style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #FFEDAD;">
                                 <img src="<?php echo URLROOT; ?>/img/mexico_flag.png" alt="Map" class="img-fluid" style="min-width:95px">
-                                <h2 class="franklin-family carousel-heading text-brown">ROAMING WITHIN MEXICO&nbsp;INCLUDED</h2>
+                                <h2 class="franklin-family carousel-heading text-brown"><?php echo $data['carousel_slide_3_col1']; ?></h2>
                             </div>
                         </div>
 
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0"  style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
                                 <img src="<?php echo URLROOT; ?>/img/price_tag.png" alt="Map" class="img-fluid" style="min-width:95px">
-                                <h2 class="franklin-family carousel-heading text-blue-2">AFFORDABLE DATA ADD-ONS</h2>
+                                <h2 class="franklin-family carousel-heading text-blue-2"><?php echo $data['carousel_slide_3_col2']; ?></h2>
                             </div>
                         </div>
 
                     </div>
-                    <!-- </div> -->
+              
                 </div>
 
                 <div class="carousel-item">
-                    <!-- <div class="" > -->
-                    <div class="row g-4 m-0 p-0" style="min-height: 185px;">
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0">
+                 
+                    <div class="row g-4 m-0 p-0">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0"  style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
                                 <img src="<?php echo URLROOT; ?>/img/usa_5g.png" alt="Map" class="img-fluid" style="min-width: 95px;">
-                                <h2 class="franklin-family carousel-heading text-blue-2">NATIONWIDE HIGH-SPEED COVERAGE</h2>
+                                <h2 class="franklin-family carousel-heading text-blue-2"><?php echo $data['carousel_slide_4_col1']; ?></h2>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0" style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #FFEDAD;">
                                 <img src="<?php echo URLROOT; ?>/img/call_agent.png" alt="Map" class="img-fluid" style="width: 150px;">
-                                <h2 class="franklin-family carousel-heading text-brown">24/7 CUSTOMER SUPPORT</h2>
+                                <h2 class="franklin-family carousel-heading text-brown"><?php echo $data['carousel_slide_4_col2']; ?></h2>
                             </div>
                         </div>
                     </div>
-                    <!-- </div> -->
+                    
                 </div>
 
             </div>
@@ -735,9 +731,9 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
         <div class="row">
             <div class="col">
                 <div class="container text-center">
-                    <h2 class="blue-heading">REVIEWS</h2>
+                    <h2 class="blue-heading"><?php echo $data['reviews_heading']; ?></h2>
                     <div class="description mx-auto" style="max-width: 900px;">
-                        <p>Customers are talking, and we're listening.<br><span>Real time reviews</span> from users who have saved with LinkUp.</p>
+                        <p><?php echo $data['reviews_description']; ?></p>
                     </div>
                 </div>
             </div>
@@ -750,68 +746,68 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 
                         <div class="swiper-slide">
                             <div class="speech-bubble">
-                                <h4 class="fw-bold mb-3">Great customer service, even better value!</h4>
-                                <p>I was unsure at first, but customer support really helped me understand the plan. Everything works as promised, and the value for the price honestly surprised me.</p>
+                                <h4 class="fw-bold mb-3"><?php echo $data['review_1_heading']; ?></h4>
+                                <p><?php echo $data['review_1_text']; ?></p>
                             </div>
                             <div class="client-info">
-                                <p class="client-name">Jasmine M.</p>
-                                <p class="client-city">Memphis, TN</p>
+                                <p class="client-name"><?php echo $data['review_1_name']; ?></p>
+                                <p class="client-city"><?php echo $data['review_1_city']; ?></p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <div class="speech-bubble">
-                                <h4 class="fw-bold mb-3">Unlimited talk and text</h4>
-                                <p>I use my phone all day, so having unlimited talk and text was important. Calls are clear, no dropped issues, and I never worry about overages anymore.</p>
+                                <h4 class="fw-bold mb-3"><?php echo $data['review_2_heading']; ?></h4>
+                                <p><?php echo $data['review_2_text']; ?></p>
                             </div>
                             <div class="client-info">
-                                <p class="client-name">Tasha D.</p>
-                                <p class="client-city">Atlanta, GA</p>
+                                <p class="client-name"><?php echo $data['review_2_name']; ?></p>
+                                <p class="client-city"><?php echo $data['review_2_city']; ?></p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <div class="speech-bubble">
-                                <h4 class="fw-bold mb-3">Everything was clear</h4>
-                                <p>What I love most is that there are no hidden fees. Everything was clear from the start and the service is very reliable for my business needs.</p>
+                                <h4 class="fw-bold mb-3"><?php echo $data['review_3_heading']; ?></h4>
+                                <p><?php echo $data['review_3_text']; ?></p>
                             </div>
                             <div class="client-info">
-                                <p class="client-name">Robert S.</p>
-                                <p class="client-city">Dallas, TX</p>
+                                <p class="client-name"><?php echo $data['review_3_name']; ?></p>
+                                <p class="client-city"><?php echo $data['review_3_city']; ?></p>
                             </div>
                         </div>
 
 
                         <div class="swiper-slide">
                             <div class="speech-bubble">
-                                <h4 class="fw-bold mb-3">Great customer service, even better value!</h4>
-                                <p>I was unsure at first, but customer support really helped me understand the plan. Everything works as promised, and the value for the price honestly surprised me.</p>
+                                <h4 class="fw-bold mb-3"><?php echo $data['review_1_heading']; ?></h4>
+                                <p><?php echo $data['review_1_text']; ?></p>
                             </div>
                             <div class="client-info">
-                                <p class="client-name">Jasmine M.</p>
-                                <p class="client-city">Memphis, TN</p>
+                                <p class="client-name"><?php echo $data['review_1_name']; ?></p>
+                                <p class="client-city"><?php echo $data['review_1_city']; ?></p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <div class="speech-bubble">
-                                <h4 class="fw-bold mb-3">Unlimited talk and text</h4>
-                                <p>I use my phone all day, so having unlimited talk and text was important. Calls are clear, no dropped issues, and I never worry about overages anymore.</p>
+                                <h4 class="fw-bold mb-3"><?php echo $data['review_2_heading']; ?></h4>
+                                <p><?php echo $data['review_2_text']; ?></p>
                             </div>
                             <div class="client-info">
-                                <p class="client-name">Tasha D.</p>
-                                <p class="client-city">Atlanta, GA</p>
+                                <p class="client-name"><?php echo $data['review_2_name']; ?></p>
+                                <p class="client-city"><?php echo $data['review_2_city']; ?></p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <div class="speech-bubble">
-                                <h4 class="fw-bold mb-3">Everything was clear</h4>
-                                <p>What I love most is that there are no hidden fees. Everything was clear from the start and the service is very reliable for my business needs.</p>
+                                <h4 class="fw-bold mb-3"><?php echo $data['review_3_heading']; ?></h4>
+                                <p><?php echo $data['review_3_text']; ?></p>
                             </div>
                             <div class="client-info">
-                                <p class="client-name">Robert S.</p>
-                                <p class="client-city">Dallas, TX</p>
+                                <p class="client-name"><?php echo $data['review_3_name']; ?></p>
+                                <p class="client-city"><?php echo $data['review_3_city']; ?></p>
                             </div>
                         </div>
 
@@ -832,22 +828,22 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
 </section>
 
 <section class="human-support-section py-5">
-    <div class="container" style="max-width: 1000px;">
+    <div class="container p-md-0" style="max-width: 1000px;">
         <!-- <div class="rounded-5 p-4 p-md-5 text-white shadow-lg overflow-visible" 
              style="background-color: #4db8ff;"> -->
 
         <!-- <img src="hand-top.png" alt="" class="hand-decoration hand-top d-none d-lg-block"> -->
 
-        <div class="row align-items-center rounded-5 p-4 p-md-5 text-white shadow-lg"
+        <div class="row align-items-center rounded-5 mx-3 mx-md-0 p-4 p-md-5 text-white shadow-lg"
             style="background-color: #4db8ff;">
             <div class="col-md-8 z-1 text-center text-md-start">
-                <h2 class="display-5 fw-bold mb-3 text-uppercase">24/7 Human Support</h2>
+                <h2 class="display-5 fw-bold mb-3 text-uppercase"><?php echo $data['support_heading']; ?></h2>
                 <p class="lead mb-4 fw-medium" style="max-width: 500px;">
-                    Questions or need help? Our bilingual customer support team is ready to step in, answer your questions, and support you every step.
+                    <?php echo $data['support_description']; ?>
                 </p>
-                <a href="#" class="btn btn-warning franklin-family btn-lg px-5 py-3 fw-bold text-primary-dark rounded-3 shadow-sm"
-                    style="background-color: #ffc107; border: none; color: #003d6b;">
-                    VISIT HELP CENTER
+                <a href="https://linkupmobile.com/support/" target="_blank" class="btn bg-yellow franklin-family btn-lg px-5 py-3 fw-bold text-primary-dark rounded-3 shadow-sm"
+                    style="border: none; color: #003d6b;">
+                    <?php echo $data['support_link_text']; ?>
                 </a>
             </div>
 
@@ -872,58 +868,58 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
             </div>
             <div class="modal-body">
                 <div class="blue-heading-modal text-center mb-3">
-                    KEEP YOUR PHONE&nbsp;AND&nbsp;NUMBER
+                    <?php echo $data['modal_heading']; ?>
                 </div>
                 <div class="description-modal">
-                    <p class="mb-0">Check your IMEI code to make sure they are LinkUp eSIM compatible</p>
-                    <div class="small-text text-center mb-3" style="max-width:650px;margin:auto;">Your <b>IMEI</b> (International Mobile Equipment Identity) is a unique number that identifies your phone and lets us check if it's compatible with LinkUp Mobile's eSIM service.</div>
+                    <p class="mb-0"><?php echo $data['modal_imei_explanation']; ?></p>
+                    <div class="small-text text-center mb-3" style="max-width:650px;margin:auto;"><?php echo $data['modal_imei_description']; ?></div>
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-6 offset-3 text-center imei-section">
-                            <label for="imeiInput">IMEI:</label>
-                            <input type="text" id="imeiInput" class="form-control mb-3" placeholder="Enter your 15 - 17 digit IMEI">
+                        <div class="col-md-6 offset-md-3 text-center imei-section">
+                            <label for="imeiInput"><?php echo $data['modal_imei_label']; ?></label>
+                            <input type="text" id="imeiInput" class="form-control mb-3" placeholder="<?php echo $data['modal_imei_placeholder']; ?>">
 
                             <div class="d-flex justify-content-center gap-3">
-                                <button class="btn bg-yellow btn-lg franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" onclick="checkImei()">Check Compatibility</button>
+                                <button class="btn bg-yellow btn-lg franklin-family uppercase fw-bold rounded-4 shadow-sm py-2 px-5 mb-md-4 mb-3" onclick="checkImei()" style="color: #003d6b;"><?php echo $data['modal_check_btn']; ?></button>
 
                             </div>
                             <div id="imeiFeedback" class="mt-3 fw-bold d-none"></div>
 
                             <!-- <a href="">Can't find your IMEI?</a> -->
-                            <button type="link" class="btn btn-link underline-link" style="color: #007bff;" data-bs-toggle="collapse" data-bs-target="#imeiHelpSection">Can't find your IMEI?</button>
+                            <button type="link" class="btn btn-link underline-link" style="color: #07639D;" data-bs-toggle="collapse" data-bs-target="#imeiHelpSection"><?php echo $data['intl_cannot_find_imei']; ?></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer" style="border:none; margin:1rem;">
+            <div class="modal-footer" style="border:none;">
                 <div class="container collapse" id="imeiHelpSection">
                     <div class="rounded-4 p-3" style="background-color: #FFF6D6;">
                     <div class="row">
                         <div class="col text-center mb-3" style="color:#524000;font-family:'Roboto', sans-serif;font-weight:900;">
-                            <h2><b>LOCATE YOUR IMEI</b></h2>
+                            <h2><b><?php echo $data['modal_locate_heading']; ?></b></h2>
                         </div>
                     </div>
                     <div class="row px-4">
                         <div class="col col-md-6 mb-3">
-                            <h3 class="fw-bold franklin-family" style="color:#8F7000">Android Users:</h3>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Option 1:</b> Dial *#06#</p>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Option 2:</b> Go to Settings > About Phone</p>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Option 3:</b> Visit <a href="http://www.android.com/find" target="_blank" rel="noopener noreferrer">www.android.com/find</a></p>
+                            <h3 class="fw-bold franklin-family" style="color:#8F7000"><?php echo $data['modal_android_heading']; ?></h3>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_android_option_1']; ?></p>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_android_option_2']; ?></p>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_android_option_3']; ?></p>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <h3 class="fw-bold franklin-family" style="color:#8F7000">iPhone Users:</h3>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Step 1:</b> Go to Settings > General > About</p>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Step 2:</b> Scroll to the bottom</p>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><b>Step 3:</b> You will find your 15 - 17 IMEI<br>number under “Available&nbsp;SIM”</p>
+                            <h3 class="fw-bold franklin-family" style="color:#8F7000"><?php echo $data['modal_iphone_heading']; ?></h3>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_iphone_step_1']; ?></p>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_iphone_step_2']; ?></p>
+                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_iphone_step_3']; ?></p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col text-center">
-                            <h3 class="fw-bold franklin-family" style="color:#8F7000">Still need help?</h3>
-                            <a href="#" class="btn btn-warning btn-lg franklin-family px-3 py-2 fw-bold text-primary-dark rounded-3 shadow-sm"
-                    style="background-color: #ffc107; border: none; color: #003d6b;">
-                    VISIT HELP CENTER
+                            <h3 class="fw-bold franklin-family" style="color:#8F7000"><?php echo $data['modal_still_need_help']; ?></h3>
+                            <a href="https://linkupmobile.com/support/"  target="_blank" class="btn bg-yellow btn-lg franklin-family px-3 py-2 fw-bold text-primary-dark rounded-3 shadow-sm"
+                    style="border: none; color: #003d6b;">
+                    <?php echo $data['support_link_text']; ?>
                 </a>
                         </div>
                     </div>
@@ -1564,7 +1560,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
     // 2. Función para actualizar la interfaz
     function selectCountry(id) {
         const country = countries.find(c => c.id === id);
-        const lang = 'en'; // Aquí podrías usar una variable global de idioma si la tienes
+        const lang = '<?php echo $data['lang']; ?>'; // Aquí podrías usar una variable global de idioma si la tienes
 
         // Actualizar el botón
         document.getElementById('selected-country-label').innerHTML = `
@@ -1586,36 +1582,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
         }
     }
 
-    // Configura la fecha de finalización (ejemplo: 3 días a partir de ahora)
-    const countdownDate = new Date();
-    countdownDate.setDate(countdownDate.getDate() + 3);
-
-    const updateCountdown = () => {
-        const now = new Date().getTime();
-        const distance = countdownDate - now;
-
-        // Cálculos de tiempo
-        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Inyectar en el HTML
-        document.getElementById("days").innerText = d;
-        document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
-        document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
-        document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
-
-        // Si la oferta termina
-        if (distance < 0) {
-            clearInterval(interval);
-            document.querySelector(".text-warning").innerText = "OFFER EXPIRED";
-        }
-    };
-
-    // Ejecutar cada segundo
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Ejecución inicial para evitar el salto de 1s
+   
 
 
     // document.getElementById('imeiInput').addEventListener('input', function(e) {
@@ -1697,10 +1664,11 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                 //feedback.innerText = "✅ Este dispositivo es compatible.";
                 feedback.innerText = "✅ This device is compatible. you will be redirected shortly.";
                 feedback.classList.add('text-success');
+                var tid = '<?php echo $data['tid']; ?>'
 
                 // Esperar 5 segundos y enviar via POST
                 setTimeout(() => {
-                    sendImeiPost(imei);
+                    sendImeiPost(imei,tid);
                 }, 5000);
 
             } else {
@@ -1716,7 +1684,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
         }
     }
 
-    async function sendImeiPost(imei) {
+    async function sendImeiPost(imei,tid="") {
         // try {
         //     await fetch('<?php //echo URLROOT; 
                             ?>/pages/checkout', {
@@ -1734,10 +1702,16 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
         form.method = 'POST';
         form.action = '<?php echo URLROOT; ?>/checkout';
         const hiddenField = document.createElement('input');
+        const hiddenField2 = document.createElement('input');
         hiddenField.type = 'hidden';
         hiddenField.name = 'imei';
         hiddenField.value = imei;
         form.appendChild(hiddenField);
+
+        hiddenField2.type = 'hidden';
+        hiddenField2.name = 'tid';
+        hiddenField2.value = tid;
+        form.appendChild(hiddenField2);
 
 
         document.body.appendChild(form);

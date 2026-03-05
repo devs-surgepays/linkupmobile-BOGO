@@ -9,7 +9,9 @@
     max-height: 97px;
     /* Ajusta según el espacio disponible en el header */
 }
-    
+    .testimonial-section {
+    padding: 25px !important;
+    }
     /* Main Hero Heading - "2X EVERYTHING" */
     .hero-banner h1 {
         font-size: 48px !important;    /* Reduced from display-1 (~80px) */

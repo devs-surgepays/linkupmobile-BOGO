@@ -113,3 +113,35 @@
 <!-- <script src="<?php //echo URLROOT; ?>/js/swiper-bundle.min.js"></script> -->
 
 
+<script>
+     // Configura la fecha de finalización (ejemplo: 3 días a partir de ahora)
+    const countdownDate = new Date();
+    countdownDate.setDate(countdownDate.getDate() + 3);
+
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        // Cálculos de tiempo
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Inyectar en el HTML
+        document.getElementById("days").innerText = d;
+        document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
+        document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
+        document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+
+        // Si la oferta termina
+        if (distance < 0) {
+            clearInterval(interval);
+            document.querySelector(".text-warning").innerText = "OFFER EXPIRED";
+        }
+    };
+
+    // Ejecutar cada segundo
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Ejecución inicial para evitar el salto de 1s
+</script>

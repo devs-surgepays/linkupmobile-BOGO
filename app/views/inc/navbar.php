@@ -6,17 +6,13 @@
             
             <div class="col-12 col-md-4 d-flex align-items-center justify-content-center small franklin-family">
                 <div class="me-2">
-                    <a href="" class="text-white text-decoration-none fw-bold d-flex align-items-center me-2" style="font-size: 24px;">
-                      <img src="https://flagcdn.com/24x18/us.png" alt="US" class="me-1">
-                    <span class="fw-bold font-yellow">EN</span>
-                    </a>
+                    <a href="<?php echo URLROOT; ?>/en" class="<?php echo ($data['lang']=="en")?"font-yellow":"text-white"; ?> text-decoration-none fw-bold d-flex align-items-center me-2" style="font-size: 24px;">
+                      <img src="https://flagcdn.com/24x18/us.png" alt="US" class="me-1">EN</a>
                 </div>
                 <span class="mx-2">|</span>
                 <div>
-                    <a href="" class="text-white text-decoration-none fw-bold d-flex align-items-center ms-2" style="font-size: 24px;">
-                      <img src="https://flagcdn.com/24x18/mx.png" alt="MX" class="me-1">
-                    <span class="text-white-50">ES</span>
-                    </a>
+                    <a href="<?php echo URLROOT; ?>/es" class="<?php echo ($data['lang']=="es")?"font-yellow":"text-white"; ?> text-decoration-none fw-bold d-flex align-items-center ms-2" style="font-size: 24px;">
+                      <img src="https://flagcdn.com/24x18/mx.png" alt="MX" class="me-1">ES</a>
                 </div>
             </div>
 
@@ -26,25 +22,25 @@
 
             <div class="col-6 col-md-4 d-flex flex-column align-items-center justify-content-md-end">
                 <p class="mb-1 fw-bold font-yellow franklin-family" style="font-size: 24px; letter-spacing: 0.5px;">
-        OFFER ENDS SOON!
+        <?php echo $data['offer_msg']; ?>
       </p>
       
       <div class="d-flex gap-3 text-center franklin-family">
         <div class="px-lg-3 px-md-2">
           <div id="days" class="h4 fw-bolder mb-0">3</div>
-          <small class="d-block" style="font-size: 12px;">DAYS</small>
+          <small class="d-block" style="font-size: 12px;"><?php echo $data['offer_day']; ?></small>
         </div>
         <div class="px-lg-3 px-md-2">
           <div id="hours" class="h4 fw-bolder mb-0">12</div>
-          <small class="d-block" style="font-size: 12px;">HOURS</small>
+          <small class="d-block" style="font-size: 12px;"><?php echo $data['offer_hours']; ?></small>
         </div>
         <div class="px-lg-3 px-md-2">
           <div id="minutes" class="h4 fw-bolder mb-0">59</div>
-          <small class="d-block" style="font-size: 12px;">MINUTES</small>
+          <small class="d-block" style="font-size: 12px;"><?php echo $data['offer_minutes']; ?></small>
         </div>
         <div class="px-lg-3 px-md-2">
           <div id="seconds" class="h4 fw-bolder mb-0">00</div>
-          <small class="d-block" style="font-size: 12px;">SECONDS</small>
+          <small class="d-block" style="font-size: 12px;"><?php echo $data['offer_seconds']; ?></small>
         </div>
       </div>
             </div>
