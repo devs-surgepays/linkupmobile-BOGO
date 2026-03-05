@@ -49,8 +49,8 @@ if (!headers_sent()) {
 
 $rmEnvSet = isset($_ENV['RUN_MODE']);
 $amEnvSet = isset($_ENV['AUTH_MODE']);
-define('ENVIRONMENT', $rmEnvSet ? $_ENV['RUN_MODE'] : 'test');
-define('AUTHENV', $amEnvSet ? $_ENV['AUTH_MODE'] : 'test');
+define('ENVIRONMENT', $rmEnvSet ? $_ENV['RUN_MODE'] : 'production');
+define('AUTHENV', $amEnvSet ? $_ENV['AUTH_MODE'] : 'production');
 
 if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
     error_reporting(E_ALL&~E_NOTICE);
@@ -144,7 +144,7 @@ if (ProPayPal) {
 
 	define("PayPalBaseUrl", $config['PAYPALSANDBOX_BASEURL']);
 
-	define("PayPalENV", "production");
+	define("PayPalENV", "c");
 
 }
 	
