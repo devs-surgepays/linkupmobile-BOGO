@@ -271,6 +271,18 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                         </div>
                                     </div>
 
+                                    <div class="row justify-content-center">
+
+                                        <div class="text-left col-lg-6 col-xs-12">
+
+                                            <input type="hidden" id="postal_code_suffix" name="postal_code_suffix" />
+
+                                            <input type="hidden" id="country" name="country" />
+
+                                        </div>
+
+                                    </div>
+
                                     <div class="row mb-3">
                                         <div class="col-lg-12">
                                             <div class="form-group">
@@ -1107,6 +1119,43 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
             submitStep3({}, '1614');
         });
     });
+
+    function getGeoCode(zip) {
+        var city, state;
+        var lat;
+        var lng;
+        var zip_value;
+        $("#postcodeRes").val(zip);
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+            'address': zip
+        }, function(results, status) {
+            console.log(status)
+            if (status == google.maps.GeocoderStatus.OK) {
+                let countAdmins = results[0].address_components.length;
+                switch (countAdmins) {
+                    case 4:
+                        $("#locality").val(results[0].address_components[1].long_name);
+                        if (results[0].address_components[3].short_name == "PR") {
+                            $("#state").val(results[0].address_components[3].short_name);
+                        } else {
+                            $("#state").val(results[0].address_components[2].short_name);
+                        }
+
+                        break;
+                    case 5:
+                        $("#locality").val(results[0].address_components[1].long_name);
+                        $("#state").val(results[0].address_components[3].short_name);
+                        break;
+                    case 6:
+                        $("#locality").val(results[0].address_components[1].long_name);
+                        $("#state").val(results[0].address_components[4].short_name);
+                        break;
+                }
+            }
+        });
+    }
+
 
     function messageFunc(msg) {
         var classF;
