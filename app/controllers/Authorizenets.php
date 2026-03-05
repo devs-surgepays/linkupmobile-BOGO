@@ -341,7 +341,7 @@ class Authorizenets extends Controller
 
 					if (!empty($pay_transmessage)) { /*Fail Payment*/
 						$updateData['payment_status'] = "Failed";
-						failPayment($data['email'], $this->mailer);
+						//failPayment($data['email'], $this->mailer);
 					} else {
 
 						if ($messageResultText == "Successful." && $transactionCode != "") {
@@ -398,7 +398,7 @@ class Authorizenets extends Controller
 					}
 							
 				} else {
-					failPayment($data['email'], $this->mailer);
+					//failPayment($data['email'], $this->mailer);
 				}
 			} catch (Exception $e) {
 
