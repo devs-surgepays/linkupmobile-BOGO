@@ -91,11 +91,22 @@ if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
 
 	//tAX API CONFIG
 	define('TAXCLIENT_NUMBER', $config['TAXCLIENT_NUMBER']);
+
 	define('TAXVALIDATION_KEY', $config['TAXVALIDATION_KEY']);
 
 	define('CARD_ENCRYPTION_KEY', $config['CARD_ENCRYPTION_KEY']);
 
 	define('GOOGLE_MAPS_API_KEY', $config['google_maps_api_key']);
+
+	/*EMAIL CONFIGS*/
+
+	define('TENANT_ID_EMAIL', $config['TENANT_ID_EMAIL']);
+
+	define('CLIENT_ID_EMAIL', $config['CLIENT_ID_EMAIL']);
+
+	define('CLIENT_SECRET_EMAIL', $config['CLIENT_SECRET_EMAIL']);
+
+	define('SENDER_EMAIL', $config['SENDER_EMAIL']);
 	
 
 /* AUTHORIZE.NET CONFIGURATION */

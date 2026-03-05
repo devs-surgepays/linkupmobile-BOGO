@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
+/* ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); 
+error_reporting(E_ALL);  */
 class Checkout extends Controller
 {
 	private $db;
@@ -15,27 +15,14 @@ class Checkout extends Controller
 		$this->logModel = $this->model('Log');
 	}
 
-	public function index()
+	public function index($lang = NULL)
 	{
 		$defaultPlan = 'BOGO30';
-		
-		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		$lang = $lang ? $lang : 'en';
 
-			$plan_id = isset($_POST['plan_id']) ? $_POST['plan_id'] : $defaultPlan;
-			$imei = isset($_POST['imei']) ? $_POST['imei'] : '';
-			$lines = isset($_POST['selectLine']) ? $_POST['selectLine'] : 1;
-			$infoPlans = $this->getPlanInfo($plan_id);
+		$data = [
 
-			//$price_data = $this->calculatePlanPriceWithTax();
-
-			$utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : null;
-			$utm_medium = isset($_GET['utm_medium']) ? $_GET['utm_medium'] : null;
-			$utm_campaign = isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : null;
-			$utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
-			$match_type = isset($_GET['match_type']) ? $_GET['match_type'] : null;
-			$utm_adgroup = isset($_GET['utm_adgroup']) ? $_GET['utm_adgroup'] : null;
-
-			$data = [
+			'en' => [
 				'title' => "BOGO PROMO",
 				'description' => "Lorem Ipsum",
 				'logo' => '/img/UsaSnap15_logo.png',
@@ -44,23 +31,165 @@ class Checkout extends Controller
 				'source' => "BOGO30landing",
 				'origin' => "domain_name",
 				'program' => "",
+				
+
+				'lang' => 'en',
+				'title' => 'Welcome to LinkUp Mobile',
+				'main_title' => '2X EVERYTHING',
+				'blue_heading_1' => '2X&nbsp;THE&nbsp;COVERAGE. 2X&nbsp;THE&nbsp;DATA. 2X&nbsp;THE&nbsp;VALUE',
+				'main_description' => '<span>Activate your line</span> with this <span>limited-time offer</span> and your second month is completely free! Don&apos;t miss out, get started&nbsp;today.',
+
+				// Offer Countdown 
+				'offer_msg' => 'OFFER ENDS SOON!',
+				'offer_day' => 'DAYS',
+				'offer_minutes' => 'MINUTES',
+				'offer_hours' => 'HOURS',
+				'offer_seconds' => 'SECONDS',
+				// Promo Details Section
+				'promo_bubble_text' => 'BUY 1 MONTH, <br> GET 1 MONTH FREE',
+				'promo_bubble_text_2' => 'UNLIMITED TALK & TEXT + <br> ROAMING TO & WITHIN MEXICO',
+				'promo_perks_description' => 'With your LinkUp data plan you get <span>additional perks</span> such as <span>unlimited talk & text</span> as well as roaming included to and within&nbsp;Mexico',
+
+				//Form 
+				'form_title'=> 'Service Address',
+				'first_name_label' => 'First Name',
+				'last_name_label' => 'Last Name',
+				'email_label' => 'Email Address',
+				'street_label' => 'Street Address',
+				'state_label' => 'State',
+				'city_label' => 'City',
+				'zipcode_label' => 'Zip Code',
+				'phone_label' => 'Phone',
+				'billingcheck_label' => 'My billing and shipping address are the same.',
+				'billing_street_label' => 'Billing Street Address',
+				'billing_street2_label' => 'Billing Apartment # or Suite #',
+				'billing_city_label' => 'Billing City',
+				'billing_state_label' => 'Billing State',
+				'billing_zipcode_label' => 'Billing Zip Code',
+
+				//OrderReview
+				'cart_title' => 'Order Review',
+				'cart_number' => '1 item in cart',
+				'summary_title' => 'Billing Summary',
+				'summary_subtotal' => 'Subtotal',
+				'summary_discount' => 'Discount',
+				'summary_tax' => 'Tax',
+				'summary_shipping' => 'Shipping',
+				'summary_total' => 'Grand total',
+				'summary_pending' => 'Pending Service Address Section',
+				'summary_pending_msg' => 'Enter your Billing Address to calculate taxes and display the Grand Total.',
+				'summary_comment_label' => 'Order Comment',
+				'summary_comment_placeholder' => 'Type here...',
+				'summary_terms_label' => 'I acknowledge LinkUp Mobile’s',
+				'summary_privacy' => 'Privacy Policy',
+				'summary_terms' => 'Terms Policy',
+				'summary_pays_label' => 'Pay'
+
+			],
+			'es' => [
+				'title' => "BOGO PROMO",
+				'description' => "Lorem Ipsum",
+				'logo' => '/img/UsaSnap15_logo.png',
+				'css' => '/css/lifeline_form.css',
+				'url' => "https://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]",
+				'source' => "BOGO30landing",
+				'origin' => "domain_name",
+				'program' => "",				
+				'lang' => 'es',
+				'title' => 'Bienvenido a LinkUp Mobile',
+				'main_title' => 'DUPLICA TU PLAN',
+				'blue_heading_1' => 'DOBLE&nbsp;COBERTURA. DOBLE&nbsp;DE&nbsp;DATOS. DOBLE&nbsp;VALOR',
+				'main_description' => '<span>Activa una linea</span> con esta oferta por <span>tiempo limitado</span> y disfruta del segundo mes completamente gratis. ¡No te la pierdas, empieza hoy&nbsp;mismo!',
+
+				// Offer Countdown 
+				'offer_msg' => '¡LA OFERTA TERMINA PRONTO!',
+				'offer_day' => 'DIAS',
+				'offer_minutes' => 'MINUTOS',
+				'offer_hours' => 'HORAS',
+				'offer_seconds' => 'SEGUNDOS',
+				// Promo Details Section
+				'promo_bubble_text' => 'COMPRA 1 MES, <br> TE REGALAMOS 1 MES',
+				'promo_bubble_text_2' => 'LLAMADAS Y TEXTOS ILIMITADOS + <br> ROAMING HACIA Y DENTRO DE MEXICO',
+				'promo_perks_description' => 'Con tu plan de datos LinkUp obtienes <span>beneficios adicionales</span> como <span>llamadas y mensajes de texto ilimitados</span>, así como roaming incluido hacia y dentro de México.',
+
+				//Form 
+				'form_title' => 'Dirección de servicio',
+				'first_name_label' => 'Primer Nombre',
+				'last_name_label' => 'Apellido',
+				'email_label' => 'Correo Electrónico',
+				'street_label' => 'Dirección',
+				'state_label' => 'Estado',
+				'city_label' => 'Ciudad',
+				'zipcode_label' => 'Código postal',
+				'phone_label' => 'Teléfono',
+				'billingcheck_label' => 'Mi dirección de facturación y envío son las mismas.',
+				'billing_street_label' => 'Dirección de facturación',
+				'billing_street2_label' => '# de Apartamento',
+				'billing_city_label' => 'Ciudad de facturación',
+				'billing_state_label' => 'Estado de facturación',
+				'billing_zipcode_label' => 'Código postal de facturación',
+
+				//OrderReview
+				'cart_title' => 'Revisión de pedido',
+				'cart_number' => '1 artículo en el carrito',
+				'summary_title' => 'Resumen de facturación',
+				'summary_subtotal' => 'Total parcial',
+				'summary_discount' => 'Descuento',
+				'summary_tax' => 'Impuesto',
+				'summary_shipping' => 'Envío',
+				'summary_total' => 'Gran total',
+				'summary_pending' => 'Sección de dirección pendiente',
+				'summary_pending_msg' =>'Enter your Billing Address to calculate taxes and display the Grand Total.',
+				'summary_comment_label' => 'Comentario del pedido',
+				'summary_comment_placeholder' => 'Escribe aqui...',
+				'summary_terms_label' => 'Reconozco la responsabilidad de LinkUp Mobile’s ',
+				'summary_privacy' => 'Política de Privacidad',
+				'summary_terms' => 'Términos y Condiciones',
+				'summary_pays_label' => 'Pagar'
+
+			]
+
+		];
+
+
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+			$tid = isset($_POST['tid']) ? $_POST['tid'] : '';
+			$plan_id = isset($_POST['plan_id']) ? $_POST['plan_id'] : $defaultPlan;
+			$imei = isset($_POST['imei']) ? $_POST['imei'] : '';
+			$lines = isset($_POST['selectLine']) ? $_POST['selectLine'] : 1;
+			$infoPlans = $this->getPlanInfo($plan_id);
+
+			//$price_data = $this->calculatePlanPriceWithTax();
+			$utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : null;
+			$utm_medium = isset($_GET['utm_medium']) ? $_GET['utm_medium'] : null;
+			$utm_campaign = isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : null;
+			$utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : null;
+			$match_type = isset($_GET['match_type']) ? $_GET['match_type'] : null;
+			$utm_adgroup = isset($_GET['utm_adgroup']) ? $_GET['utm_adgroup'] : null;
+			
+			$data_post = [
 				'utm_source' => $utm_source,
 				'utm_medium' => $utm_medium,
 				'utm_campaign' => $utm_campaign,
 				'utm_content' => $utm_content,
 				'match_type' => $match_type,
-				'utm_adgroup' => $utm_adgroup
+				'utm_adgroup' => $utm_adgroup,
+				'imei' => $imei,
+				'tid' => $tid,
+				'imei' => $imei,
+				'IdPlan' => $plan_id,
+				'number_of_lines' => $lines ?? 1,
+				'infoPlan' => $infoPlans, // Get information Plan
+				'infoTax' => isset($tax_rate) ? $tax_rate : [], // Get tax rate
+				'total' => isset($totalPriceWTaxes) ? $totalPriceWTaxes : [],
 			];
-			$data['imei'] = $imei;
-			$data['IdPlan'] = $plan_id;
-			$data['number_of_lines'] = $lines ?? 1;
-			$data['infoPlan'] = $infoPlans; // Get information Plan
-			$data['infoTax'] = isset($tax_rate) ? $tax_rate : []; // Get tax rate
-			$data['total'] = isset($totalPriceWTaxes) ? $totalPriceWTaxes : [];			
 
-			//print_r($data);
+			$data['en'] = array_merge($data['en'], $data_post);
+			$data['es'] = array_merge($data['es'], $data_post);
+			//print_r($data_post);
 
-			$this->view('checkout/index', $data);
+			//$this->view('checkout/index', $data[$lang]);
 			
 		} else {
 
@@ -73,7 +202,7 @@ class Checkout extends Controller
 			$match_type = isset($_GET['match_type']) ? $_GET['match_type'] : null;
 			$utm_adgroup = isset($_GET['utm_adgroup']) ? $_GET['utm_adgroup'] : null;
 
-			$data = [
+			$data_post = [
 				'title' => "BOGO PROMO",
 				'description' => "Lorem Ipsum",
 				'logo' => '/img/UsaSnap15_logo.png',
@@ -87,19 +216,24 @@ class Checkout extends Controller
 				'utm_campaign' => $utm_campaign,
 				'utm_content' => $utm_content,
 				'match_type' => $match_type,
-				'utm_adgroup' => $utm_adgroup
+				'utm_adgroup' => $utm_adgroup,
+				'IdPlan' => $defaultPlan,
+				'number_of_lines' => $lines ?? 1,
+				'infoPlan' => $infoPlans, // Get information Plan
+				'infoTax' => isset($tax_rate) ? $tax_rate : [], // Get tax rate
+				'total' => isset($totalPriceWTaxes) ? $totalPriceWTaxes : [],
 			];
-			$data['encryption_key'] = CARD_ENCRYPTION_KEY;
-			$data['IdPlan'] = $defaultPlan;
-			$data['number_of_lines'] = $lines ?? 1;
-			$data['infoPlan'] = $infoPlans; // Get information Plan
-			$data['infoTax'] = $tax_rate ?? []; // Get tax rate
-			$data['total'] = $totalPriceWTaxes ?? [];		
+
+
+			$data['en'] = array_merge($data['en'], $data_post);
+			$data['es'] = array_merge($data['es'], $data_post);
+			//print_r($data_post);	
 
 			//print_r($data);
 
-			$this->view('checkout/index', $data);
+			
 		}
+		$this->view('checkout/index', $data[$lang]);
 	}
 
 	public function indexTEst()

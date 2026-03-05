@@ -88,7 +88,6 @@ class Authorizenets extends Controller
 
 	public function singlePayment()
 	{
-
 		$now =  date('Y-m-d');
 		$logfile = "logpayment_" . $now . ".txt";
 		$log = new Logger($logfile);
@@ -129,6 +128,7 @@ class Authorizenets extends Controller
 				'match_type' => isset($_POST['match_type']) ? $this->sanitizeInput($_POST['match_type'], 'string') : '',
 				'source' => isset($_POST['source']) ? $this->sanitizeInput($_POST['source'], 'string') : '',
 				'URL' => isset($_POST['url']) ? $this->sanitizeInput($_POST['url'], 'url') : '',
+				'terminal_id' => isset($_POST['tid']) ? $this->sanitizeInput($_POST['tid'], 'url') : '',
 			];
 			$log->putLog("DataReceived: " . json_encode($data, true));
 
@@ -153,17 +153,17 @@ class Authorizenets extends Controller
 			}
 
 			$data_pay = [
-				'plan_price' => trim($_POST['planPrice']),
-				'amount' => trim($_POST['amount']),
-				'price' => $_POST['price'],
-				'taxes' => trim($_POST['taxes']),
-				'dataDesc' => trim($_POST['dataDesc']),
-				'dataValue' => $_POST['dataValue'],				
-				'plan_id' => trim($_POST['IdPlan']),
-				'plan' => trim($_POST['plan']),
-				'number_of_lines' => $_POST['number_of_lines'],
-				'imei' => $_POST['imei'],
-				'country' => 'USA',						
+				'plan_price' => isset($_POST['planPrice']) ? trim($_POST['planPrice']) : '',
+				'amount' => isset($_POST['amount']) ? trim($_POST['amount']) : '',
+				'price' => isset($_POST['price']) ? $_POST['price'] : '',
+				'taxes' => isset($_POST['taxes']) ? trim($_POST['taxes']) : '',
+				'dataDesc' => isset($_POST['dataDesc']) ? trim($_POST['dataDesc']) : '',
+				'dataValue' => isset($_POST['dataValue']) ? $_POST['dataValue'] : '',
+				'plan_id' => isset($_POST['IdPlan']) ? trim($_POST['IdPlan']) : '',
+				'plan' => isset($_POST['plan']) ? trim($_POST['plan']) : '',
+				'number_of_lines' => isset($_POST['number_of_lines']) ? $_POST['number_of_lines'] : '',
+				'imei' => isset($_POST['imei']) ? $_POST['imei'] : '',
+				'country' => 'USA',
 			];
 			$log->putLog("DataPay: " . json_encode($data_pay, true));
 
@@ -277,7 +277,7 @@ class Authorizenets extends Controller
 				$messageResultCode = $obj['messages']['resultCode'];
 				$transactionResponse = $obj['transactionResponse'] ?? [];
 				$transactionCode = isset($transactionResponse['messages']['message']['code']) ?? '';
-				$messageTransactionCode = $transactionCode ?? $transactionResponse['errors']['error']['errorCode'] ?? '';				
+				$messageTransactionCode = $transactionCode ?? $transactionResponse['errors']['error']['errorCode'] ?? '';
 				$messageResultCode = $obj['messages']['resultCode'];
 				$messageResultText = $obj['messages']['message']['text'];
 
@@ -308,7 +308,7 @@ class Authorizenets extends Controller
 						? $integrationRaw
 						: $textRaw);
 
-				$pay_message = $obj['messages']['message']['text'] . ' ' . $result;
+				$pay_message = (isset($obj['messages']['message']['text']) ? $obj['messages']['message']['text'] : '') . ' ' . $result;
 				/*$pay_message = "The transaction was accepted and was authorized, but is being held for merchant review.";*/
 
 				/*Apis_log_payments */
@@ -318,19 +318,19 @@ class Authorizenets extends Controller
 
 				$updateData = [
 					"order_id" => $order_id,
-					'plan' => $data_pay['plan'],
-					'email' => $data['email'],
+					'plan' => isset($data_pay['plan']) ? $data_pay['plan'] : '',
+					'email' => isset($data['email']) ? $data['email'] : '',
 					'pay_message' => $pay_message,
-					'pay_authcode' => $obj['transactionResponse']['authCode'],
-					'pay_transid' => $obj['transactionResponse']['transId'],
-					'pay_accountnumber' => $obj['transactionResponse']['accountNumber'],
-					'pay_accounttype' => $obj['transactionResponse']['accountType'],
-					'pay_transmessage' => $pay_transmessage_success,
-					'billing_address1' => !empty($data['billing_address1']) ? $data['billing_address1'] : $data['address1'],
-					'billing_address2' => !empty($data['billing_address1']) ? $data['billing_address2'] : $data['address2'],
-					'billing_city' => !empty($data['billing_city']) ? $data['billing_city'] : $data['city'],
-					'billing_state' => !empty($data['billing_state']) ? $data['billing_state'] : $data['state'],
-					'billing_zipcode' => !empty($data['billing_zipcode']) ? $data['billing_zipcode'] : $data['zipcode'],
+					'pay_authcode' => isset($obj['transactionResponse']['authCode']) ? $obj['transactionResponse']['authCode'] : '',
+					'pay_transid' => isset($obj['transactionResponse']['transId']) ? $obj['transactionResponse']['transId'] : '',
+					'pay_accountnumber' => isset($obj['transactionResponse']['accountNumber']) ? $obj['transactionResponse']['accountNumber'] : '',
+					'pay_accounttype' => isset($obj['transactionResponse']['accountType']) ? $obj['transactionResponse']['accountType'] : '',
+					'pay_transmessage' => isset($pay_transmessage_success) ? $pay_transmessage_success : '',
+					'billing_address1' => (isset($data['billing_address1']) && !empty($data['billing_address1'])) ? $data['billing_address1'] : (isset($data['address1']) ? $data['address1'] : ''),
+					'billing_address2' => (isset($data['billing_address2']) && !empty($data['billing_address2'])) ? $data['billing_address2'] : (isset($data['address2']) ? $data['address2'] : ''),
+					'billing_city' => (isset($data['billing_city']) && !empty($data['billing_city'])) ? $data['billing_city'] : (isset($data['city']) ? $data['city'] : ''),
+					'billing_state' => (isset($data['billing_state']) && !empty($data['billing_state'])) ? $data['billing_state'] : (isset($data['state']) ? $data['state'] : ''),
+					'billing_zipcode' => (isset($data['billing_zipcode']) && !empty($data['billing_zipcode'])) ? $data['billing_zipcode'] : (isset($data['zipcode']) ? $data['zipcode'] : ''),
 					/*"number_of_lines" => $data['number_of_lines'],
 					'price' => $data_pay['price'],
 					'amount' => $data_pay['amount'], */
@@ -341,7 +341,7 @@ class Authorizenets extends Controller
 
 					if (!empty($pay_transmessage)) { /*Fail Payment*/
 						$updateData['payment_status'] = "Failed";
-						//failPayment($data['email'], $this->mailer);
+						failPayment($data['email'], $this->mailer);
 					} else {
 
 						if ($messageResultText == "Successful." && $transactionCode != "") {
@@ -355,8 +355,6 @@ class Authorizenets extends Controller
 							$order = $this->orderModel->updateOrder($updateData);
 							$log->putLog("UpdatedRecord: " . $order);
 
-							//successOneTimePayment($updateData, $this->mailer);
-
 							$get_order = $this->orderModel->getOrderInformation($order_id);
 							$get_order['response_suggestion'] = $pay_message;
 							$get_order['plan_price'] = $data_pay['plan_price'];
@@ -367,8 +365,8 @@ class Authorizenets extends Controller
 							//$ecs_response = ECSTelgoo($data, $data_cc);
 							$data['areacode'] = $this->getAreaCode($data['phone_number']);
 							$data['price'] = $data_pay['price'];
-							$data['imei'] =  $data_pay['imei']	;		
-	
+							$data['imei'] =  $data_pay['imei'];
+
 							$ecs_response = ecsActivationLandingPage($data);
 							//$ecs_response = testecsActivationLandingPage($data);
 							$log->putLog(
@@ -380,7 +378,15 @@ class Authorizenets extends Controller
 							);
 							$msg_response = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];
 
+							$updateData['PGSTransId'] = "";
+							$updateData['QRCode'] = "";
+							$updateData['PhoneNumber'] = "";
+
 							if ($msg_response == 'APPROVED') {
+
+								$updateData['PGSTransId'] = $ecs_response["response"]["CellularVoucherPurchase"]["PGSTransId"];
+								$updateData['QRCode'] = $ecs_response["response"]["CellularVoucherPurchase"]["QRCode"];
+								$updateData['PhoneNumber'] = $ecs_response["response"]["CellularVoucherPurchase"]["PhoneNumber"];
 
 								$obj['Message'] = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];
 								$obj['PGSTransId'] = $ecs_response["response"]["CellularVoucherPurchase"]["PGSTransId"];
@@ -388,17 +394,15 @@ class Authorizenets extends Controller
 								$obj['PinCode'] = $ecs_response["response"]["CellularVoucherPurchase"]["PinCode"];
 								$obj['QRCode'] = $ecs_response["response"]["CellularVoucherPurchase"]["QRCode"];
 								$obj['customerIdncrypt']  = (!empty($data['customer_id'])) ? encrypt_decrypt('encrypt', $data['customer_id']) : null;
-								
 							} else {
 								$obj['Message'] = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];
 							}
 
-						}			
-
+							successOneTimePayment($updateData, $this->mailer);
+						}
 					}
-							
 				} else {
-					//failPayment($data['email'], $this->mailer);
+					failPayment($data['email'], $this->mailer);
 				}
 			} catch (Exception $e) {
 
@@ -411,6 +415,7 @@ class Authorizenets extends Controller
 
 		echo json_encode($obj);
 	}
+
 
 	public function getAreaCode($phone)
 	{

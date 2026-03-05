@@ -1,1 +1,179 @@
-<?php// ----------------- CONFIG -----------------define('TENANT_ID_EMAIL', 'f519054f-b68c-4f8a-ab3d-1fc5c7423d0d');define('CLIENT_ID_EMAIL', '6ad90e2e-5c6b-4700-be0e-9b345085435c');define('CLIENT_SECRET_EMAIL', 'SXG8Q~M9.tkdhmXI.3gOotpqTfOz1yz1dikWkani');define('SENDER_EMAIL', 'no-reply@linkupmobile.com');// ---------------------------------------------------------------------function get_token(){    $tId = TENANT_ID_EMAIL;    $url = "https://login.microsoftonline.com/$tId/oauth2/v2.0/token";    $data = http_build_query([        "client_id"     => CLIENT_ID_EMAIL,        "scope"         => "https://graph.microsoft.com/.default",        "client_secret" => CLIENT_SECRET_EMAIL,        "grant_type"    => "client_credentials"    ]);    $ch = curl_init($url);    curl_setopt_array($ch, [        CURLOPT_RETURNTRANSFER => true,        CURLOPT_POST           => true,        CURLOPT_POSTFIELDS     => $data,        CURLOPT_HTTPHEADER     => [            "Content-Type: application/x-www-form-urlencoded"        ]    ]);    $response = curl_exec($ch);    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);    if ($http_code !== 200) {        throw new Exception("Token HTTP $http_code: $response");    }    $json = json_decode($response, true);    return $json["access_token"] ?? null;}function send_mail($to, $subject, $templateContentHTML = ''){    $url = "https://graph.microsoft.com/v1.0/users/" . rawurlencode(SENDER_EMAIL) . "/sendMail";    $access_token = get_token();    $sender = SENDER_EMAIL;        $cc = "aamaya@surgepays.com";    $payload = [        "message" => [            "subject" => $subject,            "body" => [                "contentType" => "HTML",                "content" => $templateContentHTML            ],            "from" => [                "emailAddress" => ["address" => SENDER_EMAIL]            ],            "sender" => [                "emailAddress" => ["address" => SENDER_EMAIL]            ],            "toRecipients" => [                ["emailAddress" => ["address" => $to]]            ]                   ],        "saveToSentItems" => true    ];    $headers = [        "Authorization: Bearer $access_token",        "Content-Type: application/json"    ];    $ch = curl_init($url);    curl_setopt_array($ch, [        CURLOPT_RETURNTRANSFER => true,        CURLOPT_POST           => true,        CURLOPT_POSTFIELDS     => json_encode($payload),        CURLOPT_HTTPHEADER     => $headers    ]);    $response = curl_exec($ch);    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);    if ($http_code !== 202) {        throw new Exception("SendMail HTTP $http_code: $response");    }    return true;}// ----------------------- MAIN ------------------------------------// try {//     $mail = send_mail($data['email'], 'Your SurgePhone Account Information', $message);// } catch (Exception $e) {//     echo "Error: " . $e->getMessage() . "\n";// }// return $mail;
+<?php
+
+
+function get_token()
+{
+
+    $tId = TENANT_ID_EMAIL;
+
+
+
+    $url = "https://login.microsoftonline.com/$tId/oauth2/v2.0/token";
+
+    $data = http_build_query([
+
+        "client_id"     => CLIENT_ID_EMAIL,
+
+        "scope"         => "https://graph.microsoft.com/.default",
+
+        "client_secret" => CLIENT_SECRET_EMAIL,
+
+        "grant_type"    => "client_credentials"
+
+    ]);
+
+
+
+    $ch = curl_init($url);
+
+    curl_setopt_array($ch, [
+
+        CURLOPT_RETURNTRANSFER => true,
+
+        CURLOPT_POST           => true,
+
+        CURLOPT_POSTFIELDS     => $data,
+
+        CURLOPT_HTTPHEADER     => [
+
+            "Content-Type: application/x-www-form-urlencoded"
+
+        ]
+
+    ]);
+
+
+
+    $response = curl_exec($ch);
+
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+
+
+    if ($http_code !== 200) {
+
+        throw new Exception("Token HTTP $http_code: $response");
+    }
+
+
+
+    $json = json_decode($response, true);
+
+    return $json["access_token"] ?? null;
+}
+
+
+
+function send_mail($to, $subject, $templateContentHTML = '')
+
+{
+
+    $url = "https://graph.microsoft.com/v1.0/users/" . rawurlencode(SENDER_EMAIL) . "/sendMail";
+
+
+
+    $access_token = get_token();
+
+    $sender = SENDER_EMAIL;
+
+    $cc = "aamaya@surgepays.com";
+
+
+
+    $payload = [
+
+        "message" => [
+
+            "subject" => $subject,
+
+            "body" => [
+
+                "contentType" => "HTML",
+
+                "content" => $templateContentHTML
+
+            ],
+
+            "from" => [
+
+                "emailAddress" => ["address" => SENDER_EMAIL]
+
+            ],
+
+            "sender" => [
+
+                "emailAddress" => ["address" => SENDER_EMAIL]
+
+            ],
+
+            "toRecipients" => [
+
+                ["emailAddress" => ["address" => $to]]
+
+            ]
+
+        ],
+
+        "saveToSentItems" => true
+
+    ];
+
+
+
+    $headers = [
+
+        "Authorization: Bearer $access_token",
+
+        "Content-Type: application/json"
+
+    ];
+
+
+
+    $ch = curl_init($url);
+
+    curl_setopt_array($ch, [
+
+        CURLOPT_RETURNTRANSFER => true,
+
+        CURLOPT_POST           => true,
+
+        CURLOPT_POSTFIELDS     => json_encode($payload),
+
+        CURLOPT_HTTPHEADER     => $headers
+
+    ]);
+
+
+
+    $response = curl_exec($ch);
+
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+
+
+    if ($http_code !== 202) {
+
+        throw new Exception("SendMail HTTP $http_code: $response");
+    }
+
+
+
+    return true;
+}
+
+
+
+// ----------------------- MAIN ------------------------------------
+
+// try {
+
+//     $mail = send_mail($data['email'], 'Your SurgePhone Account Information', $message);
+
+// } catch (Exception $e) {
+
+//     echo "Error: " . $e->getMessage() . "\n";
+
+// }
+
+// return $mail;

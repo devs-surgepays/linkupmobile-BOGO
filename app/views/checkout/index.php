@@ -104,48 +104,47 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                 <div class="col-lg-12 customer-card mb-4 px-4 pt-4 pb-4">
                                     <div class="row">
                                         <div class="mb-4 text-start col-lg-12 col-xs-12">
-                                            <div class="fw-bold fs-5">Service Address</div>
+                                            <div class="fw-bold fs-5"><?php echo $data['form_title']; ?></div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="mb-3 text-start col-lg-6 col-xs-12">
-                                            <label for="first_name">First Name</label>
-                                            <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name*" value="<?php echo (isset($data['first_name'])) ? $data['first_name'] : '';  ?>" required="">
+                                        <div class="mb-3 pb-3 text-start col-lg-6 col-xs-12">
+                                            <label for="first_name"><?php echo $data['first_name_label']; ?></label>
+                                            <input type="text" name="first_name" class="form-control form-control-lg" id="first_name" placeholder="" value="<?php echo (isset($data['first_name'])) ? $data['first_name'] : '';  ?>" required="">
                                         </div>
-                                        <div class="mb-3 text-start col-lg-6 col-xs-12">
-                                            <label for="last_name">Last Name</label>
-                                            <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name*" value="<?php echo (isset($data['last_name'])) ? $data['last_name'] : ''; ?>" required="">
+                                        <div class="mb-3 pb-3 text-start col-lg-6 col-xs-12">
+                                            <label for="last_name"><?php echo $data['last_name_label']; ?></label>
+                                            <input type="text" name="last_name" class="form-control form-control-lg" id="last_name" placeholder="" value="<?php echo (isset($data['last_name'])) ? $data['last_name'] : ''; ?>" required="">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="mb-3 pb-3 text-start col-lg-12 col-xs-12">
+                                            <label for="email"><?php echo $data['email_label']; ?></label>
+                                            <input type="text" name="email" class="form-control form-control-lg" id="email" placeholder="" value="<?php echo (isset($data['email'])) ? $data['email'] : ''; ?>" required="">
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="mb-3 text-start col-lg-12 col-xs-12">
-                                            <label for="email">Email Address</label>
-                                            <input type="text" name="email" class="form-control" id="email" placeholder="Email*" value="<?php echo (isset($data['email'])) ? $data['email'] : ''; ?>" required="">
+                                        <div class="mb-3 pb-1 text-start col-lg-12 col-xs-12">
+                                            <label for="street_address1"><?php echo $data['street_label']; ?></label>
+                                            <input type="text" name="street_address1" class="form-control form-control-lg" id="street_address1" placeholder="" value="<?php echo (isset($data['address1'])) ? $data['address1'] : ''; ?>" required="">
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="mb-3 text-start col-lg-12 col-xs-12">
-                                            <label for="street_address1">Street Address</label>
-                                            <input type="text" name="street_address1" class="form-control" id="street_address1" placeholder="Address Line 1*" value="<?php echo (isset($data['address1'])) ? $data['address1'] : ''; ?>" required="">
+                                        <div class="mb-3 pb-3 text-start col-lg-12 col-xs-12">
+                                            <input type="text" name="address2" class="form-control form-control-lg" id="address2" placeholder="" value="<?php echo (isset($data['address2'])) ? $data['address2'] : ''; ?>">
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="mb-3 text-start col-lg-12 col-xs-12">
-                                            <input type="text" name="address2" class="form-control" id="address2" placeholder="Address Line 2*" value="<?php echo (isset($data['address2'])) ? $data['address2'] : ''; ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="mb-3 text-start col-lg-6 col-xs-12">
-                                            <label for="state">State</label>
+                                        <div class="mb-3 pb-3 text-start col-lg-6 col-xs-12">
+                                            <label for="state"><?php echo $data['state_label']; ?></label>
                                             <!-- <input type="text" name="state" class="form-control" id="state" placeholder="State*" value="<?php echo (isset($data['state'])) ? $data['state'] : ''; ?>" required=""> -->
-                                            <select class="form-control" name="state" id="state"
-
-                                                aria-required="true" required>
+                                            <select class="form-control form-control-lg" name="state" id="state" aria-required="true" required>
 
                                                 <option value="">Select State</option>
 
@@ -254,20 +253,20 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                             </select>
 
                                         </div>
-                                        <div class="mb-3 text-start col-lg-6 col-xs-12">
-                                            <label for="locality">City</label>
-                                            <input type="text" name="locality" class="form-control" id="locality" placeholder="City*" value="<?php echo (isset($data['city'])) ? $data['city'] : ''; ?>" required="">
+                                        <div class="mb-3 pb-3 text-start col-lg-6 col-xs-12">
+                                            <label for="locality"><?php echo $data['city_label']; ?></label>
+                                            <input type="text" name="locality" class="form-control form-control-lg" id="locality" placeholder="" value="<?php echo (isset($data['city'])) ? $data['city'] : ''; ?>" required="">
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="mb-3 text-start col-lg-6 col-xs-12">
-                                            <label for="postcode">Zip Code</label>
-                                            <input type="text" name="postcode" class="form-control" id="postcode" placeholder="Zip Code*" value="<?php echo (isset($data['zipcode'])) ? $data['zipcode'] : ''; ?>" required="">
+                                        <div class="mb-3 pb-3 text-start col-lg-6 col-xs-12">
+                                            <label for="postcode"><?php echo $data['zipcode_label']; ?></label>
+                                            <input type="text" name="postcode" class="form-control form-control-lg" id="postcode" placeholder="" value="<?php echo (isset($data['zipcode'])) ? $data['zipcode'] : ''; ?>" required="">
                                         </div>
-                                        <div class="mb-3 text-start col-lg-6 col-xs-12">
-                                            <label for="phone_number">Phone</label>
-                                            <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Phone Number*" value="<?php echo (isset($data['phone_number'])) ? $data['phone_number'] : ''; ?>" required="">
+                                        <div class="mb-3 pb-3 text-start col-lg-6 col-xs-12">
+                                            <label for="phone_number"><?php echo $data['phone_label']; ?></label>
+                                            <input type="text" name="phone_number" class="form-control form-control-lg" id="phone_number" placeholder="" value="<?php echo (isset($data['phone_number'])) ? $data['phone_number'] : ''; ?>" required="">
                                         </div>
                                     </div>
 
@@ -283,12 +282,13 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 
                                     </div>
 
-                                    <div class="row mb-3">
+
+                                    <div class="row mb-3 pb-3">
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="form-check text-start">
                                                     <input class="form-check-input" type="checkbox" name="mailing_address" id="mailing_address" onclick="bqp_checkboox_mailing_area()" checked>
-                                                    <label class="form-check-label" for="mailing_address"> My billing and shipping address are the same.</small></label>
+                                                    <label class="form-check-label" for="mailing_address" style="margin-top: 0px;"> <?php echo $data['billingcheck_label']; ?></small></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -299,49 +299,49 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 
                                         <div class="card-body row">
 
-                                            <div class="col-lg-12">
+                                            <div class="col-lg-12 pb-3">
 
                                                 <div class="form-group mb-2">
 
-                                                    <label for="billing_address1">Billing Street Address</label>
+                                                    <label for="billing_address1"><?php echo $data['billing_street_label']; ?></label>
 
-                                                    <input class="form-control" id="billing_address1" name="billing_address1" type="text" value="<?php echo (isset($data['mailing_address1'])) ? $data['mailing_address1'] : '';  ?>">
+                                                    <input class="form-control form-control-lg" id="billing_address1" name="billing_address1" type="text" value="<?php echo (isset($data['mailing_address1'])) ? $data['mailing_address1'] : '';  ?>">
 
                                                 </div>
 
                                             </div>
 
-                                            <div class="col-lg-12">
+                                            <div class="col-lg-12 pb-3">
 
                                                 <div class="form-group mb-2">
 
-                                                    <label for="billing_address2">Billing Apartment # or Suite #</label>
+                                                    <label for="billing_address2"><?php echo $data['billing_street2_label']; ?></label>
 
-                                                    <input class="form-control" id="billing_address2" name="billing_address2" type="text" value="<?php echo (isset($data['mailing_address2'])) ? $data['mailing_address2'] : '';  ?>">
+                                                    <input class="form-control form-control-lg" id="billing_address2" name="billing_address2" type="text" value="<?php echo (isset($data['mailing_address2'])) ? $data['mailing_address2'] : '';  ?>">
 
                                                 </div>
 
                                             </div>
 
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-6 pb-3">
 
                                                 <div class="form-group mb-2">
 
-                                                    <label for="billing_city">Billing City</label>
+                                                    <label for="billing_city"><?php echo $data['billing_city_label']; ?></label>
 
-                                                    <input class="form-control" id="billing_city" name="billing_city" type="text" value="<?php echo (isset($data['mailing_city'])) ? $data['mailing_city'] : '';  ?>">
+                                                    <input class="form-control form-control-lg" id="billing_city" name="billing_city" type="text" value="<?php echo (isset($data['mailing_city'])) ? $data['mailing_city'] : '';  ?>">
 
                                                 </div>
 
                                             </div>
 
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-6 pb-3">
 
                                                 <div class="form-group mb-2">
 
-                                                    <label for="billing_state">Billing State</label>
+                                                    <label for="billing_state"><?php echo $data['billing_state_label']; ?></label>
 
-                                                    <select class="form-control" name="billing_state" id="billing_state">
+                                                    <select class="form-control form-control-lg" name="billing_state" id="billing_state">
 
                                                         <option value="">Select State</option>
 
@@ -457,9 +457,9 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 
                                                 <div class="form-group mb-2">
 
-                                                    <label for="billing_zipcode">Billing Zip Code</label>
+                                                    <label for="billing_zipcode"><?php echo $data['billing_zipcode_label']; ?></label>
 
-                                                    <input class="form-control zip" id="billing_zipcode" name="billing_zipcode" type="text" value="<?php echo (isset($data['mailing_zipcode'])) ? $data['mailing_zipcode'] : '';  ?>">
+                                                    <input class="form-control form-control-lg zip" id="billing_zipcode" name="billing_zipcode" type="text" value="<?php echo (isset($data['mailing_zipcode'])) ? $data['mailing_zipcode'] : '';  ?>">
 
                                                 </div>
 
@@ -625,12 +625,12 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                 <div class="d-flex align-items-start justify-content-between px-4 pt-4 pb-4">
                                     <div>
                                         <div class="d-flex align-items-center gap-2">
-                                            <h5 class="mb-0 fw-bold">Order Review</h5>
+                                            <h5 class="mb-0 fw-bold"><?php echo $data['cart_title']; ?></h5>
                                             <button class="btn btn-sm btn-link text-muted collapsed" type="button" data-toggle="collapse" data-target="#order-review-area" aria-expanded="false">
                                                 <i class="fa fa-caret-down arrow-icon"></i>
                                             </button>
                                         </div>
-                                        <div class="text-muted small mt-1">1 item in cart</div>
+                                        <div class="text-muted small mt-1"><?php echo $data['cart_number']; ?></div>
                                     </div>
                                 </div>
 
@@ -684,7 +684,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                             <div class="summary-card bg-white">
                                 <!-- Header -->
                                 <div class="d-flex align-items-center justify-content-between px-4 pt-4">
-                                    <h5 class="mb-0 fw-bold">Billing Summary</h5>
+                                    <h5 class="mb-0 fw-bold"><?php echo $data['summary_title']; ?></h5>
                                     <button class="btn btn-sm btn-link text-muted" type="button" data-toggle="collapse" data-target="#order-summary-area" aria-expanded="false">
                                         <i class="fa fa-caret-up arrow-icon"></i>
                                     </button>
@@ -693,22 +693,22 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                 <!-- Lines -->
                                 <div class="px-4 pt-3 pb-2" id="order-summary-area">
                                     <div class="row g-0 mb-2 summary-row">
-                                        <div class="col text-start text-muted">Subtotal</div>
+                                        <div class="col text-start text-muted"><?php echo $data['summary_subtotal']; ?></div>
                                         <div class="col-auto fw-semibold" id="subtotal"><?php echo isset($infoPlan['price']) ? '$' . number_format($infoPlan['price'], 2) : '$0.00'; ?></div>
                                     </div>
                                     <div class="row g-0 mb-2 summary-row">
-                                        <div class="col text-start text-muted">Discount</div>
+                                        <div class="col text-start text-muted"><?php echo $data['summary_discount']; ?></div>
                                         <div class="col-auto fw-semibold">-<?php echo isset($infoPlan['price']) && isset($infoPlan['promo_price']) ? '$' . number_format($infoPlan['price'] - $infoPlan['promo_price'], 2) : '$0.00'; ?></div>
                                     </div>
                                     <?php if (isset($infoPlan['shipping']) && $infoPlan['shipping'] > 0): ?>
                                         <div class="row g-0 mb-2 summary-row">
-                                            <div class="col text-start text-muted">Shipping</div>
+                                            <div class="col text-start text-muted"><?php echo $data['summary_shipping']; ?></div>
                                             <div class="col-auto fw-semibold" id="shipping"><?php echo isset($infoPlan['shipping']) ? '$' . number_format($infoPlan['shipping'], 2) : '$0.00'; ?></div>
                                         </div>
                                     <?php endif; ?>
                                     <div class="row g-0 mb-2 summary-row">
-                                        <div class="col text-start text-muted">Tax</div>
-                                        <div class="col-auto fw-semibold" id="tax"><span class="badge-pending">Pending Service Address Section</span></div>
+                                        <div class="col text-start text-muted"><?php echo $data['summary_tax']; ?></div>
+                                        <div class="col-auto fw-semibold" id="tax"><span class="badge-pending"><?php echo $data['summary_pending']; ?></span></div>
 
                                     </div>
                                 </div>
@@ -717,8 +717,8 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 
                                 <!-- Grand total -->
                                 <div class="d-flex align-items-center justify-content-between px-4">
-                                    <div class="fw-bold fs-5">Grand Total</div>
-                                    <div class="fw-bold fs-5" id="grandTotal"><span class="badge-pending">Pending Service Address Section</span></div>
+                                    <div class="fw-bold fs-5"><?php echo $data['summary_total']; ?></div>
+                                    <div class="fw-bold fs-5" id="grandTotal"><span class="badge-pending"><?php echo $data['summary_pending']; ?></span></div>
 
                                 </div>
 
@@ -728,8 +728,8 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                 <!-- Comment -->
                                 <div class="px-4 pt-4">
                                     <div class="floating-wrap text-start">
-                                        <label class="floating-label">Order Comment</label>
-                                        <textarea class="form-control comment-box" rows="3" placeholder="Type here..."></textarea>
+                                        <label class="floating-label"><?php echo $data['summary_comment_label']; ?></label>
+                                        <textarea class="form-control comment-box pt-3" rows="3" placeholder="<?php echo $data['summary_comment_placeholder']; ?>"></textarea>
                                     </div>
                                 </div>
 
@@ -737,11 +737,11 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                 <div class="px-4 pt-3">
                                     <div class="form-check d-flex align-items-start gap-2">
                                         <input class="form-check-input mt-1" type="checkbox" value="" id="policyCheck" checked>
-                                        <label class="form-check-label text-muted" for="policyCheck">
-                                            I acknowledge LinkUp Mobile’s
-                                            <a href="#" class="text-link">Privacy Policy</a>
+                                        <label class="form-check-label text-muted" for="policyCheck" style="margin-top: 0px;position: relative;">
+                                            <?php echo $data['summary_terms_label']; ?>
+                                            <a href="#" class="text-link"><?php echo $data['summary_privacy']; ?></a>
                                             &amp;
-                                            <a href="#" class="text-link">Terms Policy</a>
+                                            <a href="#" class="text-link"><?php echo $data['summary_terms']; ?></a>
                                         </label>
                                     </div>
                                 </div>
@@ -757,6 +757,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                     <input type="hidden" id="utm_adgroup" name="utm_adgroup" value="<?php echo isset($data['utm_adgroup']) ? $data['utm_adgroup'] : '' ?>" />
                                     <input type="hidden" id="source" name="source" value="<?php echo isset($data['source']) ? $data['source'] : ''; ?>">
                                     <input type="hidden" id="Imei" name="Imei" value="<?php echo isset($data['imei']) ? $data['imei'] : ''; ?>">
+                                    <input type="hidden" id="tid" name="tid" value="<?php echo isset($data['tid']) ? $data['tid'] : ''; ?>">
                                     <input type="hidden" id="idPlan" name="idPlan" value="<?php echo $data['IdPlan']; ?>">
                                     <input type="hidden" id="plan" name="plan" value="<?php echo $infoPlan['name']; ?>">
                                     <input type="hidden" id="dataValue" name="dataValue" />
@@ -774,7 +775,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                             <input type="hidden" name="dataValue" id="dataValue" />
                                             <input type="hidden" name="dataDescriptor" id="dataDescriptor" />
                                             <button class="AcceptUI btn btn-primary w-100 pay-btn" id="pay-btn" data-billingAddressOptions='{"show":true, "required":false}' data-apiLoginID="<?php echo API_LOGIN_ID; ?>" data-clientKey="<?php echo CLIENT_KEY; ?>" data-acceptUIFormBtnTxt="Submit" data-acceptUIFormHeaderTxt="Card Information" data-paymentOptions='{"showCreditCard": true, "showBankAccount": false}' data-responseHandler="responseHandler">
-                                                Pay <span id="gtotal"></span>
+                                                <?php echo $data['summary_pays_label']; ?> <span id="gtotal"></span>
                                             </button>
                                         </div>
 
@@ -1275,6 +1276,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
             "billing_zipcode": $('#billing_zipcode').val(),
             "number_of_lines": $("#number_of_lines").val(),
             "imei": $('#Imei').val(),
+            "tid": $('#tid').val(),
             "utm_source": $("#utm_source").val(),
             "utm_medium": $("#utm_medium").val(),
             "utm_campaign": $("#utm_campaign").val(),
