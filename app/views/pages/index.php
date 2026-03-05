@@ -845,7 +845,7 @@ letter-spacing: -0.6px;">+ 1 FREE MONTH</small>
                 <p class="lead mb-4 fw-medium" style="max-width: 500px;">
                     Questions or need help? Our bilingual customer support team is ready to step in, answer your questions, and support you every step.
                 </p>
-                <a href="#" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-primary-dark rounded-3 shadow-sm"
+                <a href="#" class="btn btn-warning franklin-family btn-lg px-5 py-3 fw-bold text-primary-dark rounded-3 shadow-sm"
                     style="background-color: #ffc107; border: none; color: #003d6b;">
                     VISIT HELP CENTER
                 </a>
