@@ -41,7 +41,7 @@ class Checkout extends Controller
 				'logo' => '/img/UsaSnap15_logo.png',
 				'css' => '/css/lifeline_form.css',
 				'url' => "https://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]",
-				'source' => "bogo30landing",
+				'source' => "BOGO30landing",
 				'origin' => "domain_name",
 				'program' => "",
 				'utm_source' => $utm_source,
@@ -51,7 +51,7 @@ class Checkout extends Controller
 				'match_type' => $match_type,
 				'utm_adgroup' => $utm_adgroup
 			];
-			$data['encryption_key'] = CARD_ENCRYPTION_KEY;
+			$data['imei'] = $imei;
 			$data['IdPlan'] = $plan_id;
 			$data['number_of_lines'] = $lines ?? 1;
 			$data['infoPlan'] = $infoPlans; // Get information Plan
@@ -337,7 +337,7 @@ class Checkout extends Controller
 						'extra_notes'      => '',
 					],					
 					'sim' => 'eSIM',
-					'autopay' => true,
+					'autopay' => false,
 				],
 			];
 

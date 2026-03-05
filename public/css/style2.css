@@ -372,6 +372,27 @@ footer li {
     background-color: #EFEFEF;
 }
 
+#oreview-mobile{
+    display: none;
+}
+
+#checkout-form{
+    padding-top: 3rem !important;
+}
+
+@media (max-width: 768px) {
+    #oreview-mobile {
+        display: block;
+    }
+    #oreview-desk{
+        display: none;
+    }
+
+    #checkout-form {
+        padding-top: 1rem !important;
+    }
+}
+
 .order-card, .summary-card, .order-card, .shipping-card, .billing-card,.customer-card, .payment-card {
     border: 1px solid #e9ecef;
     border-radius: 18px;
@@ -420,15 +441,18 @@ footer li {
     display: inline-block;
 }
 .gohome-btn{
-    border-radius: 14px;
+        border-radius: 14px;
+        background: #FFCA06;
+        color: #054A76;
+        text-align: center;
+        font-family: "Roboto";
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+}
+.gohome-btn:hover{
     background: #FFCA06;
-    color: #054A76;
-    text-align: center;
-    font-family: "Roboto";
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 .thankyou-title{
         color: #054A76;

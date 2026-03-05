@@ -1,20 +1,22 @@
 <?php require APPROOT . '/views/inc/header.php';
+//print("<pre>" . print_r($data, true) . "</pre>");
 $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['infoPlan'] : [];
+$order = (isset($data['infoCustomerId']) && $data['infoCustomerId'] != NULL) ? $data['infoCustomerId'] : [];
 ?>
 
 <section class="position-relative py-4 py-xl-5" style="min-height:525px">
     <div class="container">
-
+        
         <div class="row">
             <div class="col p-3">
             </div>
         </div>
         <div class="row justify-content-md-center pt-3">
-            <div class="col-lg-6 mb-4 pt-5">
+            <div class="col-lg-6 mb-4">
                 <div class="text-center">
-                    <h1 class="thankyou-title fw-bold">ORDER #<?php echo isset($order_id) ? $order_id : 'N/A'; ?></h1>
+                    <h1 class="thankyou-title fw-bold">ORDER #<?php echo isset($order['id_order']) ? $order['id_order'] : 'N/A'; ?></h1>
                     <h2 class="thankyou-title fw-bold">HAS BEEN PLACED!</h2>
-                    <p class="lead text-muted mb-4">Thank you for your order. You will receive your eSIM and your order confirmation via email.</p>
+                    <strong class="lead mb-4">Thank you for your order. You will receive your eSIM and your order confirmation via email.</strong>
                 </div>
             </div>
         </div>
@@ -31,7 +33,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                     </div>
 
                     <!-- Item row -->
-                    <div class="px-4 pb-4 collapse" id="order-review-area">
+                    <div class="px-4 pb-4" id="order-review-area">
                         <div class="d-flex gap-3 align-items-start">
 
                             <!-- Icon -->
@@ -48,19 +50,10 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                     </div>
                                 </div>
 
-                                <div class="d-flex align-items-end justify-content-between mt-2 flex-wrap gap-3">
+                                <div class="d-flex justify-content-between mt-2 flex-wrap gap-3">
                                     <!-- Quantity -->
-                                    <div class="d-flex align-items-center gap-2">
-                                        <button class="btn btn-outline-secondary qty-btn" type="button" aria-label="Decrease" disabled>
-                                            −
-                                        </button>
+                                    <div class="text-muted text-start small">1 eSIM</div>
 
-                                        <input class="form-control qty-input text-center" name="lines" id="lines" type="text" value="1" aria-label="Quantity" readonly>
-
-                                        <button class="btn btn-outline-secondary qty-btn" type="button" aria-label="Increase" disabled>
-                                            +
-                                        </button>
-                                    </div>
 
                                     <!-- Price -->
                                     <div class="text-end ms-auto">
@@ -79,8 +72,8 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
         </div>
 
         <div class="row justify-content-md-center pt-3">
-            <div class="col-lg-3 text-center mt-3">
-                <a class="btn w-100 gohome-btn">GO BACK HOME</a>
+            <div class="col-lg-3 col-md-4 text-center mt-3">
+                <a class="btn w-100 gohome-btn pt-3 pb-3" href="<?php echo URLROOT; ?>">GO BACK HOME</a>
             </div>
         </div>
 

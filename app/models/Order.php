@@ -137,7 +137,7 @@ class Order
 
 	public function updateOrder($data)
 	{
-		$this->db->query('UPDATE orders SET
+		/* $this->db->query('UPDATE orders SET
 		plan              = :plan,
         email             = :email,
         pay_message       = :pay_message,
@@ -175,14 +175,14 @@ class Order
 		$this->db->bind(':price',             (float) $data['price']);
 		$this->db->bind(':amount',            (float) $data['amount']);
 		$this->db->bind(':action',            $data['action']);
-		$this->db->bind(':id',          	  $data['id']);
+		$this->db->bind(':id',          	  $data['id']); */
 
-		if ($this->db->execute()) {
+		/* if ($this->db->execute()) {
 			return true;
 		} else {
 			return false;
-		}
-		//return $this->db->updateQuery($this->table, $data, "order_id=:order_id");
+		} */
+		return $this->db->updateQuery($this->table, $data, "id_order=:id_order");
 	}
 
 	public function createOrderId()

@@ -28,16 +28,83 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
     <form action="" class="form-floating" method="post" enctype="multipart/form-data" id="LinkupmobileOrder" autocomplete="off"
         data-customerid="" data-formtype="stepsForm" data-tf-element-role="offer">
         <div class="container-fluid">
+            <div class="row" id="oreview-mobile">
+                <div class="col-md-12 col-sm-12 gray-bg">
+                    <div class="row justify-content-md-center pt-4 " id="summary-formmobile">
+                        <div class="col-lg-7 mb-4 ">
+                            <div class="order-card bg-white">
+                                <!-- Header -->
+                                <div class="d-flex align-items-start justify-content-between px-4 pt-4 pb-4">
+                                    <div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <h5 class="mb-0 fw-bold">Order Review</h5>
+                                            <button class="btn btn-sm btn-link text-muted collapsed" type="button" data-toggle="collapse" data-target="#order-review-area" aria-expanded="false">
+                                                <i class="fa fa-caret-down arrow-icon"></i>
+                                            </button>
+                                        </div>
+                                        <div class="text-muted small mt-1">1 item in cart</div>
+                                    </div>
+                                </div>
+
+                                <!-- Item row -->
+                                <div class="px-4 pb-4 collapse" id="order-review-area">
+                                    <div class="d-flex gap-3 align-items-start">
+
+                                        <!-- Icon -->
+                                        <div class="icon-box d-flex align-items-center justify-content-center flex-shrink-0">
+                                            <span class="fs-3"><?php echo isset($infoPlan['image']) ? '<img src="' . URLROOT . $infoPlan['image'] . '" alt="Plan Image" class="img-fluid plan-img">' : '📶'; ?></span>
+                                        </div>
+
+                                        <!-- Details -->
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-start justify-content-between gap-3">
+                                                <div>
+                                                    <div class="fw-semibold"><?php echo isset($infoPlan['name']) ? $infoPlan['name'] : 'Plan name not available'; ?></div>
+                                                    <div class="text-muted text-start small"><?php echo isset($infoPlan['data']) ? $infoPlan['data'] : 'Data not available'; ?> | <?php echo isset($infoPlan['sim']) ? $infoPlan['sim'] : ''; ?> <?php echo (isset($infoPlan['autopay']) && $infoPlan['autopay'] == true) ? '| Auto Pay' : ''; ?></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex align-items-end justify-content-between mt-2 flex-wrap gap-3">
+                                                <!-- Quantity -->
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="btn btn-outline-secondary qty-btn" type="button" aria-label="Decrease" disabled>
+                                                        −
+                                                    </button>
+
+                                                    <input class="form-control qty-input text-center" name="lines" id="lines" type="text" value="1" aria-label="Quantity" readonly>
+
+                                                    <button class="btn btn-outline-secondary qty-btn" type="button" aria-label="Increase" disabled>
+                                                        +
+                                                    </button>
+                                                </div>
+
+                                                <!-- Price -->
+                                                <div class="text-end ms-auto">
+                                                    <div class="text-muted text-decoration-line-through small"><?php echo isset($infoPlan['price']) ? '$' . number_format($infoPlan['price'], 2) : '$0.00'; ?></div>
+                                                    <div class="fs-5 fw-bold"><?php echo isset($infoPlan['promo_price']) ? '$' . number_format($infoPlan['promo_price'], 2) : '$0.00'; ?></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <hr class="my-3">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-md-6 col-sm-6 white-bg">
+                <div class="col-lg-6 col-md-6 col-sm-6 white-bg">
                     <div class="row justify-content-start pt-5">
                         <div class="col-xl-3"></div>
                         <div class="col-xl-8">
-                            <div class="row pt-5" id="checkout-form">
+                            <div class="row" id="checkout-form">
                                 <div class="col-lg-12 customer-card mb-4 px-4 pt-4 pb-4">
                                     <div class="row">
                                         <div class="mb-4 text-start col-lg-12 col-xs-12">
-                                            <div class="fw-bold fs-5">Billing Address</div>
+                                            <div class="fw-bold fs-5">Service Address</div>
                                         </div>
                                     </div>
 
@@ -224,9 +291,9 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 
                                                 <div class="form-group mb-2">
 
-                                                    <label for="mailing_address1">Billing Street Address</label>
+                                                    <label for="billing_address1">Billing Street Address</label>
 
-                                                    <input class="form-control" id="mailing_address1" name="mailing_address1" type="text" value="<?php echo (isset($data['mailing_address1'])) ? $data['mailing_address1'] : '';  ?>">
+                                                    <input class="form-control" id="billing_address1" name="billing_address1" type="text" value="<?php echo (isset($data['mailing_address1'])) ? $data['mailing_address1'] : '';  ?>">
 
                                                 </div>
 
@@ -236,21 +303,9 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 
                                                 <div class="form-group mb-2">
 
-                                                    <label for="mailing_address2">Billing Apartment # or Suite #</label>
+                                                    <label for="billing_address2">Billing Apartment # or Suite #</label>
 
-                                                    <input class="form-control" id="mailing_address2" name="mailing_address2" type="text" value="<?php echo (isset($data['mailing_address2'])) ? $data['mailing_address2'] : '';  ?>">
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="col-lg-6">
-
-                                                <div class="form-group mb-2">
-
-                                                    <label for="mailing_city">Billing City</label>
-
-                                                    <input class="form-control" id="mailing_city" name="mailing_city" type="text" value="<?php echo (isset($data['mailing_city'])) ? $data['mailing_city'] : '';  ?>">
+                                                    <input class="form-control" id="billing_address2" name="billing_address2" type="text" value="<?php echo (isset($data['mailing_address2'])) ? $data['mailing_address2'] : '';  ?>">
 
                                                 </div>
 
@@ -260,9 +315,21 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 
                                                 <div class="form-group mb-2">
 
-                                                    <label for="mailing_state">Billing State</label>
+                                                    <label for="billing_city">Billing City</label>
 
-                                                    <select class="form-control" name="mailing_state" id="mailing_state">
+                                                    <input class="form-control" id="billing_city" name="billing_city" type="text" value="<?php echo (isset($data['mailing_city'])) ? $data['mailing_city'] : '';  ?>">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-lg-6">
+
+                                                <div class="form-group mb-2">
+
+                                                    <label for="billing_state">Billing State</label>
+
+                                                    <select class="form-control" name="billing_state" id="billing_state">
 
                                                         <option value="">Select State</option>
 
@@ -378,9 +445,9 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 
                                                 <div class="form-group mb-2">
 
-                                                    <label for="mailing_zipcode">Billing Zip Code</label>
+                                                    <label for="billing_zipcode">Billing Zip Code</label>
 
-                                                    <input class="form-control zip" id="mailing_zipcode" name="mailing_zipcode" type="text" value="<?php echo (isset($data['mailing_zipcode'])) ? $data['mailing_zipcode'] : '';  ?>">
+                                                    <input class="form-control zip" id="billing_zipcode" name="billing_zipcode" type="text" value="<?php echo (isset($data['mailing_zipcode'])) ? $data['mailing_zipcode'] : '';  ?>">
 
                                                 </div>
 
@@ -392,7 +459,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 
                                 </div>
 
-                                <!--  <div class="col-lg-12 shipping-card mb-4 px-4 pt-4 pb-4">
+                                <!--<div class="col-lg-12 shipping-card mb-4 px-4 pt-4 pb-4">
                                     <div class="row">
                                         <div class="mb-4 text-start col-lg-12 col-xs-12">
                                             <div class="fw-bold fs-5">Shipping Method</div>
@@ -420,14 +487,14 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                     </div>
                                 </div> -->
 
-                                <div class="col-lg-12 billing-card mb-4 px-4 pt-4 pb-4">
+                                <!-- <div class="col-lg-12 billing-card mb-4 px-4 pt-4 pb-4">
                                     <div class="row">
                                         <div class="mb-4 text-start col-lg-12 col-xs-12">
                                             <div class="fw-bold fs-5">Billing Method</div>
                                         </div>
                                     </div>
 
-                                    <!--  <div class="row pb-3 purchase-options">
+                                     <div class="row pb-3 purchase-options">
                                         <div class="col-md-3 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                                             <div class="d-block mb-2">
                                                 <label for="autopay" class="control-label mr-2">
@@ -440,7 +507,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                         <div class="col-md-9 col-lg-9 col-xl-9 mb-4 mb-lg-0">
                                             <p class="mb-0">Your data plan automatically renews at the end of every&nbsp;cycle.</p>
                                         </div>
-                                    </div> -->
+                                    </div>
                                     <div class="row pb-3">
                                         <div class="col-md-3 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                                             <div class="d-block mb-2">
@@ -455,7 +522,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                             <p class="mb-0">Your data plan automatically renews at the end of every&nbsp;cycle.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <!--  <div class="col-lg-12 payment-card mb-4 px-4 pt-4 pb-4">
                                     <div class="row">
@@ -533,13 +600,14 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                         </div>
                                     </div>
                                 </div> -->
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6 gray-bg">
-                    <div class="row justify-content-md-center pt-5" id="summary-form">
-                        <div class="col-lg-7 mb-4 pt-5">
+                <div class="col-lg-6 col-md-6 col-sm-6 gray-bg">
+                    <div class="row justify-content-md-center pt-5 pb-5" id="summary-form">
+                        <div class="col-lg-7 mb-4 pt-5" id="oreview-desk">
                             <div class="order-card bg-white">
                                 <!-- Header -->
                                 <div class="d-flex align-items-start justify-content-between px-4 pt-4 pb-4">
@@ -568,7 +636,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                             <div class="d-flex align-items-start justify-content-between gap-3">
                                                 <div>
                                                     <div class="fw-semibold"><?php echo isset($infoPlan['name']) ? $infoPlan['name'] : 'Plan name not available'; ?></div>
-                                                    <div class="text-muted text-start small"><?php echo isset($infoPlan['data']) ? $infoPlan['data'] : 'Data not available'; ?> | <?php echo isset($infoPlan['sim']) ? $infoPlan['sim'] : ''; ?> | <?php echo (isset($infoPlan['autopay']) && $infoPlan['autopay'] == true) ? 'Auto Pay' : ''; ?></div>
+                                                    <div class="text-muted text-start small"><?php echo isset($infoPlan['data']) ? $infoPlan['data'] : 'Data not available'; ?> | <?php echo isset($infoPlan['sim']) ? $infoPlan['sim'] : ''; ?> <?php echo (isset($infoPlan['autopay']) && $infoPlan['autopay'] == true) ? '| Auto Pay' : ''; ?></div>
                                                 </div>
                                             </div>
 
@@ -628,7 +696,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                     <?php endif; ?>
                                     <div class="row g-0 mb-2 summary-row">
                                         <div class="col text-start text-muted">Tax</div>
-                                        <div class="col-auto fw-semibold" id="tax"><span class="badge-pending">Pending Billing Address Section</span></div>
+                                        <div class="col-auto fw-semibold" id="tax"><span class="badge-pending">Pending Service Address Section</span></div>
 
                                     </div>
                                 </div>
@@ -638,7 +706,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                 <!-- Grand total -->
                                 <div class="d-flex align-items-center justify-content-between px-4">
                                     <div class="fw-bold fs-5">Grand Total</div>
-                                    <div class="fw-bold fs-5" id="grandTotal"><span class="badge-pending">Pending Billing Address Section</span></div>
+                                    <div class="fw-bold fs-5" id="grandTotal"><span class="badge-pending">Pending Service Address Section</span></div>
 
                                 </div>
 
@@ -669,12 +737,12 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                 <!-- Pay button -->
                                 <div class="px-4 pt-4">
                                     <input type="hidden" id="url" name="url" value="<?php echo $data['url']; ?>">
-                                    <input type="hidden" id="utm_source" name="utm_source" value="<? echo $data['utm_source']; ?>">
-                                    <input type="hidden" id="utm_medium" name="utm_medium" value="<? echo $data['utm_medium']; ?>" />
-                                    <input type="hidden" id="utm_campaign" name="utm_campaign" value="<? echo $data['utm_campaign']; ?>" />
-                                    <input type="hidden" id="utm_content" name="utm_content" value="<? echo $data['utm_content']; ?>" />
-                                    <input type="hidden" id="match_type" name="match_type" value="<? echo $data['match_type']; ?>" />
-                                    <input type="hidden" id="utm_adgroup" name="utm_adgroup" value="<? echo $data['utm_adgroup']; ?>" />
+                                    <input type="hidden" id="utm_source" name="utm_source" value="<?php echo isset($data['utm_source']) ? $data['utm_source'] : '' ?>" />
+                                    <input type="hidden" id="utm_medium" name="utm_medium" value="<?php echo isset($data['utm_medium']) ? $data['utm_medium'] : '' ?>" />
+                                    <input type="hidden" id="utm_campaign" name="utm_campaign" value="<?php echo isset($data['utm_campaign']) ? $data['utm_campaign'] : '' ?>" />
+                                    <input type="hidden" id="utm_content" name="utm_content" value="<?php echo isset($data['utm_content']) ? $data['utm_content'] : '' ?>" />
+                                    <input type="hidden" id="match_type" name="match_type" value="<?php echo isset($data['match_type']) ? $data['match_type'] : '' ?>" />
+                                    <input type="hidden" id="utm_adgroup" name="utm_adgroup" value="<?php echo isset($data['utm_adgroup']) ? $data['utm_adgroup'] : '' ?>" />
                                     <input type="hidden" id="source" name="source" value="<?php echo isset($data['source']) ? $data['source'] : ''; ?>">
                                     <input type="hidden" id="Imei" name="Imei" value="<?php echo isset($data['imei']) ? $data['imei'] : ''; ?>">
                                     <input type="hidden" id="idPlan" name="idPlan" value="<?php echo $data['IdPlan']; ?>">
@@ -686,11 +754,6 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                     <input type="hidden" id="regularPrice" value="">
                                     <input type="hidden" id="promoPrice" value="<?php echo isset($infoPlan['promo_price']) ? $infoPlan['promo_price'] : ''; ?>">
                                     <input type="hidden" id="taxes" value="">
-                                    <input type="hidden" id="c1" value="">
-                                    <input type="hidden" id="c2" value="">
-                                    <input type="hidden" id="c3" value="">
-                                    <input type="hidden" id="c4" value="">
-                                    <input type="hidden" id="c5" value="">
                                     <!--<button type="submit" id="pay-btn" class="btn btn-primary w-100 pay-btn"> Pay <span id="gtotal"></span></button>-->
                                 </div>
                                 <div class="px-4 pt-4">
@@ -715,8 +778,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                     </div>
                                 </div>
 
-
-                                <div class="px-4 pt-3 pb-4 text-center">
+                                <div class="px-4 pt-2 pb-2 text-center">
                                     <div id="receipt" style="margin-bottom: 0;"></div>
                                 </div>
 
@@ -724,12 +786,10 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                     <div id="response" style="margin-bottom: 0;"></div>
                                 </div> -->
 
-
-
                                 <!-- Norton -->
-                                <div class="px-4 pt-3 pb-4 text-center">
+                                <div class="px-4 pt-3 pb-3 text-center">
                                     <div class="norton d-inline-flex align-items-center gap-2">
-
+                                        <img src="<?php echo URLROOT; ?>/img/NortonIcon.png" class="img-fluid" />
                                     </div>
                                 </div>
 
@@ -882,7 +942,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                     $('#tax').text('$' + parseFloat(data.tax).toFixed(2));
                     $('#grandTotal').text('$' + parseFloat(data.total_with_taxes).toFixed(2));
                     $('#gtotal').text('$' + parseFloat(data.total_with_taxes).toFixed(2));
-                    $('#regularPrice').val(data.subtotal);
+                    $('#regularPrice').val(parseFloat(data.total_with_taxes).toFixed(2));
                     $('#taxes').val(parseFloat(data.tax).toFixed(2));
                     setSummaryText(''); // clear any status
                     enablePay();
@@ -932,7 +992,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
 <script type="text/javascript">
     $(document).ready(function(e) {
 
-        $("#phone").mask('(000)000-0000');
+        $("#phone_number").mask('(000)000-0000');
 
         $("#areacode").mask('000');
 
@@ -1074,7 +1134,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                         message = "<p style='color: #007bff;font-weight: 500;font-size: 20px;'>Your payment has been processed successfully! <br>Transaction ID: " + responseObj.transactionResponse.transId + "</p>";
                         //submitStep3(responseObj, packageID);
                         setTimeout(function() {
-                            window.location.href = '/thankyou/';;
+                            window.location.href = '<?php echo URLROOT; ?>/thankyou/?cid=' + responseObj.customerIdncrypt;
                         }, 1000);
 
                     }
@@ -1145,16 +1205,35 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
             "orderId": $("#order_id").val(),
             "IdPlan": $("#idPlan").val(),
             "plan": $("#plan").val(),
-            "firstName": $("#first_name").val(),
-            "lastName": $("#second_name").val(),
+            "first_name": $("#first_name").val(),
+            "second_name": $("#last_name").val(),
             "email": $("#email").val(),
-            "phoneNumber": $("#phoneNumber").val(),
-            "address": $("#baddressLine1").val(),
-            "address2": $("#baddressLine2").val(),
-            "city": $("#bcity").val(),
-            "state": $("#bstate").val(),
-            "zipcode": $("#bzipcode").val(),
-            "number_of_lines": $("#number_of_lines").val()
+            "phone_number": $("#phone_number").val(),
+            "address1": $("#street_address1").val(),
+            "address2": $("#address2").val(),
+            "city": $("#locality").val(),
+            "state": $("#state").val(),
+            "zipcode": $("#postcode").val(),
+            "shipping_address1": $('#mailing_address1').val(),
+            "shipping_address2": $('#mailing_address2').val(),
+            "shipping_city": $('#mailing_city').val(),
+            "shipping_state": $('#mailing_state').val(),
+            "shipping_zipcode": $('#mailing_zipcode').val(),
+            "billing_address1": $('#billing_address1').val(),
+            "billing_address2": $('#billing_address2').val(),
+            "billing_city": $('#billing_city').val(),
+            "billing_state": $('#billing_state').val(),
+            "billing_zipcode": $('#billing_zipcode').val(),
+            "number_of_lines": $("#number_of_lines").val(),
+            "imei": $('#Imei').val(),
+            "utm_source": $("#utm_source").val(),
+            "utm_medium": $("#utm_medium").val(),
+            "utm_campaign": $("#utm_campaign").val(),
+            "utm_content": $("#utm_content").val(),
+            "match_type": $("#match_type").val(),
+            "utm_adgroup": $("#utm_adgroup").val(),
+            "source": $('#source').val(),
+            "url": $("#url").val(),
         }
         console.log(fields)
 

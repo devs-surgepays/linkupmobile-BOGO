@@ -1,5 +1,5 @@
 <?php
-/*ini_set('display_errors', 1);
+/* ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);*/
 libxml_use_internal_errors(true);
@@ -21,6 +21,7 @@ class Authorizenets extends Controller
 		//$this->userModel = $this->model('User');
 		//$this->addonModel = $this->model('Addon');		
 		$this->orderModel = $this->model('Order');
+		
 
 		$this->mailer = new PHPMailer_Lib();
 
@@ -97,30 +98,74 @@ class Authorizenets extends Controller
 			//die('Submit');
 			$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
+			$customer_id = $this->orderModel->createCustomerId();
 			//echo $_POST['orderItemId'];
 			$data = [
+				'customer_id' => $customer_id,
+				'first_name' => isset($_POST['first_name']) ? $this->sanitizeInput($_POST['first_name'], 'string') : '',
+				'second_name' => isset($_POST['second_name']) ? $this->sanitizeInput($_POST['second_name'], 'string') : '',
+				'phone_number' => isset($_POST['phone_number']) ? $this->sanitizeInput($_POST['phone_number'], 'phone') : '',
+				'email' => isset($_POST['email']) ? $this->sanitizeInput($_POST['email'], 'email') : '',
+				'address1' => isset($_POST['address1']) ? $this->sanitizeInput($_POST['address1'], 'string') : '',
+				'address2' => isset($_POST['address2']) ? $this->sanitizeInput($_POST['address2'], 'string') : '',
+				'city' => isset($_POST['city']) ? $this->sanitizeInput($_POST['city'], 'string') : '',
+				'state' => isset($_POST['state']) ? $this->sanitizeInput($_POST['state'], 'string') : '',
+				'zipcode' => isset($_POST['zipcode']) ? $this->sanitizeInput($_POST['zipcode'], 'string') : '',
+				'shipping_address1' => isset($_POST['shipping_address1']) ? $this->sanitizeInput($_POST['shipping_address1'], 'string') : '',
+				'shipping_address2' => isset($_POST['shipping_address2']) ? $this->sanitizeInput($_POST['shipping_address2'], 'string') : '',
+				'shipping_city' => isset($_POST['shipping_city']) ? $this->sanitizeInput($_POST['shipping_city'], 'string') : '',
+				'shipping_state' => isset($_POST['shipping_state']) ? strtoupper($this->sanitizeInput($_POST['shipping_state'], 'string')) : '',
+				'shipping_zipcode' => isset($_POST['shipping_zipcode']) ? $this->sanitizeInput($_POST['shipping_zipcode'], 'string') : '',
+				'billing_address1' => isset($_POST['billing_address1']) ? $this->sanitizeInput($_POST['billing_address1'], 'string') : '',
+				'billing_address2' => isset($_POST['billing_address2']) ? $this->sanitizeInput($_POST['billing_address2'], 'string') : '',
+				'billing_city' => isset($_POST['billing_city']) ? $this->sanitizeInput($_POST['billing_city'], 'string') : '',
+				'billing_state' => isset($_POST['billing_state']) ? strtoupper($this->sanitizeInput($_POST['billing_state'], 'string')) : '',
+				'billing_zipcode' => isset($_POST['billing_zipcode']) ? $this->sanitizeInput($_POST['billing_zipcode'], 'string') : '',
+				'agree_terms' => isset($_POST['agree_terms']) ? $this->sanitizeInput($_POST['agree_terms'], 'string') : '',
+				'utm_source' => isset($_POST['utm_source']) ? $this->sanitizeInput($_POST['utm_source'], 'string') : '',
+				'utm_medium' => isset($_POST['utm_medium']) ? $this->sanitizeInput($_POST['utm_medium'], 'string') : '',
+				'utm_campaign' => isset($_POST['utm_campaign']) ? $this->sanitizeInput($_POST['utm_campaign'], 'string') : '',
+				'utm_content' => isset($_POST['utm_content']) ? $this->sanitizeInput($_POST['utm_content'], 'string') : '',
+				'match_type' => isset($_POST['match_type']) ? $this->sanitizeInput($_POST['match_type'], 'string') : '',
+				'source' => isset($_POST['source']) ? $this->sanitizeInput($_POST['source'], 'string') : '',
+				'URL' => isset($_POST['url']) ? $this->sanitizeInput($_POST['url'], 'url') : '',
+			];
+			$log->putLog("DataReceived: " . json_encode($data, true));
+
+			/*Handle the Order ID*/
+			/*********************************************/
+			if (!empty($data['order_id'])) {
+				$order_id = $data['order_id'];
+				$actionDatabase = 'updateOrder';
+			} else {
+				$actionDatabase = 'addOrder';
+				$order_id = $this->orderModel->createOrderId();
+				$data['order_id'] = $order_id;
+			}
+			$log->putLog("OrderID: " . json_encode($order_id, true));
+
+			/*Create Order Record*/
+			/*********************************************/
+			if (isset($data['order_id']) && !empty($data['order_id']) && $actionDatabase == 'updateOrder') {
+				$order = $this->orderModel->updateOrder($data);
+			} else {
+				$order = $this->orderModel->createOrder($data);
+			}
+
+			$data_pay = [
 				'plan_price' => trim($_POST['planPrice']),
 				'amount' => trim($_POST['amount']),
 				'price' => $_POST['price'],
 				'taxes' => trim($_POST['taxes']),
 				'dataDesc' => trim($_POST['dataDesc']),
-				'dataValue' => $_POST['dataValue'],
-				'orderId' => $_POST['orderId'],
-				'firstname' => trim($_POST['firstName']),
-				'lastname' => trim($_POST['lastName']),
-				'email' => trim($_POST['email']),
-				'phone_number' => trim($_POST['phoneNumber']),
-				'address' => trim($_POST['address']),
-				'address2' => trim($_POST['address2']),
-				'city' => trim($_POST['city']),
-				'state' => trim($_POST['state']),
-				'zipcode' => trim($_POST['zipcode']),
+				'dataValue' => $_POST['dataValue'],				
 				'plan_id' => trim($_POST['IdPlan']),
 				'plan' => trim($_POST['plan']),
 				'number_of_lines' => $_POST['number_of_lines'],
-				'country' => 'USA'
+				'imei' => $_POST['imei'],
+				'country' => 'USA',						
 			];
-			$log->putLog("DataReceived: " . json_encode($data, true));
+			$log->putLog("DataPay: " . json_encode($data_pay, true));
 
 
 			$transRequestXmlStr = <<<XML
@@ -167,22 +212,22 @@ class Authorizenets extends Controller
 			$url = APIURL;
 			$transRequestXml->merchantAuthentication->addChild('name', $loginId);
 			$transRequestXml->merchantAuthentication->addChild('transactionKey', $transactionKey);
-			$transRequestXml->transactionRequest->amount = $data['amount'];
-			$transRequestXml->transactionRequest->payment->opaqueData->dataDescriptor = $data['dataDesc'];
-			$transRequestXml->transactionRequest->payment->opaqueData->dataValue = $data['dataValue'];
+			$transRequestXml->transactionRequest->amount = $data_pay['amount'];
+			$transRequestXml->transactionRequest->payment->opaqueData->dataDescriptor = $data_pay['dataDesc'];
+			$transRequestXml->transactionRequest->payment->opaqueData->dataValue = $data_pay['dataValue'];
 			$transRequestXml->transactionRequest->lineItems->lineItem->itemId = '1';
-			$transRequestXml->transactionRequest->lineItems->lineItem->name = $data['plan_id'];
-			$transRequestXml->transactionRequest->lineItems->lineItem->description = $data['plan'];
-			$transRequestXml->transactionRequest->lineItems->lineItem->quantity = $data['number_of_lines'];
-			$transRequestXml->transactionRequest->lineItems->lineItem->unitPrice = $data['price'];
+			$transRequestXml->transactionRequest->lineItems->lineItem->name = $data_pay['plan_id'];
+			$transRequestXml->transactionRequest->lineItems->lineItem->description = $data_pay['plan'];
+			$transRequestXml->transactionRequest->lineItems->lineItem->quantity = $data_pay['number_of_lines'];
+			$transRequestXml->transactionRequest->lineItems->lineItem->unitPrice = $data_pay['price'];
 			//$transRequestXml->transactionRequest->tax->amount = $data['taxes'];
-			$transRequestXml->transactionRequest->billTo->firstName = $data['firstname'];
-			$transRequestXml->transactionRequest->billTo->lastName = $data['lastname'];
-			$transRequestXml->transactionRequest->billTo->address = $data['address'];
+			$transRequestXml->transactionRequest->billTo->firstName = $data['first_name'];
+			$transRequestXml->transactionRequest->billTo->lastName = $data['second_name'];
+			$transRequestXml->transactionRequest->billTo->address = $data['address1'];
 			$transRequestXml->transactionRequest->billTo->city = $data['city'];
 			$transRequestXml->transactionRequest->billTo->state = $data['state'];
 			$transRequestXml->transactionRequest->billTo->zip = $data['zipcode'];
-			$transRequestXml->transactionRequest->billTo->country = $data['country'];
+			$transRequestXml->transactionRequest->billTo->country = $data_pay['country'];
 			$transRequestXml->transactionRequest->billTo->phoneNumber = $data['phone_number'];
 			$transRequestXml->transactionRequest->billTo->email = $data['email'];
 
@@ -228,18 +273,13 @@ class Authorizenets extends Controller
 				$obj = json_decode($jsonResult, true);
 				//$log->putLog("XMData: " . json_encode($jsonResult, true)); // save log	
 
-				//print_r($_SESSION);
-				/*$user_id = $_SESSION['user_id'];
-					$email = $_SESSION['user_email'];
-					$id_order = $_SESSION['plan_show']['id_order']; */
+				//print_r($_SESSION);			
 				$messageResultCode = $obj['messages']['resultCode'];
 				$transactionResponse = $obj['transactionResponse'] ?? [];
 				$transactionCode = isset($transactionResponse['messages']['message']['code']) ?? '';
-				$messageTransactionCode = $transactionCode ?? $transactionResponse['errors']['error']['errorCode'] ?? '';
-				
+				$messageTransactionCode = $transactionCode ?? $transactionResponse['errors']['error']['errorCode'] ?? '';				
 				$messageResultCode = $obj['messages']['resultCode'];
 				$messageResultText = $obj['messages']['message']['text'];
-
 
 				if (isset($transactionResponse['errors']['error']['errorText'])	&& $transactionResponse['errors']['error']['errorText'] !== '') {
 
@@ -271,14 +311,14 @@ class Authorizenets extends Controller
 				$pay_message = $obj['messages']['message']['text'] . ' ' . $result;
 				/*$pay_message = "The transaction was accepted and was authorized, but is being held for merchant review.";*/
 
-					/*Apis_log_payments */
+				/*Apis_log_payments */
 				/*********************************************/
-				$this->logModel->log_payment(array('order_id' => $data['orderId'], 'response' =>  $jsonResult, 'payment_method' => "Credit Card", 'action' => 'Single Payment'));
+				$this->logModel->log_payment(array('order_id' => $order_id, 'response' =>  $jsonResult, 'payment_method' => "Credit Card", 'action' => 'Single Payment'));
 				/*********************************************/
 
 				$updateData = [
-					"order_id" => $data['orderId'],
-					'plan' => $data['plan'],
+					"order_id" => $order_id,
+					'plan' => $data_pay['plan'],
 					'email' => $data['email'],
 					'pay_message' => $pay_message,
 					'pay_authcode' => $obj['transactionResponse']['authCode'],
@@ -286,75 +326,77 @@ class Authorizenets extends Controller
 					'pay_accountnumber' => $obj['transactionResponse']['accountNumber'],
 					'pay_accounttype' => $obj['transactionResponse']['accountType'],
 					'pay_transmessage' => $pay_transmessage_success,
-					'billing_address1' => $data['address'],
-					'billing_address2' => $data['address2'] ?? '',
-					'billing_city' => $data['city'],
-					'billing_state' => $data['state'],
-					'billing_zipcode' => $data['zipcode'],
-					"number_of_lines" => $data['number_of_lines'],
-					'price' => $data['price'],
-					'amount' => $data['amount'],
+					'billing_address1' => !empty($data['billing_address1']) ? $data['billing_address1'] : $data['address1'],
+					'billing_address2' => !empty($data['billing_address1']) ? $data['billing_address2'] : $data['address2'],
+					'billing_city' => !empty($data['billing_city']) ? $data['billing_city'] : $data['city'],
+					'billing_state' => !empty($data['billing_state']) ? $data['billing_state'] : $data['state'],
+					'billing_zipcode' => !empty($data['billing_zipcode']) ? $data['billing_zipcode'] : $data['zipcode'],
+					/*"number_of_lines" => $data['number_of_lines'],
+					'price' => $data_pay['price'],
+					'amount' => $data_pay['amount'], */
 				];
 
 
 				if ($messageResultCode == "Ok") {
 
 					if (!empty($pay_transmessage)) { /*Fail Payment*/
-						$updateData['action'] = "Failed";
+						$updateData['payment_status'] = "Failed";
 						failPayment($data['email'], $this->mailer);
 					} else {
 
 						if ($messageResultText == "Successful." && $transactionCode != "") {
-							if (!empty($data['orderId'])) {
-								$order_data = $this->orderModel->getOrderInformation($data['orderId']);
+							if (!empty($order_id)) {
+								$order_data = $this->orderModel->getOrderInformation($order_id);
 							}
-							$updateData['id'] = $order_data['id'];
-							$updateData['action'] = "Paid";
+							$updateData['id_order'] = $order_data['id_order'];
+							$updateData['payment_status'] = "Paid";
 							$log->putLog("UpdatedData: " . json_encode($updateData, true));
 
 							$order = $this->orderModel->updateOrder($updateData);
 							$log->putLog("UpdatedRecord: " . $order);
 
-							successOneTimePayment($updateData, $this->mailer);
-							$get_order = $this->orderModel->getOrderInformation($data['orderId']);
-							$get_order['response_suggestion'] = $pay_message;
-							$get_order['plan_price'] = $data['plan_price'];
-							$get_order['taxes'] = $data['taxes'];
-							fulfillmentEmail($get_order, $this->mailer);
-						}
+							//successOneTimePayment($updateData, $this->mailer);
 
-						//if ($data['action'] == "addon") {
-						/*Create AddOn*/
-						/* $addOnData = [
-										"id_orderItem" => $data['orderItemId'],
-										'LinkupPhoneNumber' => $data['phone'],
-										'date_addon' => $todayDate,
-										'plan_id' => $new_plan_id,
-										'sku' => $data['sku'],
-										'name' => $new_plan_name,
-										'price' => $new_price,
-										'transactionID' => $TransactionID
-									];							
-									$this->addonModel->createAddonRecord($addOnData); */
-						//}
+							$get_order = $this->orderModel->getOrderInformation($order_id);
+							$get_order['response_suggestion'] = $pay_message;
+							$get_order['plan_price'] = $data_pay['plan_price'];
+							$get_order['taxes'] = $data_pay['taxes'];
+
+							/*ECS Telgo API*/
+							/*******************************/
+							//$ecs_response = ECSTelgoo($data, $data_cc);
+							$data['areacode'] = $this->getAreaCode($data['phone_number']);
+							$data['price'] = $data_pay['price'];
+							$data['imei'] =  $data_pay['imei']	;		
+	
+							$ecs_response = ecsActivationLandingPage($data);
+							//$ecs_response = testecsActivationLandingPage($data);
+							$log->putLog(
+								"ECSResponse: " .
+									json_encode(array(
+										'request' => $ecs_response['request'],
+										'response' => $ecs_response['response'],
+									))
+							);
+							$msg_response = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];
+
+							if ($msg_response == 'APPROVED') {
+
+								$obj['Message'] = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];
+								$obj['PGSTransId'] = $ecs_response["response"]["CellularVoucherPurchase"]["PGSTransId"];
+								$obj['PhoneNumber'] = $ecs_response["response"]["CellularVoucherPurchase"]["PhoneNumber"];
+								$obj['PinCode'] = $ecs_response["response"]["CellularVoucherPurchase"]["PinCode"];
+								$obj['QRCode'] = $ecs_response["response"]["CellularVoucherPurchase"]["QRCode"];
+								$obj['customerIdncrypt']  = (!empty($data['customer_id'])) ? encrypt_decrypt('encrypt', $data['customer_id']) : null;
+								
+							} else {
+								$obj['Message'] = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];
+							}
+
+						}			
 
 					}
-							/*TopUp*/
-					/*********************************************/
-							/* $topupresponse = ecsTopUp($data);
-							$TransactionID = $topupresponse['response']['CellularRtrPurchase']['PGSTransId'];
-							$this->logModel->log_topup(array('id_user' => $user_id, 'id_order' => $id_order, 'request' => $topupresponse['request'], 'response' => json_encode($topupresponse['response']), 'topup_action' => $data['action']));	 */
-
-
-					/*********************************************/
-							/*Get the sku info with the new product_id*/
-							/* $sku_plans = $this->skuPlansModel->getSKUPlansBySku($data['sku'], 0);
-							$new_plan_name = $sku_plans['name'];
-							$new_price = $sku_plans['price'];
-							$new_plan_id = $sku_plans['plan_id'];
-							$new_activation_sku = $sku_plans['activation_sku'];
-							$todayDate = date('Y-m-d h:i:s'); */
-					/*********************************************/
+							
 				} else {
 					failPayment($data['email'], $this->mailer);
 				}
@@ -368,6 +410,12 @@ class Authorizenets extends Controller
 		}
 
 		echo json_encode($obj);
+	}
+
+	public function getAreaCode($phone)
+	{
+		$digits = preg_replace('/\D+/', '', $phone);
+		return strlen($digits) >= 3 ? substr($digits, 0, 3) : null;
 	}
 
 	public function recurringPayment()
@@ -1169,5 +1217,59 @@ class Authorizenets extends Controller
 		$codes = array_column($errors, 'code');
 		$index = array_search($code, $codes, true);
 		return $index !== false ? $errors[$index] : null;
+	}
+
+	public function sanitizeInput($input, $type)
+	{
+
+		if (isset($input) && !empty($input)) {
+			switch ($type) {
+				case 'string':
+					// Sanitize string: Trim, remove HTML tags, escape HTML characters
+					$input = trim($input);
+					$input = strip_tags($input); // Removes HTML and PHP tags
+					return htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
+
+				case 'email':
+					// Sanitize email
+					return filter_var($input, FILTER_SANITIZE_EMAIL);
+
+				case 'phone':
+					// Sanitize phone
+					$cleanphone = preg_replace('/[^0-9]/', '', $input);
+					$phone = trim($cleanphone);
+					return $phone;
+
+				case 'url':
+					// Sanitize URL
+					return filter_var($input, FILTER_SANITIZE_URL);
+
+				case 'int':
+					// Sanitize integer
+					return filter_var($input, FILTER_SANITIZE_NUMBER_INT);
+
+				case 'float':
+					// Sanitize float
+					return filter_var($input, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+
+				case 'boolean':
+					// Sanitize boolean
+					return filter_var($input, FILTER_VALIDATE_BOOLEAN);
+
+				case 'csrf':
+					// Check CSRF token (assumes token is stored in session)
+					session_start(); // Start session if not started
+					if ($input !== $_SESSION['csrf_token']) {
+						die("CSRF token validation failed");
+					}
+					return $input;
+
+				default:
+					// Return unmodified input if type is unknown
+					return $input;
+			}
+		} else {
+			return $input = '';
+		}
 	}
 }
