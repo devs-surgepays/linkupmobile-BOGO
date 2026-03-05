@@ -54,7 +54,7 @@
                     <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold">FORGOT PASSWORD</a></li>
                 </ul>
                 <div class="d-inline-flex align-items-center rounded shadow-sm" style="background-color: #004d7c;">
-                    <img src="<?php echo URLROOT; ?>/img/BBB_logo.png" alt="BBB" height="75" class="img-fluid">
+                    <img src="<?php echo URLROOT; ?>/img/BBB_Logo.png" alt="BBB" height="75" class="img-fluid">
 
                 </div>
             </div>
@@ -67,13 +67,13 @@
         </div>
         <div class="row mt-3 d-md-none">
             <div class="col-4 text-center">
-                <h6 class="font-yellow fw-bold text-uppercase mb-3 franklin-family" style="font-size: 16px;">Home</h6>
+                <a  href="<?php echo URLROOT; ?>" class="font-yellow fw-bold text-uppercase mb-3 franklin-family" style="font-size: 16px;">Home</a>
             </div>
             <div class="col-4 text-center">
-                <h6 class="font-yellow fw-bold text-uppercase mb-3 franklin-family" style="font-size: 16px;">Help Center</h6>
+                <a href="https://linkupmobile.com/support/"  class="font-yellow fw-bold text-uppercase mb-3 franklin-family" style="font-size: 16px;">Help Center</a>
             </div>
             <div class="col-4 text-center">
-                <h6 class="font-yellow fw-bold text-uppercase mb-3 franklin-family" style="font-size: 16px;">My Account</h6>
+                <a href="https://enroll.linkupmobile.com/SignIn.php"  class="font-yellow fw-bold text-uppercase mb-3 franklin-family" style="font-size: 16px;">My Account</a>
             </div>
         </div>
         
