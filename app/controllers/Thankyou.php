@@ -53,6 +53,20 @@ class Thankyou extends Controller{
 				'transpgst_label' => 'Transaction PGS:',
 				'phone_number_label' => 'Phone Number',
 				'back_btn' => 'GO BACK HOME',
+
+				// Footer Section 
+				'privacy'=>"Privacy Policy",
+				'terms' => "Terms of Service",
+				'livechat' => "LIVE CHAT",
+				'phonecall'=>"PHONE CALL",
+				'email'=>"EMAIL",
+				'message'=>"MESSAGE",
+				'home' => "HOME",
+				'help' => "HELP CENTER",
+				'account' => "MY ACCOUNT",
+				'login' => "LOG IN",
+				'register' => "REGISTER",
+				'forgot' => "FORGOT PASSWORD"
 				
 			],
 			'es' => [
@@ -90,6 +104,20 @@ class Thankyou extends Controller{
 				'transpgst_label' => 'Transacción PGS:',
 				'phone_number_label' => 'Número de teléfono',
 				'back_btn' => 'REGRESAR',
+
+				// footer
+				'privacy'=>"Politicas de Privacidad",
+				'terms' => "Terminos de Servicio",
+				'livechat' => "CHAT EN VIVO",
+				'phonecall'=>"LLAMADA TELEFÓNICA",
+				'email'=>"CORREO ELECTRONICO",
+				'message'=>"MENSAJE",
+				'home' => "INICIO",
+				'help' => "CENTRO DE SOPORTE",
+				'account' => "MI CUENTA",
+				'login' => "INICIAR SESION",
+				'register' => "REGISTRAR",
+				'forgot' => "OLVIDE MI PASSWORD"
 
 			]
 

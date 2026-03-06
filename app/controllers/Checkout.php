@@ -83,7 +83,21 @@ class Checkout extends Controller
 				'summary_terms_label' => 'I acknowledge LinkUp Mobile’s',
 				'summary_privacy' => 'Privacy Policy',
 				'summary_terms' => 'Terms Policy',
-				'summary_pays_label' => 'Pay'
+				'summary_pays_label' => 'Pay',
+
+				 // Footer Section 
+				'privacy'=>"Privacy Policy",
+				'terms' => "Terms of Service",
+				'livechat' => "LIVE CHAT",
+				'phonecall'=>"PHONE CALL",
+				'email'=>"EMAIL",
+				'message'=>"MESSAGE",
+				'home' => "HOME",
+				'help' => "HELP CENTER",
+				'account' => "MY ACCOUNT",
+				'login' => "LOG IN",
+				'register' => "REGISTER",
+				'forgot' => "FORGOT PASSWORD"
 
 			],
 			'es' => [
@@ -145,7 +159,21 @@ class Checkout extends Controller
 				'summary_terms_label' => 'Reconozco la responsabilidad de LinkUp Mobile’s ',
 				'summary_privacy' => 'Política de Privacidad',
 				'summary_terms' => 'Términos y Condiciones',
-				'summary_pays_label' => 'Pagar'
+				'summary_pays_label' => 'Pagar',
+
+				// footer
+				'privacy'=>"Politicas de Privacidad",
+				'terms' => "Terminos de Servicio",
+				'livechat' => "CHAT EN VIVO",
+				'phonecall'=>"LLAMADA TELEFÓNICA",
+				'email'=>"CORREO ELECTRONICO",
+				'message'=>"MENSAJE",
+				'home' => "INICIO",
+				'help' => "CENTRO DE SOPORTE",
+				'account' => "MI CUENTA",
+				'login' => "INICIAR SESION",
+				'register' => "REGISTRAR",
+				'forgot' => "OLVIDE MI PASSWORD"
 
 			]
 
