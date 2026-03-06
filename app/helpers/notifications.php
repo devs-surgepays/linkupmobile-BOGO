@@ -1,6 +1,7 @@
 <?php 
 function successOneTimePayment($data,$mailer){
-    $url = URLROOT . 'templates/payment/success_payment.html';
+    //$url = URLROOT . 'templates/payment/success_payment.html';
+	$url = URLROOT . '/public/templates/payment/success_payment.html';
 	//$template = file_get_contents(URLROOT . 'templates/payment/success_payment.html');
 	$template = http_get($url);
 	$replacements = [
@@ -48,9 +49,10 @@ function successOneTimePayment($data,$mailer){
 
 function fulfillmentEmail($data, $mailer)
 {
-    $url = URLROOT . 'templates/payment/success_paymentECS.html';
+    //$url = URLROOT . 'templates/payment/success_paymentECS.html';
+	$url = URLROOT . '/public/templates/payment/success_paymentECS.html';
 	//$template = file_get_contents(URLROOT . 'templates/payment/success_paymentECS.html');
-    $template = http_get($url);
+	$template = http_get($url);
 	$replacements = [
 		'{{order_id}}'          => $data['order_id'] ?? '',
 		'{{first_name}}'        => $data['first_name'] ?? '',
@@ -124,7 +126,8 @@ function fulfillmentEmail($data, $mailer)
 
 function successAddOnPayment($data, $mailer)
 {
-    $url = URLROOT . 'templates/payment/success_addon.html';
+    //$url = URLROOT . 'templates/payment/success_addon.html';
+	$url = URLROOT . '/public/templates/payment/success_addon.html'; 
 	//$template = file_get_contents(URLROOT . 'templates/payment/success_addon.html');
 	$template = http_get($url);
 	$replacements = [
@@ -169,7 +172,8 @@ function successAddOnPayment($data, $mailer)
 }
 	
 function successSubscriptionPayment($email,$mailer){
-	$template = file_get_contents(URLROOT . 'templates/payment/successpayment.html');
+	//$template = file_get_contents(URLROOT . 'templates/payment/successpayment.html');
+	$template = URLROOT . '/public/templates/payment/successpayment.html';
 	$message = $template;
 
 	try {
@@ -207,9 +211,11 @@ function successSubscriptionPayment($email,$mailer){
 	
 function failPayment($email,$mailer){
 		//$template = file_get_contents(URLROOT . 'templates/payment/failpayment.html');
-		$url = URLROOT . 'templates/payment/failpayment.html';
+				
+		$url = URLROOT . '/public/templates/payment/failpayment.html';
 		$template = http_get($url);
 		$message = $template;
+		$mail = null;	
 
 		try {
 			$mail = send_mail($email,'Fail Payment Process', $message);
@@ -217,30 +223,7 @@ function failPayment($email,$mailer){
 			echo "Error: " . $e->getMessage() . "\n";
 		}
 
-	/* $mail = $mailer->load();
-		$mail->SMTPDebug = 0;                                       // Enable verbose debug output
-		$mail->isSMTP();                                            // Set mailer to use SMTP
-		$mail->Host       = 'smtp.office365.com';  					// Specify main and backup SMTP servers
-		$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-		$mail->Username   = EMAIL_USERNAME;                     // SMTP username
-		$mail->Password   = EMAIL_PASS;                               // SMTP password
-		$mail->SMTPSecure = 'TLS/StartTLS';                                  // Enable TLS encryption, `ssl` also accepted
-		$mail->Port       = 587; 	                              // TCP port to connect to
-		//Recipients
-		$mail->setFrom(EMAIL_USERNAME, EMAIL_NAME);
-		$mail->addAddress($email);  		// Add a recipient
-		//$mail->addBCC('jdominguez@surgepays.com');
-		//$mail->addBCC('jparker@surgepays.com');
-		$mail->isHTML(true);                                  // Set email format to HTML
-		$mail->Subject = 'Fail Payment Process';
-		$mail->Body    = $message;
-		$mail->CharSet = 'UTF-8';
-		if ($mail->send()) {
-			//$this->userModel->saveRemembertoken($saveData);
-			return true;
-		} else {
-			return false;
-		} */
+	
 		return $mail;
 	}
 

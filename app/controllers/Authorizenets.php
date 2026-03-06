@@ -115,11 +115,11 @@ class Authorizenets extends Controller
 				'shipping_city' => isset($_POST['shipping_city']) ? $this->sanitizeInput($_POST['shipping_city'], 'string') : '',
 				'shipping_state' => isset($_POST['shipping_state']) ? strtoupper($this->sanitizeInput($_POST['shipping_state'], 'string')) : '',
 				'shipping_zipcode' => isset($_POST['shipping_zipcode']) ? $this->sanitizeInput($_POST['shipping_zipcode'], 'string') : '',
-				'billing_address1' => isset($_POST['billing_address1']) ? $this->sanitizeInput($_POST['billing_address1'], 'string') : '',
-				'billing_address2' => isset($_POST['billing_address2']) ? $this->sanitizeInput($_POST['billing_address2'], 'string') : '',
-				'billing_city' => isset($_POST['billing_city']) ? $this->sanitizeInput($_POST['billing_city'], 'string') : '',
-				'billing_state' => isset($_POST['billing_state']) ? strtoupper($this->sanitizeInput($_POST['billing_state'], 'string')) : '',
-				'billing_zipcode' => isset($_POST['billing_zipcode']) ? $this->sanitizeInput($_POST['billing_zipcode'], 'string') : '',
+				'billing_address1' => (isset($_POST['billing_address1']) && !empty($_POST['billing_address1'])) ? $_POST['billing_address1'] : (isset($_POST['address1']) ? $_POST['address1']: ''),
+				'billing_address2' => (isset($_POST['billing_address2']) && !empty($_POST['billing_address2'])) ? $_POST['billing_address2'] : (isset($_POST['address2']) ? $_POST['address2'] : ''),
+				'billing_city' => (isset($_POST['billing_city']) && !empty($_POST['billing_city'])) ? $_POST['billing_city'] : (isset($_POST['city']) ? $_POST['city'] : ''),
+				'billing_state' => (isset($_POST['billing_state']) && !empty($_POST['billing_state'])) ? $_POST['billing_state'] : (isset($_POST['state']) ? $_POST['state'] : ''),
+				'billing_zipcode' => (isset($_POST['billing_zipcode']) && !empty($_POST['billing_zipcode'])) ? $_POST['billing_zipcode'] : (isset($_POST['zipcode']) ? $_POST['zipcode'] : ''),
 				'agree_terms' => isset($_POST['agree_terms']) ? $this->sanitizeInput($_POST['agree_terms'], 'string') : '',
 				'utm_source' => isset($_POST['utm_source']) ? $this->sanitizeInput($_POST['utm_source'], 'string') : '',
 				'utm_medium' => isset($_POST['utm_medium']) ? $this->sanitizeInput($_POST['utm_medium'], 'string') : '',
@@ -223,10 +223,10 @@ class Authorizenets extends Controller
 			//$transRequestXml->transactionRequest->tax->amount = $data['taxes'];
 			$transRequestXml->transactionRequest->billTo->firstName = $data['first_name'];
 			$transRequestXml->transactionRequest->billTo->lastName = $data['second_name'];
-			$transRequestXml->transactionRequest->billTo->address = $data['address1'];
-			$transRequestXml->transactionRequest->billTo->city = $data['city'];
-			$transRequestXml->transactionRequest->billTo->state = $data['state'];
-			$transRequestXml->transactionRequest->billTo->zip = $data['zipcode'];
+			$transRequestXml->transactionRequest->billTo->address = $data['billing_address1'];
+			$transRequestXml->transactionRequest->billTo->city = $data['billing_city'];
+			$transRequestXml->transactionRequest->billTo->state = $data['billing_state'];
+			$transRequestXml->transactionRequest->billTo->zip = $data['billing_zipcode'];
 			$transRequestXml->transactionRequest->billTo->country = $data_pay['country'];
 			$transRequestXml->transactionRequest->billTo->phoneNumber = $data['phone_number'];
 			$transRequestXml->transactionRequest->billTo->email = $data['email'];
@@ -341,7 +341,7 @@ class Authorizenets extends Controller
 
 					if (!empty($pay_transmessage)) { /*Fail Payment*/
 						$updateData['payment_status'] = "Failed";
-						//failPayment($data['email'], $this->mailer);
+						failPayment($data['email'], $this->mailer);
 					} else {
 
 						if ($messageResultText == "Successful." && $transactionCode != "") {
@@ -367,8 +367,12 @@ class Authorizenets extends Controller
 							$data['price'] = $data_pay['price'];
 							$data['imei'] =  $data_pay['imei'];
 
-							$ecs_response = ecsActivationLandingPage($data);
-							//$ecs_response = testecsActivationLandingPage($data);
+							if (ENVIRONMENT == 'test' || ENVIRONMENT == 'dev') {
+								$ecs_response = testecsActivationLandingPage($data);
+							}else{
+								$ecs_response = ecsActivationLandingPage($data);
+							}
+							
 							$log->putLog(
 								"ECSResponse: " .
 									json_encode(array(
@@ -397,6 +401,7 @@ class Authorizenets extends Controller
 							} else {
 								$obj['Message'] = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];								
 							}
+							
 							$obj['customerIdncrypt']  = (!empty($data['customer_id'])) ? encrypt_decrypt('encrypt', $data['customer_id']) : null;
 
 							$log->putLog(
@@ -408,11 +413,11 @@ class Authorizenets extends Controller
 							);
 							$this->logModel->log_payment(array('id_order' => $order_data['id_order'], 'response' => json_encode($obj), 'payment_method' => "Credit Card"));
 
-							//successOneTimePayment($updateData, $this->mailer);
+							successOneTimePayment($updateData, $this->mailer);
 						}
 					}
 				} else {
-					//failPayment($data['email'], $this->mailer);
+					failPayment($data['email'], $this->mailer);
 				}
 			} catch (Exception $e) {
 
