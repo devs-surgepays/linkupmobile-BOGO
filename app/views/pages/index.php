@@ -1,4 +1,13 @@
-<?php require APPROOT . '/views/inc/header.php'; //echo $data['tid']; ?>
+<?php 
+if($data['tid']){
+    $langEN=URLROOT."?tid=".$data['tid'];
+    $langES=URLROOT."/es?tid=".$data['tid'];
+}else{
+    $langEN=URLROOT;
+    $langES=URLROOT."/es";
+}
+require APPROOT . '/views/inc/header.php'; //echo $data['tid']; 
+?>
 
 
 <!-- Hero Banner Section -->
@@ -59,16 +68,16 @@
             </div>
 
         </div>
-        
+
     </div>
-    
+
 
     </div>
 </section>
 
 <!-- Section of plan details -->
 <section id="linkup-offer" class="bogo-section py-5 bg-white">
-    
+
     <div class="container" style="max-width:1240px;">
         <div class="row g-5 align-items-center">
 
@@ -88,7 +97,7 @@
                     <div class="py-3 px-5 text-start d-flex justify-content-between align-items-center" style="background-color: #FFF6D6;">
                         <div>
                             <p class="mb-0 fw-bold text-brown franklin-family" style="font-size: 30px;line-height: normal;
-letter-spacing: -0.9px;"><?php echo $data['bogo_deal_plan'];?></p>
+letter-spacing: -0.9px;"><?php echo $data['bogo_deal_plan']; ?></p>
                             <h4 class="mb-0 fw-bold font-yellow franklin-family" style="font-size: 26px;">12<span style="font-size: 20px;line-height: normal;
 letter-spacing: -0.78px;">GB</span></h4>
                             <small class="d-block fw-bold franklin-family" style="font-size: 20px;color: #8F7000;line-height: normal;
@@ -99,7 +108,7 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
                         <div class="text-left">
                             <p class="mb-0 fw-bold franklin-family" style="color:#292000;font-size:30px;line-height:normal;">SUBTOTAL:</p>
                             <h2 class="mb-0 fw-bold franklin-family" style="color: #524000;font-size:70px;letter-spacing: -2.1px;line-height:normal;">$30 <small class="fw-normal" style="font-size: 20px;letter-spacing: -0.6px;
-"><?php echo $data['bogo_deal_charges'];?></small></h2>
+"><?php echo $data['bogo_deal_charges']; ?></small></h2>
                         </div>
                     </div>
                 </div>
@@ -145,7 +154,8 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
                             aria-expanded="false"
                             aria-controls="broadbandCard"><?php echo $data['broadband_label']; ?></a>
 
-                        <div class="broadband-label-card bg-white rounded-3 shadow-sm mx-auto mb-5 collapse" style="max-width: 362px;" id="broadbandCard">
+                        <?php if($data['lang']=="en"):?>
+                            <div class="broadband-label-card bg-white rounded-3 shadow-sm mx-auto mb-5 collapse" style="max-width: 362px;" id="broadbandCard">
                             <div class="header-premium text-center text-white py-2 rounded-top">
                                 <h4 class="fw-bold mb-0 font-yellow">PREMIUM</h4>
                                 <div class="small">12GB data plan</div>
@@ -283,6 +293,146 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
                                 </div>
                             </div>
                         </div>
+                        <?php else: ?>
+                            <div class="broadband-label-card bg-white rounded-3 shadow-sm mx-auto mb-5 collapse" style="max-width: 362px;" id="broadbandCard">
+                            <div class="header-premium text-center text-white py-2 rounded-top">
+                                <h4 class="fw-bold mb-0 font-yellow">PREMIUM</h4>
+                                <div class="small">Plan de 12GB de datos</div>
+                            </div>
+
+                            <div class="p-3 " style="border:2px solid;border-radius: 0 0 0.5rem 0.5rem;">
+                                <h1 class="fw-bold border-bottom border-dark border-4 mb-1 pb-1">Información de Internet de Banda&nbsp;Ancha</h1>
+
+                                <div class="mb-2">
+                                    <span class="fw-bold">LinkUp Mobile</span><br>
+                                    <span class="fw-bold">Premium - $30 / 12GB</span><br>
+                                    Declaración de transparencia para el usuario de servicios de internet de banda ancha&nbsp;móvil
+                                </div>
+
+                                <table class="table table-sm table-borderless mb-0">
+                                    <tr class="border-bottom border-top border-dark border-bottom-5 border-top-8">
+                                        <td class="fw-bold py-1">Precio Mensual</td>
+                                        <td class="text-end fw-bold  py-1">$30.00</td>
+                                    </tr>
+                                </table>
+
+                                <p class="x-small-text my-2 border-bottom border-dark border-bottom-3 pb-2">
+                                    Este precio mensual <span class="fw-bold">no</span> corresponde a una tarifa inicial.<br>
+                                    Este precio mensual <span class="fw-bold">no</span> requiere un contrato.<br>
+                                    Enlace a los términos del&nbsp;contrato:<br><a href="https://linkupmobile.com/terms-of-service/" class="text-primary ps-3">https://linkupmobile.com/terms-of-service/</a>
+                                </p>
+
+                                <div class="fw-bold mb-2">Cargos y condiciones adicionales</div>
+                                <table class="table table-sm table-borderless x-small-text mb-0">
+                                    <tr style="height: 25px;">
+                                        <td class="fw-bold ps-3">Tarifas mensuales del&nbsp;proveedor</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-3">Tarifa de activación
+                                            <hr>
+                                        </td>
+                                        <td class="text-end">$0.00
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-3" style="height: 25px;">Cargos Mensuales del proveedor</td>
+                                        <td class="text-end">$0.00</td>
+                                    </tr>
+
+                                    <tr style="height: 35px;">
+                                        <td colspan="2" class="fw-bold pt-2 ps-3">Cargos Únicos al Momento de la&nbsp;Compra</td>
+                                        
+                                    </tr>
+                                    <tr style="height: 25px;">
+                                        <td class="ps-3">Fondo de Servicio Federal&nbsp;Universal
+                                            <hr>
+                                        </td>
+                                        <td class="text-end">$0.00
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr style="height: 25px;">
+                                        <td class="ps-3">Recuperación de costos&nbsp;regulatorios
+                                            <hr>
+                                        </td>
+                                        <td class="text-end">$0.00
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr style="height: 25px;">
+                                        <td class="ps-3">Cargos por terminación anticipada
+                                            <hr>
+                                        </td>
+                                        <td class="text-end">$0.00
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr style="height: 25px;">
+                                        <td class="ps-3">Impuestos gubernamentales</td>
+                                        <td class="text-end">Varia por ubicación</td>
+                                    </tr>
+                                </table>
+
+                                <div class="fw-bold pt-2 mb-2 border-top border-dark border-top-3">Descuentos y paquetes</div>
+                                <p class="x-small-text my-1 pb-1 ps-3">
+                                    Visite el sitio web de más abajo para obtener información sobre alternativas de precios y descuentos, servicios de internet de banda ancha combinados con otros servicios, como, por ejemplo, de vídeo, teléfono y servicios inalámbricos, y sobre la opción de usar sus propios equipos, como módems y&nbsp;enrutadores.<br><a href="https://linkupmobile.com/plans/" class="text-primary">https://linkupmobile.com/plans/</a>
+                                </p>
+
+                                <div class="fw-bold pt-2 mb-2 border-top border-dark border-top-3">Velocidades proporcionadas con el plan</div><!-- border-bottom border-dark border-2 -->
+                                <table class="table table-sm table-borderless x-small-text mb-0">
+                                    <tr style="height: 25px;">
+                                        <td class="ps-3">Velocidad típica de descarga
+                                            <hr>
+                                        </td>
+                                        <td class="text-end">38 Mbps
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr style="height: 25px;">
+                                        <td class="ps-3">Velocidad típica de carga
+                                            <hr>
+                                        </td>
+                                        <td class="text-end">6 Mbps
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr style="height: 25px;">
+                                        <td class="ps-3">Velocidad típica de latencia</td>
+                                        <td class="text-end">18 ms</td>
+                                    </tr>
+                                </table>
+
+                                <table class="table table-sm table-borderless mb-2 border-top border-dark border-top-2">
+                                    <tr>
+                                        <td class="fw-bold  pt-2">Datos incluidos con el precio mensual</td>
+                                        <td class="text-end fw-bold  pt-2">12 GB</td>
+                                    </tr>
+                                    <tr class="x-small-text">
+                                        <td class="ps-3">Cargos por uso de datos adicionales</td>
+                                        <td class="text-end">$2.00 / GB</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-3"><small>*El cliente debe adquirir datos adicionales de&nbsp;LinkUp</small></td>
+                                    </tr>
+                                </table>
+
+                                <div class="pt-2 mb-2 border-top border-dark border-top-8"><b>Política de administración de redes</b><br><a href="https://about.att.com/sites/broadband/network" class=" fs-medium text-primary ps-3 fs-light">https://about.att.com/sites/broadband/network</a></div>
+                                <div class="pt-2 mb-2"><b>Política de privacidad</b><br><a href="https://linkupmobile.com/privacy-policy/" class="text-primary fs-medium ps-3 fs-light">https://linkupmobile.com/privacy-policy/</a></div>
+                                <div class="pt-2 mb-2 border-top border-dark border-top-5">
+                                    <b>Atención al cliente</b>
+                                </div>
+                                <div><span class="ps-3">Teléfono: <a href="tel: +19045960304" class="text-primary fs-medium">(904) 596-0304</a></span></div>
+                                <div class=" mb-2"><span class="ps-3">Sitio web: <a href="https://linkupmobile.com/" class="text-primary fs-medium">https://linkupmobile.com/</a></span></div>
+                                <div class="pt-2 border-top border-dark border-top-8">Familiarícese con el lenguaje utilizado en esta etiqueta. Visite el sitio web del área de recursos para el consumidos, de la Comisión Federal de Comunicaciones (FCC).</div>
+                                <div class="text-end  mb-3"><a href="https://www.fcc.gov/consumers" class="text-primary fs-medium">fcc/customers</a></div>
+                                <div>
+                                    Unique Plan Identifier: M0035530427LINKUPMOBILE12GB
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif;?>
 
                         <button class="btn bg-yellow franklin-family fw-bold rounded-4 shadow-sm py-2 px-5 mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #054A76;font-size:36px;font-weight:400;">
                             <?php echo $data['claim_offer_btn']; ?>
@@ -637,35 +787,35 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
                 </div>
 
                 <div class="carousel-item">
-                
+
                     <div class="row g-4 m-0 p-0">
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0"  style="height: 185px;">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0" style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
                                 <img src="<?php echo URLROOT; ?>/img/northamerica_icon.png" alt="Map" class="img-fluid" style="min-width:95px">
                                 <h2 class="franklin-family carousel-heading text-blue-2"><?php echo $data['carousel_slide_2_col1']; ?></h2>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0"  style="height: 185px;">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0" style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #FFEDAD;">
                                 <img src="<?php echo URLROOT; ?>/img/map_61807711.png" alt="Map" class="img-fluid" style="min-width:95px">
                                 <h2 class="franklin-family carousel-heading text-brown"><?php echo $data['carousel_slide_2_col2']; ?></h2>
                             </div>
                         </div>
                     </div>
-            
+
                 </div>
 
                 <div class="carousel-item">
-                  
+
                     <div class="row g-4 m-0 p-0">
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0"  style="height: 185px;">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0" style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #FFEDAD;">
                                 <img src="<?php echo URLROOT; ?>/img/mexico_flag.png" alt="Map" class="img-fluid" style="min-width:95px">
                                 <h2 class="franklin-family carousel-heading text-brown"><?php echo $data['carousel_slide_3_col1']; ?></h2>
                             </div>
                         </div>
 
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0"  style="height: 185px;">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0" style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
                                 <img src="<?php echo URLROOT; ?>/img/price_tag.png" alt="Map" class="img-fluid" style="min-width:95px">
                                 <h2 class="franklin-family carousel-heading text-blue-2"><?php echo $data['carousel_slide_3_col2']; ?></h2>
@@ -673,13 +823,13 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
                         </div>
 
                     </div>
-              
+
                 </div>
 
                 <div class="carousel-item">
-                 
+
                     <div class="row g-4 m-0 p-0">
-                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0"  style="height: 185px;">
+                        <div class="col-12 col-md-6 px-0 pe-md-2 mt-0 mb-2 mb-md-0" style="height: 185px;">
                             <div class="rounded-4 p-4 d-flex align-items-center justify-content-start justify-content-md-center gap-3 h-100" style="background-color: #cceeff;">
                                 <img src="<?php echo URLROOT; ?>/img/usa_5g.png" alt="Map" class="img-fluid" style="min-width: 95px;">
                                 <h2 class="franklin-family carousel-heading text-blue-2"><?php echo $data['carousel_slide_4_col1']; ?></h2>
@@ -692,7 +842,7 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -895,35 +1045,35 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
             <div class="modal-footer" style="border:none;">
                 <div class="container collapse" id="imeiHelpSection">
                     <div class="rounded-4 p-3" style="background-color: #FFF6D6;">
-                    <div class="row">
-                        <div class="col text-center mb-3" style="color:#524000;font-family:'Roboto', sans-serif;font-weight:900;">
-                            <h2><b><?php echo $data['modal_locate_heading']; ?></b></h2>
+                        <div class="row">
+                            <div class="col text-center mb-3" style="color:#524000;font-family:'Roboto', sans-serif;font-weight:900;">
+                                <h2><b><?php echo $data['modal_locate_heading']; ?></b></h2>
+                            </div>
+                        </div>
+                        <div class="row px-4">
+                            <div class="col col-md-6 mb-3">
+                                <h3 class="fw-bold franklin-family" style="color:#8F7000"><?php echo $data['modal_android_heading']; ?></h3>
+                                <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_android_option_1']; ?></p>
+                                <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_android_option_2']; ?></p>
+                                <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_android_option_3']; ?></p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h3 class="fw-bold franklin-family" style="color:#8F7000"><?php echo $data['modal_iphone_heading']; ?></h3>
+                                <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_iphone_step_1']; ?></p>
+                                <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_iphone_step_2']; ?></p>
+                                <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_iphone_step_3']; ?></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <h3 class="fw-bold franklin-family" style="color:#8F7000"><?php echo $data['modal_still_need_help']; ?></h3>
+                                <a href="https://linkupmobile.com/support/" target="_blank" class="btn bg-yellow btn-lg franklin-family px-3 py-2 fw-bold text-primary-dark rounded-3 shadow-sm"
+                                    style="border: none; color: #003d6b;">
+                                    <?php echo $data['support_link_text']; ?>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="row px-4">
-                        <div class="col col-md-6 mb-3">
-                            <h3 class="fw-bold franklin-family" style="color:#8F7000"><?php echo $data['modal_android_heading']; ?></h3>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_android_option_1']; ?></p>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_android_option_2']; ?></p>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_android_option_3']; ?></p>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <h3 class="fw-bold franklin-family" style="color:#8F7000"><?php echo $data['modal_iphone_heading']; ?></h3>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_iphone_step_1']; ?></p>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_iphone_step_2']; ?></p>
-                            <p class="mb-0 franklin-family" style="color:#524000;"><?php echo $data['modal_iphone_step_3']; ?></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col text-center">
-                            <h3 class="fw-bold franklin-family" style="color:#8F7000"><?php echo $data['modal_still_need_help']; ?></h3>
-                            <a href="https://linkupmobile.com/support/"  target="_blank" class="btn bg-yellow btn-lg franklin-family px-3 py-2 fw-bold text-primary-dark rounded-3 shadow-sm"
-                    style="border: none; color: #003d6b;">
-                    <?php echo $data['support_link_text']; ?>
-                </a>
-                        </div>
-                    </div>
-                </div>
                     <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
@@ -1002,553 +1152,638 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
             en: 'Algeria',
             es: 'Argelia',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'as',
             en: 'American Samoa',
             es: 'Samoa Americana',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'ad',
             en: 'Andorra',
             es: 'Andorra',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'ar',
             en: 'Argentina',
             es: 'Argentina',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'aw',
             en: 'Aruba',
             es: 'Aruba',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'at',
             en: 'Austria',
             es: 'Austria',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'bd',
             en: 'Bangladesh',
             es: 'Bangladesh',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'be',
             en: 'Belgium',
             es: 'Bélgica',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'bm',
             en: 'Bermuda',
             es: 'Bermudas',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'bt',
             en: 'Bhutan',
             es: 'Bután',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'br',
             en: 'Brazil',
             es: 'Brasil',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'bn',
             en: 'Brunei',
             es: 'Brunéi',
             leyenden: 'UNLIMITED MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 3
         },
         {
             id: 'bg',
             en: 'Bulgaria',
             es: 'Bulgaria',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'kh',
             en: 'Cambodia',
             es: 'Camboya',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'ca',
             en: 'Canada',
             es: 'Canadá',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'ky',
             en: 'Cayman Islands',
             es: 'Islas Caimán',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'cl',
             en: 'Chile',
             es: 'Chile',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'cn',
             en: 'China',
             es: 'China',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'co',
             en: 'Colombia',
             es: 'Colombia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'cr',
             en: 'Costa Rica',
             es: 'Costa Rica',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'hr',
             en: 'Croatia',
             es: 'Croacia',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'cz',
             en: 'Czech Republic',
             es: 'República Checa',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'dk',
             en: 'Denmark',
             es: 'Dinamarca',
             leyenden: 'UNLIMITED MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 3
         },
         {
             id: 'co',
             en: 'Dominican Republic',
             es: 'República Dominicana',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'ee',
             en: 'Estonia',
             es: 'Estonia',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'fo',
             en: 'Faroe Islands',
             es: 'Islas Feroe',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'fi',
             en: 'Finland',
             es: 'Finlandia',
             leyenden: 'UNLIMITED MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 3
         },
         {
             id: 'fr',
             en: 'France',
             es: 'Francia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'gf',
             en: 'French Guiana',
             es: 'Guayana Francesa',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'de',
             en: 'Germany',
             es: 'Alemania',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'gi',
             en: 'Gibraltar',
             es: 'Gibraltar',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'gr',
             en: 'Greece',
             es: 'Grecia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'gp',
             en: 'Guadeloupe',
             es: 'Guadalupe',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'gu',
             en: 'Guam',
             es: 'Guam',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'hk',
             en: 'Hong Kong',
             es: 'Hong Kong',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'hu',
             en: 'Hungary',
             es: 'Hungría',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'is',
             en: 'Iceland',
             es: 'Islandia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'in',
             en: 'India',
             es: 'India',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'id',
             en: 'Indonesia',
             es: 'Indonesia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'ie',
             en: 'Ireland',
             es: 'Irlanda',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'il',
             en: 'Israel',
             es: 'Israel',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'it',
             en: 'Italy',
             es: 'Italia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'jp',
             en: 'Japan',
             es: 'Japón',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'kw',
             en: 'Kuwait',
             es: 'Kuwait',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'la',
             en: 'Laos',
             es: 'Laos',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'li',
             en: 'Liechtenstein',
             es: 'Liechtenstein',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'my',
             en: 'Malaysia',
             es: 'Malasia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'mp',
             en: 'Mariana Islands',
             es: 'Islas Marianas',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'mq',
             en: 'Martinique',
             es: 'Martinica',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'mu',
             en: 'Mauritius',
             es: 'Mauricio',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'mx',
             en: 'Mexico',
             es: 'México',
             leyenden: 'UNLIMITED MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 3
         },
         {
             id: 'mc',
             en: 'Monaco',
             es: 'Mónaco',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'mn',
             en: 'Mongolia',
             es: 'Mongolia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'ma',
             en: 'Morocco',
             es: 'Marruecos',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'na',
             en: 'Namibia',
             es: 'Namibia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'nl',
             en: 'Netherlands',
             es: 'Países Bajos',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'nz',
             en: 'New Zealand',
             es: 'Nueva Zelanda',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'no',
             en: 'Norway',
             es: 'Noruega',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'pk',
             en: 'Pakistan',
             es: 'Pakistán',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'pa',
             en: 'Panama',
             es: 'Panamá',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'pe',
             en: 'Peru',
             es: 'Perú',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'pl',
             en: 'Poland',
             es: 'Polonia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'pt',
             en: 'Portugal',
             es: 'Portugal',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'pr',
             en: 'Puerto Rico',
             es: 'Puerto Rico',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'ro',
             en: 'Romania',
             es: 'Rumanía',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'ru',
             en: 'Russia',
             es: 'Rusia',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'sg',
             en: 'Singapore',
             es: 'Singapur',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'sk',
             en: 'Slovakia',
             es: 'Eslovaquia',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'za',
             en: 'South Africa',
             es: 'Sudáfrica',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'kr',
             en: 'South Korea',
             es: 'Corea del Sur',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'es',
             en: 'Spain',
             es: 'España',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'se',
             en: 'Sweden',
             es: 'Suecia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'ch',
             en: 'Switzerland',
             es: 'Suiza',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'tw',
             en: 'Taiwan',
             es: 'Taiwán',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'th',
             en: 'Thailand',
             es: 'Tailandia',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         },
         {
             id: 'tt',
             en: 'Trinidad & Tobago',
             es: 'Trinidad y Tobago',
             leyenden: 'UNLIMITED LANDLINE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS',
+            type: 2
         },
         {
             id: 'tr',
             en: 'Turkey',
             es: 'Turquía',
             leyenden: 'UNLIMITED LANDLINE &&nbsp;MOBILE',
-            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES'
+            leyendes: 'LLAMADAS ILIMITADAS A LÍNEAS FIJAS Y MÓVILES',
+            type: 1
         }
     ];
 
     const listContainer = document.getElementById('countries-list');
     const infoContainer = document.getElementById('country-info');
-
+    const lang = '<?php echo $data['lang']; ?>'
     // 1. Generar la lista dinámicamente
     countries.forEach(country => {
         const li = document.createElement('li');
-        li.innerHTML = `
+        if (lang === 'en') {
+            li.innerHTML = `
     <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="selectCountry('${country.id}')">
       <img src="https://flagcdn.com/24x18/${country.id}.png" class="me-2" alt="${country.en}"> 
       ${country.en}
     </a>`;
+        } else {
+            li.innerHTML = `
+    <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);" onclick="selectCountry('${country.id}')">
+      <img src="https://flagcdn.com/24x18/${country.id}.png" class="me-2" alt="${country.es}"> 
+      ${country.es}
+    </a>`;
+        }
         // li.innerHTML = `
         // <a class="dropdown-item d-flex align-items-center" href="#" onclick="selectCountry('${country.id}')">
         //   <img src="https://flagcdn.com/w20/${country.id}.png" class="me-2" alt="${country.es}"> 
@@ -1582,7 +1817,7 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
         }
     }
 
-   
+
 
 
     // document.getElementById('imeiInput').addEventListener('input', function(e) {
@@ -1632,14 +1867,23 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
     }
 
     async function checkImei() {
+        const lang = '<?php echo ($data['lang']=='es')?"es":"en";?>'
         const imei = document.getElementById('imeiInput').value.trim();
         const feedback = document.getElementById('imeiFeedback');
         feedback.classList.remove('d-none', 'text-danger', 'text-success');
-        feedback.innerHTML = '<span class="text-muted">Checking compatibility...</span>';
+        if(lang==="es"){
+            feedback.innerHTML = '<span class="text-muted">Verificando Compatibilidad...</span>';
+        }else{
+            feedback.innerHTML = '<span class="text-muted">Checking compatibility...</span>';
+        }
 
         if (imei.length < 15) {
             //showFeedback("El IMEI debe tener al menos 15 dígitos", "text-danger");
-            feedback.innerText = "❌ IMEI Length is less than 15 digits.";
+            if(lang==="es"){
+                feedback.innerText = "❌ El IMEI debe tener al menos 15 dígitos";
+            }else{
+                feedback.innerText = "❌ IMEI Length is less than 15 digits.";
+            }
             feedback.classList.add('text-danger');
             return;
         }
@@ -1647,7 +1891,11 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
         // Validación de algoritmo
         if (!isValidLuhn(imei)) {
             //showFeedback("El formato del IMEI es inválido", "text-danger");
-            feedback.innerText = "❌ Invalid IMEI Format.";
+            if(lang==="es"){
+                feedback.innerText = "❌ El formato del IMEI es inválido";
+            }else{
+                feedback.innerText = "❌ Invalid IMEI Format.";
+            }
             feedback.classList.add('text-danger');
             return;
         }
@@ -1661,30 +1909,45 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
 
             if (data.response.CellularRtrPurchase.Message == "APPROVED") {
                 // Caso Positivo
-                //feedback.innerText = "✅ Este dispositivo es compatible.";
-                feedback.innerText = "✅ This device is compatible. you will be redirected shortly.";
+                if(lang==="es"){
+                    feedback.innerText = "✅ Este dispositivo es compatible. en un momento seras redireccionado!";
+                }else{
+                    feedback.innerText = "✅ This device is compatible. you will be redirected shortly.";
+                }
+                
+                
                 feedback.classList.add('text-success');
                 var tid = '<?php echo $data['tid']; ?>'
 
                 // Esperar 5 segundos y enviar via POST
                 setTimeout(() => {
-                    sendImeiPost(imei,tid);
+                    sendImeiPost(imei, tid);
                 }, 5000);
 
             } else {
                 // Caso Negativo
-                //feedback.innerText = "❌ Este dispositivo no es compatible.";
-                feedback.innerText = "❌ This device is not compatible.";
+                if(lang=="es"){
+                    feedback.innerText = "❌ Este dispositivo no es compatible.";
+                }else{
+                    feedback.innerText = "❌ This device is not compatible.";
+                }
+                
+                
                 feedback.classList.add('text-danger');
             }
         } catch (error) {
-            //feedback.innerText = "Error al conectar con el servidor.";
-            feedback.innerText = "Error connecting to server.";
+            if(lang==="es"){
+                feedback.innerText = "Error al conectar con el servidor.";
+            }else{
+                feedback.innerText = "Error connecting to server.";
+            }
+            //
+            
             feedback.classList.add('text-danger');
         }
     }
 
-    async function sendImeiPost(imei,tid="") {
+    async function sendImeiPost(imei, tid = "") {
         // try {
         //     await fetch('<?php //echo URLROOT; 
                             ?>/pages/checkout', {
@@ -1700,7 +1963,7 @@ letter-spacing: -0.6px;"><?php echo $data['bogo_deal_desc']; ?></small>
 
         const form = document.createElement('form');
         form.method = 'POST';
-        form.action = '<?php echo URLROOT; ?>/checkout';
+        form.action = '<?php echo URLROOT; ?>/checkout<?php echo ($data['lang']=='es')?"/es":"";?>';
         const hiddenField = document.createElement('input');
         const hiddenField2 = document.createElement('input');
         hiddenField.type = 'hidden';

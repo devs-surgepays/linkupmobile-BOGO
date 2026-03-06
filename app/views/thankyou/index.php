@@ -1,4 +1,7 @@
-<?php require APPROOT . '/views/inc/header.php';
+<?php 
+$langEN = URLROOT."/thankyou";
+$langES = URLROOT."/thankyou/es";
+require APPROOT . '/views/inc/header.php';
 //print("<pre>" . print_r($data, true) . "</pre>");
 $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['infoPlan'] : [];
 $order = (isset($data['infoCustomerId']) && $data['infoCustomerId'] != NULL) ? $data['infoCustomerId'] : [];

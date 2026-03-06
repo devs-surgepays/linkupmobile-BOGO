@@ -12,9 +12,8 @@
 
     public function index($lang=NULL){
       $lang = $lang ? $lang : 'en';
-      $tid = ($_GET['tid'])?$_GET['tid']:"";
-      $data = [
-        
+      $tid = (isset($_GET['tid']))?$_GET['tid']:"";
+      $data = [        
         'en'=>[
           'tid'=>$tid,
           'lang' => 'en',
@@ -46,11 +45,11 @@
           'bogo_price' => '$30 / mo.',
           'bogo_data_amount' => '12GB',
           'bogo_see_details' => 'SEE PLAN DETAILS',
-          'plan_feature_1' => '<span class="fw-demi">12 GB</span><span class="fw-medium">high-speed data</span>',
-          'plan_feature_2' => '<span class="fw-demi">Unlimited talk & text</span><span class="fw-medium">to and within US, Canada, and Mexico</span>',
-          'plan_feature_3' => '<span class="fw-medium">Unlimited calling to</span><span class="fw-demi">100+ international destinations</span>',
-          'plan_feature_4' => '<span class="fw-demi">Mobile Hotspot</span>',
-          'plan_feature_5' => '<span class="fw-demi">Global Roaming</span><span class="fw-medium">via Wi-Fi Calling</span>',
+          'plan_feature_1' => '<span class="fw-demi">12 GB </span><span class="fw-medium">high-speed data</span>',
+          'plan_feature_2' => '<span class="fw-demi">Unlimited talk & text </span><span class="fw-medium">to and within US, Canada, and Mexico</span>',
+          'plan_feature_3' => '<span class="fw-medium">Unlimited calling to </span><span class="fw-demi">100+ international destinations</span>',
+          'plan_feature_4' => '<span class="fw-demi">Mobile Hotspot </span>',
+          'plan_feature_5' => '<span class="fw-demi">Global Roaming </span><span class="fw-medium">via Wi-Fi Calling</span>',
           'broadband_label' => 'Check broadband facts label',
           'broadband_premium' => 'PREMIUM',
           'broadband_plan_desc' => '12GB data plan',
@@ -129,6 +128,21 @@
           'modal_broadband_facts' => 'Broadband Facts',
           'review_offer_btn' => 'REVIEW OFFER',
           'claim_offer_btn' => 'CLAIM OFFER',
+
+          // Footer Section 
+          'privacy'=>"Privacy Policy",
+          'terms' => "Terms of Service",
+          'livechat' => "LIVE CHAT",
+          'phonecall'=>"PHONE CALL",
+          'email'=>"EMAIL",
+          'message'=>"MESSAGE",
+          'home' => "HOME",
+          'help' => "HELP CENTER",
+          'account' => "MY ACCOUNT",
+          'login' => "LOG IN",
+          'register' => "REGISTER",
+          'forgot' => "FORGOT PASSWORD"
+
 
         ],
         'es'=>[
@@ -246,6 +260,20 @@
           'modal_broadband_facts' => 'Broadband Facts',
           'review_offer_btn' => 'VER OFERTA',
           'claim_offer_btn' => 'OBTENER OFERTA',
+
+          // footer
+          'privacy'=>"Politicas de Privacidad",
+          'terms' => "Terminos de Servicio",
+          'livechat' => "CHAT EN VIVO",
+          'phonecall'=>"LLAMADA TELEFÓNICA",
+          'email'=>"CORREO ELECTRONICO",
+          'message'=>"MENSAJE",
+          'home' => "INICIO",
+          'help' => "CENTRO DE SOPORTE",
+          'account' => "MI CUENTA",
+          'login' => "INICIAR SESION",
+          'register' => "REGISTRAR",
+          'forgot' => "OLVIDE MI PASSWORD"
         ]
 
       ];

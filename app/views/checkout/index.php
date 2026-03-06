@@ -1,4 +1,8 @@
 <?php
+//$langurl=URLROOT."/".$lang;
+
+$langEN = URLROOT."/checkout";
+$langES = URLROOT."/checkout/es";
 require APPROOT . '/views/inc/header.php';
 //print("<pre>" . print_r($data, true) . "</pre>");
 $saInformation = (isset($data['saInformation']) && $data['saInformation'] != NULL) ? json_decode($data['saInformation'], true) : [];
