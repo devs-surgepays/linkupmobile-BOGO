@@ -219,7 +219,7 @@
 			: $defaultTerminalId;
 
 		$request = '<Request>
-		<CellularVoucherPurchase sku="8497">
+		<CellularVoucherPurchase sku="8544">
 		<ApiUsername>ecsapi</ApiUsername>
 		<ApiPassword>ko23fs</ApiPassword>
 		<TerminalType>1</TerminalType>
