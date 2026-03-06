@@ -393,10 +393,12 @@ class Authorizenets extends Controller
 								$obj['PhoneNumber'] = $ecs_response["response"]["CellularVoucherPurchase"]["PhoneNumber"];
 								$obj['PinCode'] = $ecs_response["response"]["CellularVoucherPurchase"]["PinCode"];
 								$obj['QRCode'] = $ecs_response["response"]["CellularVoucherPurchase"]["QRCode"];
-								$obj['customerIdncrypt']  = (!empty($data['customer_id'])) ? encrypt_decrypt('encrypt', $data['customer_id']) : null;
+								
 							} else {
-								$obj['Message'] = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];
+								$obj['Message'] = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];								
 							}
+							$obj['customerIdncrypt']  = (!empty($data['customer_id'])) ? encrypt_decrypt('encrypt', $data['customer_id']) : null;
+
 							$log->putLog(
 								"CompleteResponse: " .
 									json_encode(array(

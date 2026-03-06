@@ -288,7 +288,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
                                             <div class="form-group">
                                                 <div class="form-check text-start">
                                                     <input class="form-check-input" type="checkbox" name="mailing_address" id="mailing_address" onclick="bqp_checkboox_mailing_area()" checked>
-                                                    <label class="form-check-label" for="mailing_address" style="margin-top: 0px;"> <?php echo $data['billingcheck_label']; ?></small></label>
+                                                    <label class="form-check-label" for="mailing_address" style="margin-top: 0px; position: relative;"> <?php echo $data['billingcheck_label']; ?></small></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -838,6 +838,7 @@ $infoPlan = (isset($data['infoPlan']) && $data['infoPlan'] != NULL) ? $data['inf
             </div>
         </div>
     </div>
+    
 </section>
 <script type="text/javascript" src="<?php echo ACCEPTURL; ?>" charset="utf-8"></script>
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
