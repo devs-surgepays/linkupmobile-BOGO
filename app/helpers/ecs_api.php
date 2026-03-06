@@ -210,7 +210,13 @@
 
 		$url = "https://www.ecsprepaid.com/api/";
 
-		$terminalId = '9102319965';
+		//$terminalId = '9102319965';
+		$allowedTerminalIds = ['1071501', '5965718', '5456320', '6308980'];
+		$defaultTerminalId = '9102319965';
+
+		$terminalId = in_array($data['terminal_id'] ?? '', $allowedTerminalIds, true)
+			? $data['terminal_id']
+			: $defaultTerminalId;
 
 		$request = '<Request>
 		<CellularVoucherPurchase sku="8497">
