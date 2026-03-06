@@ -1,6 +1,6 @@
 <?php
 //$langurl=URLROOT."/".$lang;
-
+$currentPage = "checkout";
 $langEN = URLROOT."/checkout";
 $langES = URLROOT."/checkout/es";
 require APPROOT . '/views/inc/header.php';

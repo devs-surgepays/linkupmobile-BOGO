@@ -1,4 +1,5 @@
 <?php 
+$currentPage = "page";
 if($data['tid']){
     $langEN=URLROOT."?tid=".$data['tid'];
     $langES=URLROOT."/es?tid=".$data['tid'];

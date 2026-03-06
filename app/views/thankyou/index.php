@@ -1,4 +1,5 @@
 <?php 
+$currentPage = "thankyou";
 $langEN = URLROOT."/thankyou";
 $langES = URLROOT."/thankyou/es";
 require APPROOT . '/views/inc/header.php';

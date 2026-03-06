@@ -15,7 +15,8 @@
                     <span>ES</span>
                 </div> -->
                 <div class="d-flex align-items-center franklin-family px-2">
-                    <div class="me-2">
+                    <?php if($currentPage!="checkout"): ?>
+                        <div class="me-2">
                         <a href="<?php echo $langEN; ?>" class="<?php echo ($data['lang']=="en")?"font-yellow":"text-white"; ?> text-decoration-none fw-bold d-flex align-items-center me-2" style="font-size: 24px;">
                       <img src="https://flagcdn.com/24x18/us.png" alt="US" class="me-1">EN</a>
                     </div>
@@ -24,6 +25,7 @@
                         <a href="<?php echo $langES; ?>" class="<?php echo ($data['lang']=="es")?"font-yellow":"text-white"; ?> text-decoration-none fw-bold d-flex align-items-center ms-2" style="font-size: 24px;">
                       <img src="https://flagcdn.com/24x18/mx.png" alt="MX" class="me-1">ES</a>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
 

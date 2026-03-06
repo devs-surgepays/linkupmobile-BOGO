@@ -5,7 +5,8 @@
         <div class="row align-items-center">
             
             <div class="col-12 col-md-4 d-flex align-items-center justify-content-center small franklin-family">
-                <div class="me-2">
+                <?php if($currentPage!="checkout"): ?>
+                  <div class="me-2">
                     <a href="<?php echo $langEN; ?>" class="<?php echo ($data['lang']=="en")?"font-yellow":"text-white"; ?> text-decoration-none fw-bold d-flex align-items-center me-2" style="font-size: 24px;">
                       <img src="https://flagcdn.com/24x18/us.png" alt="US" class="me-1">EN</a>
                 </div>
@@ -14,6 +15,7 @@
                     <a href="<?php echo $langES; ?>" class="<?php echo ($data['lang']=="es")?"font-yellow":"text-white"; ?> text-decoration-none fw-bold d-flex align-items-center ms-2" style="font-size: 24px;">
                       <img src="https://flagcdn.com/24x18/mx.png" alt="MX" class="me-1">ES</a>
                 </div>
+                <?php endif; ?>
             </div>
 
             <div class="col-6 col-md-4 text-center">
