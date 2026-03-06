@@ -341,7 +341,7 @@ class Authorizenets extends Controller
 
 					if (!empty($pay_transmessage)) { /*Fail Payment*/
 						$updateData['payment_status'] = "Failed";
-						failPayment($data['email'], $this->mailer);
+						//failPayment($data['email'], $this->mailer);
 					} else {
 
 						if ($messageResultText == "Successful." && $transactionCode != "") {
@@ -398,11 +398,11 @@ class Authorizenets extends Controller
 								$obj['Message'] = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];
 							}
 
-							successOneTimePayment($updateData, $this->mailer);
+							//successOneTimePayment($updateData, $this->mailer);
 						}
 					}
 				} else {
-					failPayment($data['email'], $this->mailer);
+					//failPayment($data['email'], $this->mailer);
 				}
 			} catch (Exception $e) {
 
