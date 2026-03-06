@@ -128,7 +128,7 @@ class Authorizenets extends Controller
 				'match_type' => isset($_POST['match_type']) ? $this->sanitizeInput($_POST['match_type'], 'string') : '',
 				'source' => isset($_POST['source']) ? $this->sanitizeInput($_POST['source'], 'string') : '',
 				'URL' => isset($_POST['url']) ? $this->sanitizeInput($_POST['url'], 'url') : '',
-				'terminal_id' => isset($_POST['tid']) ? $this->sanitizeInput($_POST['tid'], 'url') : '',
+				'terminal_id' => isset($_POST['tid']) ? $this->sanitizeInput($_POST['tid'], 'string') : '',
 			];
 			$log->putLog("DataReceived: " . json_encode($data, true));
 
@@ -313,7 +313,7 @@ class Authorizenets extends Controller
 
 				/*Apis_log_payments */
 				/*********************************************/
-				$this->logModel->log_payment(array('order_id' => $order_id, 'response' =>  $jsonResult, 'payment_method' => "Credit Card", 'action' => 'Single Payment'));
+				//$this->logModel->log_payment(array('id_order' => $order_id, 'response' =>  $jsonResult, 'payment_method' => "Credit Card", 'action' => 'Single Payment'));
 				/*********************************************/
 
 				$updateData = [
@@ -404,7 +404,7 @@ class Authorizenets extends Controller
 										'response' => json_encode($obj),
 									))
 							);
-							$this->logModel->log_payment(array('id_order' => $updateData['id_order'], 'response' => json_encode($obj), 'payment_method' => "Credit Card", 'action' => 'Single Payment'));
+							$this->logModel->log_payment(array('id_order' => $order_data['id_order'], 'response' => json_encode($obj), 'payment_method' => "Credit Card"));
 
 							//successOneTimePayment($updateData, $this->mailer);
 						}
@@ -424,8 +424,7 @@ class Authorizenets extends Controller
 		echo json_encode($obj);
 	}
 
-
-	public function getAreaCode($phone)
+   	public function getAreaCode($phone)
 	{
 		$digits = preg_replace('/\D+/', '', $phone);
 		return strlen($digits) >= 3 ? substr($digits, 0, 3) : null;

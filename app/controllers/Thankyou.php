@@ -126,7 +126,7 @@ class Thankyou extends Controller{
 
 				if (!empty($c_data['id_order'])) {
 					$response = $this->logModel->getLogPayment($c_data['id_order']);
-					$array_response = json_decode($response, true);
+					$array_response = json_decode($response['response'], true);
 				}
 			}
 		}
