@@ -55,6 +55,15 @@ class Log {
 		} */
 	}
 
+	public function getLogPayment($id_order)
+	{
+		$this->db->query('SELECT * FROM LinkupMobile.' . $this->table . ' WHERE id_order = :id_order ORDER BY created_at DESC LIMIT 1;');
+		$this->db->bind("id_order", $id_order);
+		$getOrder = $this->db->single();
+		return $getOrder;
+	}
+
+
 	public function updateApiLog($data, $configs){
 
 		$this->db->updateQuery($configs['table_log'], $data, "customer_id=:customer_id");

@@ -397,6 +397,14 @@ class Authorizenets extends Controller
 							} else {
 								$obj['Message'] = $ecs_response["response"]["CellularVoucherPurchase"]["Message"];
 							}
+							$log->putLog(
+								"CompleteResponse: " .
+									json_encode(array(
+										'request' => '',
+										'response' => json_encode($obj),
+									))
+							);
+							$this->logModel->log_payment(array('id_order' => $updateData['id_order'], 'response' => json_encode($obj), 'payment_method' => "Credit Card", 'action' => 'Single Payment'));
 
 							//successOneTimePayment($updateData, $this->mailer);
 						}

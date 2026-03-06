@@ -2,14 +2,99 @@
 class Thankyou extends Controller{
 	
 	public $orderModel;
+	public $logModel;
+
 	public function __construct()
 	{
-		//echo 'Pages loaded';
 		$this->orderModel = $this->model('Order');
+		$this->logModel = $this->model('Log');
 	}
 
-	public function index()
+	public function index($lang = NULL)
 	{
+		$lang = $lang ? $lang : 'en';
+
+		$data = [
+
+			'en' => [
+				'title' => "BOGO PROMO",
+				'description' => "Lorem Ipsum",
+				'logo' => '/img/UsaSnap15_logo.png',
+				'css' => '/css/lifeline_form.css',
+				'url' => "https://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]",
+				'source' => "BOGO30landing",
+				'origin' => "domain_name",
+				'program' => "",
+
+
+				'lang' => 'en',
+				'title' => 'Welcome to LinkUp Mobile',
+				'main_title' => '2X EVERYTHING',
+				'blue_heading_1' => '2X&nbsp;THE&nbsp;COVERAGE. 2X&nbsp;THE&nbsp;DATA. 2X&nbsp;THE&nbsp;VALUE',
+				'main_description' => '<span>Activate your line</span> with this <span>limited-time offer</span> and your second month is completely free! Don&apos;t miss out, get started&nbsp;today.',
+
+				// Offer Countdown 
+				'offer_msg' => 'OFFER ENDS SOON!',
+				'offer_day' => 'DAYS',
+				'offer_minutes' => 'MINUTES',
+				'offer_hours' => 'HOURS',
+				'offer_seconds' => 'SECONDS',
+				// Promo Details Section
+				'promo_bubble_text' => 'BUY 1 MONTH, <br> GET 1 MONTH FREE',
+				'promo_bubble_text_2' => 'UNLIMITED TALK & TEXT + <br> ROAMING TO & WITHIN MEXICO',
+				'promo_perks_description' => 'With your LinkUp data plan you get <span>additional perks</span> such as <span>unlimited talk & text</span> as well as roaming included to and within&nbsp;Mexico',
+
+				//
+				'thankyou_h1' => 'ORDER',
+				'thankyou_h1_2' => 'HAS BEEN PLACED!',
+				'thankyou_desc' => 'Thank you for your order. You will receive your eSIM and your order confirmation via email.',
+				'orderreview_label' => 'Order Review',
+				'transid_label' => 'Transaction Id:',
+				'transpgst_label' => 'Transaction PGS:',
+				'phone_number_label' => 'Phone Number',
+				'back_btn' => 'GO BACK HOME',
+				
+			],
+			'es' => [
+				'title' => "BOGO PROMO",
+				'description' => "Lorem Ipsum",
+				'logo' => '/img/UsaSnap15_logo.png',
+				'css' => '/css/lifeline_form.css',
+				'url' => "https://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]",
+				'source' => "BOGO30landing",
+				'origin' => "domain_name",
+				'program' => "",
+				'lang' => 'es',
+				'title' => 'Bienvenido a LinkUp Mobile',
+				'main_title' => 'DUPLICA TU PLAN',
+				'blue_heading_1' => 'DOBLE&nbsp;COBERTURA. DOBLE&nbsp;DE&nbsp;DATOS. DOBLE&nbsp;VALOR',
+				'main_description' => '<span>Activa una linea</span> con esta oferta por <span>tiempo limitado</span> y disfruta del segundo mes completamente gratis. ¡No te la pierdas, empieza hoy&nbsp;mismo!',
+
+				// Offer Countdown 
+				'offer_msg' => '¡LA OFERTA TERMINA PRONTO!',
+				'offer_day' => 'DIAS',
+				'offer_minutes' => 'MINUTOS',
+				'offer_hours' => 'HORAS',
+				'offer_seconds' => 'SEGUNDOS',
+				// Promo Details Section
+				'promo_bubble_text' => 'COMPRA 1 MES, <br> TE REGALAMOS 1 MES',
+				'promo_bubble_text_2' => 'LLAMADAS Y TEXTOS ILIMITADOS + <br> ROAMING HACIA Y DENTRO DE MEXICO',
+				'promo_perks_description' => 'Con tu plan de datos LinkUp obtienes <span>beneficios adicionales</span> como <span>llamadas y mensajes de texto ilimitados</span>, así como roaming incluido hacia y dentro de México.',
+
+				//
+				'thankyou_h1' => 'ORDEN',
+				'thankyou_h1_2' => 'HA SIDO COLOCADA!',
+				'thankyou_desc' => 'Gracias por su pedido. Recibirá su eSIM y la confirmación del pedido por correo electrónico.',
+				'orderreview_label' => 'Revisión de Pedido',
+				'transid_label' => 'Transacción Id:',
+				'transpgst_label' => 'Transacción PGS:',
+				'phone_number_label' => 'Número de teléfono',
+				'back_btn' => 'REGRESAR',
+
+			]
+
+		];
+
 		$c_id = null;
 		$defaultPlan = 'BOGO30';
 		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -34,23 +119,37 @@ class Thankyou extends Controller{
 
 		if (!empty($customer_id)) {
 			$c_data = $this->orderModel->getOrderBy($customer_id);
-			$queryString = http_build_query($c_data);
-			$dataToken = encrypt_decrypt('encrypt', $queryString);
-			
+
+			if (!empty($c_data)) {
+				$queryString = http_build_query($c_data);
+				$dataToken = encrypt_decrypt('encrypt', $queryString);
+
+				if (!empty($c_data['id_order'])) {
+					$response = $this->logModel->getLogPayment($c_data['id_order']);
+					$array_response = json_decode($response, true);
+				}
+			}
 		}
+
 		$infoPlans = $this->getPlanInfo($plan_id);
 		
-		$data = [
+		$data_post = [
 			'title' => "Thank You",
 			'logo' => '/img/MyBenefits_LogoBlanco2.png',
 			'urlRedirect' => 'https://usaphone.org',
 			'description' => "App to share posts to other users",
 			'customer_id'=> $customer_id,
 			'infoCustomerId' => $c_data,
+			'response' => isset($array_response) ? $array_response : [],
 		];
+		$data_post['infoPlan'] = $infoPlans;
 
-		$data['infoPlan'] = $infoPlans;
-		$this->view('thankyou/index',$data);
+		$data['en'] = array_merge($data['en'], $data_post);
+		$data['es'] = array_merge($data['es'], $data_post);
+
+		//print_r($data);
+
+		$this->view('thankyou/index', $data[$lang]);
 	}
 
 	public function getPlanInfo($plan_name = null)
