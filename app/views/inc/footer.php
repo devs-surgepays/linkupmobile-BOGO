@@ -37,7 +37,7 @@
                 <ul class="list-unstyled small">
                     <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold"><?php echo $data['livechat']; ?></a></li>
                     <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold"><?php echo $data['phonecall']; ?></a></li>
-                    <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold"><?php echo $data['email']; ?></a></li>
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold"><?php echo $data['email_footer']; ?></a></li>
                     <li class="mb-2"><a href="#" class="text-white text-decoration-none fw-bold"><?php echo $data['message']; ?></a></li>
                 </ul>
             </div>
